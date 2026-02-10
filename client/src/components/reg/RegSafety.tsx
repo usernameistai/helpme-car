@@ -1,0 +1,206 @@
+import type { FC } from 'react';
+import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
+import ParticlesBg from '../layout/ParticlesBg';
+
+const RegSafety: FC = () => {
+  const quoteClass = "space-grotesk bg-gray-200 dark:bg-gray-700 dark:text-zinc-200/90 px-4 py-4 rounded-lg shadow-lg dark:shadow-sky-100/50 backdrop-blur-md border border-white/20";
+
+  return (
+    <>
+      <ParticlesBg theme='nasa' colour='blue-500'/>
+      <section className='relative z-20 my-[-1.5rem] mx-2'>
+        <h1 className="space-grotesk text-4xl sm:text-5xl font-bold mt-5 mb-8 w-96 text-transparent 
+          bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300 leading-[4rem]"
+        >
+          HelpMe-Safety
+        </h1>
+        <section className='roboto'>
+          <section aria-labelledby='safety-intent'>
+            <h2 id="safety-intent" className='sr-only'>
+              This site could potentially redce the number of accidents, even only a little bit
+            </h2>
+            <blockquote className='mb-2'>
+              <p className={quoteClass}>
+                "The best thing this site could hope to achieve is reduce the number of accidents on the road and the very least could help drivers ensure their car's are safe and roadworthy."
+              </p>
+              <footer className='flex flex-row-reverse mt-1 text-cyan-600'> - me</footer>
+            </blockquote>
+          </section>
+
+          <hr className='border-t border-zinc-500/50'/>
+          <br />
+
+          <section className='mx-2 sm:mx-0'>
+            <p className='text-sm md:text-base dark:text-zinc-200/90'>The following data is from the <span>
+              <a className='text-cyan-600' rel='noopener noreferrer' target='_blank' href='https://www.gov.uk/government/statistical-data-sets/ras50-contributory-factors'> Department for Transport Statistics </a></span>
+            </p>
+            <div className='text-cyan-600 font-semibold'>
+              <h3>RAS50002 Contributory factors allocated to vehicles or pedestrians in reported accidents, Great Britain, 2014-2018</h3>
+            </div>
+            <figure>
+              <div 
+                className='bg-safety-car-1 md:max-w-[100vw] lg:w-[50%] mx-auto h-56 md:h-[27rem] my-[2rem] py-4 rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
+                  role='img'
+                    aria-label='Chart showing contributory accident factors, Great Britain 2014 - 2018'
+              />
+              <figcaption className='sr-only'>
+                Department for Transprot accident statistics chart
+              </figcaption>
+            </figure>
+          </section>
+          
+          <section aria-labelledby='faulty-components' className='mx-2 sm:mx-0'>
+            <h3 
+              className='text-cyan-600 font-semibold'
+                id="faulty-components"
+            >
+              The following are the potential top associated accidents with having faulty components
+            </h3>
+            <br />
+            <article>
+              <blockquote className={quoteClass}>"Driver / Rider failed to look properly - 40% of accidents in 2018"</blockquote>
+              <p className='mb-5 px-6 py-4 text-sm md:text-base dark:text-zinc-200/90'>If a car involved had faulty brake or indicator lights, this could be a contributory factor towards said driver not looking properly and then not seeing the potential car</p>
+            </article>
+
+            <article>
+              <blockquote className={quoteClass}>"Driver / Rider failed to judge other person's path or speed - 21% of accidents in 2018"</blockquote>
+              <p className='mb-5 px-6 py-4 text-sm md:text-base dark:text-zinc-200/90'>At times with poor visibility such as at night, heavy rain or during fog, people are strained to see the other person's car with lights fully working. When not working this puts an extra strain on driver's surrounding the car with faulty lights and again could be a contributory factor as reduces said driver's distance perception</p>
+            </article>
+
+            <article>
+              <blockquote className={quoteClass}>"Poor turn or manoeuvre - 13% of accidents in 2018"</blockquote>
+              <p className='mb-5 px-6 py-4 text-sm md:text-base dark:text-zinc-200/90'>The poor action of the driver and people getting into accidnts could be poor equipmwent on top of poor driving. Many people now brake and then indicate, which gives no prior warning for cars around</p>
+            </article>
+
+            <article>
+              <blockquote className={quoteClass}>"Sudden braking - 5% of accidents in 2018"</blockquote>
+              <p className='mb-5 px-6 py-4 text-sm md:text-base dark:text-zinc-200/90'>Personally I have nearly fallen victim to this when people suddenly brake and only have one out of three potential brake lights working (that's assuming the car is clean the lights are clear when applied), only through paying 100% attention have avoided several accidents</p>
+            </article>
+
+            <article className='dark:text-zinc-200/90'>
+              <p className='mb-6'>There is a substantial trend towards the overall decrease in accidents from 115673 accidents in 2014 to 84968 accidents in 2018. What could be the causes of this?</p>
+              <ol className='ml-4 mb-6 text-sm md:text-base leading-8 md:leading-10'>
+                <li>1. The inclusion of more 20mph zones around cities</li>
+                <li>2. More automatic indication of faulty car parts in newer cars</li>
+                <li>3. People are driving better and more considerately</li>
+                <li>4. Less people are driving - using public transport or cycling</li>
+              </ol>
+              <p className='mb-2'>Yet despite these encouranging trends, driving on the roads it appears less people are interested in following The Highway Code or driving appropriately (i.e. safely and considerately)</p>
+              <p className='px-4 text-sm md:text-base'>e.g. People braking before indicating (not following the MSM principle)</p>
+            </article>
+          </section>
+
+          <br />
+          <hr className='border-t border-zinc-500/50'/>
+          <br />
+
+          <section className='mx-2 sm:mx-0'>
+            <p className='text-sm md:text-base dark:text-zinc-200/90'>The following data is from the 
+              <span>
+                <a className='text-cyan-600' rel='noopener noreferrer' target='_blank' href='https://www.gov.uk/government/statistical-data-sets/ras20-drivers-riders-and-vehicles-in-reported-road-accidents'> Department for Transport Statistics </a>
+              </span>
+            </p>
+            <div className='text-cyan-600 font-semibold'>
+              <h3>RAS20002 Drivers in reported accidents by gender, number injured, road user type and age, Great Britain, 2018</h3>
+            </div>
+            <figure className='dark:text-zinc-200/90'>
+              <div 
+                className='bg-safety-car-2 h-[20rem] md:h-[40rem] mt-[2rem] py-[2rem] lg:w-[50%] mx-auto rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
+                  role='img'
+                    aria-label='Chart showing accidents by gender, Great Britain 2018'
+              />
+              <aside className='text-[0.6rem] md:text-xs mx-auto lg:mx-[20vw] mt-2 mb-4'>
+                <figcaption className='sr-only'>Department for Transport gender accident statistics</figcaption>
+                <figcaption className='flex justify-between'>
+                  <p>1. Includes cases where gender was not reported. </p>
+                  <span className='font-semibold'>Source: DfT STATS19</span>
+                </figcaption>
+                <figcaption className='flex justify-between'>
+                  <p>2. Includes electric motorcycles and cases where engine size was not reported. </p>
+                  <span className='font-semibold'>The figures in this table are National Statistics</span>
+                </figcaption>
+              </aside>
+            </figure>
+          </section>
+
+          <section className='mx-2 sm:mx-0'>
+            <article className='my-5'>
+              <header className='text-cyan-600 mb-1'>The table above shows two immediate patterns</header>
+              <blockquote className='bg-gray-200 dark:bg-gray-700 dark:text-zinc-200/90 px-4 py-4 rounded-lg shadow-lg dark:shadow-sky-100/50 mb-2 backdrop-blur-md border border-white/20'>
+                "Males are nearly twice as likely to be involved in accidents than females - 92005 compared to 55268"
+              </blockquote>
+              <p className='p-5 dark:text-zinc-200/90'>And...</p>
+              <blockquote className='bg-gray-200 dark:bg-gray-700 dark:text-zinc-200/90 px-4 py-4 rounded-lg shadow-lg dark:shadow-sky-100/50 mb-2 backdrop-blur-md border border-white/20'>
+                "If females are involved in accidents they are more likely to be casualties  - 53% compared to 38%"
+              </blockquote>
+              <div className="dark:text-zinc-200/90">
+                <p className='p-5 text-sm md:text-base'>There appears to be less variation across the age ranges with females drivers. Males have more definite peaks with the age ranges 25 - 29 and 30 - 34 to the highest peaks being 40 - 49 (highest number number of accidents) and 50 - 59 (second highest)</p>
+                <p className='p-5 text-sm md:text-base'>Not counting the age range 25 - 34 (which would be far and away the highest number of accidents in an age range), both female and male drivers between the ages of 40 - 49 had the highest number of incidents in 2018</p>
+                <p className='p-5 text-sm md:text-base'> There are potentially more males requiring to keep an eye on their faulty components and as such should use this site. Females, you could help other females and males out by not only driving more safely but also letting people know their car needs a little work.. (before it's MOT) </p>
+              </div>
+            </article>
+          </section>
+
+          <br />
+          <hr className='border-t border-zinc-500/50'/>
+          <br />
+
+          <section className='mx-2 sm:mx-0'>
+            <p className='text-sm md:text-base dark:text-zinc-200/90'>Data and map from 
+              <a className='text-cyan-600' rel='noopener noreferrer' target='_blank' href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/800502/vehicle-licensing-statistics-2018.pdf'> Vehicle Licensing Statistics: Annual 2018 </a>
+              release
+            </p>
+            <div className='text-cyan-600 font-semibold'>
+              <h4>Map of licensed vehicles per 1000 head of population by unitary authority, Uniten Kingdom, 2018</h4>
+            </div>
+            <figure>
+              <div 
+                className='bg-safety-car-3 h-[18rem] md:h-[35rem] mt-[2rem] p-[2rem] md:w-[77vw] lg:w-[50%] mx-auto rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
+                  role='img'
+                    aria-label='Map of licensed vehicle distribution, United Kingdom 2018'
+              />
+              <figcaption className='sr-only'>
+                Vehicle Licensing Statistics: Annual 2018
+              </figcaption>
+            </figure>
+          </section>
+          <br />
+
+          <section className='mx-2 sm:mx-0'>
+            <article>
+              <p className='text-cyan-600 mb-1'>Vehicle Licensing Statistics: Annual 2018 - Page 9. </p>
+              <blockquote className='bg-gray-200 dark:bg-gray-700 dark:text-zinc-200/90 px-4 py-4 rounded-lg mb-2 backdrop-blur-md border border-white/20 shadow-lg dark:shadow-sky-100/50'><p> "In the United Kingdom, there were 39.4 million licensed vehicles at the end of 2018.This figure was made of 32.5 million (83%) vehicles registered to an address in England, 1.9 million (5%) in Wales, 3.0 million (8%) in Scotland, and 1.2 million (3%) in Northern Ireland" </p></blockquote>
+            </article>
+
+            <article>
+              <p className='p-5 text-sm md:text-base dark:text-zinc-200/90'>Regionally, this was markedly lower in London (348 per 1000 head) than in any other region or country, potentially reflecting its highly urbanised nature and / or provision of excellent public transportation. There was less variation between the other regions, with the rate being highest in the southern English regions (of which the South West was highest at 729) and lowest among the northern English regions (of which the North East was lowest at 521)</p>
+              <p className='p-1 dark:text-zinc-200/90'>Data and map from 
+                <a className='text-cyan-600 ' rel='noopener noreferrer' target='_blank' href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/800502/vehicle-licensing-statistics-2018.pdf'> Vehicle Licensing Statistics: Annual 2018 </a> 
+                release
+              </p>
+            </article>
+          </section>
+
+          <nav className='poppins flex flex-col mb-4 md:mb-20 px-4 md:flex-row w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'>
+            <Link 
+              to='/reg' 
+                className='text-slate-700 font-semibold bg-yellow-300 rounded px-4 py-3 h-12 mt-4  shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
+            >
+              HelpMe-Car Home
+            </Link>
+            <Link 
+              to='/reghelp'
+                className='text-slate-700 font-semibold bg-yellow-300 rounded px-4 py-3 h-12 mt-4  shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
+                  onClick={() => toast.success(`Being helpful is great!!`)}
+            >
+              The Point of Being Helpful
+            </Link>
+          </nav>
+        </section>
+      </section>
+    </>
+  );
+};
+
+export default RegSafety;

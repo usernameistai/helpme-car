@@ -1,0 +1,329 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dark-colour: #343a40;
+  --slate900-colour: #0f172a;
+  --coolg-colour: #55d6be;
+  --neon-colour: hsl(55 100% 54%);
+}
+
+html {
+  transition: background-color 0.3s ease;
+}
+
+html.dark {
+  background-color: var(--slate900-colour);
+  color: white;
+}
+
+.poppins { 
+  font-family: 'Poppins', sans-serif;
+ }
+.roboto { 
+  font-family: 'Roboto', sans-serif;
+ }
+.michroma { 
+  font-family: 'Michroma', sans-serif;
+ }
+.space-grotesk { 
+  font-family: 'Space Grotesk', sans-serif;
+ } 
+
+.regclass h2 {
+  background-image: linear-gradient(90deg, var(--coolg-colour), var(--neon-colour));
+  background-clip: text;
+  color: transparent;
+  padding-bottom: 1rem;
+}
+.dark .regclass h2 {
+  background-image: linear-gradient(90deg, var(--dark-colour), var(--coolg-colour));
+  background-clip: text;
+  color: transparent;
+  padding-bottom: 1rem;
+}
+
+.bg-landing-car-1 {
+  background-image: url('./components/layout/english.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.lan {
+  margin-top: 3rem;
+  background-image: linear-gradient(90deg, var(--coolg-colour), var(--neon-colour));
+  background-clip: text;
+  color: transparent;
+}
+/* Landing Page Styles */
+.neon-button {
+  color: var(--neon-colour);
+  font-size: 2rem;
+  display: inline-block;
+  cursor: pointer;
+  border: var(--neon-colour) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  text-shadow: 
+    0 0 1em hsl(0 0% 100% / 0.3),
+    0 0 1em var(--neon-colour);
+  box-shadow: 
+    0 0 0.5em 0 var(--neon-colour),
+    inset 0 0 0.5em 0 var(--neon-colour);
+  position: relative;
+}
+.neon-button::before,
+.neon-button::after {
+  box-sizing: border-box;
+}
+.neon-button::before {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  background: var(--neon-colour);
+  border-radius: .25em;
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: 
+    perspective(2.5em)
+    rotateX(40deg)
+    scale(1, 0.55);
+  filter: blur(1.5em);
+  opacity: 0.7;
+}
+.neon-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0  2em 0.5em var(--neon-colour);
+  opacity: 0;
+  background-color: var(--neon-colour);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+.neon-button:focus,
+.neon-button:hover {
+  background-color: var(--neon-colour);
+  color: var(--dark-colour);
+  text-shadow:  none;
+}
+.neon-button:hover::before,
+.neon-button:focus::before {
+  opacity: 1;
+}
+.neon-button:hover::after ,
+.neon-button:focus::after {
+  opacity: 1;
+}
+
+/* Modal */
+@keyframes scale-up {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-scale-up {
+  animation: scale-up 0.2s ease-out forwards;
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(0,255,255,0.4); }
+  50% { box-shadow: 0 0 20px rgba(0,255,255,0.6); }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 0.2s ease-out forwards;
+}
+
+.bg-home-car {
+  background-image: url('./components/layout/multi_car.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-search-car {
+  background-image: url('./components/layout/car_search.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-search-combine{
+  background-image: url('./components/layout/english_combine_harvester.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-search-combine-2{
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)),
+  url('./components/layout/english_combine_harvester.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-search-combine-2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+.bg-search-combine-2 > * {
+  position: relative;
+}
+
+.bg-rules-car {
+  background-image: url('./components/layout/Urban-Landscape.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-rules-people-1 {
+  background-image: url('./components/layout/pan-xiaozhen.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-2 {
+  background-image: url('./components/layout/luke-porter.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-3 {
+  background-image: url('./components/layout/vitor-pinto.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-4 {
+  background-image: url('./components/layout/timo-volz.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-5 {
+  background-image: url('./components/layout/jorge-dominguez.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-6 {
+  background-image: url('./components/layout/jan-kopriva.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-7 {
+  background-image: url('./components/layout/caspar-camille-rubin.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-8 {
+  background-image: url('./components/layout/josh-gordon.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-9 {
+  background-image: url('./components/layout/priscilla-du-preez.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-10 {
+  background-image: url('./components/layout/david-hurley.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-11 {
+  background-image: url('./components/layout/nick-fewings.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-12 {
+  background-image: url('./components/layout/christopher-burns.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-13 {
+  background-image: url('./components/layout/tarun-dhiman.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-14 {
+  background-image: url('./components/layout/ben-white.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-15 {
+  background-image: url('./components/layout/charles-etoroma.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-16 {
+  background-image: url('./components/layout/sincerely-media.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-17 {
+  background-image: url('./components/layout/artur-tumasjan.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-18 {
+  background-image: url('./components/layout/pan-xiaozhen.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-19 {
+  background-image: url('./components/layout/rosie-kerr.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-20 {
+  background-image: url('./components/layout/mareko-tamaleaa.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-rules-people-21 {
+  background-image: url('./components/layout/pawel-czerwinski.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-safety-car-1 {
+  background-image: url('./components/layout/accidents.webp');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-safety-car-2 {
+  background-image: url('./components/layout/RAS20002.webp');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-safety-car-3 {
+  background-image: url('./components/layout/car-density.webp');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
