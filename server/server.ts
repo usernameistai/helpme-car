@@ -38,11 +38,13 @@ app.use("/api/profile", profileRoutes);
 app.get('/healthcheck', healthCheck);
 
 if (process.env.NODE_ENV === 'production') {
-  const __dirname = path.resolve(); // Use this if you get a "__dirname is not defined" error in ES modules
-  app.use(express.static(path.join(__dirname, 'dist')));
+  // Use process.cwd() to get the absolute root of the Heroku app
+  const root = process.cwd();
+  
+  app.use(express.static(path.join(root, 'dist')));
 
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+    res.sendFile(path.resolve(root, 'dist', 'index.html'));
   });
 }
 
