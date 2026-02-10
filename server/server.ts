@@ -8,13 +8,16 @@ import regRoutes from './routes/reg';
 import profileRoutes from './routes/profile';
 import { clerkMiddleware } from "@clerk/express";
 import { healthCheck } from "./controllers/health.controller";
+import path from "node:path";
 
 const app = express();
 // Connect DB
 connectDB();
 // Middleware
 app.use(cors({ 
-  origin: "http://localhost:5173", 
+  origin: process.env.NODE_ENV === 'production'
+          ? "https://helpme-car.herokuapp.com"
+          : "http://localhost:5173", 
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
@@ -33,6 +36,15 @@ app.use("/api/reg", regRoutes);
 // Example test route
 app.use("/api/profile", profileRoutes);
 app.get('/healthcheck', healthCheck);
+
+if (process.env.NODE_ENV === 'production') {
+  const __dirname = path.resolve(); // Use this if you get a "__dirname is not defined" error in ES modules
+  app.use(express.static(path.join(__dirname, 'dist')));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+  });
+}
 
 // Start Server
 app.listen(PORT, () => {
