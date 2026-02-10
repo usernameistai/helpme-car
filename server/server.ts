@@ -38,13 +38,12 @@ app.use("/api/profile", profileRoutes);
 app.get('/healthcheck', healthCheck);
 
 if (process.env.NODE_ENV === 'production') {
-  // Use process.cwd() to get the absolute root of the Heroku app
   const root = process.cwd();
-  
   app.use(express.static(path.join(root, 'dist')));
 
-  app.get('(.*)', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+  // This is the Express 5 version of your old '*'
+  app.get('*any', (req, res) => {
+    res.sendFile(path.resolve(root, 'dist', 'index.html'));
   });
 }
 
