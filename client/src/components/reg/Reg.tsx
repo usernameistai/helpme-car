@@ -67,7 +67,7 @@ const Reg: FC = () => {
       <ParticlesBg theme="default" colour="cyan-400"/>
       <section className="space-y-10 sm:mx-0">
         <section className="relative my-[-1.5rem] z-20">
-          <h1 className="flex relative space-grotesk text-4xl md:text-5xl font-bold mb-8 pb-4 w-full lan">
+          <h1 className="flex relative z-50 space-grotesk text-4xl md:text-5xl font-bold mb-8 pb-4 w-full lan">
             Home of HelpMe-Car
           </h1>
 
