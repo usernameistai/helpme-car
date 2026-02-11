@@ -23,11 +23,11 @@ const Landing = () => {
                 HelpMe - Car
               </h1>
             </Link>
-            <p className='michroma  pb-2 lan text-2xl md:text-4xl'>
+            <p className='michroma  pb-2 lan text-xl sm:text-2xl md:text-4xl'>
               Share helpful information / advisories about someone's car, if it needs it. Create a helper profile if you would like
             </p>
 
-            <div className='roboto text-white text-lg sm:text-xl'>
+            <div className='roboto text-white text-base sm:text-lg md:text-xl'>
               <p>If you see a fault with someone's car, this is a way of letting them know. Simply choose from a selection of various problems</p>
               <p>Help someone out</p>
               <p>Dark mode yields surprises...</p>

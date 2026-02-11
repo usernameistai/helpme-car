@@ -21,14 +21,15 @@ const Reg: FC = () => {
   const queryClient = useQueryClient();
   const [regplate, setRegplate] = useState("");
 
-  const liClass = "relative z-30 group group-hover:-translate-y-4 my-2 sm:my-8 p-4 lg:h-72 bg-white/10 backdrop-blur-md border border-white/20 w-1/3 rounded-2xl shadow-lg hover:bg-white/50 hover:scale-105 transition-transform hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
+  const liClass = "relative z-30 group group-hover:-translate-y-4 sm:my-8 py-2 sm:p-4 lg:h-72 bg-white/10 backdrop-blur-md border border-white/20 w-1/3 rounded-2xl shadow-lg hover:bg-white/50 hover:scale-105 transition-transform hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
   const h3Class = "space-grotesk text-base md:text-xl lg:text-3xl font-bold mt-2 lg:mt-4 mb-4 text-gray-500 dark:text-gray-800 text-center";
   const titleClass = "space-grotesk text-sm md:text-base lg:text-lg mb-4 lg:my-6 px-4 lg:px-20 lg:leading-8 lg:font-semibold text-gray-900";
   const buttonClass = "poppins relative z-50 rounded shadow-lg px-3 py-2 my-4 lg:my-12 text-center text-white text-sm md:text-lg lg:text-2xl font-bold hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
   const brightBorderClass = "absolute inset-0 rounded-2xl group-hover:rotate-1 border border-cyan-400/40 animate-pulse animate-pulse-glow";
   const linksClass = "poppins text-base md:text-lg lg:text-xl text-white font-semibold bg-sky-100 text-zinc-700 px-4 py-2 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem]";
   const linkClass = "font-mono text-base md:text-lg lg:text-xl font-semibold my-4 pl-1 text-gray-500";
-
+  
+  
   useEffect(() => {
     fetchRegs();
   }, [fetchRegs]);
@@ -64,69 +65,79 @@ const Reg: FC = () => {
   return (
     <>
       <ParticlesBg theme="default" colour="cyan-400"/>
-      <section className="space-y-48 sm:mx-0">
+      <section className="space-y-10 sm:mx-0">
         <section className="relative my-[-1.5rem] z-20">
           <h1 className="flex relative space-grotesk text-4xl md:text-5xl font-bold mb-8 pb-4 w-full lan">
             Home of HelpMe-Car
           </h1>
 
-          <section className="relative w-full min-h-[75vh] bg-home-car bg-fixed mb-8 pb-20">
-            <div className="absolute inset-0 bg-zinc-700/50" />
-            <h2 className="space-grotesk absolute top-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-zinc-100 text-xl md:text-2xl lg:text-4xl font-extrabold w-full text-center">
-              A way to help fellow Humans and potentially why... ?
-            </h2>
+          <section className="relative w-full min-h-[75vh] pb-20 overflow-visible">
+            {/* 1. The Parallax Wrapper - This clips the image to this section only */}
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none" style={{ clip: 'rect(0, auto, auto, 0)' }}>
+              {/* 2. The Actual Image - 'fixed' position inside a clipped container creates parallax */}
+              <div className="fixed inset-0 w-full h-full bg-home-car" style={{ zIndex: -1, height: '100vh' }} /> {/* This ensures it works on older Firefox ESR and Mobile */}
+              {/* 3. The Overlay - Nested here to stay with the image */}
+              <div className="fixed inset-0 bg-zinc-700/60 z-0" />
+            </div>
 
-            <section className="relative my-10 mb-28">
-              <ul className="flex flex-col sm:flex-row mb-10 justify-between items-center transform top-8 gap-6 translate-y-16 sm:-translate-x-10 lg:-translate-x-20 w-[90vw] md:w-[110vw] max-w-[110%] mx-auto">
-              {/* //absolute transform -translate-x-1/2 gap-2 md:gap-6 lg:gap-10  */}
-                <li className={`${liClass} w-full sm:w-1/3`}>
-                  <h3 className={`${h3Class}`}>Help Someone's Car</h3>
-                  <p className={`${titleClass}`}>Add a car's number plate for any advisories you may have seen along your travels</p>
-                  <div className="text-center my-0 sm:my-4">
-                    <Link 
-                      to="/helpreg" 
-                        className={`bg-gradient-to-br from-cyan-400 to-yellow-300 ${buttonClass}`}
-                          aria-label="Click this button to go to the Help-Car page, to help someone's car"
-                    >
-                      HelpMe-Car
-                    </Link>
-                  </div>
-                  <div className={`${brightBorderClass}`}></div>
-                </li>
-                <li className={`${liClass} w-full sm:w-1/3`}>
-                  <h3 className={`${h3Class}`}>Search for your Car</h3>
-                  <p className={`${titleClass}`}>Please enter a number plate to see if anyone has entered information about YOUR car!!</p>
-                  <div className="text-center my-0 sm:my-4">
-                    <Link 
-                      to="/search" 
-                        className={`bg-gradient-to-br from-green-300 to-zinc-300 ${buttonClass}`}
-                          aria-label="Click this button after entering a number plate to go to the display page"
-                    >
-                    Regplate Search
-                    </Link>
-                  </div>
-                  <div className={`${brightBorderClass}`}></div>
-                </li>
-                <li className={`${liClass} w-full sm:w-1/3`}>
-                  <h3 className={`${h3Class}`}>HelpMe Information</h3>
-                  <p className={`${titleClass}`}>Important Information, Rules & Regulations, Guidance about HelpMe-Car and more...</p>
-                  <div className="text-center my-0 sm:my-4">
-                    <Link 
-                      to="/regrules"
-                        className={`bg-gradient-to-br from-yellow-300 to-red-300 mt-9 md:mt-4 ${buttonClass}`}
-                          aria-label="Click this button to hear about the rules and regulatations subsequently about being helpful"
-                    >
-                      HelpMe - Info?
-                    </Link>
-                  </div>
-                  <div className={`${brightBorderClass}`}></div>
-                </li>
-              </ul>
-            </section>
+            {/* 4. The Content - Must be relative and high z-index */}
+            <div className="relative z-30">
+              <h2 className="space-grotesk pt-10 tracking-wide text-zinc-100 text-2xl lg:text-4xl font-extrabold w-full text-center">
+                A way to help fellow Humans and potentially why... ?
+              </h2>
+
+              <section className="relative my-10 mb-28">
+                <ul className="flex flex-col sm:flex-row mb-10 justify-between items-center transform top-8 gap-6 sm:-translate-x-10 lg:-translate-x-20 w-[90vw] md:w-[110vw] max-w-[110%] mx-auto">
+                {/* //absolute transform -translate-x-1/2 gap-2 md:gap-6 lg:gap-10  */}
+                  <li className={`${liClass} w-full sm:w-1/3`}>
+                    <h3 className={`${h3Class}`}>Help Someone's Car</h3>
+                    <p className={`${titleClass}`}>Add a car's number plate for any advisories you may have seen along your travels</p>
+                    <div className="text-center my-4">
+                      <Link 
+                        to="/helpreg" 
+                          className={`bg-gradient-to-br from-cyan-400 to-yellow-300 ${buttonClass}`}
+                            aria-label="Click this button to go to the Help-Car page, to help someone's car"
+                      >
+                        HelpMe-Car
+                      </Link>
+                    </div>
+                    <div className={`${brightBorderClass}`}></div>
+                  </li>
+                  <li className={`${liClass} w-full sm:w-1/3`}>
+                    <h3 className={`${h3Class}`}>Search for your Car</h3>
+                    <p className={`${titleClass}`}>Please enter a number plate to see if anyone has entered information about YOUR car!!</p>
+                    <div className="text-center my-4">
+                      <Link 
+                        to="/search" 
+                          className={`bg-gradient-to-br from-green-300 to-zinc-300 ${buttonClass}`}
+                            aria-label="Click this button after entering a number plate to go to the display page"
+                      >
+                      Regplate Search
+                      </Link>
+                    </div>
+                    <div className={`${brightBorderClass}`}></div>
+                  </li>
+                  <li className={`${liClass} w-full sm:w-1/3`}>
+                    <h3 className={`${h3Class}`}>HelpMe Information</h3>
+                    <p className={`${titleClass}`}>Important Information, Rules & Regulations, Guidance about HelpMe-Car and more...</p>
+                    <div className="text-center my-4">
+                      <Link 
+                        to="/regrules"
+                          className={`bg-gradient-to-br from-yellow-300 to-red-300 mt-9 md:mt-4 ${buttonClass}`}
+                            aria-label="Click this button to hear about the rules and regulatations subsequently about being helpful"
+                      >
+                        HelpMe - Info?
+                      </Link>
+                    </div>
+                    <div className={`${brightBorderClass}`}></div>
+                  </li>
+                </ul>
+              </section>
+            </div>
 
             <GlassCard title="Recently added registrations" className="z-30 space-grotesk relative w-full lg:w-[63vw] backdrop-blur-xl mx-auto hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]">
-              <p className="text-gray-900 dark:text-gray-200 lg:text-xl m-1/2 sm:m-0 px-6 sm:px-8">Here are a few number plates from the database, if this is your car, click on it to see what advisories have been added. Maybe you could help someone else out?</p>
-              <div className="mb-8 lg:mb-16 z-30">
+              <p className="text-gray-900 dark:text-gray-200 text-base lg:text-xl m-1/2 sm:m-0 px-6 sm:px-8">Here are a few number plates from the database, if this is your car, click on it to see what advisories have been added. Maybe you could help someone else out?</p>
+              <div className="lg:mb-16 z-30">
                 <RegList 
                   regs={displayedRegs}
                     isLoading={isLoading}
@@ -134,20 +145,19 @@ const Reg: FC = () => {
                 />
               </div>
             </GlassCard>
-
           </section>
         </section>
 
-        <section className="relative z-20 space-y-20 w-full h-[100vh] sm:h-[90vh] bg-landing-car-1 bg-fixed">
+        <section className="relative z-20 w-full h-[100vh] sm:h-[90vh] lg:space-y-10">
           <Search
             regplate={regplate}
               setRegplate={setRegplate}
                 onSubmit={handleRegSearch}
-                  className="relative mt-10 w-[90vw] lg:w-[60vw] sm:w-full pt-2 mx-auto scale-[1.1]"
+                  className="relative mt-10 w-[90vw] sm:w-full pt-2 mx-auto md:hover:scale-100"
           />
           <Board 
             leaderboard={leaderboard.slice(0, 5)}
-              className="rounded-2xl w-[90vw] lg:w-[63vw] sm:w-full mx-auto translate-y-32 lg:translate-y-10 dark:bg-zinc-900/50"
+              className="rounded-2xl w-[90vw] sm:w-full mx-auto md:hover:scale-100 translate-y-32 lg:translate-y-10 dark:bg-zinc-900/50"
           />
         </section>
         

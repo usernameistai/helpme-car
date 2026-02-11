@@ -6,14 +6,14 @@ import { FaJediOrder } from "react-icons/fa";
 import ParticlesBg from '../layout/ParticlesBg';
 
 const RegRules: FC = () => {
-  const sectionClass = "flex flex-row justify-between";
+  const sectionClass = "flex flex-row justify-between my-2";
   const sectionTwo = "rounded-2xl m-5 mx-auto py-10 px-8 mb-10 shadow-[inset_1px_5px_20px_rgba(0,0,0,0.2)]";
   const articleClass = "relative rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
   const textClass = "roboto rounded-lg shadow-lg dark:shadow-sky-100/50 h-60 md:h-80 lg:h-96 w-[47.5%] p-4 text-cyan-200 text-2xl md:text-3xl font-semibold drop-shadow-md";
   const pClass = "roboto px-6 py-4 lg:text-xl text-zinc-500/90 dark:text-zinc-200/90 font-semibold leading-7 md:leading-8";
   const brightBorder = "absolute inset-0 rounded-2xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
   const imageClass = "h-60 md:h-80 lg:h-96 w-[49%] rounded-lg mb-8 font-semibold text-zinc-700 justify-center flex shadow-lg dark:shadow-sky-100/50";
-  const divClass = "roboto md:h-80 lg:h-96 w-[49%] text-base md:text-xl rounded-lg sm:p-2 md:p-4 mb-8 font-semibold text-zinc-700 dark:text-zinc-200/90 justify-center flex leading-6 md:leading-8";
+  const divClass = "roboto md:h-80 lg:h-96 w-[49%] text-sm sm:text-base md:text-xl rounded-lg p-2 md:p-4 mb-8 font-semibold text-zinc-700 dark:text-zinc-200/90 justify-center flex leading-6 md:leading-8";
 
   return (
     <>
@@ -26,7 +26,7 @@ const RegRules: FC = () => {
         <h2 className='space-grotesk text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-2'>Rules (Please don't break them)</h2>
         <section className='relative bg-rules-car rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
           <div className='bg-black/50 text-center h-44 rounded-2xl shadow-lg flex items-start justify-center' >
-            <span className='michroma text-lg sm:text-xl md:text-3xl font-bold text-cyan-500 pt-6'>
+            <span className='michroma text-lg sm:text-xl md:text-3xl font-bold text-cyan-400 pt-6'>
               No driver(s) may enter data
             </span>
           </div>
@@ -178,17 +178,17 @@ const RegRules: FC = () => {
           <h3 className='roboto font-bold text-zinc-700 dark:text-zinc-200/90'>**MSM - Mirror Signal Manoeuvre (this is still driving, so not this)</h3>
         </section>
 
-        <nav className='poppins flex flex-col mb-4 md:mb-20 px-4 md:flex-row w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'> 
+        <nav className='poppins flex flex-col md:flex-row mb-4 md:mb-20 px-4 w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'> 
           <Link 
             to='/reghelp'
-              className='poppins text-slate-700 font-semibold bg-yellow-300 rounded mt-2 px-4 py-3 h-12 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
+              className='poppins text-slate-700 font-semibold bg-yellow-300 rounded my-2 px-4 py-3 h-12 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
                 onClick={() => toast.success(`Being helpful is great!!`)}
           >
             The Point of Being Helpful
           </Link>
           <Link 
             to='/reg' 
-              className='poppins text-slate-700 font-semibold bg-yellow-300 rounded mt-2 px-4 py-3 h-12 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
+              className='poppins text-slate-700 font-semibold bg-yellow-300 rounded my-2 px-4 py-3 h-12 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
           >
             HelpMe-Car Home
           </Link>
@@ -199,7 +199,7 @@ const RegRules: FC = () => {
 
           <section className='relative bg-rules-car rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
             <div className='bg-black/50 text-center h-44 rounded-2xl shadow-lg flex items-start justify-center'>
-              <span className='michroma text-lg md:text-3xl font-bold text-cyan-500 pt-6'>
+              <span className='michroma text-lg md:text-3xl font-bold text-cyan-400 pt-6'>
                 Drive safely and follow the Highway Code
               </span>
             </div>

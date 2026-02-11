@@ -25,7 +25,7 @@ const RegList: FC<Props> = ({ regs, isLoading, isError }) => {
             regs.map(( reg ) => (
               <div
                 key={reg._id}
-                  className={`shrink-0 transition z-20 my-2 sm:mb-3 lg:mb-8 animate-none hover:${randomAnime()}`}
+                  className={`shrink-0 transition z-20 my-4 sm:mb-3 lg:mb-8 animate-none hover:${randomAnime()}`}
                     style={{ transform: `rotate(${Math.random() * 8 - 4}deg) translateY(${Math.random() * 16 - 8}px)` }}
               >
                 <RegItem reg={reg} />

@@ -66,9 +66,9 @@ const RegHelp: FC = () => {
           </article>
         </section>
         
-        <section className="bg-zinc-900/50 text-white text-center py-4 sm:-mt-24 md:translate-y-24 lg:translate-y-0 lg:mt-0 mb-12">
-          <h3 className="space-grotesk text-lg md:text-xl font-bold">Helpfulness Photo Credits from UnSplash</h3>
-          <ul className="roboto text-sm md:text-base">
+        <section className="bg-zinc-900/50 text-white text-center mx-auto py-4 sm:-mt-24 md:translate-y-24 lg:translate-y-0 lg:mt-0 mb-12">
+          <h3 className="space-grotesk text-base md:text-xl font-bold">Helpfulness Photo Credits from UnSplash</h3>
+          <ul className="roboto text-xs md:text-base">
             <br />
             <li>Stafe Safe and a Cup of Coffee - <strong>Sincerely Media</strong></li>
             <li>Lady Taking Photo of Flowers on Busy Bridge - <strong>Artur Tumasjan</strong></li>
@@ -79,8 +79,8 @@ const RegHelp: FC = () => {
           </ul>
         </section>
 
-        <section className="relative flex flex-1 mb-8 md:mb-32 lg:mb-10 z-50 top-0 sm:top-24">
-          <nav className='w-full max-w-4xl text-center items-center justify-center mx-auto'>
+        <section className="relative mb-8 md:mb-32 lg:mb-10 z-50 top-0 sm:top-24">
+          <nav className='flex w-full max-w-4xl items-center text-center justify-between mx-auto gap-4'>
             <Link 
               to='/reg' 
                 className='poppins text-slate-700 font-semibold bg-yellow-300 rounded px-4 py-3 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
@@ -88,6 +88,14 @@ const RegHelp: FC = () => {
                     onClick={() => toast.success(`Remember, be excellent to each other and don't drop litter`)}
             >
               Car Help Home
+            </Link>
+            <Link 
+              to='/regsafety' 
+                className='poppins text-slate-700 font-semibold bg-yellow-300 rounded px-4 py-3 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
+                  aria-label="Return to Help Me Car home page"
+                    onClick={() => toast.success(`Remember, be excellent to each other and don't drop litter`)}
+            >
+              Car Help Safety
             </Link>
           </nav>
         </section>

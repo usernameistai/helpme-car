@@ -21,7 +21,7 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
 
   return (
     <>
-      <section className={`z-20 bg-white dark:bg-zinc-700/95 absolute inset-x-0 top-1/3 -translate-y-[14rem] rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] hover:scale-110 transition-transform ${className}`}>
+      <section className={`z-20 bg-white dark:bg-slate-800/70 absolute inset-x-0 top-1/3 -translate-y-[14rem] rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] hover:scale-105 transition-transform ${className}`}>
         <h2 className='michroma text-xl md:text-2xl lg:text-3xl ml-8 mt-4 mb-2 text-blue-500 font-semibold'>
           Search for the reg number in question
         </h2>
@@ -38,7 +38,7 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
                   placeholder='Enter registration number'
                     value={regplate}
                       onChange={(e) => setRegplate(e.target.value.trim().toUpperCase().replace(/[\s-]/g, ""))}
-                        className='w-full p-3 rounded-xl text-base md:text-lg bg-white/10 backdrop-blur-sm text-zinc-700 focus:outline-none focus:ring-2 focus:ring-cyan-400 shadow-[0_0_8px_rgba(0, 255, 255, 0.6)] transition shadow-[inset_0px_1px_10px_rgba(0,0,0,0.2)]'
+                        className='w-full p-3 rounded-xl text-base md:text-lg bg-white/10 backdrop-blur-sm text-zinc-700 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-cyan-400 shadow-[0_0_8px_rgba(0, 255, 255, 0.6)] transition shadow-[inset_0px_1px_10px_rgba(0,0,0,0.2)]'
                           aria-label="This is the number plate search input box"
               />
               <div className='flex flex-col'>

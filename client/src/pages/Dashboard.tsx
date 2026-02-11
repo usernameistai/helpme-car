@@ -55,7 +55,8 @@ const Dashboard: FC = () => {
     <>
       <ParticlesBg theme="snow" colour="cyan-400" />
       <section className={`relative z-20 p-6 my-[-1.5rem] ${profile.theme === "dark" ? "text-white" : "text-gray-900"} mx-auto lg:mx-56 relative bg-search-combine bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]`}>
-        <div className="absolute inset-0 bg-zinc-700/50" />
+        <div className="absolute inset-0 bg-zinc-950/60" />
+        <div className="relative z-10">
         <h1 className="relative space-grotesk z-10 text-4xl sm:text-5xl font-bold mt-5 mb-4 md:mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300" >
           Welcome back {''}
           <span className="text-5xl sm:text-7xl">
@@ -64,7 +65,7 @@ const Dashboard: FC = () => {
         </h1>
 
         {/* Profile Section  */}
-        <GlassCard title={`${profile?.username}'s Profile`} className="space-grotesk backdrop-blur-md">
+        <GlassCard title={`${profile?.username}'s Profile`} className="space-grotesk backdrop-blur-md z-30">
           <div className="m-4">
             <p className={`${dashClass}`}>
               <span className="hidden sm:flex">First Name: </span>
@@ -86,7 +87,7 @@ const Dashboard: FC = () => {
         </GlassCard>
 
         {/* Cars I have helped */}
-        <GlassCard title="Your Impact" className="space-grotesk backdrop-blur-md max-h-screen h-[100%]">
+        <GlassCard title="Your Impact" className="space-grotesk backdrop-blur-md z-30">
           <div className="m-4">
             <p className={`${dashClass}`}>
               <span>Cars Helped: </span>
@@ -125,13 +126,13 @@ const Dashboard: FC = () => {
         </GlassCard>
 
         {/* Superpowers (for fun) */}
-        <GlassCard title="Superpowers" className="space-grotesk backdrop-blur-md max-h-screen h-[100%]">
+        <GlassCard title="Superpowers" className="space-grotesk backdrop-blur-md z-30">
           <div className="m-4">
             {profile.superpowers?.length ? (
               <ul className="space-x-2">
                 {profile.superpowers?.map((s, i) => (
-                  <li key={i} className="flex flex-row text-xl gap-1">
-                    <div className="text-yellow-300 pt-2"><BsFillLightningChargeFill /> </div>
+                  <li key={i} className="flex flex-row text-xl gap-2 items-center">
+                    <BsFillLightningChargeFill className="text-yellow-300"/>
                     <div className="text-gray-100 ">{s}</div>
                   </li>
                 ))}
@@ -140,7 +141,7 @@ const Dashboard: FC = () => {
               <div className="">
                 <p className={`${dashClass}`}>
                   <span>No superpowers yet </span>
-                  <span><BsFillLightningChargeFill className="text-yellow-300"/></span>
+                  <span><BsFillLightningChargeFill className="text-yellow-300 inline mx-2"/></span>
                   <span>⚡ ⚡️ 🌩️ ⛈️ 🔌 🧨 💥</span>
                 </p>
               </div>
@@ -149,7 +150,7 @@ const Dashboard: FC = () => {
         </GlassCard>
 
         {/* Quick Actions  */}
-        <GlassCard title="Quick Actions" className="backdrop-blur-md">
+        <GlassCard title="Quick Actions" className="backdrop-blur-md z-30">
           <div className="mb-4">
             <nav className='flex justify-between items-center text-base sm:text-lg gap-3'>
               <Link to={`/dashboard/${profile.userId}/edit`} className={`${navClass}`} aria-label='Go back to the home page button'>
@@ -164,6 +165,7 @@ const Dashboard: FC = () => {
             </nav>
           </div>
         </GlassCard>
+        </div>
 
       </section>
     </>

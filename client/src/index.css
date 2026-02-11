@@ -327,3 +327,37 @@ html.dark {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+
+/* Mobile and Tablet adjustment (Tailwind 'md' and below) */
+@media (max-width: 768px) {
+  .neon-button {
+    font-size: 1.25rem; /* Dropped from 2rem */
+    padding: 0.2em 0.8em; /* Slightly tighter padding */
+    border-width: 0.1em; /* Thinner border for smaller scale */
+  }
+
+  .neon-button::before {
+    top: 110%; /* Pulled the "reflection" up slightly */
+    filter: blur(1em); /* Reduced blur to match smaller scale */
+  }
+
+  .neon-button::after {
+    box-shadow: 0 0 1.5em 0.3em var(--neon-colour); /* Tighter glow */
+  }
+
+  .bg-fixed-mobile-safe {
+    background-attachment: scroll !important;
+    background-image: none !important; /* Move the image to the ::before element */
+  }
+}
+
+/* Extra small devices (Phones) */
+@media (max-width: 480px) {
+  .neon-button {
+    font-size: 1.25rem;
+    padding: 0.2em 0.6em;
+    width: auto; /* Ensures it doesn't stretch weirdly */
+    text-align: center;
+  }
+}
