@@ -15,7 +15,7 @@ export const Board: FC<BoardProps> = ({ leaderboard, className = "" }) => {
   return (
     <>
       <div className={className}>
-        <GlassCard title='HelpMe-Car Leaderboards' className="michroma backdrop-blur-xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]" >
+        <GlassCard title='HelpMe-Car Leaderboards' className="michroma landscape:min-h-[500px] backdrop-blur-xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]" >
           <ul className="space-y-4">
             {leaderboard.map((entry: any, index: number) => (
               <li 

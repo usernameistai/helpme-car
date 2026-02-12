@@ -16,7 +16,7 @@ const Layout: FC = () => {
         <Sidebar />
         {/* Main content fills remaining space */}
         <main className="flex-1">
-          <div className="sm:container mx-auto py-6">
+          <div className="sm:container mx-auto">
             <Outlet />
           </div>
         </main>

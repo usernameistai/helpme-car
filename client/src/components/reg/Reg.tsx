@@ -21,10 +21,10 @@ const Reg: FC = () => {
   const queryClient = useQueryClient();
   const [regplate, setRegplate] = useState("");
 
-  const liClass = "relative z-30 group group-hover:-translate-y-4 sm:my-8 py-2 sm:p-4 lg:h-72 bg-white/10 backdrop-blur-md border border-white/20 w-1/3 rounded-2xl shadow-lg hover:bg-white/50 hover:scale-105 transition-transform hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
+  const liClass = "relative z-30 lg:min-h-[325px] group group-hover:-translate-y-4 sm:my-8 py-2 sm:p-4 lg:h-72 bg-white/10 backdrop-blur-md border border-white/20 w-1/3 rounded-2xl shadow-lg hover:bg-white/50 hover:scale-105 transition-transform hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
   const h3Class = "space-grotesk text-base md:text-xl lg:text-3xl font-bold mt-2 lg:mt-4 mb-4 text-gray-500 dark:text-gray-800 text-center";
-  const titleClass = "space-grotesk text-sm md:text-base lg:text-lg mb-4 lg:my-6 px-4 lg:px-20 lg:leading-8 lg:font-semibold text-gray-900";
-  const buttonClass = "poppins relative z-50 rounded shadow-lg px-3 py-2 my-4 lg:my-12 text-center text-white text-sm md:text-lg lg:text-2xl font-bold hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
+  const titleClass = "space-grotesk text-sm md:text-base lg:text-lg mb-4 lg:my-6 px-4 lg:px-8 lg:leading-8 lg:font-semibold text-gray-900";
+  const buttonClass = "poppins relative z-50 rounded shadow-lg px-3 py-2 my-4 lg:my-16 text-center text-white text-sm md:text-lg lg:text-2xl font-bold hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
   const brightBorderClass = "absolute inset-0 rounded-2xl group-hover:rotate-1 border border-cyan-400/40 animate-pulse animate-pulse-glow";
   const linksClass = "poppins text-base md:text-lg lg:text-xl text-white font-semibold bg-sky-100 text-zinc-700 px-4 py-2 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem]";
   const linkClass = "font-mono text-base md:text-lg lg:text-xl font-semibold my-4 pl-1 text-gray-500";
@@ -66,28 +66,21 @@ const Reg: FC = () => {
     <>
       <ParticlesBg theme="default" colour="cyan-400"/>
       <section className="space-y-10 sm:mx-0">
-        <section className="relative my-[-1.5rem] z-20">
-          <h1 className="flex relative z-50 space-grotesk text-4xl md:text-5xl font-bold mb-8 pb-4 w-full lan">
+        <section className="relative z-20 ">
+          <h1 className="relative mt-4 z-50 space-grotesk text-4xl md:text-5xl font-bold ml-4 sm:ml-10 mb-8 pb-4 w-full text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
             Home of HelpMe-Car
           </h1>
 
-          <section className="relative w-full min-h-[75vh] pb-20 overflow-visible">
-            {/* 1. The Parallax Wrapper - This clips the image to this section only */}
-            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none" style={{ clip: 'rect(0, auto, auto, 0)' }}>
-              {/* 2. The Actual Image - 'fixed' position inside a clipped container creates parallax */}
-              <div className="fixed inset-0 w-full h-full bg-home-car" style={{ zIndex: -1, height: '100vh' }} /> {/* This ensures it works on older Firefox ESR and Mobile */}
-              {/* 3. The Overlay - Nested here to stay with the image */}
-              <div className="fixed inset-0 bg-zinc-700/60 z-0" />
-            </div>
+          <section className="relative flex flex-col w-full min-h-fit bg-home-car bg-fixed mb-8 pb-20">
+            <div className="absolute inset-0 bg-zinc-700/50" />
 
-            {/* 4. The Content - Must be relative and high z-index */}
-            <div className="relative z-30">
-              <h2 className="space-grotesk pt-10 tracking-wide text-zinc-100 text-2xl lg:text-4xl font-extrabold w-full text-center">
-                A way to help fellow Humans and potentially why... ?
-              </h2>
+            <div className="relative pt-4">
+              <h2 className="space-grotesk relative text-center w-full mb-2 text-zinc-100 text-3xl md:text-4xl font-extrabold">
+                A way to help fellow your Humans
+              </h2> 
 
-              <section className="relative my-10 mb-28">
-                <ul className="flex flex-col sm:flex-row mb-10 justify-between items-center transform top-8 gap-6 sm:-translate-x-10 lg:-translate-x-20 w-[90vw] md:w-[110vw] max-w-[110%] mx-auto">
+              <section className="relative px-4">
+                <ul className="flex flex-col relative sm:flex-row mb-10 justify-between items-center transform top-8 gap-6 sm:-translate-x-10 lg:-translate-x-20 w-full md:w-[110vw] max-w-[110%] mx-auto overflow-hidden">
                 {/* //absolute transform -translate-x-1/2 gap-2 md:gap-6 lg:gap-10  */}
                   <li className={`${liClass} w-full sm:w-1/3`}>
                     <h3 className={`${h3Class}`}>Help Someone's Car</h3>
@@ -133,34 +126,39 @@ const Reg: FC = () => {
                   </li>
                 </ul>
               </section>
-            </div>
+              
 
-            <GlassCard title="Recently added registrations" className="z-30 space-grotesk relative w-full lg:w-[63vw] backdrop-blur-xl mx-auto hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]">
-              <p className="text-gray-900 dark:text-gray-200 text-base lg:text-xl m-1/2 sm:m-0 px-6 sm:px-8">Here are a few number plates from the database, if this is your car, click on it to see what advisories have been added. Maybe you could help someone else out?</p>
-              <div className="lg:mb-16 z-30">
-                <RegList 
-                  regs={displayedRegs}
-                    isLoading={isLoading}
-                      isError={isError}
-                />
-              </div>
-            </GlassCard>
+              <GlassCard title="Recently added registrations" className="z-30 space-grotesk h-full relative w-full lg:w-[63vw] min-h-60 backdrop-blur-xl mx-auto hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]">
+                <p className="text-gray-900 dark:text-gray-200 text-base lg:text-xl m-1/2 sm:m-0 px-6 sm:px-8">Here are a few number plates from the database, if this is your car, click on it to see what advisories have been added. Maybe you could help someone else out?</p>
+                <div className="lg:mb-16 z-30">
+                  <RegList 
+                    regs={displayedRegs}
+                      isLoading={isLoading}
+                        isError={isError}
+                  />
+                </div>
+              </GlassCard>
+            </div>
           </section>
         </section>
 
-        <section className="relative z-20 w-full h-[100vh] sm:h-[90vh] lg:space-y-10">
-          <Search
-            regplate={regplate}
-              setRegplate={setRegplate}
-                onSubmit={handleRegSearch}
-                  className="relative mt-10 w-[90vw] sm:w-full pt-2 mx-auto md:hover:scale-100"
-          />
-          <Board 
-            leaderboard={leaderboard.slice(0, 5)}
-              className="rounded-2xl w-[90vw] sm:w-full mx-auto md:hover:scale-100 translate-y-32 lg:translate-y-10 dark:bg-zinc-900/50"
-          />
+        <section className="relative grid grid-cols-1 py-24 z-20 w-full min-h-fit gap-8">
+          <div className="">
+            <Search
+              regplate={regplate}
+                setRegplate={setRegplate}
+                  onSubmit={handleRegSearch}
+                    className="relative w-full sm:w-full pt-2 mx-auto md:hover:scale-100"
+            />
+          </div>
+          <div className="">
+            <Board 
+              leaderboard={leaderboard.slice(0, 5)}
+                className="rounded-2xl w-full sm:w-full mx-auto md:hover:scale-100 dark:bg-zinc-900/50"
+            />
+          </div>
         </section>
-        
+
         <section className="relative bg-gradient-to-br z-20 from-cyan-300 to-white sm:mt-10">
           <h2 className="space-grotesk text-xl md:text-3xl lg:text-5xl font-bold text-zinc-700 p-8 mx-2 md:mx-5">A little bit about HelpMe-Car site</h2>
           <section className="relative flex flex-col md:flex-row justify-between ml-1 md:ml-3 lg:ml-10 md:my-5">            
@@ -236,9 +234,9 @@ const Reg: FC = () => {
               </div>
             </article>
 
-            <article className="bg-search-combine bg-fixed z-5 flex w-[80vw] mx-auto sm:w-[95%] md:max-w-[45%] mb-8 shadow-[inset_5px_5px_10px_rgba(255,255,255,0.2)] rounded-2xl border border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] transition-all duration-500">
-              <div className="flex flex-col h-[90vh] w-full rounded-2xl p-8 items-center justify-center my-auto dark:bg-zinc-900/40">
-                <div className="space-grotesk text-3xl md:text-4xl text-white font-extrabold text-center -translate-y-44">
+            <article className="z-5 flex w-[80vw] mx-auto sm:w-[95%] md:max-w-[45%] mb-8 bg-search-combine bg-fixed shadow-[inset_5px_5px_10px_rgba(255,255,255,0.2)] rounded-2xl border border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] transition-all duration-300">
+              <div className="flex flex-col min-h-[500px] landscape:min-h-[850px] w-full rounded-2xl p-8 items-center justify-center my-auto dark:bg-zinc-900/40">
+                <div className="space-grotesk text-3xl md:text-4xl text-white font-extrabold text-center justify-center">
                   Maybe cars aren't for you, maybe you'd prefer a Combine Harvester?
                 </div>
               </div>
@@ -252,3 +250,18 @@ const Reg: FC = () => {
 
 export default Reg;
 
+{/* <section className="relative w-full min-h-[75vh] pb-20 overflow-visible"> */}
+{/* 1. The Parallax Wrapper - This clips the image to this section only */}
+{/* <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none" style={{ clip: 'rect(0, auto, auto, 0)' }}> */}
+  {/* 2. The Actual Image - 'fixed' position inside a clipped container creates parallax */}
+  {/* <div className="fixed inset-0 w-full h-full bg-home-car" style={{ zIndex: -1, height: '100vh' }} />  */}
+  {/* This ensures it works on older Firefox ESR and Mobile */}
+  {/* 3. The Overlay - Nested here to stay with the image */}
+  {/* <div className="fixed inset-0 bg-zinc-700/60 z-0" />
+</div> */}
+
+{/* 4. The Content - Must be relative and high z-index */}
+{/* <div className="relative z-30">
+  <h2 className="space-grotesk pt-10 tracking-wide text-zinc-100 text-2xl lg:text-4xl font-extrabold w-full text-center">
+    A way to help fellow Humans and potentially why... ?
+  </h2> */}

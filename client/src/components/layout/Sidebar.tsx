@@ -28,8 +28,7 @@ const Sidebar: FC = () => {
 
   return (
     <>
-      {/* 1. The Trigger (Hamburger Button) */}
-      {/* This sits in the top-left of the screen, fixed, ready to toggle the checkbox */}
+      {/* 1. Hamburger Button */}
       <label 
         htmlFor="sidebar-toggle" 
           className="fixed group top-10 sm:top-[0.6rem] left-0 sm:left-[0.5rem] z-[105] p-2 bg-gray-600 dark:bg-gray-800/50 hover:bg-gray-700 backdrop-blur-md rounded-lg border-cyan-400/80 hover:border-b-2 hover:border-cyan-400 text-cyan-400 cursor-pointer lg:hidden transition-transform shadow-lg"
@@ -37,15 +36,15 @@ const Sidebar: FC = () => {
         <IoMenu className='text-xs sm:text-2xl'/>
         <span aria-hidden="true" className={`absolute top-12 left-12 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all duration-200 origin-top border border-cyan-400/70 bg-slate-900/90 backdrop-blur-md text-cyan-300 text-xs py-1 px-2 rounded shadow-xl pointer-events-none lg:hidden z-50 text-center w-24`}>Sidebar Menu</span>
       </label>
-      {/* 2. The Peer (Hidden Checkbox) */}
+      {/* 2. The Peer / Hidden Checkbox */}
       <input type="checkbox" id="sidebar-toggle" className="peer hidden" />
-      {/* 3. The Dark Overlay */}
+      {/* 3. Dark Overlay */}
       <label 
         htmlFor="sidebar-toggle" 
           className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[110] hidden peer-checked:block transition-all"
       />
 
-      {/* 4. The Sidebar itself */}
+      {/* 4. Sidebar */}
       <aside className="fixed top-0 left-0 h-full w-72 z-[120] -translate-x-full peer-checked:translate-x-0 transition-transform duration-300 ease-in-out bg-slate-900/90 backdrop-blur-xl border-r border-cyan-400/30 shadow-2xl">
         {/* Close Button Inside Sidebar */}
         <div className="flex justify-end p-4">

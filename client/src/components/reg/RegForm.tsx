@@ -117,7 +117,7 @@ const RegForm: React.FC = () => {
     <>
       <ParticlesBg theme='nasa' colour='purple-500' />
       <section className='relative z-20 mx-2 sm:mx-0'>
-        <h1 className="space-grotesk text-4xl sm:text-5xl font-bold mt-[3rem] pb-4 w-[30rem] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300 -translate-y-10 sm:-translate-y-8 mb-4">
+        <h1 className="space-grotesk text-4xl sm:text-5xl font-bold ml-10 mt-[3rem] pb-4 w-[30rem] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300 -translate-y-10 sm:-translate-y-8 mb-4">
           HelpMe-Out
         </h1>
         <section className="rounded-lg m-5 mx-auto py-5 sm:py-10 px-8 shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] -translate-y-10">
