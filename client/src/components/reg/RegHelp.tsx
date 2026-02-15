@@ -6,7 +6,7 @@ import ParticlesBg from "../layout/ParticlesBg";
 const RegHelp: FC = () => {
   const articleClass = "flex flex-col justify-between";
   const divClass = "h-80 w-full rounded-lg shadow-lg shadow-zinc-500/50 dark:shadow-sky-100/50";
-  const pClass = "roboto w-full rounded-lg mb-8 p-4 font-semibold text-zinc-700 dark:text-zinc-200/90 text-lg md:text-xl justify-center flex leading-8";
+  const pClass = "roboto w-full rounded-lg mb-8 p-4 font-semibold text-zinc-700/80 dark:text-zinc-200/90 text-lg md:text-xl justify-center flex leading-8";
 
   return (
     <>
