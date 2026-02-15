@@ -19,10 +19,12 @@ interface SearchProps {
 export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, className = "" }) => {
   const { history } = useSearchStore();
 
+  const recentHistory = history.slice(0, 4);
+
   return (
     <>
-      <section className={`z-20 bg-white dark:bg-slate-800/70 absolute inset-x-0 top-1/3 -translate-y-[14rem] rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] hover:scale-105 transition-transform ${className}`}>
-        <h2 className='michroma text-xl md:text-2xl lg:text-3xl ml-8 mt-4 mb-2 text-blue-500 font-semibold'>
+      <section className={`z-20 bg-white dark:bg-slate-800/70 absolute inset-x-0 rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] hover:scale-105 transition-transform ${className}`}>
+        <h2 className='michroma text-lg sm:text-xl md:text-2xl lg:text-3xl ml-5 landscape:ml-7 mt-4 text-blue-500 font-semibold tracking-wide'>
           Search for the reg number in question
         </h2>
         <form 
@@ -43,17 +45,17 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
               />
               <div className='flex flex-col'>
                 {/* THE MEMORY SECTION: Show recently searched plates */}
-                {history.length > 0 && (
-                  <div className="mt-1 flex flex-wrap gap-2">
+                {recentHistory.length > 0 && (
+                  <div className="flex justify-between gap-2">
                     <span className="text-[10px] uppercase tracking-widest text-zinc-400 w-full mb-1 ml-1 michroma my-5 items-center justify-center">
                       Recent:
                     </span>
-                    {history.map((plate) => (
+                    {recentHistory.map((plate) => (
                       <button
                         key={plate}
                         type="button" // Important: Prevents form submission
                         onClick={() => setRegplate(plate)} // Fills the box for the user
-                        className="items-center px-3 py-1 bg-cyan-500/10 text-cyan-400 text-xs rounded-lg border border-cyan-400/30 hover:bg-cyan-500/20 transition-all poppins font-semibold shadow-sm"
+                        className="items-center px-3 py-1 my-3 max-h-[42px] bg-cyan-500/10 text-cyan-400 text-xs rounded-lg border border-cyan-400/30 hover:bg-cyan-500/20 transition-all poppins font-semibold shadow-sm"
                       >
                         {plate}
                       </button>
@@ -63,14 +65,14 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
                 <div className="flex justify-between">
                   <button 
                     type='submit' 
-                      className='poppins bg-cyan-500 text-slate-50 text-base md:text-lg font-semibold px-4 py-2 rounded mt-4 shadow-lg active:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out opacity-105'
+                      className='poppins bg-cyan-500 text-slate-50 dark:text-zinc-700 text-base md:text-lg font-semibold px-4 py-2 rounded mt-4 shadow-lg active:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out opacity-105'
                         aria-label='Search button, click here after entering number plate'
                         >
                     Search
                   </button>
                   <Link 
                     to="/reg" 
-                    className='poppins text-zinc-700 items-center text-base md:text-lg font-semibold bg-sky-100 rounded px-4 py-3 mt-4 shadow-lg active:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out opacity-105'
+                    className='poppins text-zinc-700 items-center text-base md:text-lg font-semibold bg-sky-100 dark:bg rounded px-4 py-3 mt-4 shadow-lg active:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out opacity-105'
                     aria-label='Home button'
                     >
                     Home
@@ -116,12 +118,12 @@ const SearchReg: FC = () => {
   return (
     <>
       <ParticlesBg theme="snow" colour="purple-500" />
-      <section className='relative bg-search-car h-[100vh] z-20 mx-auto lg:mx-56 -translate-y-10 sm:translate-y-0 my-[-3rem]'>
+      <section className='relative bg-search-car h-[100vh] z-20 mx-auto lg:mx-56 my-[-3rem]'>
         <div className="absolute inset-0 bg-zinc-700/50" /> 
-        <h1 className="space-grotesk relative z-10 w-full text-4xl sm:text-5xl font-bold px-8 py-6 mt-[3rem] md:mt-5 mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
+        <h1 className="space-grotesk relative z-10 w-full text-4xl sm:text-5xl font-bold px-8 py-6 landscape:py-10 mt-[5rem] md:mt-5 mb-2 landscape:mb-[-1.7rem] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
           HelpMe-Search...
         </h1>
-        <section className='relative h-[75vh] mx-auto'>
+        <section className='relative h-[75vh] mx-auto landscape:h-[185px]'>
           <Search
             regplate={regplate}
               setRegplate={setRegplate}

@@ -167,7 +167,7 @@ const Navbar = () => {
                         onKeyDown={handleKeyDown}
                           aria-label="HelpMe-Car Menu"
                             aria-orientation="vertical"
-                              className="absolute right-4 sm:right-[-3.5rem] lg:right-[-1.5rem] mt-2 top-12 mx-2 w-48 rounded-md border bg-white shadow-lg z-50 text-zinc-500"
+                              className="absolute right-4 sm:right-[-3.5rem] lg:right-[-1.5rem] mt-2 top-12 landscape:top-0 mx-2 w-48 rounded-md border bg-white shadow-lg z-50 text-zinc-500"
                   >
                     {
                       [

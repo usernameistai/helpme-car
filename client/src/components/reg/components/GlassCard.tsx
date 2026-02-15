@@ -13,7 +13,7 @@ const GlassCard: FC<GlassCardProps> = ({ children, title, className = "" }) => {
       <section className={twMerge(
         `relative z-10 mb-6 p-6 
         bg-slate-200/10 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-cyan-400/20 shadow-xl 
-        transition-all duration-200 ease-in-out min-h-[30vh] sm:h-[25vh]
+        transition-all duration-200 ease-in-out min-h-56 sm:h-[25vh] landscape:min-h-64
         hover:bg-white/20 hover:scale-[1.05] hover:-translate-y-1 
         hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]`,
         className
