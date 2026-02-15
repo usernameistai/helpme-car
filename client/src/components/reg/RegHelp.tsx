@@ -11,10 +11,11 @@ const RegHelp: FC = () => {
   return (
     <>
       <ParticlesBg theme="default" colour="cyan-400" />
-      <section className="relative z-20 my-[-1.5rem] mx-2 sm:mx-0">
-        <h1 className="space-grotesk text-5xl font-bold my-5 pb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
+      <section className="relative z-20 mx-2 sm:mx-0 mb-4">
+        <h1 className="space-grotesk text-5xl font-bold my-8 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
           Why help a fellow human?
         </h1>
+        <h2 className='space-grotesk text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Many, many good reasons...</h2>
         <section className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-2 md:gap-10">
           <article className={articleClass}>
             <div 

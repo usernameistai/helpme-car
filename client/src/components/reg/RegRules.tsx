@@ -18,12 +18,12 @@ const RegRules: FC = () => {
   return (
     <>
       <ParticlesBg theme='bubble' colour='#94a3b8' />
-      <section className='relative z-20 mx-2 sm:mx-0 my-[-1.5rem]'>
-        <h1 className="space-grotesk text-4xl md:text-5xl font-bold my-5 pb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
+      <section className='relative z-20 mx-2 sm:mx-0 mb-4'>
+        <h1 className="space-grotesk text-4xl md:text-5xl font-bold my-8 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
           HelpMe - Rules & Regulations
         </h1>
 
-        <h2 className='space-grotesk text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-2'>Rules (Please don't break them)</h2>
+        <h2 className='space-grotesk text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Rules (Please don't break them)</h2>
         <section className='relative bg-rules-car rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
           <div className='bg-black/50 text-center h-44 rounded-2xl shadow-lg flex items-start justify-center' >
             <span className='michroma text-lg sm:text-xl md:text-3xl font-bold text-cyan-400 pt-6'>
@@ -195,7 +195,7 @@ const RegRules: FC = () => {
         </nav>
 
         <section>
-          <h2 className='space-grotesk text-zinc-500 dark:text-zinc-200/90 text-2xl md:text-4xl font-bold mb-2'>Regulations</h2>
+          <h2 className='space-grotesk text-zinc-500 dark:text-zinc-200/90 text-2xl md:text-4xl font-bold mb-4'>Regulations</h2>
 
           <section className='relative bg-rules-car rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
             <div className='bg-black/50 text-center h-44 rounded-2xl shadow-lg flex items-start justify-center'>
@@ -280,7 +280,7 @@ const RegRules: FC = () => {
             </Link>
           </nav>
 
-          <article className='space-grotesk flex relative items-center justify-center rounded-2xl bg-sky-100 p-2 mb-4 shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
+          <article className='space-grotesk flex relative items-center justify-center rounded-2xl bg-sky-100 p-2 mb-4 landscape:mb-8 shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
             <FaJediOrder size={25} className='text-zinc-700 font-bold mr-5'/>
             <p className='font-bold text-zinc-700 text-base sm:text-lg md:text-2xl lg:text-3xl'>Thank you for reading the rules </p>
             <FaJediOrder size={25} className='text-zinc-700 font-bold ml-5'/>

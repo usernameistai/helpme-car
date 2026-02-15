@@ -10,20 +10,21 @@ const RegSafety: FC = () => {
   return (
     <>
       <ParticlesBg theme='nasa' colour='blue-500'/>
-      <section className='relative z-20 my-[-1.5rem] mx-2'>
-        <h1 className="space-grotesk text-4xl sm:text-5xl font-bold mt-5 mb-8 w-96 text-transparent 
+      <section className='relative z-20 mx-2 mb-4'>
+        <h1 className="space-grotesk text-4xl sm:text-5xl font-bold my-8 pb-1 w-96 text-transparent 
           bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300 leading-[4rem]"
         >
           HelpMe-Safety
         </h1>
         <section className='roboto'>
+        <h2 className='space-grotesk text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Driver Accident Statistics from DoT</h2>
           <section aria-labelledby='safety-intent'>
             <h2 id="safety-intent" className='sr-only'>
               This site could potentially redce the number of accidents, even only a little bit
             </h2>
             <blockquote className='mb-2'>
               <p className={quoteClass}>
-                "The best thing this site could hope to achieve is reduce the number of accidents on the road and the very least could help drivers ensure their car's are safe and roadworthy."
+                "The best thing this site could hope to achieve is reduce the number of accidents on the road and the very least could help drivers ensure their car's are safe and roadworthy. Below is some analysis of vehicle stats, maybe worth considering. Drive safely"
               </p>
               <footer className='flex flex-row-reverse mt-1 text-cyan-600'> - me</footer>
             </blockquote>
@@ -93,10 +94,22 @@ const RegSafety: FC = () => {
           </section>
 
           <br />
-          <hr className='border-t border-zinc-500/50'/>
+          <hr className='border-t border-zinc-500/50 mb-4'/>
           <br />
 
           <section className='mx-2 sm:mx-0'>
+          <h2 className='space-grotesk text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Gender Variation Statistics from DoT</h2>
+          <section aria-labelledby='safety-intent'>
+            <h2 id="safety-intent" className='sr-only'>
+              Hopefully people will see how they tenmselves might be at risk of an accident. 
+            </h2>
+            <blockquote className='mb-2'>
+              <p className={quoteClass}>
+                "The table below talks about the relative number of casualties for males and females relating to certain age groups, also collective results."
+              </p>
+              <footer className='flex flex-row-reverse mt-1 text-cyan-600'> - me</footer>
+            </blockquote>
+          </section>
             <p className='text-sm md:text-base dark:text-zinc-200/90'>The following data is from the 
               <span>
                 <a className='text-cyan-600' rel='noopener noreferrer' target='_blank' href='https://www.gov.uk/government/statistical-data-sets/ras20-drivers-riders-and-vehicles-in-reported-road-accidents'> Department for Transport Statistics </a>
@@ -144,10 +157,22 @@ const RegSafety: FC = () => {
           </section>
 
           <br />
-          <hr className='border-t border-zinc-500/50'/>
+          <hr className='border-t border-zinc-500/50 mb-4'/>
           <br />
 
           <section className='mx-2 sm:mx-0'>
+          <h2 className='space-grotesk text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Driver Density UK from DoT</h2>
+          <section aria-labelledby='safety-intent'>
+            <h2 id="safety-intent" className='sr-only'>
+              Hopefully people will see how they tenmselves might be at risk of an accident. 
+            </h2>
+            <blockquote className='mb-2'>
+              <p className={quoteClass}>
+                "The figure below shows the relative car density per 1000 head of population. London appers to have amongst the lowest frequencies of car owners."
+              </p>
+              <footer className='flex flex-row-reverse mt-1 text-cyan-600'> - me</footer>
+            </blockquote>
+          </section>
             <p className='text-sm md:text-base dark:text-zinc-200/90'>Data and map from 
               <a className='text-cyan-600' rel='noopener noreferrer' target='_blank' href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/800502/vehicle-licensing-statistics-2018.pdf'> Vehicle Licensing Statistics: Annual 2018 </a>
               release
@@ -183,21 +208,23 @@ const RegSafety: FC = () => {
             </article>
           </section>
 
-          <nav className='poppins flex flex-col mb-4 md:mb-20 px-4 md:flex-row w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'>
+          <section className="relative mb-8 md:mb-32 lg:mb-10 z-50 top-0 sm:top-24">
+          <nav className='poppins flex w-full max-w-4xl items-center text-center justify-between mx-auto gap-4'>
             <Link 
               to='/reg' 
-                className='text-slate-700 font-semibold bg-yellow-300 rounded px-4 py-3 h-12 mt-4  shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
+                className='text-slate-700 font-semibold bg-yellow-300 rounded px-4 py-3 h-12 mt-4 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
             >
               HelpMe-Car Home
             </Link>
             <Link 
               to='/reghelp'
-                className='text-slate-700 font-semibold bg-yellow-300 rounded px-4 py-3 h-12 mt-4  shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
+                className='text-slate-700 font-semibold bg-yellow-300 rounded px-4 py-3 h-12 mt-4 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
                   onClick={() => toast.success(`Being helpful is great!!`)}
             >
               The Point of Being Helpful
             </Link>
           </nav>
+          </section>
         </section>
       </section>
     </>
