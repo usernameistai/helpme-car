@@ -84,18 +84,21 @@ const itemVariants = {
   return (
     <>
       <ParticlesBg theme="default" colour="cyan-400"/>
-      <section className="space-y-10 sm:mx-0">
-        <section className="relative z-20 ">
+      <section className="space-y-10 sm:mx-0 w-full"> {/* added w-full */}
+        <section className="relative z-20 max-w-6xl mx-auto">
           <h1 className="relative mt-4 z-50 space-grotesk text-4xl md:text-5xl font-bold ml-4 sm:ml-10 mb-8 pb-4 w-full text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
             Home of HelpMe-Car
           </h1>
 
-          <section className="relative flex flex-col w-full min-h-fit bg-home-car bg-fixed mb-8 pb-20">
+          <section className="relative flex flex-col w-full min-h-fit bg-home-car md:bg-fixed mb-8 pb-20">
             <div className="absolute inset-0 dark:bg-zinc-700/40" />
 
-            <div className="relative pt-4">
-              <h2 className="space-grotesk relative text-center w-full mb-2 text-zinc-700/90 dark:text-zinc-100 text-3xl md:text-4xl lg:text-7xl lg:mt-14 font-extrabold">
-                A way to help fellow your Humans
+            <div className="relative pt-4 w-full">
+              <h2 
+                style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
+                  className="space-grotesk relative drop-shadow-cyan-400 text-center w-full mb-2 text-zinc-700/90 dark:text-zinc-100 text-3xl md:text-5xl lg:text-7xl lg:mt-14 font-extrabold"
+              >
+                A way to help your fellow Humans
               </h2> 
 
               <section className="relative px-4">
@@ -103,7 +106,7 @@ const itemVariants = {
                   variants={containerVariants}
                     initial="hidden"
                       animate="visible"
-                        className="flex flex-col relative z-50 sm:flex-row mb-10 justify-between items-center transform top-8 gap-6 sm:-translate-x-10 lg:-translate-x-20 w-full md:w-[110vw] max-w-[110%] mx-auto overflow-x-hidden"
+                        className="flex flex-col relative z-50 sm:flex-row mb-10 justify-between items-center transform gap-6 sm:-translate-x-10 lg:-translate-x-14 w-full md:w-[110vw] max-w-[110%] mx-auto overflow-x-hidden"
                 >
                   <motion.li 
                     variants={itemVariants}
@@ -160,7 +163,7 @@ const itemVariants = {
               </section>
               
 
-              <GlassCard title="Recently added registrations" className="z-30 space-grotesk h-full relative w-full lg:w-[63vw] min-h-60 backdrop-blur-xl mx-auto hover:scale-100 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]">
+              <GlassCard title="Recently added registrations" className="z-30 space-grotesk h-full relative w-full lg:w-[63vw] min-h-60 lg:-translate-x-7 backdrop-blur-xl mx-auto hover:scale-100 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]">
                 <p className="text-gray-900 dark:text-gray-200 text-base lg:text-xl m-1/2 sm:m-0 px-6 sm:px-8">Here are a few number plates from the database, if this is your car, click on it to see what advisories have been added. Maybe you could help someone else out?</p>
                 <div className="lg:mb-16 z-30">
                   <RegList 
@@ -174,7 +177,7 @@ const itemVariants = {
           </section>
         </section>
 
-        <section className="relative grid grid-cols-1 py-24 z-20 w-full min-h-fit gap-8">
+        <section className="relative max-w-6xl mx-auto grid grid-cols-1 py-24 z-20 w-full min-h-fit gap-8">
           <div className="">
             <Search
               regplate={regplate}
@@ -191,7 +194,7 @@ const itemVariants = {
           </div>
         </section>
 
-        <section className="relative bg-gradient-to-br z-20 from-cyan-300 to-white sm:mt-10">
+        <section className="relative max-w-6xl mx-auto bg-gradient-to-br z-20 from-cyan-300 to-white sm:mt-10">
           <h2 className="space-grotesk text-xl md:text-3xl lg:text-5xl font-bold text-zinc-700 p-8 mx-2 md:mx-5">A little bit about HelpMe-Car site</h2>
           <section className="relative flex flex-col md:flex-row justify-between ml-1 md:ml-3 lg:ml-10 md:my-5">            
             <article className="w-[80vw] sm:w-[95%] md:max-w-[50%] mx-auto mb-8">
@@ -266,7 +269,7 @@ const itemVariants = {
               </div>
             </article>
 
-            <article className={`${shimmerClass} z-10 flex w-[80vw] mx-auto sm:w-[95%] md:max-w-[45%] mb-8 bg-search-combine bg-fixed shadow-[inset_5px_5px_10px_rgba(255,255,255,0.2)] rounded-2xl border border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3)] transition-all duration-500 group overflow-hidden`}>
+            <article className={`${shimmerClass} z-10 flex w-[80vw] mx-auto sm:w-[95%] md:max-w-[45%] mb-8 bg-search-combine md:bg-fixed shadow-[inset_5px_5px_10px_rgba(255,255,255,0.2)] rounded-2xl border border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3)] transition-all duration-500 group overflow-hidden`}>
               <div className="flex flex-col min-h-[500px] landscape:min-h-[850px] p-8 items-center justify-center my-auto bg-zinc-900/30 group-hover:bg-zinc-900/10 transition-colors duration-500">
                 <div className="space-grotesk text-2xl md:text-3xl lg:text-4xl text-white font-extrabold text-center leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-500">
                   Maybe cars aren't for you... <br/>
