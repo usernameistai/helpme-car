@@ -45,6 +45,7 @@ const RegForm: React.FC = () => {
   const paneTitleClass = "michroma text-xl font-semibold text-zinc-500/90 dark:text-zinc-200/90 mb-1";
   const labelClass = "roboto ml-1 text-gray-700 dark:text-gray-200";
   const navClass = "poppins font-semibold px-4 py-3 mt-4 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition duration-200 ease-in-out";
+  const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
   
   const onChange = ( e: React.ChangeEvent<HTMLInputElement> ) => {
     const { name, value, type, checked } = e.target;
@@ -425,14 +426,14 @@ const RegForm: React.FC = () => {
               <button 
                 type="submit"
                   disabled={loading}
-                    className={`${loading ? 'bg-gray-400' : 'bg-green-500'} text-white ${navClass}`}
+                    className={`${loading ? 'bg-gray-400' : 'bg-green-500'} text-white ${navClass} ${shimmerClass}`}
                       aria-label='Add a car entry which has faults button, after filling in the checkbox form'
               >
                 {loading ? 'Adding...' : 'Add Registration'}
               </button>
               <Link 
                 to="/reg" 
-                  className={`text-slate-700 bg-yellow-300 ${navClass}`}
+                  className={`text-slate-700 bg-yellow-300 ${navClass} ${shimmerClass}`}
                     aria-label='Go back to the home page button'
               >
                 Home

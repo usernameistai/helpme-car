@@ -16,7 +16,6 @@ const Navbar = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Styles for common nav items to reduce repetition
   const navItemBase = "group relative flex items-center gap-x-1 sm:gap-x-2 p-1 sm:p-2 rounded-xl transition-all duration-300 border-b-2 border-transparent hover:border-cyan-400 hover:bg-white/10 hover:text-cyan-400";
   const navItemsOneTwo = "absolute top-10 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all duration-200 origin-top border border-cyan-400/70 bg-slate-900/90 backdrop-blur-md text-cyan-300 text-xs py-1 px-2 rounded shadow-xl pointer-events-none lg:hidden z-50 text-center";
   const activeClass = "bg-cyan-400/20 text-cyan-400 border-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.1)]";
@@ -40,7 +39,6 @@ const Navbar = () => {
     }
   }, [open]);
 
-  // Toggle theme function
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
@@ -48,10 +46,8 @@ const Navbar = () => {
 
     if ( newTheme === 'dark') {
       document.documentElement.classList.add('dark');
-      // document.body.style.backgroundColor = '#1f2937';
     } else {
       document.documentElement.classList.remove('dark');
-      // document.body.style.backgroundColor = '#f1f5f91a';
     }
   };
 

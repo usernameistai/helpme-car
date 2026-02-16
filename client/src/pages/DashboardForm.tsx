@@ -14,7 +14,6 @@ const DashboardForm: React.FC = () => {
   const { profile, loading, error, setLoading, setProfile  } = useProfileStore();
   const [currentPower, setCurrentPower] = useState("");
   const [editted, setEditted] = useState(false);
-
   // Initialise formData but keep it empty until profile loads
   const [formData, setFormData] = useState<Partial<IProfile>>({});
 
@@ -22,7 +21,7 @@ const DashboardForm: React.FC = () => {
   const h2Class = "space-grotesk text-2xl md:text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300 mb-4";
   const brightBorder = "absolute inset-0 rounded-2xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
   const buttonLink = "poppins relative z-10 max-w-44 font-semibold rounded px-2 sm:px-4 py-3 h-12 mt-0 sm:mt-4 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
-
+  const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
   // Sync profile from Store to Form once it loads
   useEffect(() => {
     if (profile) {
@@ -223,19 +222,19 @@ const DashboardForm: React.FC = () => {
               <nav className="flex justify-between items-center text-sm sm:text-lg">
                 <button 
                   type="submit"
-                    className={`${buttonLink} bg-blue-500 max-w-40 text-white`}
+                    className={`${buttonLink} ${shimmerClass} bg-blue-500 max-w-40 text-white`}
                 >
                   Save Changes
                 </button>
                 <Link 
                   to="/dashboard" 
-                    className={`${buttonLink} text-slate-700 bg-yellow-300 max-w-32`}
+                    className={`${buttonLink} ${shimmerClass} text-slate-700 bg-yellow-300 max-w-32`}
                 >
                   Dashboard
                 </Link>
                 <Link 
                   to="/helpreg" 
-                    className={`${buttonLink} text-slate-700 bg-yellow-300 max-w-32`}
+                    className={`${buttonLink} ${shimmerClass} text-slate-700 bg-yellow-300 max-w-32`}
                 >
                   Help A Car
                 </Link>

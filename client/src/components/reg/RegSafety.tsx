@@ -6,7 +6,9 @@ import ParticlesBg from '../layout/ParticlesBg';
 const RegSafety: FC = () => {
   const quoteClass = "space-grotesk bg-gray-200 dark:bg-gray-700 dark:text-zinc-200/90 mb-2 px-4 py-4 rounded-lg shadow-lg dark:shadow-sky-100/50 backdrop-blur-md border border-white/20";
   const pClass = "mb-5 px-6 py-4 text-sm md:text-base text-zinc-700/80 dark:text-zinc-200/90 leading-6";
-
+  const buttonClass = "text-zinc-700 font-semibold dark:bg-yellow-300 bg-sky-100 rounded px-4 py-3 h-12 mt-4 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
+  const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
+  
   return (
     <>
       <ParticlesBg theme='nasa' colour='blue-500'/>
@@ -218,13 +220,13 @@ const RegSafety: FC = () => {
           <nav className='poppins flex w-full max-w-4xl items-center text-center justify-between mx-auto gap-4'>
             <Link 
               to='/reg' 
-                className='text-slate-700 font-semibold bg-yellow-300 rounded px-4 py-3 h-12 mt-4 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
+                className={`${buttonClass} ${shimmerClass}`}
             >
               HelpMe-Car Home
             </Link>
             <Link 
               to='/reghelp'
-                className='text-slate-700 font-semibold bg-yellow-300 rounded px-4 py-3 h-12 mt-4 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
+                className={`${buttonClass} ${shimmerClass}`}
                   onClick={() => toast.success(`Being helpful is great!!`)}
             >
               The Point of Being Helpful

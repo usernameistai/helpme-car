@@ -21,8 +21,8 @@ const ShowReg = () => {
   const divClass = "relative shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
   const titleClass = "shadow-lg p-4 rounded-xl mb-4";
   const brightBorderClass = "absolute inset-0 rounded-xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
-  
-  // Replaces the useEffect and 'loading/error' states fomr the store
+  const buttonClass = "px-4 h-12 mt-4 text-zinc-700 text-small md:text-lg font-semibold text-center items-center justify-center rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
+  const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
   const handleDeleteClick = () => setModalOpen(true);
   const handleDelete = async () => {
@@ -168,7 +168,7 @@ const ShowReg = () => {
         <nav className="flex gap-4 mt-4 justify-between">
           <Link 
             to={`/reg/${selectedReg.regplate}/edit`} 
-              className='px-4 pt-3 h-12 mt-4 text-slate-700 font-semibold text-center items-center justify-center bg-yellow-300 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out'
+              className={`pt-3 bg-yellow-300 ${buttonClass} ${shimmerClass}`}
           >
             Edit Reg
           </Link>
@@ -176,7 +176,7 @@ const ShowReg = () => {
           <div className="">
             <button
               onClick={handleDeleteClick}
-                className='px-4 h-12 mt-4 text-slate-700 text-center font-semibold bg-red-300 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out'
+                className={`bg-red-300 ${buttonClass} ${shimmerClass}`}
             >
               Delete Reg
             </button>
@@ -191,7 +191,7 @@ const ShowReg = () => {
           />
           <Link 
             to="/reg" 
-              className="px-4 pt-3 h-12 mt-4 text-slate-700 font-semibold text-center items-center justify-center bg-blue-300 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out"
+              className={`pt-3 bg-sky-100 ${buttonClass} ${shimmerClass}`}
                   onClick={() => toast.success(`Not your car?`)}
           >
             Home

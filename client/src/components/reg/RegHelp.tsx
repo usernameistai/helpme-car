@@ -7,6 +7,8 @@ const RegHelp: FC = () => {
   const articleClass = "flex flex-col justify-between";
   const divClass = "h-80 w-full rounded-lg shadow-lg shadow-zinc-500/50 dark:shadow-sky-100/50";
   const pClass = "roboto w-full rounded-lg mb-8 p-4 font-semibold text-zinc-700/80 dark:text-zinc-200/90 text-lg md:text-xl justify-center flex leading-8";
+  const buttonClass = "poppins text-zinc-700 font-semibold dark:bg-yellow-300 bg-sky-100 rounded px-4 py-3 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
+  const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
   return (
     <>
@@ -83,20 +85,20 @@ const RegHelp: FC = () => {
         <section className="relative mb-8 md:mb-32 lg:mb-10 z-50 top-0 sm:top-24">
           <nav className='flex w-full max-w-4xl items-center text-center justify-between mx-auto gap-4'>
             <Link 
-              to='/reg' 
-                className='poppins text-slate-700 font-semibold bg-yellow-300 rounded px-4 py-3 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
-                  aria-label="Return to Help Me Car home page"
-                    onClick={() => toast.success(`Remember, be excellent to each other and don't drop litter`)}
-            >
-              Car Help Home
-            </Link>
-            <Link 
               to='/regsafety' 
-                className='poppins text-slate-700 font-semibold bg-yellow-300 rounded px-4 py-3 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
-                  aria-label="Return to Help Me Car home page"
+                className={`${buttonClass} ${shimmerClass}`}
+                  aria-label="Go to Help Me Car Safety page"
                     onClick={() => toast.success(`Remember, be excellent to each other and don't drop litter`)}
             >
               Car Help Safety
+            </Link>
+            <Link 
+              to='/reg' 
+                className={`${buttonClass} ${shimmerClass}`}
+                  aria-label="Return to Help Me Car Home page"
+                    onClick={() => toast.success(`Remember, be excellent to each other and don't drop litter`)}
+            >
+              Car Help Home
             </Link>
           </nav>
         </section>

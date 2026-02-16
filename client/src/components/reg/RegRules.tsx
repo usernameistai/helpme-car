@@ -14,6 +14,8 @@ const RegRules: FC = () => {
   const brightBorder = "absolute inset-0 rounded-2xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
   const imageClass = "h-60 md:h-80 lg:h-96 w-[49%] rounded-lg mb-8 font-semibold text-zinc-700 justify-center flex shadow-lg dark:shadow-sky-100/50";
   const divClass = "roboto md:h-80 lg:h-96 w-[49%] text-sm sm:text-base md:text-xl rounded-lg p-2 md:p-4 mb-8 font-semibold text-zinc-700 dark:text-zinc-200/90 justify-center flex leading-6 md:leading-8";
+  const buttonClass = "poppins text-zinc-700 font-semibold dark:bg-yellow-300 bg-sky-100 rounded my-2 md:px-4 py-3 h-12 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
+  const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
   return (
     <>
@@ -181,14 +183,14 @@ const RegRules: FC = () => {
         <nav className='poppins flex flex-col md:flex-row mb-4 md:mb-20 px-4 w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'> 
           <Link 
             to='/reghelp'
-              className='poppins text-slate-700 font-semibold bg-yellow-300 rounded my-2 px-4 py-3 h-12 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
+              className={`${buttonClass} ${shimmerClass}`}
                 onClick={() => toast.success(`Being helpful is great!!`)}
           >
             The Point of Being Helpful
           </Link>
           <Link 
             to='/reg' 
-              className='poppins text-slate-700 font-semibold bg-yellow-300 rounded my-2 px-4 py-3 h-12 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
+              className={`${buttonClass} ${shimmerClass}`}
           >
             HelpMe-Car Home
           </Link>
@@ -267,14 +269,14 @@ const RegRules: FC = () => {
           <nav className='poppins flex flex-col mb-4 md:mb-20 px-4 md:flex-row w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'>
             <Link 
               to='/reghelp'
-                className='text-slate-700 font-semibold bg-yellow-300 rounded px-4 py-3 h-12 mt-4 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
+                className={`${buttonClass} ${shimmerClass}`}
                   onClick={() => toast.success(`Being helpful is great!!`)}
             >
               The Point of Being Helpful
             </Link>
             <Link 
               to='/reg' 
-                className='text-slate-700 font-semibold bg-yellow-300 rounded py-3 h-12 mt-4 md:px-4 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition'
+                className={`${buttonClass} ${shimmerClass}`}
             >
               HelpMe-Car Home
             </Link>

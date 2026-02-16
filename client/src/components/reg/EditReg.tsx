@@ -51,6 +51,7 @@ const EditReg: FC = () => {
   const paneTitleClass = "michroma text-xl font-semibold text-zinc-500/90 dark:text-zinc-200/90 mb-1";
   const labelClass = "roboto ml-1 text-gray-700 dark:text-gray-200";
   const navClass = "poppins font-semibold text-center items-center justify-center rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out mt-4 px-4 py-3 h-12";
+  const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
   // Fetch reg once
   useEffect(() => {
@@ -426,13 +427,13 @@ const EditReg: FC = () => {
             <nav className='flex justify-between'>
               <button
                 type='submit'
-                  className={`bg-blue-500 text-white ${navClass}`}
+                  className={`bg-blue-500 text-white ${navClass} ${shimmerClass}`}
               >
                 Save Changes
               </button>
               <Link 
                 to="/reg" 
-                  className={` bg-yellow-300 text-slate-700 ${navClass}`}
+                  className={` bg-yellow-300 text-slate-700 ${navClass} ${shimmerClass}`}
               >
                 Home
               </Link>

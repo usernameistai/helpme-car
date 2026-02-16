@@ -16,7 +16,7 @@ export const useSearchStore = create<SearchHistoryState>()(
         // 1. Remove the plate if it already exists (so we don't have duplicates)
         const filtered = state.history.filter((h) => h !== regplate);
         // 2. Add the new plate to the fornt and keep only the last 5
-        const newHistory = [regplate, ...filtered].slice(0, 5);
+        const newHistory = [regplate, ...filtered].slice(0, 10);
         return { history: newHistory };
       }),
 
