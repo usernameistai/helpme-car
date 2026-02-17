@@ -34,7 +34,7 @@ const GlassCard: FC<GlassCardProps> = ({ children, title, className = "" }) => {
         </div>
 
         {/* The 'Magic' Pulse Border */}
-        <div className="absolute inset-0 rounded-2xl border border-cyan-400/30 pointer-events-none animate-pulse animate-pulse-glow hover:opacity-50" />
+        <div className="absolute inset-0 rounded-2xl border border-cyan-400/30 pointer-events-none animate-pulse-glow hover:opacity-50" />
       </section>
     </>
   );

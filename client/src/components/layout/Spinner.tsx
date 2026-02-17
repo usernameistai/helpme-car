@@ -12,7 +12,7 @@ const Spinner: FC = () => {
         <div className="flex flex-col items-center p-6 rounded-2xl animate-in zoom-in duration-300">
           {/* The spinner itself spins indefinitely due to 'animate-spin' */}
           <ImSpinner2 className='animate-spin text-cyan-400 text-6xl shadow-cyan-500/20'/>
-          <p className="mt-4 text-cyan-400 font-bold text-sm tracking-widest animate-pulse">
+          <p className="font-poppins mt-4 text-cyan-400 font-bold text-sm tracking-widest animate-pulse">
             AWESOME, CAN YOU READ THIS... ? JUST LOADING
           </p>
         </div>

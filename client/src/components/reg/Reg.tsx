@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useRegStore } from "../../store/useRegStore";
 import { useQueryClient } from "@tanstack/react-query";
 import { getRegByPlate } from "../../api/reg";
+import { useRegs } from "../../hooks/useRegs";
 import ParticlesBg from "../layout/ParticlesBg";
 import GlassCard from "./components/GlassCard";
 import RegList from "./components/RegList";
@@ -10,7 +11,6 @@ import { Search } from "./SearchReg";
 import { Board } from "../../pages/Leaderboard";
 import { useLeaderboard } from "../../hooks/useLeaderboard";
 import toast from "react-hot-toast";
-import { useRegs } from "../../hooks/useRegs";
 import { motion } from "motion/react";
 
 const Reg: FC = () => {
@@ -22,12 +22,12 @@ const Reg: FC = () => {
   const queryClient = useQueryClient();
   const [regplate, setRegplate] = useState("");
 
-  const liClass = "relative z-30 lg:min-h-[275px] group sm:my-8 py-2 sm:p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl w-1/3 shadow-lg will-change-transform hover:bg-white/50 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
-  const h3Class = "space-grotesk text-base md:text-xl lg:text-3xl font-bold mt-2 lg:mt-4 mb-4 text-zinc-500 dark:text-zinc-800 text-center";
-  const titleClass = "space-grotesk font-semibold text-sm md:text-base lg:text-lg mb-4 lg:my-6 px-4 lg:px-8 lg:leading-8 text-zinc-800/90";
-  const buttonClass = "poppins relative z-50 rounded shadow-lg bg-sky-100 px-3 py-2 my-4 lg:my-16 text-center text-zinc-700 text-sm md:text-lg lg:text-2xl font-semibold hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
+  const liClass = "relative z-30 lg:min-h-[275px] group sm:my-8 py-2 sm:p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl w-1/3 shadow-lg will-change-transform hover:bg-white/40 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
+  const h3Class = "font-space text-2xl md:text-xl lg:text-3xl font-bold mt-2 lg:mt-4 mb-4 text-zinc-600 dark:text-zinc-50 text-center";
+  const titleClass = "font-inter font-semibold text-base md:text-base lg:text-lg mb-4 lg:my-6 px-4 lg:px-8 lg:leading-8 text-zinc-800/90";
+  const buttonClass = "font-poppins relative z-50 rounded shadow-lg bg-sky-100 px-3 py-2 my-4 lg:my-16 text-center text-zinc-700 text-base md:text-lg lg:text-xl font-semibold hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
   const brightBorderClass = "absolute inset-0 rounded-2xl group-hover:rotate-1 border border-cyan-400/40 animate-pulse animate-pulse-glow";
-  const linksClass = "poppins text-base md:text-lg lg:text-xl text-white font-semibold bg-sky-100 text-zinc-700 px-4 py-2 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem]";
+  const linksClass = "font-poppins text-base md:text-lg lg:text-xl text-white font-semibold bg-sky-100 text-zinc-700 px-4 py-2 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem]";
   const linkClass = "font-mono text-base md:text-lg lg:text-xl font-semibold my-4 pl-1 text-gray-500";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
   
@@ -86,7 +86,7 @@ const itemVariants = {
       <ParticlesBg theme="default" colour="cyan-400"/>
       <section className="space-y-10 sm:mx-0 w-full"> {/* added w-full */}
         <section className="relative z-20 max-w-6xl mx-auto">
-          <h1 className="relative mt-4 z-50 space-grotesk text-4xl md:text-5xl font-bold ml-4 sm:ml-10 mb-8 pb-4 w-full text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
+          <h1 className="relative mt-4 z-50 font-space text-4xl md:text-5xl font-bold ml-4 sm:ml-10 mb-8 pb-4 w-full text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
             Home of HelpMe-Car
           </h1>
 
@@ -96,7 +96,7 @@ const itemVariants = {
             <div className="relative pt-4 w-full">
               <h2 
                 style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
-                  className="space-grotesk relative drop-shadow-cyan-400 text-center w-full mb-2 text-zinc-700/90 dark:text-zinc-100 text-3xl md:text-5xl lg:text-7xl lg:mt-14 font-extrabold"
+                  className="font-space relative drop-shadow-cyan-400 text-center w-full mb-2 text-zinc-700/90 dark:text-zinc-100 text-3xl md:text-4xl lg:text-6xl lg:mt-14 font-extrabold"
               >
                 A way to help your fellow Humans
               </h2> 
@@ -163,7 +163,7 @@ const itemVariants = {
               </section>
               
 
-              <GlassCard title="Recently added registrations" className="z-30 space-grotesk h-full relative w-full lg:w-[63vw] min-h-60 lg:-translate-x-7 backdrop-blur-xl mx-auto hover:scale-100 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]">
+              <GlassCard title="Recently added registrations" className="z-30 font-space h-full relative w-full lg:w-[63vw] min-h-60 lg:-translate-x-7 backdrop-blur-xl mx-auto hover:scale-100 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]">
                 <p className="text-gray-900 dark:text-gray-200 text-base lg:text-xl m-1/2 sm:m-0 px-6 sm:px-8">Here are a few number plates from the database, if this is your car, click on it to see what advisories have been added. Maybe you could help someone else out?</p>
                 <div className="lg:mb-16 z-30">
                   <RegList 
@@ -195,7 +195,7 @@ const itemVariants = {
         </section>
 
         <section className="relative max-w-6xl mx-auto bg-gradient-to-br z-20 from-cyan-300 to-white sm:mt-10">
-          <h2 className="space-grotesk text-xl md:text-3xl lg:text-5xl font-bold text-zinc-700 p-8 mx-2 md:mx-5">A little bit about HelpMe-Car site</h2>
+          <h2 className="font-space text-xl md:text-3xl lg:text-5xl font-bold text-zinc-700 p-8 mx-2 md:mx-5">A little bit about HelpMe-Car site</h2>
           <section className="relative flex flex-col md:flex-row justify-between ml-1 md:ml-3 lg:ml-10 md:my-5">            
             <article className="w-[80vw] sm:w-[95%] md:max-w-[50%] mx-auto mb-8">
               <Link 
@@ -271,7 +271,7 @@ const itemVariants = {
 
             <article className={`${shimmerClass} z-10 flex w-[80vw] mx-auto sm:w-[95%] md:max-w-[45%] mb-8 bg-search-combine md:bg-fixed shadow-[inset_5px_5px_10px_rgba(255,255,255,0.2)] rounded-2xl border border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3)] transition-all duration-500 group overflow-hidden`}>
               <div className="flex flex-col min-h-[500px] landscape:min-h-[850px] p-8 items-center justify-center my-auto bg-zinc-900/30 group-hover:bg-zinc-900/10 transition-colors duration-500">
-                <div className="space-grotesk text-2xl md:text-3xl lg:text-4xl text-white font-extrabold text-center leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-500">
+                <div className="font-space text-2xl md:text-3xl lg:text-4xl text-white font-extrabold text-center leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-500">
                   Maybe cars aren't for you... <br/>
                   <span className="text-yellow-400">Maybe you would prefer a Combine Harvester?</span>
                 </div>

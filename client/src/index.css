@@ -18,18 +18,18 @@ html.dark {
   color: white;
 }
 
-.poppins { 
+/* .poppins { 
   font-family: 'Poppins', sans-serif;
  }
-.roboto { 
-  font-family: 'Roboto', sans-serif;
- }
+ .space-grotesk { 
+   font-family: 'Space Grotesk', sans-serif;
+  } 
 .michroma { 
   font-family: 'Michroma', sans-serif;
- }
-.space-grotesk { 
-  font-family: 'Space Grotesk', sans-serif;
- } 
+  }
+.inter {
+  font-family: 'Inter', sans-serif;
+} */
 
 .regclass h2 {
   background-image: linear-gradient(90deg, var(--coolg-colour), var(--neon-colour));
@@ -334,7 +334,6 @@ html.dark {
   background-position: center;
   background-repeat: no-repeat;
 }
-
 
 /* Mobile and Tablet adjustment (Tailwind 'md' and below) */
 @media (max-width: 768px) {

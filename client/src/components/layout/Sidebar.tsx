@@ -10,7 +10,7 @@ import { NavLink } from 'react-router-dom';
 const Sidebar: FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
-  const linkClass = "michroma block p-4 text-zinc-100 hover:bg-cyan-400/20 hover:text-cyan-400 transition-all border-l-4 border-transparent hover:border-cyan-400";
+  const linkClass = "font-michroma block p-4 text-zinc-100 hover:bg-cyan-400/20 hover:text-cyan-400 transition-all border-l-4 border-transparent hover:border-cyan-400";
 
   // Toggle theme function
   const toggleTheme = () => {
@@ -54,7 +54,7 @@ const Sidebar: FC = () => {
         </div>
 
         <nav className="mt-4 flex flex-col">
-          <h2 className="michroma px-5 text-sm font-bold text-zinc-500 uppercase tracking-widest my-4">Navigation</h2>
+          <h2 className="font-michroma px-5 text-sm font-bold text-zinc-500 uppercase tracking-widest my-4">Navigation</h2>
           <NavLink to="/reg" className={`${linkClass} flex justify-between`}>
             <div>Home</div>
             <div><IoHome /></div>

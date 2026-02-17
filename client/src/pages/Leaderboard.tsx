@@ -12,7 +12,7 @@ interface LeaderboardProps {
   username: string;
   carsHelped: number;
   starsGiven: number;
-}
+};
 
 interface BoardProps {
   leaderboard: any[];
@@ -37,12 +37,11 @@ const rowVariants = {
   }
 } as const;
 
-
 export const Board: FC<BoardProps> = ({ leaderboard, className = "" }) => {
   return (
     <>
       <div className={className}>
-        <GlassCard title='HelpMe-Car Leaderboards' className="michroma hover:scale-100 landscape:min-h-[500px] backdrop-blur-xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]" >
+        <GlassCard title='HelpMe-Car Leaderboards' className="font-michroma hover:scale-100 landscape:min-h-[500px] backdrop-blur-xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]" >
           <motion.ul 
             className="space-y-4 pt-2"
               variants={containerVariants}
@@ -64,7 +63,7 @@ export const Board: FC<BoardProps> = ({ leaderboard, className = "" }) => {
                     variants={rowVariants}
                       whileHover={{ scale: 1.02, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
                         className={`
-                          flex justify-between items-center roboto p-2 sm:p-4 rounded-xl transition-all border
+                          flex justify-between items-center font-inter p-2 sm:p-4 rounded-xl transition-all border
                           ${isTopThree ? medalColors[index] : "bg-white/5 border-transparent text-gray-400"}
                         `}
                 >
@@ -76,13 +75,13 @@ export const Board: FC<BoardProps> = ({ leaderboard, className = "" }) => {
                         index === 2 ? "🥉" : 
                           `#${index + 1}`}
                     </span>
-                    <span className={`text-lg sm:text-xl font-semibold ${isTopThree ? 'text-white' : 'text-gray-400'}`}>
+                    <span className={`font-inter text-lg sm:text-xl font-semibold ${isTopThree ? 'dark:text-white text-zinc-400' : 'dark:text-zinc-400 text-zinc-700'}`}>
                       {entry.username}
                     </span>
                   </div>
 
-                  <div className="flex gap-6 items-center">
-                    <span className={`text-xs sm:text-sm ${index === 0 ? 'text-yellow-300' : 'text-cyan-400'}`}>
+                  <div className="flex font-inter gap-6 items-center">
+                    <span className={`text-xs sm:text-sm ${index === 0 ? 'dark:text-yellow-300 text-yellow-500' : 'text-cyan-400'}`}>
                       {entry.carsHelped} Car(s)
                     </span>
                     <span className="text-lg sm:text-2xl font-bold">
@@ -116,7 +115,7 @@ const Leaderboard: React.FC = () => {
       <section className='relative z-20 my-[-1.5rem] '>
         <section className="p-6 mx-auto max-w-6xl bg-rules-people-8 bg-fixed bg-black/30 min-h-screen">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-5 mb-8 md:mb-12">
-            <h1 className="text-center text-3xl sm:text-6xl pb-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300 space-grotesk tracking-tight">
+            <h1 className="font-space text-center text-3xl sm:text-6xl pb-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300 tracking-tight">
               Global Hero Rankings
             </h1>
             <motion.div
@@ -139,7 +138,7 @@ export default Leaderboard;
   <motion.li 
     key={entry.clerkId}
       variants={rowVariants}
-        className="flex justify-between items-center roboto p-2 sm:p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors"
+        className="flex justify-between items-center inter p-2 sm:p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors"
   >
     <div className="flex items-center gap-4">
       <span className="text-lg sm:text-2xl font-mono text-zinc-500 dark:text-zinc-100">#{index + 1}</span>

@@ -9,33 +9,34 @@ const RegRules: FC = () => {
   const sectionClass = "flex flex-row justify-between my-2";
   const sectionTwo = "rounded-2xl m-5 mx-auto py-10 px-8 mb-10 shadow-[inset_1px_5px_20px_rgba(0,0,0,0.2)]";
   const articleClass = "relative rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
-  const textClass = "roboto rounded-lg shadow-lg dark:shadow-sky-100/50 h-60 md:h-80 lg:h-96 w-[47.5%] p-4 text-cyan-200 text-2xl md:text-3xl font-semibold drop-shadow-md";
-  const pClass = "roboto px-6 py-4 lg:text-xl text-zinc-500/90 dark:text-zinc-200/90 font-semibold leading-7 md:leading-8";
+  const textClass = "font-inter rounded-lg shadow-lg relative dark:shadow-sky-100/50 h-60 md:h-80 lg:h-96 w-[47.5%] p-4 justify-center items-center flex text-center text-cyan-100 text-2xl md:text-3xl font-semibold drop-shadow-md";
+  const overlayClass = "absolute rounded-lg inset-0 bg-black/40 dark:bg-black/60 z-0";
+  const pClass = "font-inter px-6 py-4 lg:text-xl text-zinc-500/90 dark:text-zinc-200/90 font-semibold leading-7 md:leading-8";
   const brightBorder = "absolute inset-0 rounded-2xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
-  const imageClass = "h-60 md:h-80 lg:h-96 w-[49%] rounded-lg mb-8 font-semibold text-zinc-700 justify-center flex shadow-lg dark:shadow-sky-100/50";
-  const divClass = "roboto md:h-80 lg:h-96 w-[49%] text-sm sm:text-base md:text-xl rounded-lg p-2 md:p-4 mb-8 font-semibold text-zinc-700 dark:text-zinc-200/90 justify-center flex leading-6 md:leading-8";
-  const buttonClass = "poppins text-zinc-700 font-semibold dark:bg-yellow-300 bg-sky-100 rounded my-2 md:px-4 py-3 h-12 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
+  const imageClass = "relative h-60 md:h-80 lg:h-96 w-[49%] rounded-lg mb-8 font-semibold text-zinc-100 justify-center flex items-center shadow-cyan-200/30 dark:shadow-sky-100/50";
+  const divClass = "font-inter md:h-80 lg:h-96 w-[49%] text-sm sm:text-base md:text-xl rounded-lg p-2 md:p-4 mb-8 font-semibold text-zinc-700 dark:text-zinc-200/90 justify-center flex leading-6 md:leading-8";
+  const buttonClass = "font-poppins text-zinc-700 font-semibold dark:bg-yellow-300 bg-sky-100 rounded my-2 md:px-4 py-3 h-12 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
   return (
     <>
       <ParticlesBg theme='bubble' colour='#94a3b8' />
       <section className='relative z-20 mx-2 sm:mx-0 mb-4'>
-        <h1 className="space-grotesk text-4xl md:text-5xl font-bold my-8 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
+        <h1 className="font-space text-4xl md:text-5xl font-bold my-8 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
           HelpMe - Rules & Regulations
         </h1>
 
-        <h2 className='space-grotesk text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Rules (Please don't break them)</h2>
+        <h2 className='font-space text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Rules (Please don't break them)</h2>
         <section className='relative bg-rules-car rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
           <div className='bg-black/50 text-center h-44 rounded-2xl shadow-lg flex items-start justify-center' >
-            <span className='michroma text-lg sm:text-xl md:text-3xl font-bold text-cyan-400 pt-6'>
+            <span className='font-michroma text-lg sm:text-xl md:text-3xl font-bold text-cyan-400 pt-6'>
               No driver(s) may enter data
             </span>
           </div>
         </section>
 
         <section className='text-center'>
-          <p className='robot font-semibold text-md md:text-lg text-cyan-500'>Until safely stopped* / MSM**</p>
+          <p className='font-inter font-semibold text-md md:text-lg text-cyan-500'>Until safely stopped* / MSM**</p>
         </section>
 
         <section className='rounded-lg m-5 mx-auto py-10 px-8 mb-10 shadow-[inset_1px_5px_20px_rgba(0,0,0,0.2)]'>
@@ -49,15 +50,17 @@ const RegRules: FC = () => {
         </section>
 
         <section className={`${sectionClass} mb-10`}>
-          <div 
-            className={`bg-rules-people-1 ${textClass}`}
-          >
-            People allowed to enter data include the following :
+          <div className={`bg-rules-people-1 ${textClass}`}>
+            <div className={overlayClass}></div>
+            <span className="relative z-10 drop-shadow-md">
+              People allowed to enter data include the following :
+            </span>
           </div>
-          <div 
-            className={`bg-rules-people-2 ${textClass}`}
-          >
-            Passengers in cars & lorries, not on motorcycles
+          <div className={`bg-rules-people-2 ${textClass}`}>
+            <div className={overlayClass}></div>
+            <span className="relative z-10 drop-shadow-md">
+              Passengers in cars & lorries, not on motorcycles
+            </span>
           </div>
         </section>
 
@@ -72,15 +75,17 @@ const RegRules: FC = () => {
         </section>
 
         <section className={`${sectionClass} mb-10`}>
-          <div 
-            className={`bg-rules-people-3 ${textClass}`}
-          >
-            Cyclists (not currently cycling)
+          <div className={`bg-rules-people-3 ${textClass}`}>
+            <div className={overlayClass}></div>
+            <span className="relative z-10 drop-shadow-md">
+              Cyclists (not currently cycling)
+            </span>
           </div>
-          <div 
-            className={`bg-rules-people-4 ${textClass}`}
-          >
-            Pedestrians (not crossing the road)
+          <div className={`bg-rules-people-4 ${textClass}`}>
+          <div className={overlayClass}></div>
+            <span className="relative z-10 drop-shadow-md">
+              Pedestrians (not crossing the road)
+            </span>
           </div>
         </section>
 
@@ -92,15 +97,17 @@ const RegRules: FC = () => {
         </section>
 
         <section className={`${sectionClass} mb-10`}>
-          <div 
-            className={`bg-rules-people-5 ${textClass}`}
-          >
-            People sitting on benches
+          <div className={`bg-rules-people-5 ${textClass}`}>
+            <div className={overlayClass}></div>
+            <span className="relative z-10 drop-shadow-md">
+              People sitting on benches
+            </span>
           </div>
-          <div 
-            className={`bg-rules-people-6 ${textClass}`}
-          >
-            People who have just recently stopped skateboarding or bmxing
+          <div className={`bg-rules-people-6 ${textClass}`}>
+            <div className={overlayClass}></div>
+            <span className="relative z-10 drop-shadow-md">
+              People who have just recently stopped skateboarding or bmxing
+            </span>
           </div>
         </section>
 
@@ -114,15 +121,17 @@ const RegRules: FC = () => {
         </section>
 
         <section className={`${sectionClass} mb-10`}>
-          <div 
-            className={`bg-rules-people-7 ${textClass}`}
-          >
-            People with mobiles
+          <div className={`bg-rules-people-7 ${textClass}`}>
+            <div className={overlayClass}></div>
+            <span className="relative z-10 drop-shadow-md">
+              People with mobiles
+            </span>
           </div>
-          <div 
-            className={`bg-rules-people-8 ${textClass}`}
-          >
-            People who take life seriously
+          <div className={`bg-rules-people-8 ${textClass}`}>
+            <div className={overlayClass}></div>
+            <span className="relative z-10 drop-shadow-md">
+              People who take life seriously
+            </span>
           </div>
         </section>
 
@@ -136,15 +145,17 @@ const RegRules: FC = () => {
         </section>
 
         <section className={`${sectionClass} mb-10`}>
-          <div 
-            className={`bg-rules-people-9 ${textClass}`}
-          >
-            People who don't take life seriously
+          <div className={`bg-rules-people-9 ${textClass}`}>
+            <div className={overlayClass}></div>
+            <span className="relative z-10 drop-shadow-md">
+              People who don't take life seriously
+            </span>
           </div>
-          <div 
-            className={`bg-rules-people-10 ${textClass}`}
-          >
-            Anyone who wants to help
+          <div className={`bg-rules-people-10 ${textClass}`}>
+            <div className={overlayClass}></div>
+            <span className="relative z-10 drop-shadow-md">
+              Anyone who wants to help
+            </span>
           </div>
         </section>
 
@@ -157,9 +168,9 @@ const RegRules: FC = () => {
           </article>
         </section>
         
-        <section className='bg-zinc-900/50 text-white text-center py-4'>
-          <h3 className='space-grotesk text-lg md:text-xl lg:text-2xl font-bold'>Rules Photo Credits from UnSplash</h3>
-          <ul className='roboto text-sm md:text-base lg:text-lg mb-2'>
+        <section className='bg-zinc-900/70 dark:bg-zinc-900/50 text-white text-center py-4'>
+          <h3 className='font-space text-lg md:text-xl lg:text-2xl font-bold'>Rules Photo Credits from UnSplash</h3>
+          <ul className='inter text-sm md:text-base lg:text-lg mb-2'>
             <br />
             <li>Little Girl Having Fun with Mobile - <strong>Pan Xiaozhen</strong></li>
             <li>Three Gents Being Passengers - <strong>Luke Porter</strong></li>
@@ -176,11 +187,11 @@ const RegRules: FC = () => {
         </section>
 
         <section className="mb-2 text-sm md:text-lg">
-          <h3 className='roboto font-bold text-zinc-700 dark:text-zinc-200/90'>* Pulled over correctly and safely and are not blocking traffic, so not driving</h3>
-          <h3 className='roboto font-bold text-zinc-700 dark:text-zinc-200/90'>**MSM - Mirror Signal Manoeuvre (this is still driving, so not this)</h3>
+          <h3 className='inter font-bold text-zinc-700 dark:text-zinc-200/90'>* Pulled over correctly and safely and are not blocking traffic, so not driving</h3>
+          <h3 className='inter font-bold text-zinc-700 dark:text-zinc-200/90'>**MSM - Mirror Signal Manoeuvre (this is still driving, so not this)</h3>
         </section>
 
-        <nav className='poppins flex flex-col md:flex-row mb-4 md:mb-20 px-4 w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'> 
+        <nav className='font-poppins flex flex-col md:flex-row mb-4 md:mb-20 px-4 w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'> 
           <Link 
             to='/reghelp'
               className={`${buttonClass} ${shimmerClass}`}
@@ -197,11 +208,11 @@ const RegRules: FC = () => {
         </nav>
 
         <section>
-          <h2 className='space-grotesk text-zinc-500 dark:text-zinc-200/90 text-2xl md:text-4xl font-bold mb-4'>Regulations</h2>
+          <h2 className='font-space text-zinc-500 dark:text-zinc-200/90 text-2xl md:text-4xl font-bold mb-4'>Regulations</h2>
 
           <section className='relative bg-rules-car rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
             <div className='bg-black/50 text-center h-44 rounded-2xl shadow-lg flex items-start justify-center'>
-              <span className='michroma text-lg md:text-3xl font-bold text-cyan-400 pt-6'>
+              <span className='font-michroma text-lg md:text-3xl font-bold text-cyan-400 pt-6'>
                 Drive safely and follow the Highway Code
               </span>
             </div>
@@ -253,9 +264,9 @@ const RegRules: FC = () => {
         </section>
 
         <section>
-          <article className='bg-zinc-900/50 text-white text-center py-4 mb-2'>
-            <h3 className='space-grotesk text-lg md:text-xl lg:text-2xl font-bold'>Regulations Photo Credits from UnSplash</h3>
-            <ul className='roboto text-sm md:text-base lg:text-lg mb-2'>
+          <article className='bg-zinc-900/70 dark:bg-zinc-900/50 text-white text-center py-4 mb-2'>
+            <h3 className='font-space text-lg md:text-xl lg:text-2xl font-bold'>Regulations Photo Credits from UnSplash</h3>
+            <ul className='inter text-sm md:text-base lg:text-lg mb-2'>
               <br />
               <li>Daunting Road Signs  - <strong>Nick Fewings</strong></li>
               <li>Abandoned American 1950's Pick-Up - <strong>Christopher Burns</strong></li>
@@ -266,7 +277,7 @@ const RegRules: FC = () => {
             </ul>
           </article>
 
-          <nav className='poppins flex flex-col mb-4 md:mb-20 px-4 md:flex-row w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'>
+          <nav className='font-poppins flex flex-col mb-4 md:mb-20 px-4 md:flex-row w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'>
             <Link 
               to='/reghelp'
                 className={`${buttonClass} ${shimmerClass}`}
@@ -282,7 +293,10 @@ const RegRules: FC = () => {
             </Link>
           </nav>
 
-          <article className='space-grotesk flex relative items-center justify-center rounded-2xl bg-sky-100 p-2 mb-4 landscape:mb-8 shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
+          <article 
+            onClick={() => toast.success('You have taken the first step into a much larger world')}
+              className='font-space flex relative items-center justify-center rounded-2xl bg-sky-100 p-2 mb-4 landscape:mb-8 shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'
+          >
             <FaJediOrder size={25} className='text-zinc-700 font-bold mr-5'/>
             <p className='font-bold text-zinc-700 text-base sm:text-lg md:text-2xl lg:text-3xl'>Thank you for reading the rules </p>
             <FaJediOrder size={25} className='text-zinc-700 font-bold ml-5'/>

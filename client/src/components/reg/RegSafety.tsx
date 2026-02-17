@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import ParticlesBg from '../layout/ParticlesBg';
 
 const RegSafety: FC = () => {
-  const quoteClass = "space-grotesk bg-gray-200 dark:bg-gray-700 dark:text-zinc-200/90 mb-2 px-4 py-4 rounded-lg shadow-lg dark:shadow-sky-100/50 backdrop-blur-md border border-white/20";
-  const pClass = "mb-5 px-6 py-4 text-sm md:text-base text-zinc-700/80 dark:text-zinc-200/90 leading-6";
+  const quoteClass = "font-space bg-gray-200 dark:bg-gray-700 dark:text-zinc-200/90 mb-2 px-4 py-4 rounded-lg shadow-lg dark:shadow-sky-100/50 backdrop-blur-md border border-white/20";
+  const pClass = "font-inter mb-5 px-6 py-4 text-sm md:text-base text-zinc-700/80 dark:text-zinc-200/90 leading-6";
   const buttonClass = "text-zinc-700 font-semibold dark:bg-yellow-300 bg-sky-100 rounded px-4 py-3 h-12 mt-4 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
   
@@ -13,13 +13,13 @@ const RegSafety: FC = () => {
     <>
       <ParticlesBg theme='nasa' colour='blue-500'/>
       <section className='relative z-20 mx-2 mb-4'>
-        <h1 className="space-grotesk text-4xl sm:text-5xl font-bold my-8 pb-1 w-96 text-transparent 
+        <h1 className="font-space text-4xl sm:text-5xl font-bold my-8 pb-1 w-96 text-transparent 
           bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300 leading-[4rem]"
         >
           HelpMe-Safety
         </h1>
         <section className='roboto'>
-        <h2 className='space-grotesk text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Driver Accident Statistics from DoT</h2>
+        <h2 className='font-space text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Driver Accident Statistics from DoT</h2>
           <section aria-labelledby='safety-intent'>
             <h2 id="safety-intent" className='sr-only'>
               This site could potentially redce the number of accidents, even only a little bit
@@ -74,7 +74,7 @@ const RegSafety: FC = () => {
 
             <article>
               <blockquote className={quoteClass}>"Poor turn or manoeuvre - 13% of accidents in 2018"</blockquote>
-              <p className={pClass}>The poor action of the driver and people getting into accidnts could be poor equipmwent on top of poor driving. Many people now brake and then indicate, which gives no prior warning for cars around</p>
+              <p className={pClass}>The poor action of the driver and people getting into accidents could be poor equipment on top of poor driving. Many people now brake and then indicate, which gives no prior warning for cars around</p>
             </article>
 
             <article>
@@ -106,7 +106,7 @@ const RegSafety: FC = () => {
           <br />
 
           <section className='mx-2 sm:mx-0'>
-          <h2 className='space-grotesk text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Gender Variation Statistics from DoT</h2>
+          <h2 className='font-space text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Gender Variation Statistics from DoT</h2>
           <section aria-labelledby='safety-intent'>
             <h2 id="safety-intent" className='sr-only'>
               Hopefully people will see how they tenmselves might be at risk of an accident. 
@@ -169,7 +169,7 @@ const RegSafety: FC = () => {
           <br />
 
           <section className='mx-2 sm:mx-0'>
-          <h2 className='space-grotesk text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Driver Density UK from DoT</h2>
+          <h2 className='font-space text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Driver Density UK from DoT</h2>
           <section aria-labelledby='safety-intent'>
             <h2 id="safety-intent" className='sr-only'>
               Hopefully people will see how they tenmselves might be at risk of an accident. 
@@ -217,21 +217,21 @@ const RegSafety: FC = () => {
           </section>
 
           <section className="relative mb-8 md:mb-32 lg:mb-10 z-50 top-0 sm:top-24">
-          <nav className='poppins flex w-full max-w-4xl items-center text-center justify-between mx-auto gap-4'>
-            <Link 
-              to='/reg' 
-                className={`${buttonClass} ${shimmerClass}`}
-            >
-              HelpMe-Car Home
-            </Link>
-            <Link 
-              to='/reghelp'
-                className={`${buttonClass} ${shimmerClass}`}
-                  onClick={() => toast.success(`Being helpful is great!!`)}
-            >
-              The Point of Being Helpful
-            </Link>
-          </nav>
+            <nav className='font-poppins flex flex-col md:flex-row mb-4 md:mb-20 px-4 w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'>
+              <Link 
+                to='/reg' 
+                  className={`${buttonClass} ${shimmerClass}`}
+              >
+                HelpMe-Car Home
+              </Link>
+              <Link 
+                to='/reghelp'
+                  className={`${buttonClass} ${shimmerClass}`}
+                    onClick={() => toast.success(`Being helpful is great!!`)}
+              >
+                The Point of Being Helpful
+              </Link>
+            </nav>
           </section>
         </section>
       </section>

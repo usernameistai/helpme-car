@@ -18,8 +18,8 @@ const ShowReg = () => {
   const queryClient = useQueryClient();
 
   const h1Class = "text-xl md:text-2xl mb-2 md:mb-4 font-bold text-zinc-500/90 dark:text-zinc-200/90";
-  const divClass = "relative shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
-  const titleClass = "shadow-lg p-4 rounded-xl mb-4";
+  const divClass = "relative rounded-xl mb-4 shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
+  const titleClass = "font-inter tracking-wider font-bold shadow-lg px-5 py-4 rounded-xl mb-4";
   const brightBorderClass = "absolute inset-0 rounded-xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
   const buttonClass = "px-4 h-12 mt-4 text-zinc-700 text-small md:text-lg font-semibold text-center items-center justify-center rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
@@ -137,7 +137,7 @@ const ShowReg = () => {
     <>
       <ParticlesBg theme="default" colour='purple-500' />
       <section className="relative z-20 space-y-2 md:space-y-4 mx-2 sm:mx-0 -translate-y-10 sm:-translate-y-4">
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 pb-2 lan">
+        <h1 className="font-space text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 pb-2 lan">
           HelpMe-Advisories | Faults
         </h1>
 

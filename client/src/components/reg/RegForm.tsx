@@ -40,11 +40,11 @@ const RegForm: React.FC = () => {
     },
   });
 
-  const shadowClass = "relative p-4 rounded-xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] hover:shadow-[0_20px_60px_rgba(34,211,238,0.5)] transition-shadow duration-300 bg-white/5 backdrop-blur-sm";
+  const shadowClass = "relative p-5 rounded-xl leading-8 shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] hover:shadow-[0_20px_60px_rgba(34,211,238,0.5)] transition-shadow duration-300 bg-white/5 backdrop-blur-sm";
   const brightBorderClass = "absolute inset-0 rounded-xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
-  const paneTitleClass = "michroma text-xl font-semibold text-zinc-500/90 dark:text-zinc-200/90 mb-1";
-  const labelClass = "roboto ml-1 text-gray-700 dark:text-gray-200";
-  const navClass = "poppins font-semibold px-4 py-3 mt-4 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition duration-200 ease-in-out";
+  const paneTitleClass = "font-michroma tracking-wider text-xl font-semibold text-zinc-500/90 dark:text-zinc-200/90 mb-2";
+  const labelClass = "font-inter tracking-wider m-1 text-zinc-500/90 dark:text-zinc-200/90";
+  const navClass = "font-poppins font-semibold px-4 py-3 mt-4 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition duration-200 ease-in-out";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
   
   const onChange = ( e: React.ChangeEvent<HTMLInputElement> ) => {
@@ -118,11 +118,11 @@ const RegForm: React.FC = () => {
     <>
       <ParticlesBg theme='nasa' colour='purple-500' />
       <section className='relative z-20 mx-2 sm:mx-0'>
-        <h1 className="space-grotesk text-4xl sm:text-5xl font-bold ml-10 mt-[3rem] pb-4 w-[30rem] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300 -translate-y-10 sm:-translate-y-8 mb-4">
+        <h1 className="font-space text-4xl sm:text-5xl font-bold ml-10 mt-[3rem] pb-4 w-[30rem] lan -translate-y-10 sm:-translate-y-8 mb-4">
           HelpMe-Out
         </h1>
         <section className="rounded-lg m-5 mx-auto py-5 sm:py-10 px-8 shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] -translate-y-10">
-          <h2 className="michroma text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-300">
+          <h2 className="font-michroma text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-300">
             Help out fellow humans by adding their car number plate...
           </h2>
           <form onSubmit={onSubmit} className='space-y-5 '>
@@ -246,7 +246,7 @@ const RegForm: React.FC = () => {
             <fieldset>
               <legend className="sr-only">Indicator and hazard or warning lights condition</legend>
               <div className={`${shadowClass}`}>
-                <h3 className={`${paneTitleClass}`}>Indicator and Hazard / Warning Lights Condition</h3>
+                <h3 className={`${paneTitleClass}`}>Indicator / Hazard Warning Lights Condition</h3>
                 <div>
                   <label htmlFor='indicator-broken-on-one-side' className={`${labelClass}`}>
                     <input 
@@ -348,7 +348,7 @@ const RegForm: React.FC = () => {
             <fieldset>
               <legend className="sr-only">Car rear tyre condition</legend>
               <div className={`${shadowClass}`}>
-                <h3 className={`${paneTitleClass}`}>Car's Rear Tyre Condition <small>(might only be slightly flat)</small></h3>
+                <h3 className={`${paneTitleClass}`}>Car's Rear Tyre Condition</h3>
                 <div>
                   <label htmlFor='flat-tyre-left' className={`${labelClass}`}>
                     <input 

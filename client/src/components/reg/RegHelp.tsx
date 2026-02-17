@@ -6,18 +6,18 @@ import ParticlesBg from "../layout/ParticlesBg";
 const RegHelp: FC = () => {
   const articleClass = "flex flex-col justify-between";
   const divClass = "h-80 w-full rounded-lg shadow-lg shadow-zinc-500/50 dark:shadow-sky-100/50";
-  const pClass = "roboto w-full rounded-lg mb-8 p-4 font-semibold text-zinc-700/80 dark:text-zinc-200/90 text-lg md:text-xl justify-center flex leading-8";
-  const buttonClass = "poppins text-zinc-700 font-semibold dark:bg-yellow-300 bg-sky-100 rounded px-4 py-3 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
+  const pClass = "font-inter w-full rounded-lg mb-8 p-4 font-semibold text-zinc-700/80 dark:text-zinc-200/90 text-lg md:text-xl justify-center flex leading-8";
+  const buttonClass = "font-poppins text-zinc-700 font-semibold dark:bg-yellow-300 bg-sky-100 rounded px-4 py-3 h-12 mt-4 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
   return (
     <>
       <ParticlesBg theme="default" colour="cyan-400" />
       <section className="relative z-20 mx-2 sm:mx-0 mb-4">
-        <h1 className="space-grotesk text-5xl font-bold my-8 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
+        <h1 className="font-space text-5xl font-bold my-8 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
           Why help a fellow human?
         </h1>
-        <h2 className='space-grotesk text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Many, many good reasons...</h2>
+        <h2 className='font-space text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Many, many good reasons...</h2>
         <section className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-2 md:gap-10">
           <article className={articleClass}>
             <div 
@@ -70,8 +70,8 @@ const RegHelp: FC = () => {
         </section>
         
         <section className="bg-zinc-900/50 text-white text-center mx-auto py-4 sm:-mt-24 md:translate-y-24 lg:translate-y-0 lg:mt-0 mb-12">
-          <h3 className="space-grotesk text-base md:text-xl font-bold">Helpfulness Photo Credits from UnSplash</h3>
-          <ul className="roboto text-xs md:text-base">
+          <h3 className="font-space text-base md:text-xl font-bold">Helpfulness Photo Credits from UnSplash</h3>
+          <ul className="font-inter text-xs md:text-base">
             <br />
             <li>Stafe Safe and a Cup of Coffee - <strong>Sincerely Media</strong></li>
             <li>Lady Taking Photo of Flowers on Busy Bridge - <strong>Artur Tumasjan</strong></li>
@@ -83,7 +83,7 @@ const RegHelp: FC = () => {
         </section>
 
         <section className="relative mb-8 md:mb-32 lg:mb-10 z-50 top-0 sm:top-24">
-          <nav className='flex w-full max-w-4xl items-center text-center justify-between mx-auto gap-4'>
+          <nav className='font-poppins flex flex-col md:flex-row mb-4 md:mb-20 px-4 w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'>
             <Link 
               to='/regsafety' 
                 className={`${buttonClass} ${shimmerClass}`}
