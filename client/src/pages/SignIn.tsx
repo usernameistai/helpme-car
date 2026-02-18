@@ -8,7 +8,7 @@ const SignInPage = () => {
     <div className="min-h-screen flex flex-col ">
       <Navbar />
 
-      <main className="relative flex flex-1 bg-search-car items-center justify-center shadow-2xl shadow-zinc-700">
+      <main className="relative flex flex-1 bg-search-car bg-standard items-center justify-center shadow-2xl shadow-zinc-700">
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/80" />
         {/* Content Stack */}

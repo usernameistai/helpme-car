@@ -55,7 +55,7 @@ const Dashboard: FC = () => {
   return (
     <>
       <ParticlesBg theme="snow" colour="cyan-400" />
-      <section className={`relative z-20 p-6 my-[-1.5rem] ${profile.theme === "dark" ? "text-white" : "text-gray-900"} mx-auto max-w-6xl relative bg-search-combine bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]`}>
+      <section className={`relative z-20 p-6 my-[-1.5rem] ${profile.theme === "dark" ? "text-white" : "text-gray-900"} mx-auto max-w-6xl relative bg-search-combine bg-standard bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]`}>
         <div className="absolute inset-0 bg-zinc-950/60" />
         <div className="relative z-10">
         <h1 className="relative font-space z-10 text-4xl sm:text-5xl font-bold mt-5 mb-4 md:mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300" >

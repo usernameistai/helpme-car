@@ -12,7 +12,7 @@ const Landing = () => {
       <Navbar />
       <Sidebar />
 
-      <main className="relative z-20 bg-landing-car-1 h-[100vh] ">
+      <main className="relative z-20 bg-landing-car-1 bg-standard h-[100vh] ">
         <div className="absolute inset-0 bg-black/70 z-0">
           <div 
             className="flex flex-col text-center justify-center translate-x-[15%] md:translate-y-[15%] space-y-10 max-w-[75%]"

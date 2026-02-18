@@ -44,7 +44,7 @@ const RegSafety: FC = () => {
             </div>
             <figure>
               <div 
-                className='bg-safety-car-1 md:max-w-[100vw] lg:w-[50%] mx-auto h-56 md:h-[27rem] my-[2rem] py-4 rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
+                className='bg-safety-car-1 bg-standard md:max-w-[100vw] lg:w-[50%] mx-auto h-56 md:h-[27rem] my-[2rem] py-4 rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
                   role='img'
                     aria-label='Chart showing contributory accident factors, Great Britain 2014 - 2018'
               />
@@ -128,7 +128,7 @@ const RegSafety: FC = () => {
             </div>
             <figure className='dark:text-zinc-200/90'>
               <div 
-                className='bg-safety-car-2 h-[20rem] md:h-[40rem] mt-[2rem] py-[2rem] lg:w-[50%] mx-auto rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
+                className='bg-safety-car-2 bg-standard h-[20rem] md:h-[40rem] mt-[2rem] py-[2rem] lg:w-[50%] mx-auto rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
                   role='img'
                     aria-label='Chart showing accidents by gender, Great Britain 2018'
               />
@@ -190,7 +190,7 @@ const RegSafety: FC = () => {
             </div>
             <figure>
               <div 
-                className='bg-safety-car-3 h-[18rem] md:h-[35rem] mt-[2rem] p-[2rem] md:w-[77vw] lg:w-[50%] mx-auto rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
+                className='bg-safety-car-3 bg-standard h-[18rem] md:h-[35rem] mt-[2rem] p-[2rem] md:w-[77vw] lg:w-[50%] mx-auto rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
                   role='img'
                     aria-label='Map of licensed vehicle distribution, United Kingdom 2018'
               />

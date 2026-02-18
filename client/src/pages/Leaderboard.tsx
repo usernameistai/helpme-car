@@ -113,7 +113,7 @@ const Leaderboard: React.FC = () => {
     <>
       <ParticlesBg theme='nasa' colour='yellow-300' />
       <section className='relative z-20 my-[-1.5rem] '>
-        <section className="p-6 mx-auto max-w-6xl bg-rules-people-8 bg-fixed bg-black/30 min-h-screen">
+        <section className="p-6 mx-auto max-w-6xl bg-rules-people-8 bg-standard bg-fixed bg-black/30 min-h-screen">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-5 mb-8 md:mb-12">
             <h1 className="font-space text-center text-3xl sm:text-6xl pb-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300 tracking-tight">
               Global Hero Rankings

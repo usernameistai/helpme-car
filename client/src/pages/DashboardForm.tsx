@@ -95,7 +95,7 @@ const DashboardForm: React.FC = () => {
   return (
     <>
       <ParticlesBg theme='snow' colour='cyan-400' />
-      <div className={`relative z-20 p-4 sm:p-6 bg-search-combine shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] rounded-lg `}>
+      <div className={`relative z-20 p-4 sm:p-6 bg-search-combine bg-standard bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] rounded-lg `}>
         <div className="absolute inset-0 bg-zinc-700/50" />
         <h1 className="font-space relative z-10 text-3xl sm:text-5xl font-bold mt-5 mb-4 md:mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
           Here you can update {''} <span className="text-5xl sm:text-7xl">{profile?.username}'s</span>{''} profile

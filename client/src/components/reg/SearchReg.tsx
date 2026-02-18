@@ -133,7 +133,7 @@ const SearchReg: FC = () => {
   return (
     <>
       <ParticlesBg theme="snow" colour="purple-500" />
-      <section className='relative bg-search-car h-[100vh] z-20 mx-auto max-w-6xl my-[-5rem] sm:my-[-3rem]'>
+      <section className='relative bg-search-car bg-standard h-[100vh] z-20 mx-auto max-w-6xl my-[-5rem] sm:my-[-3rem]'>
         <div className="absolute inset-0 bg-zinc-700/50" /> 
         <h1 className="font-space relative z-10 w-full text-4xl sm:text-5xl font-bold px-8 py-6 landscape:py-10 mt-[5rem] md:mt-5 mb-2 landscape:mb-[-1.7rem] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
           HelpMe-Search...

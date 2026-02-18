@@ -83,7 +83,7 @@ const Navbar = () => {
           <Link to="/" className={`${navItemBase} group text-xl md:text-2xl lg:text-3xl hover:text-cyan-400 transition-colors font-semibold`}>
             <FaHands aria-hidden="true"/><FaCarRear aria-hidden="true"/>
             <span className="hidden md:block">HelpMe - Car</span>
-            <span aria-hidden="true" className={navItemsOneTwo}>Landing Page</span>
+            <span aria-hidden="true" className={`${navItemsOneTwo} hidden md:block`}>Landing Page</span>
           </Link>
 
           {/* Nav Links */}
@@ -96,7 +96,7 @@ const Navbar = () => {
               ) : (
                 <div className="flex items-center gap-x-2"><span>☀️</span><span className="hidden lg:flex font-bold">| Light</span></div>
               )}
-              <span aria-hidden="true" className={`${navItemsOneTwo} w-20 space-x-2`}><span> ☀️ </span><span>|</span> <span>🌙 </span> </span>
+              <span aria-hidden="true" className={`${navItemsOneTwo} hidden md:block w-20 space-x-2`}><span> ☀️ </span><span>|</span> <span>🌙 </span> </span>
             </button>
 
             {[
@@ -113,7 +113,7 @@ const Navbar = () => {
               >
                 <span className="text-xl">{item.icon}</span>
                 <span className="hidden lg:block">{item.label}</span>
-                <span aria-hidden="true" className={`${navItemsOneTwo} w-24`}>{item.tooltip}</span>
+                <span aria-hidden="true" className={`${navItemsOneTwo} hidden md:block w-24`}>{item.tooltip}</span>
               </NavLink>
             ))}
 
@@ -137,7 +137,7 @@ const Navbar = () => {
                   </SignOutButton>
                 </SignedIn>
               {/* </div> */}
-              <span aria-hidden="true" className={`${navItemsOneTwo} w-24 text-center`}>Sign In / Out</span>
+              <span aria-hidden="true" className={`${navItemsOneTwo} hidden md:block w-24 text-center`}>Sign In / Out</span>
             </section>
 
             {/* HMC Menu */}
@@ -154,7 +154,7 @@ const Navbar = () => {
                 <div className="flex justify-between gap-2">
                   <BsMenuUp aria-hidden="true" className="text-xl sm:text-2xl font-bold"/>
                   <span className="hidden lg:block font-semibold transition-all duration-300">Menu</span>
-                  <span aria-hidden="true" className={`${navItemsOneTwo} w-24 text-center`}>Menu</span>
+                  <span aria-hidden="true" className={`${navItemsOneTwo} hidden md:block w-24 text-center`}>Menu</span>
                 </div>
                 {open && (
                   <ul 

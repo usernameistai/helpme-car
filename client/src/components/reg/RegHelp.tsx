@@ -21,7 +21,7 @@ const RegHelp: FC = () => {
         <section className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-2 md:gap-10">
           <article className={articleClass}>
             <div 
-              className={`bg-rules-people-16 ${divClass}`}
+              className={`bg-rules-people-16 bg-standard ${divClass}`}
                 role="img"
                   aria-label="Stay Safe in scrabble tiles above a lovely latte with a heart in the milk foam"
             />
@@ -29,7 +29,7 @@ const RegHelp: FC = () => {
           </article>
           <article className={articleClass}>
             <div 
-              className={`bg-rules-people-17 ${divClass}`}
+              className={`bg-rules-people-17 bg-standard ${divClass}`}
                 role="img"
                   aria-label="Lady taking a photo of flowers on a bridge in London"
             />
@@ -37,7 +37,7 @@ const RegHelp: FC = () => {
           </article>
           <article className={articleClass}>
             <div 
-              className={`bg-rules-people-18 ${divClass}`}
+              className={`bg-rules-people-18 bg-standard ${divClass}`}
                 role="img"
                   aria-label="Girl having stoplen mummy or daddy's phone and being sneaky"
             />
@@ -45,7 +45,7 @@ const RegHelp: FC = () => {
           </article>
           <article className={articleClass}>
             <div 
-              className={`bg-rules-people-19 ${divClass}`}
+              className={`bg-rules-people-19 bg-standard ${divClass}`}
                 role="img"
                   aria-label="Image of 'Don't Give Up' on the side of a tree in American suburbia"
             />
@@ -53,7 +53,7 @@ const RegHelp: FC = () => {
           </article>
           <article className={articleClass}>
             <div 
-              className={`bg-rules-people-20 ${divClass}`}
+              className={`bg-rules-people-20 bg-standard ${divClass}`}
                 role="img"
                   aria-label="Three Hawaiian lads being excellent to each other, in cool Hawaiian shirts"
             />
@@ -61,7 +61,7 @@ const RegHelp: FC = () => {
           </article>
           <article className={articleClass}>
             <div 
-              className={`bg-rules-people-21 ${divClass}`}
+              className={`bg-rules-people-21 bg-standard ${divClass}`}
                 role="img"
                   aria-label="A yellow, blue, red and green wheelie bin lined up from left to right"
             />

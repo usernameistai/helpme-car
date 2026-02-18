@@ -90,7 +90,7 @@ const itemVariants = {
             Home of HelpMe-Car
           </h1>
 
-          <section className="relative flex flex-col w-full min-h-fit bg-home-car md:bg-fixed mb-8 pb-20">
+          <section className="relative flex flex-col w-full min-h-fit bg-home-car bg-standard md:bg-fixed mb-8 pb-20">
             <div className="absolute inset-0 dark:bg-zinc-700/40" />
 
             <div className="relative pt-4 w-full">
@@ -269,7 +269,7 @@ const itemVariants = {
               </div>
             </article>
 
-            <article className={`${shimmerClass} z-10 flex w-[80vw] mx-auto sm:w-[95%] md:max-w-[45%] mb-8 bg-search-combine md:bg-fixed shadow-[inset_5px_5px_10px_rgba(255,255,255,0.2)] rounded-2xl border border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3)] transition-all duration-500 group overflow-hidden`}>
+            <article className={`${shimmerClass} z-10 flex w-[80vw] mx-auto sm:w-[95%] md:max-w-[45%] mb-8 bg-search-combine bg-standard md:bg-fixed shadow-[inset_5px_5px_10px_rgba(255,255,255,0.2)] rounded-2xl border border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3)] transition-all duration-500 group overflow-hidden`}>
               <div className="flex flex-col min-h-[500px] landscape:min-h-[850px] p-8 items-center justify-center my-auto bg-zinc-900/30 group-hover:bg-zinc-900/10 transition-colors duration-500">
                 <div className="font-space text-2xl md:text-3xl lg:text-4xl text-white font-extrabold text-center leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-500">
                   Maybe cars aren't for you... <br/>

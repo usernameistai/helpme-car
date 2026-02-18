@@ -27,7 +27,7 @@ const RegRules: FC = () => {
         </h1>
 
         <h2 className='font-space text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Rules (Please don't break them)</h2>
-        <section className='relative bg-rules-car rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
+        <section className='relative bg-rules-car bg-standard rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
           <div className='bg-black/50 text-center h-44 rounded-2xl shadow-lg flex items-start justify-center' >
             <span className='font-michroma text-lg sm:text-xl md:text-3xl font-bold text-cyan-400 pt-6'>
               No driver(s) may enter data
@@ -50,13 +50,13 @@ const RegRules: FC = () => {
         </section>
 
         <section className={`${sectionClass} mb-10`}>
-          <div className={`bg-rules-people-1 ${textClass}`}>
+          <div className={`bg-rules-people-1 bg-standard ${textClass}`}>
             <div className={overlayClass}></div>
             <span className="relative z-10 drop-shadow-md">
               People allowed to enter data include the following :
             </span>
           </div>
-          <div className={`bg-rules-people-2 ${textClass}`}>
+          <div className={`bg-rules-people-2 bg-standard ${textClass}`}>
             <div className={overlayClass}></div>
             <span className="relative z-10 drop-shadow-md">
               Passengers in cars & lorries, not on motorcycles
@@ -75,13 +75,13 @@ const RegRules: FC = () => {
         </section>
 
         <section className={`${sectionClass} mb-10`}>
-          <div className={`bg-rules-people-3 ${textClass}`}>
+          <div className={`bg-rules-people-3 bg-standard ${textClass}`}>
             <div className={overlayClass}></div>
             <span className="relative z-10 drop-shadow-md">
               Cyclists (not currently cycling)
             </span>
           </div>
-          <div className={`bg-rules-people-4 ${textClass}`}>
+          <div className={`bg-rules-people-4 bg-standard ${textClass}`}>
           <div className={overlayClass}></div>
             <span className="relative z-10 drop-shadow-md">
               Pedestrians (not crossing the road)
@@ -97,13 +97,13 @@ const RegRules: FC = () => {
         </section>
 
         <section className={`${sectionClass} mb-10`}>
-          <div className={`bg-rules-people-5 ${textClass}`}>
+          <div className={`bg-rules-people-5 bg-standard ${textClass}`}>
             <div className={overlayClass}></div>
             <span className="relative z-10 drop-shadow-md">
               People sitting on benches
             </span>
           </div>
-          <div className={`bg-rules-people-6 ${textClass}`}>
+          <div className={`bg-rules-people-6 bg-standard ${textClass}`}>
             <div className={overlayClass}></div>
             <span className="relative z-10 drop-shadow-md">
               People who have just recently stopped skateboarding or bmxing
@@ -121,13 +121,13 @@ const RegRules: FC = () => {
         </section>
 
         <section className={`${sectionClass} mb-10`}>
-          <div className={`bg-rules-people-7 ${textClass}`}>
+          <div className={`bg-rules-people-7 bg-standard ${textClass}`}>
             <div className={overlayClass}></div>
             <span className="relative z-10 drop-shadow-md">
               People with mobiles
             </span>
           </div>
-          <div className={`bg-rules-people-8 ${textClass}`}>
+          <div className={`bg-rules-people-8 bg-standard ${textClass}`}>
             <div className={overlayClass}></div>
             <span className="relative z-10 drop-shadow-md">
               People who take life seriously
@@ -145,13 +145,13 @@ const RegRules: FC = () => {
         </section>
 
         <section className={`${sectionClass} mb-10`}>
-          <div className={`bg-rules-people-9 ${textClass}`}>
+          <div className={`bg-rules-people-9 bg-standard ${textClass}`}>
             <div className={overlayClass}></div>
             <span className="relative z-10 drop-shadow-md">
               People who don't take life seriously
             </span>
           </div>
-          <div className={`bg-rules-people-10 ${textClass}`}>
+          <div className={`bg-rules-people-10 bg-standard ${textClass}`}>
             <div className={overlayClass}></div>
             <span className="relative z-10 drop-shadow-md">
               Anyone who wants to help
@@ -210,7 +210,7 @@ const RegRules: FC = () => {
         <section>
           <h2 className='font-space text-zinc-500 dark:text-zinc-200/90 text-2xl md:text-4xl font-bold mb-4'>Regulations</h2>
 
-          <section className='relative bg-rules-car rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
+          <section className='relative bg-rules-car bg-standard rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
             <div className='bg-black/50 text-center h-44 rounded-2xl shadow-lg flex items-start justify-center'>
               <span className='font-michroma text-lg md:text-3xl font-bold text-cyan-400 pt-6'>
                 Drive safely and follow the Highway Code
@@ -230,11 +230,11 @@ const RegRules: FC = () => {
                   {' '} will ensure no problems when driving, apart from other cars. Let's hope their equipment isn't faulty! Also, the signs won't be as compliacated as they are on the right...
                 </p>
               </div>
-              <div className={`bg-rules-people-11 ${imageClass}`} />
+              <div className={`bg-rules-people-11 bg-standard ${imageClass}`} />
             </article>
 
             <article className={sectionClass}>
-              <div className={`bg-rules-people-12 ${imageClass}`} />
+              <div className={`bg-rules-people-12 bg-standard ${imageClass}`} />
               <div className={`h-40 ${divClass}`}>
                 <p>Every year we must get our cars checked to be officially road worthy to pass our <span><Link to='https://www.gov.uk/check-mot-status' className='text-cyan-500'> MOT Test</Link></span>, wherein said faults will have been sorted (we hope) or our cars can become fossils, maybe not as extremely as on the left!</p>
               </div>
@@ -244,11 +244,11 @@ const RegRules: FC = () => {
               <div className={`h-60 ${divClass}`}>
                 <p>The point of this site is mainly human and car safety, hopefully with working lights and other elements we might stay safer, get in less accidents and incur less costs</p>
               </div>
-              <div className={`bg-rules-people-13 ${imageClass}`} />
+              <div className={`bg-rules-people-13 bg-standard ${imageClass}`} />
             </article>
 
             <article className={sectionClass}>
-              <div className={`bg-rules-people-14 ${imageClass}`} />
+              <div className={`bg-rules-people-14 bg-standard ${imageClass}`} />
               <div className={`h-60 ${divClass}`}>
                 <p>At some point in our lives we were happy little people, then cynicism and self-importance takes hold. We're taught to try to be better than each other. Be more little person (PS I'm not not including trans people, that's for another time)</p>
               </div>
@@ -258,7 +258,7 @@ const RegRules: FC = () => {
               <div className={`h-60 ${divClass}`}>
                 <p>Now is the time to start smiling, now is the time to help each other, now is the time to forget this and that and just be the helpful selfless human that is inside you, like this fellow. Or other people illustrated here</p>
               </div>
-              <div className={`bg-rules-people-15 ${imageClass}`} />
+              <div className={`bg-rules-people-15 bg-standard ${imageClass}`} />
             </article>
           </section>
         </section>
