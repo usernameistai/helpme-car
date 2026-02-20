@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { memo, type FC } from 'react';
 import RegItem from './RegItem';
 import Spinner from '../../layout/Spinner';
 import type { IReg } from '../../../types/reg';
@@ -9,7 +9,7 @@ interface Props {
   isError: boolean;
 }
 
-const RegList: FC<Props> = ({ regs, isLoading, isError }) => {
+const RegList: FC<Props> = memo(({ regs, isLoading, isError }) => {
   const animations = ['animate-spin', 'animate-bounce', 'animate-ping', 'animate-pulse'];
   const randomAnime = () => animations[Math.floor(Math.random() * animations.length)];
 
@@ -41,7 +41,7 @@ const RegList: FC<Props> = ({ regs, isLoading, isError }) => {
       </div>
     </>
   );
-};
+});
 
 export default RegList
 

@@ -1,3 +1,4 @@
+import { memo } from 'react';// Added
 import { Link } from 'react-router-dom';
 import type { IReg } from '../../../types/reg';
 import { timeAgo } from '../../../utils/formatTime';
@@ -31,4 +32,4 @@ const RegItem = ({ reg }: Props) => {
   );
 };
 
-export default RegItem;
+export default memo(RegItem);
