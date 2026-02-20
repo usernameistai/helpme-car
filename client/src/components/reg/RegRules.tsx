@@ -21,7 +21,7 @@ const RegRules: FC = () => {
   return (
     <>
       <ParticlesBg theme='bubble' colour='#94a3b8' />
-      <section className='relative z-20 mx-2 sm:mx-0 mb-4'>
+      <section className='relative z-20 mx-auto mb-4 w-full max-w-6xl px-4 sm:px-0'>
         <h1 className="font-space text-4xl md:text-5xl font-bold my-8 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
           HelpMe - Rules & Regulations
         </h1>
@@ -200,6 +200,14 @@ const RegRules: FC = () => {
             The Point of Being Helpful
           </Link>
           <Link 
+            to='/regsafety' 
+              className={`${buttonClass} ${shimmerClass}`}
+                aria-label="Go to Help Me Car Safety page"
+                  onClick={() => toast.success(`Remember, be excellent to each other and don't drop litter`)}
+          >
+            Car Help Safety
+          </Link>
+          <Link 
             to='/reg' 
               className={`${buttonClass} ${shimmerClass}`}
           >
@@ -284,6 +292,14 @@ const RegRules: FC = () => {
                   onClick={() => toast.success(`Being helpful is great!!`)}
             >
               The Point of Being Helpful
+            </Link>
+            <Link 
+              to='/regsafety' 
+                className={`${buttonClass} ${shimmerClass}`}
+                  aria-label="Go to Help Me Car Safety page"
+                    onClick={() => toast.success(`Remember, be excellent to each other and don't drop litter`)}
+            >
+              Car Help Safety
             </Link>
             <Link 
               to='/reg' 

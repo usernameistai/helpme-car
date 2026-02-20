@@ -17,7 +17,7 @@ interface RegState {
   error: string | null;
   fetchRegs: () => Promise<void>;
   fetchRegById: ( id: string ) => Promise<void>;
-  fetchRegByPlate: ( regplate: string ) => Promise<void>;
+  fetchRegByPlate: ( regplate: string ) => Promise<IReg | null>; // was void
   createReg: ( reg: Partial<IReg>, token?: string | null ) => Promise<IReg | undefined>; // new interface to account for auth token
   // createReg: ( reg: Partial<IReg> ) => Promise<IReg | undefined>;
   updateReg: ( regplate: string, updated: Partial<IReg>, token: string | null ) => Promise<IReg | undefined>; // new interface to account for auth token
@@ -69,7 +69,8 @@ export const useRegStore = create<RegState>((set) => ({
     } catch (err: any) {
       if (err.response?.status === 404) {
         // Instead of generic axios error, return a structured error
-        throw { notFound: true }; // Added
+        // throw { notFound: true }; // Added
+        return null;
       } else {
         set({ error: err.message || "Failed to fetch registration" });
         throw err; // Added

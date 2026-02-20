@@ -21,7 +21,7 @@ const ShowReg = () => {
   const divClass = "relative rounded-xl mb-4 shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
   const titleClass = "font-inter tracking-wider font-bold shadow-lg px-5 py-4 rounded-xl mb-4";
   const brightBorderClass = "absolute inset-0 rounded-xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
-  const buttonClass = "px-4 h-12 mt-4 text-zinc-700 text-small md:text-lg font-semibold text-center items-center justify-center rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
+  const buttonClass = "flex text-center items-center justify-center font-poppins text-zinc-700 px-4 py-3 mt-4 text-small md:text-lg font-semibold rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
   const handleDeleteClick = () => setModalOpen(true);
@@ -141,26 +141,30 @@ const ShowReg = () => {
           HelpMe-Advisories | Faults
         </h1>
 
-        <div className="m-5 mx-auto py-6 md:py-10 px-8 space-y-5 md:space-y-8 text-zinc-500/90 dark:text-zinc-200/90 font-semibold rounded-lg shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]">
-          <h1 className='text-3xl md:text-4xl font-bold mb-4 text-transparent pb-4 bg-clip-text bg-gradient-to-r from-blue-400 to-green-400 text-center'>
+        <div className="m-5 mx-auto py-6 md:py-10 px-8 space-y-5 text-zinc-500/90 dark:text-zinc-200/90 font-semibold rounded-lg shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]">
+          <h1 className='text-3xl md:text-4xl font-bold mb-2 text-transparent pb-4 bg-clip-text bg-gradient-to-r from-blue-400 to-green-400 text-center'>
             Message for owner of
             <span
-              className="mx-2 md:mx-3 px-2 md:px-3 py-0.5 md:py-1 text-xl md:text-2xl w-48 font-bold text-zinc-700 shadow-lg rounded bg-zinc-50 border-2 border-blue-800 tracking-wide hover:shadow-[inset_0px_1px_10px_rgba(0,0,0,0.2)] transition ease-in-out">
+              className="text-center justify-center mx-2 md:mx-3 px-2 md:px-3 py-0.5 md:py-1 text-xl md:text-2xl w-48 font-bold text-zinc-700 shadow-lg rounded bg-zinc-50 border-2 border-blue-800 tracking-wide hover:shadow-[inset_0px_1px_10px_rgba(0,0,0,0.2)] transition ease-in-out">
               {selectedReg.regplate}
             </span>
           </h1>
 
           <section>
-            <h1 className={`${h1Class}`}>The following faults may apply to your car: </h1>
-            {ADVISORY_MAP.map(({ key, msg }) => (
-              (selectedReg as any)?.[key] && (
-              <AdvisoryBox key={key} message={msg} />
-            )))}
-            <h1 className={`${h1Class}`}>People said the following about your driving: </h1>
-            {DRIVER_MAP.map(({ key, msg }) => (
-              (selectedReg.driver as any)?.[key] && (
-              <AdvisoryBox key={key} message={msg} />
-            )))}
+            <div className='mb-10'>
+              <h1 className={`${h1Class}`}>The following faults may apply to your car: </h1>
+              {ADVISORY_MAP.map(({ key, msg }) => (
+                (selectedReg as any)?.[key] && (
+                <AdvisoryBox key={key} message={msg} />
+              )))}
+            </div>
+            <div>
+              <h1 className={`${h1Class} mt-4`}>People said the following about your driving: </h1>
+              {DRIVER_MAP.map(({ key, msg }) => (
+                (selectedReg.driver as any)?.[key] && (
+                <AdvisoryBox key={key} message={msg} />
+              )))}
+            </div>
           </section>
 
         </div>

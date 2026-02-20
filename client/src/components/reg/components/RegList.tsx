@@ -17,15 +17,20 @@ const RegList: FC<Props> = ({ regs, isLoading, isError }) => {
   if (isError) return <p>Error Loading Reg / Number plates</p>;
   return (
     <>
-      <div className='z-50 flex items-center justify-center'>
+      <div className='z-50 flex flex-wrap items-center justify-center justify-items-center gap-1 sm:gap-4 w-full max-w-6xl mx-auto'>
         {!regs || regs.length === 0 
           ? (
             <p className='bg-slate-200 text-slate-700 font-semibold rounded shadow-lg px-4 py-2 text-center w-[100rem]'>No Registrations found in database 🔬</p>
           ) : (
-            regs.map(( reg ) => (
+            regs.map(( reg, index ) => (
               <div
                 key={reg._id}
-                  className={`shrink-0 transition z-20 my-4 sm:mb-3 lg:mb-8 animate-none hover:${randomAnime()}`}
+                  className={`shrink-0 transition z-20 
+                  w-[31%] md:w-[23%] lg:w-[18%]
+                  sm:mb-3 lg:mb-8 
+                  animate-none hover:${randomAnime()}
+                  ${index >= 3 ? 'hidden' : 'md:block'} ${index === 3 ? 'md:block' : ''} ${index >= 4 ? 'lg:block' : ''}
+                  `}
                     style={{ transform: `rotate(${Math.random() * 8 - 4}deg) translateY(${Math.random() * 16 - 8}px)` }}
               >
                 <RegItem reg={reg} />

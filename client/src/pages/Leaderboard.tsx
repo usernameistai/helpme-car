@@ -1,4 +1,4 @@
-import React, { type FC } from 'react'
+import { type FC } from 'react'
 import { getLeaderboard } from '../api/profile';  
 import Spinner from '../components/layout/Spinner';
 import GlassCard from '../components/reg/components/GlassCard';
@@ -13,18 +13,16 @@ interface LeaderboardProps {
   carsHelped: number;
   starsGiven: number;
 };
-
 interface BoardProps {
   leaderboard: any[];
   className?: string;
 };
-
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.05,
     },
   },
 };
@@ -59,7 +57,7 @@ export const Board: FC<BoardProps> = ({ leaderboard, className = "" }) => {
 
               return (
                 <motion.li 
-                  key={entry.clerkId} 
+                  key={`${index}`} 
                     variants={rowVariants}
                       whileHover={{ scale: 1.02, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
                         className={`
@@ -98,7 +96,7 @@ export const Board: FC<BoardProps> = ({ leaderboard, className = "" }) => {
   )
 }
 
-const Leaderboard: React.FC = () => {
+const Leaderboard: FC = () => {
   const { data: leaderboard = [], isLoading, isError } = useQuery({
     queryKey: ['leaderboard'],
     queryFn: getLeaderboard, // existing API call function

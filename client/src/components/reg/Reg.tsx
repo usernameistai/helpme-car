@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState, type FC, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useRegStore } from "../../store/useRegStore";
 import { useQueryClient } from "@tanstack/react-query";
 import { getRegByPlate } from "../../api/reg";
 import { useRegs } from "../../hooks/useRegs";
@@ -14,13 +13,12 @@ import toast from "react-hot-toast";
 import { motion } from "motion/react";
 
 const Reg: FC = () => {
-  const { fetchRegs } = useRegStore();
-  // const regs = useRegStore((state) => state.regs); // did just have destructured above
   const { data: regs = [], isLoading, isError } = useRegs();
   const { data: leaderboard = [] } = useLeaderboard();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [regplate, setRegplate] = useState("");
+  const [showBoard, setShowBoard] = useState(false);
 
   const liClass = "relative z-30 lg:min-h-[275px] group sm:my-8 py-2 sm:p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl w-1/3 shadow-lg will-change-transform hover:bg-white/40 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
   const h3Class = "font-space text-2xl md:text-xl lg:text-3xl font-bold mt-2 lg:mt-4 mb-4 text-zinc-600 dark:text-zinc-50 text-center";
@@ -31,27 +29,28 @@ const Reg: FC = () => {
   const linkClass = "font-mono text-base md:text-lg lg:text-xl font-semibold my-4 pl-1 text-gray-500";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
   
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: window.innerWidth > 640 ? 0.2 : 0,
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: window.innerWidth > 640 ? 0.2 : 0,
+      },
     },
-  },
-};
-const itemVariants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.4, ease: "easeOut" } // Custom cubic-bezier for "slick" motion
-  },
-} as const;
-  
-  useEffect(() => {
-    fetchRegs();
-  }, [fetchRegs]);
+  };
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" } // Custom cubic-bezier for "slick" motion
+    },
+  } as const;
+
+  useEffect(() => { // added by BG
+    const timer = setTimeout(() => setShowBoard(true), 400);
+    return () => clearTimeout(timer);
+  }, []);
 
   const displayedRegs = useMemo(() => {
     if (!regs || regs.length === 0) return [];
@@ -68,7 +67,6 @@ const itemVariants = {
 
   const handleRegSearch = (e: FormEvent) => {
     e.preventDefault();
-
     if(!regplate) return;
 
     // Prefetch for job hunting
@@ -77,14 +75,13 @@ const itemVariants = {
       queryFn: () => getRegByPlate(regplate),
       staleTime: 1000 * 60 * 5,
     });
-    // 2. Navigate
     navigate(`/reg/${regplate}`);
-  }
+  };
 
   return (
     <>
       <ParticlesBg theme="default" colour="cyan-400"/>
-      <section className="space-y-10 sm:mx-0 w-full"> {/* added w-full */}
+      <section className="space-y-10 sm:mx-0 w-full">
         <section className="relative z-20 max-w-6xl mx-auto">
           <h1 className="relative mt-4 z-50 font-space text-4xl md:text-5xl font-bold ml-4 sm:ml-10 mb-8 pb-4 w-full text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
             Home of HelpMe-Car
@@ -108,9 +105,10 @@ const itemVariants = {
                       animate="visible"
                         className="flex flex-col relative z-50 sm:flex-row mb-10 justify-between items-center transform gap-6 sm:-translate-x-10 lg:-translate-x-14 w-full md:w-[110vw] max-w-[110%] mx-auto overflow-x-hidden"
                 >
-                  <motion.li 
-                    variants={itemVariants}
-                      className={`${liClass} w-full sm:w-1/3`}
+                  <motion.li
+                    key="helpme-car"
+                      variants={itemVariants}
+                        className={`${liClass} w-full sm:w-1/3`}
                   >
                     <h3 className={`${h3Class}`}>Help Someone's Car</h3>
                     <p className={`${titleClass}`}>Add a car's number plate for any advisories you may have seen along your travels</p>
@@ -126,8 +124,9 @@ const itemVariants = {
                     <div className={`${brightBorderClass}`}></div>
                   </motion.li>
                   <motion.li 
-                    variants={itemVariants}
-                      className={`${liClass} w-full sm:w-1/3`}
+                    key="helpme-car-search"
+                      variants={itemVariants}
+                        className={`${liClass} w-full sm:w-1/3`}
                   >
                     <h3 className={`${h3Class}`}>Search for your Car</h3>
                     <p className={`${titleClass}`}>Please enter a number plate to see if anyone has entered information about YOUR car!!</p>
@@ -143,8 +142,9 @@ const itemVariants = {
                     <div className={`${brightBorderClass}`}></div>
                   </motion.li>
                   <motion.li 
-                    variants={itemVariants}
-                      className={`${liClass} w-full sm:w-1/3`}
+                    key="helpme-car-info"
+                      variants={itemVariants}
+                        className={`${liClass} w-full sm:w-1/3`}
                   >
                     <h3 className={`${h3Class}`}>HelpMe Information</h3>
                     <p className={`${titleClass}`}>Important Information, Rules & Regulations, Guidance about HelpMe-Car and more...</p>
@@ -187,16 +187,19 @@ const itemVariants = {
             />
           </div>
           <div className="">
-            <Board 
-              leaderboard={leaderboard.slice(0, 5)}
-                className="rounded-2xl w-full sm:w-full mx-auto dark:bg-zinc-900/50"
-            />
+            {showBoard && (
+              <Board 
+                leaderboard={leaderboard.slice(0, 5)}
+                  className="rounded-2xl w-full sm:w-full mx-auto dark:bg-zinc-900/50"
+              />
+            )}
           </div>
         </section>
 
         <section className="relative max-w-6xl mx-auto bg-gradient-to-br z-20 from-cyan-300 to-white sm:mt-10">
           <h2 className="font-space text-xl md:text-3xl lg:text-5xl font-bold text-zinc-700 p-8 mx-2 md:mx-5">A little bit about HelpMe-Car site</h2>
           <section className="relative flex flex-col md:flex-row justify-between ml-1 md:ml-3 lg:ml-10 md:my-5">            
+            
             <article className="w-[80vw] sm:w-[95%] md:max-w-[50%] mx-auto mb-8">
               <Link 
                 to='/regrules'
@@ -273,7 +276,14 @@ const itemVariants = {
               <div className="flex flex-col min-h-[500px] landscape:min-h-[850px] p-8 items-center justify-center my-auto bg-zinc-900/30 group-hover:bg-zinc-900/10 transition-colors duration-500">
                 <div className="font-space text-2xl md:text-3xl lg:text-4xl text-white font-extrabold text-center leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-500">
                   Maybe cars aren't for you... <br/>
-                  <span className="text-yellow-400">Maybe you would prefer a Combine Harvester?</span>
+                  <a 
+                    href="https://www.deere.co.uk/en-gb/products-and-solutions/harvesting/combines"
+                      target="_blank"
+                        rel="noopener noreferrer"
+                          className="text-yellow-400"
+                  >
+                    Maybe you would prefer a Combine Harvester?
+                  </a>
                 </div>
               </div>
             </article>
@@ -285,3 +295,11 @@ const itemVariants = {
 }
 
 export default Reg;
+
+// import { useRegStore } from "../../store/useRegStore";
+
+// const { fetchRegs } = useRegStore();
+
+// useEffect(() => {
+//   fetchRegs();
+// }, [fetchRegs]);

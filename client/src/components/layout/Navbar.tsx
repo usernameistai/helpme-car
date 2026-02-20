@@ -108,8 +108,8 @@ const Navbar = () => {
             ].map((item) => (
               <NavLink 
                 key={item.to}
-                to={item.to} 
-                className={({ isActive }) => `${navItemBase} ${isActive ? activeClass : ""}`}
+                  to={item.to} 
+                    className={({ isActive }) => `${navItemBase} ${isActive ? activeClass : ""}`}
               >
                 <span className="text-xl">{item.icon}</span>
                 <span className="hidden lg:block">{item.label}</span>
@@ -118,25 +118,22 @@ const Navbar = () => {
             ))}
 
             <section aria-label="Sign in or out" className={`${navItemBase} group`}>
-              
-              {/* <div className="hidden lg:block font-bold"> */}
-                <SignedOut>
-                  <SignInButton mode="modal" forceRedirectUrl="/dashboard">
-                    <button className="flex items-center gap-x-2">
-                      <PiSignInDuotone aria-hidden="true" className="my-auto" size={22}/>
-                      <span className="hidden lg:block font-bold">Sign In</span>
-                    </button>
-                  </SignInButton>
-                </SignedOut>
-                <SignedIn>
-                  <SignOutButton redirectUrl="/">
-                    <button className="flex items-center gap-x-2">
-                      <PiSignInDuotone aria-hidden="true" className="my-auto" size={22} />
-                      <span className="hidden lg:block font-bold">Sign Out</span>
-                    </button>
-                  </SignOutButton>
-                </SignedIn>
-              {/* </div> */}
+              <SignedOut>
+                <SignInButton mode="modal" forceRedirectUrl="/dashboard">
+                  <button className="flex items-center gap-x-2">
+                    <PiSignInDuotone aria-hidden="true" className="my-auto" size={22}/>
+                    <span className="hidden lg:block font-bold">Sign In</span>
+                  </button>
+                </SignInButton>
+              </SignedOut>
+              <SignedIn>
+                <SignOutButton redirectUrl="/">
+                  <button className="flex items-center gap-x-2">
+                    <PiSignInDuotone aria-hidden="true" className="my-auto" size={22} />
+                    <span className="hidden lg:block font-bold">Sign Out</span>
+                  </button>
+                </SignOutButton>
+              </SignedIn>
               <span aria-hidden="true" className={`${navItemsOneTwo} hidden md:block w-24 text-center`}>Sign In / Out</span>
             </section>
 
@@ -163,7 +160,7 @@ const Navbar = () => {
                         onKeyDown={handleKeyDown}
                           aria-label="HelpMe-Car Menu"
                             aria-orientation="vertical"
-                              className="absolute right-4 sm:right-[-3.5rem] lg:right-[-1.5rem] mt-2 top-12 landscape:top-0 mx-2 w-48 rounded-md border bg-white shadow-lg z-50 text-zinc-500"
+                              className="absolute right-[-1.5rem] md:right-[-5rem] lg:right-[-3.8rem] mt-2 md:mt-10 lg:mt-12 top-7 landscape:top-0 mx-2 w-48 rounded-md border bg-white shadow-lg z-50 text-zinc-500"
                   >
                     {
                       [
@@ -177,7 +174,7 @@ const Navbar = () => {
                         { to: "/regsafety", label: "HMC Safety", icon: <FaHelmetSafety className="my-auto text-cyan-500"/>},
                         { to: "/signin", label: "HMC Sign In", icon: <PiSignInDuotone className="my-auto text-cyan-500" size={20}/>}
                       ].map((menu) => (
-                        <li role="none">
+                        <li key={menu.to} role="none">
                           <Link to={menu.to} role="menuitem" tabIndex={0} className={menuClass}>
                             <span>{menu.label}</span>
                             <span className="flex gap1 ml-1">{menu.icon}{menu.icon2}</span>

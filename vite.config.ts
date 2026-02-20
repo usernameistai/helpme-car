@@ -3,7 +3,17 @@ import react from '@vitejs/plugin-react-swc';
 
 export default defineConfig({
   plugins: [react()],
-  // server: {
+  optimizeDeps: {
+    exclude: ['@clerk/clerk-sdk-node'],
+  },
+  build: {
+    rollupOptions: {
+      external: ['@clerk/clerk-sdk-node'],
+    }
+  }
+});
+
+// server: {
   //   proxy: {
   //     '/api/reg': {
   //       target: 'http://localhost:5000/api/reg',
@@ -15,4 +25,3 @@ export default defineConfig({
   //     },
   //   }
   // }
-});

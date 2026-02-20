@@ -11,7 +11,7 @@ import ParticlesBg from '../layout/ParticlesBg';
 
 const RegForm: React.FC = () => {
   const navigate = useNavigate();
-  const { createReg, loading } = useRegStore();
+  const { createReg, fetchRegByPlate, loading } = useRegStore();
   const { getToken } = useAuth();
   const { setProfile } = useProfileStore();
   const [submitted, setSubmitted] = useState(false);
@@ -43,8 +43,8 @@ const RegForm: React.FC = () => {
   const shadowClass = "relative p-5 rounded-xl leading-8 shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] hover:shadow-[0_20px_60px_rgba(34,211,238,0.5)] transition-shadow duration-300 bg-white/5 backdrop-blur-sm";
   const brightBorderClass = "absolute inset-0 rounded-xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
   const paneTitleClass = "font-michroma tracking-wider text-xl font-semibold text-zinc-500/90 dark:text-zinc-200/90 mb-2";
-  const labelClass = "font-inter tracking-wider m-1 text-zinc-500/90 dark:text-zinc-200/90";
-  const navClass = "font-poppins font-semibold px-4 py-3 mt-4 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition duration-200 ease-in-out";
+  const labelClass = "font-inter tracking-wider m-1 text-zinc-700/90 dark:text-zinc-200/90";
+  const navClass = "flex items-center justify-center font-poppins bg-sky-100 text-zinc-700/90 font-semibold px-4 py-3 mt-4 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition duration-200 ease-in-out";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
   
   const onChange = ( e: React.ChangeEvent<HTMLInputElement> ) => {
@@ -69,10 +69,8 @@ const RegForm: React.FC = () => {
 
   const onSubmit = async ( e: React.FormEvent ) => {
     e.preventDefault();
-
     // Front-End Validation
-    const plate = formData.regplate?.trim().toUpperCase() || "";
-    
+    const plate = formData.regplate?.trim().toUpperCase().replace(/[\s-]/g, "") || "";
     const regRegex = /^[A-Z0-9]{1,7}$/;
     if (!regRegex.test(plate)) {
       toast.error("Number plate must be 1-7 alphanumeric characters");
@@ -80,9 +78,17 @@ const RegForm: React.FC = () => {
     }
     
     try {
+      // See if it exists
+      const checkReg = await fetchRegByPlate(plate);
+      // If exists redirect to it's page
+      if (checkReg) {
+        navigate(`/reg/${plate}/edit`);
+        toast(`This ${plate} already exists on our database, redirecting...`);
+        return;
+      }
       // Fetch token BEFORE API call
       const token = await getToken(); // Added to avoid bug
-      console.log("Frontend Token Check:", token ? "Token acquired" : "Token NULL");
+      // console.log("Frontend Token Check:", token ? "Token acquired" : "Token NULL");
       // Call store to create the registration
       const newReg = await createReg(formData, token);
 
@@ -425,15 +431,15 @@ const RegForm: React.FC = () => {
             <nav className='flex justify-between'>
               <button 
                 type="submit"
-                  disabled={loading}
-                    className={`${loading ? 'bg-gray-400' : 'bg-green-500'} text-white ${navClass} ${shimmerClass}`}
+                  disabled={loading || !formData.regplate} // added || !formData.regplate by gemini 19/2/2026 about 1630
+                    className={`dark:bg-sky-500 ${navClass} ${shimmerClass}`}
                       aria-label='Add a car entry which has faults button, after filling in the checkbox form'
               >
                 {loading ? 'Adding...' : 'Add Registration'}
               </button>
               <Link 
                 to="/reg" 
-                  className={`text-slate-700 bg-yellow-300 ${navClass} ${shimmerClass}`}
+                  className={`dark:bg-yellow-300 ${navClass} ${shimmerClass}`}
                     aria-label='Go back to the home page button'
               >
                 Home

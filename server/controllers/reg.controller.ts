@@ -213,7 +213,7 @@ export const updateReg = async ( // changed id to regplate
       if (!updatedReg) {
         return res.status(404).json({ message: `No registration found with plate ${regplate}` });
       }
-
+      
       // REWARD LOGIC: 2-Star Max Check
       if (userId) {
         // Check if this specific user has ever helped this car before

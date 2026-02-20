@@ -5,14 +5,14 @@ import ParticlesBg from '../layout/ParticlesBg';
 
 const RegSafety: FC = () => {
   const quoteClass = "font-space bg-gray-200 dark:bg-gray-700 dark:text-zinc-200/90 mb-2 px-4 py-4 rounded-lg shadow-lg dark:shadow-sky-100/50 backdrop-blur-md border border-white/20";
-  const pClass = "font-inter mb-5 px-6 py-4 text-sm md:text-base text-zinc-700/80 dark:text-zinc-200/90 leading-6";
+  const pClass = "font-inter mt-5 mb-8 px-6 py-4 text-sm md:text-base text-zinc-700/80 dark:text-zinc-200/90 leading-6";
   const buttonClass = "text-zinc-700 font-semibold dark:bg-yellow-300 bg-sky-100 rounded px-4 py-3 h-12 mt-4 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
   
   return (
     <>
       <ParticlesBg theme='nasa' colour='blue-500'/>
-      <section className='relative z-20 mx-2 mb-4'>
+      <section className='relative z-20 mx-auto mb-4 w-full max-w-6xl px-4 sm:px-0'>
         <h1 className="font-space text-4xl sm:text-5xl font-bold my-8 pb-1 w-96 text-transparent 
           bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300 leading-[4rem]"
         >
@@ -44,7 +44,7 @@ const RegSafety: FC = () => {
             </div>
             <figure>
               <div 
-                className='bg-safety-car-1 bg-standard md:max-w-[100vw] lg:w-[50%] mx-auto h-56 md:h-[27rem] my-[2rem] py-4 rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
+                className='bg-safety-car-1 bg-standard md:max-w-[100vw] lg:w-[60%] mx-auto h-56 md:h-[27rem] my-[2rem] py-4 rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
                   role='img'
                     aria-label='Chart showing contributory accident factors, Great Britain 2014 - 2018'
               />
@@ -82,12 +82,11 @@ const RegSafety: FC = () => {
               <p className={pClass}>Personally I have nearly fallen victim to this when people suddenly brake and only have one out of three potential brake lights working (that's assuming the car is clean the lights are clear when applied), only through paying 100% attention have avoided several accidents</p>
             </article>
 
-            <article>
+            <article className='grid grid-cols-1'>
               <article>
                 <blockquote className={quoteClass}>"There is a substantial trend towards the overall decrease in accidents from 115673 accidents in 2014 to 84968 accidents in 2018. What could be the causes of this?"</blockquote>
-                <p className={pClass}>The poor action of the driver and people getting into accidnts could be poor equipmwent on top of poor driving. Many people now brake and then indicate, which gives no prior warning for cars around</p>
               </article>
-              <ol className='ml-3 mb-6 text-sm md:text-base leading-8 md:leading-10 text-zinc-700/80 dark:text-zinc-200/90'>
+              <ol className='mx-auto my-8 text-sm md:text-base leading-8 md:leading-10 text-zinc-700/80 dark:text-zinc-200/90'>
                 <li>1. The inclusion of more 20mph zones around cities</li>
                 <li>2. More automatic indication of faulty car parts in newer cars</li>
                 <li>3. People are driving better and more considerately</li>
@@ -98,6 +97,7 @@ const RegSafety: FC = () => {
                 <p className='px-2 sm:text-center text-sm md:text-base'>e.g. People braking before indicating (not following the MSM principle)</p>
                 </blockquote>
               </article>
+                <p className={pClass}>The reduced quality action of the driver and people getting into accidents could be down to reduced quality equipment on top of driving without attention. Many people now brake and then indicate, which gives no prior warning for cars around them or time to successfully react</p>
             </article>
           </section>
 
@@ -128,7 +128,7 @@ const RegSafety: FC = () => {
             </div>
             <figure className='dark:text-zinc-200/90'>
               <div 
-                className='bg-safety-car-2 bg-standard h-[20rem] md:h-[40rem] mt-[2rem] py-[2rem] lg:w-[50%] mx-auto rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
+                className='bg-safety-car-2 bg-standard h-[20rem] md:h-[40rem] lg:h-[50rem] mt-[2rem] py-[2rem] lg:w-[60%] mx-auto rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
                   role='img'
                     aria-label='Chart showing accidents by gender, Great Britain 2018'
               />
@@ -190,7 +190,7 @@ const RegSafety: FC = () => {
             </div>
             <figure>
               <div 
-                className='bg-safety-car-3 bg-standard h-[18rem] md:h-[35rem] mt-[2rem] p-[2rem] md:w-[77vw] lg:w-[50%] mx-auto rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
+                className='bg-safety-car-3 bg-standard h-[18rem] md:h-[35rem] mt-[2rem] p-[2rem] md:w-[77vw] lg:w-[60%] mx-auto rounded shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]'
                   role='img'
                     aria-label='Map of licensed vehicle distribution, United Kingdom 2018'
               />
@@ -216,13 +216,19 @@ const RegSafety: FC = () => {
             </article>
           </section>
 
-          <section className="relative mb-8 md:mb-32 lg:mb-10 z-50 top-0 sm:top-24">
-            <nav className='font-poppins flex flex-col md:flex-row mb-4 md:mb-20 px-4 w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'>
+          <section className="relative mb-8 md:mb-24 z-50">
+            <nav className='font-poppins flex flex-col md:flex-row px-4 w-full max-w-4xl mx-auto text-sm md:text-base justify-between text-center'>
               <Link 
                 to='/reg' 
                   className={`${buttonClass} ${shimmerClass}`}
               >
                 HelpMe-Car Home
+              </Link>
+              <Link 
+                to='/regrule' 
+                  className={`${buttonClass} ${shimmerClass}`}
+              >
+                HelpMe-Car Rules
               </Link>
               <Link 
                 to='/reghelp'

@@ -3,8 +3,12 @@ import { Toaster } from "react-hot-toast";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
+import { useLeaderboard } from "../../hooks/useLeaderboard";
+import { useRegs } from "../../hooks/useRegs";
 
 const Landing = () => {
+  useLeaderboard();
+  useRegs();
 
   return (
     <>

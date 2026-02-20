@@ -13,7 +13,7 @@ const RegHelp: FC = () => {
   return (
     <>
       <ParticlesBg theme="default" colour="cyan-400" />
-      <section className="relative z-20 mx-2 sm:mx-0 mb-4">
+      <section className="relative z-20 mx-auto mb-4 w-full max-w-6xl px-4 sm:px-0">
         <h1 className="font-space text-5xl font-bold my-8 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
           Why help a fellow human?
         </h1>
@@ -69,7 +69,7 @@ const RegHelp: FC = () => {
           </article>
         </section>
         
-        <section className="bg-zinc-900/50 text-white text-center mx-auto py-4 sm:-mt-24 md:translate-y-24 lg:translate-y-0 lg:mt-0 mb-12">
+        <section className="bg-zinc-900/50 text-white text-center mx-auto py-4 mb-12">
           <h3 className="font-space text-base md:text-xl font-bold">Helpfulness Photo Credits from UnSplash</h3>
           <ul className="font-inter text-xs md:text-base">
             <br />
@@ -82,8 +82,8 @@ const RegHelp: FC = () => {
           </ul>
         </section>
 
-        <section className="relative mb-8 md:mb-32 lg:mb-10 z-50 top-0 sm:top-24">
-          <nav className='font-poppins flex flex-col md:flex-row mb-4 md:mb-20 px-4 w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'>
+        <section className="relative mb-4 md:mb-32 lg:mb-28 z-50">
+          <nav className='font-poppins flex flex-col sm:flex-row md:px-4 w-full max-w-4xl mx-auto text-sm md:text-base justify-between text-center'>
             <Link 
               to='/regsafety' 
                 className={`${buttonClass} ${shimmerClass}`}
@@ -91,6 +91,12 @@ const RegHelp: FC = () => {
                     onClick={() => toast.success(`Remember, be excellent to each other and don't drop litter`)}
             >
               Car Help Safety
+            </Link>
+            <Link 
+              to='/regrule' 
+                className={`${buttonClass} ${shimmerClass}`}
+            >
+              HelpMe-Car Rules
             </Link>
             <Link 
               to='/reg' 

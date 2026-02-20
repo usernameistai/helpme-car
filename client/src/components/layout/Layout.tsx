@@ -10,7 +10,7 @@ const Layout: FC = () => {
   return (
     <>
       <div className="flex flex-col min-h-screen bg-slate-200/30 dark:bg-gray-800 transition-colors duration-300">
-        <Toaster position="top-center" toastOptions={{ duration: 2500, }} />
+        <Toaster position="top-center" toastOptions={{ duration: 1500, }} />
         
         <Navbar />
         <Sidebar />

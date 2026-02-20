@@ -9,7 +9,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { getRegByPlate } from '../../api/reg';
 import { useSearchStore } from '../../store/useSearchStore';
 
-const buttonClass = "text-zinc-700 font-semibold items-center text-center text-base md:text-lg rounded px-4 py-2 h-12 mt-2 my-auto shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
+const buttonClass = "flex items-center text-center text-zinc-700 font-semibold text-base md:text-lg rounded px-4 py-2 h-12 my-auto shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
 const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
 interface SearchProps {
@@ -20,8 +20,20 @@ interface SearchProps {
 }
 
 export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, className = "" }) => {
-  const { history, clearHistory } = useSearchStore();
+  const { history, clearHistory, addSearch } = useSearchStore();
   const recentHistory = history.slice(0, 7);
+
+  const handleInternalSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const normalisedPlate = regplate.trim().toUpperCase().replace(/[\s-]/g, "");
+
+    if (normalisedPlate) {
+      addSearch(normalisedPlate);
+      onSubmit(e); // Send to main SearchReg component
+    } else {
+      toast.error("Please enter a valid reg");
+    }
+  }
 
   return (
     <>
@@ -30,7 +42,7 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
           Search for the reg number in question
         </h2>
         <form 
-          onSubmit={onSubmit} 
+          onSubmit={handleInternalSubmit} 
             className='mx-auto bg-slate-100/40 dark:bg-transparent p-6 rounded-b-2xl'
               aria-label="Search bar form, image in background is toy car being looked at under microscope"
         >
@@ -57,9 +69,10 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
                         key={plate}
                         type="button" // Important: Prevents form submission
                         onClick={() => setRegplate(plate)} // Fills the box for the user
-                        className={`items-center px-3 py-1 my-3 max-h-[42px] bg-cyan-500/10 text-cyan-400 text-xs rounded-lg border border-cyan-400/30 hover:bg-cyan-500/20 transition-all font-poppins font-semibold shadow-sm
-                          ${index >= 3 ? 'hidden md:block' : ''}  /* Hide items 4-7 on mobile */
-                          ${index >= 5 ? 'hidden lg:block' : ''}  /* Hide items 6-7 on medium */
+                        className={`items-center px-3 py-1 my-3 max-h-[42px] bg-cyan-500/10 text-cyan-600/80 dark:text-cyan-400 text-xs rounded-lg border border-cyan-400/30 hover:bg-cyan-500/20 transition-all font-poppins font-semibold shadow-sm
+                          ${index < 3 ? 'flex' : 'hidden'}  /* Hide items 4-7 on mobile */
+                          ${index >= 3 && index < 5 ? 'md:flex' : ''} /* show 4 & 5 on mediu screens */
+                          ${index >= 5 ? 'lg:flex' : ''}  /* Hide items 6-7 on medium */    
                         `}
                       >
                         {plate}

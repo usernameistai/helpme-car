@@ -46,10 +46,10 @@ const EditReg: FC = () => {
   });
 
   const shadowClass = "relative p-5 rounded-xl leading-8 shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] hover:shadow-[0_20px_60px_rgba(34,211,238,0.5)] transition-shadow duration-300 bg-white/5 backdrop-blur-sm";
-  const brightBorderClass = "absolute inset-0 rounded-xl border border-cyan-400/40 pofont--events-none animate-pulse-glow animate-pulse";
+  const brightBorderClass = "absolute inset-0 rounded-xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
   const paneTitleClass = "font-michroma text-xl font-semibold text-zinc-500/90 dark:text-zinc-200/90 mb-1";
   const labelClass = "font-inter tracking-wider ml-1 text-zinc-500/90 dark:text-zinc-200/90";
-  const navClass = "font-poppins font-semibold text-center items-center justify-center rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out mt-4 px-4 py-3 h-12";
+  const navClass = "flex items-center justify-center text-center font-poppins bg-sky-100 text-zinc-700/90 font-semibold px-4 py-3 mt-4 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
   // Fetch reg once
@@ -426,13 +426,13 @@ const EditReg: FC = () => {
             <nav className='flex justify-between'>
               <button
                 type='submit'
-                  className={`bg-blue-500 text-white ${navClass} ${shimmerClass}`}
+                  className={`dark:bg-sky-500 ${navClass} ${shimmerClass}`}
               >
                 Save Changes
               </button>
               <Link 
                 to="/reg" 
-                  className={` bg-yellow-300 text-slate-700 ${navClass} ${shimmerClass}`}
+                  className={`dark:bg-yellow-300 ${navClass} ${shimmerClass}`}
               >
                 Home
               </Link>
