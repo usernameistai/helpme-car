@@ -432,14 +432,14 @@ const RegForm: React.FC = () => {
               <button 
                 type="submit"
                   disabled={loading || !formData.regplate} // added || !formData.regplate by gemini 19/2/2026 about 1630
-                    className={`dark:bg-sky-500 ${navClass} ${shimmerClass}`}
+                    className={`dark:bg-sky-500/20 dark:text-sky-400 border dark:border-sky-500/50 ${navClass} ${shimmerClass}`}
                       aria-label='Add a car entry which has faults button, after filling in the checkbox form'
               >
                 {loading ? 'Adding...' : 'Add Registration'}
               </button>
               <Link 
                 to="/reg" 
-                  className={`dark:bg-yellow-300 ${navClass} ${shimmerClass}`}
+                  className={`dark:bg-yellow-500/20 dark:text-yellow-400 border dark:border-yellow-500/50 ${navClass} ${shimmerClass}`}
                     aria-label='Go back to the home page button'
               >
                 Home

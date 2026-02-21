@@ -426,13 +426,13 @@ const EditReg: FC = () => {
             <nav className='flex justify-between'>
               <button
                 type='submit'
-                  className={`dark:bg-sky-500 ${navClass} ${shimmerClass}`}
+                  className={`dark:bg-sky-500/20 dark:text-sky-400 border dark:border-sky-500/50  ${navClass} ${shimmerClass}`}
               >
                 Save Changes
               </button>
               <Link 
                 to="/reg" 
-                  className={`dark:bg-yellow-300 ${navClass} ${shimmerClass}`}
+                  className={`dark:bg-yellow-500/20 dark:text-yellow-400 border dark:border-yellow-500/50 ${navClass} ${shimmerClass}`}
               >
                 Home
               </Link>

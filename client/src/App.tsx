@@ -44,7 +44,7 @@ const App: FC = () => {
         <Route path="/signin" element={ <SignInPage /> } />
         <Route path="/" element={ <Layout /> }>
           <Route path="/reg" element={ <Reg /> } />
-          <Route path="/reglist" element={ <RegList regs={regs}/> } />
+          <Route path="/reglist" element={ <RegList regs={regs} isLoading isError /> } />
           <Route path="/regrules" element={ <RegRules /> } />
           <Route path="/reghelp" element={ <RegHelp /> } />
           <Route path="/regsafety" element={ <RegSafety /> } />
