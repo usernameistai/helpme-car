@@ -16,32 +16,64 @@ const Landing = () => {
       <Navbar />
       <Sidebar />
 
-      <main className="relative z-20 bg-landing-car-1 bg-standard h-[100vh] ">
+      <main className="relative z-20 bg-landing-car-1 bg-standard h-[100vh] my-[-2.5rem]">
         <div className="absolute inset-0 bg-black/70 z-0">
           <div 
-            className="flex flex-col text-center justify-center translate-x-[15%] md:translate-y-[15%] space-y-10 max-w-[75%]"
-              aria-label="This is the main title of the landing page HelpMe - Car, also a link to home page. Welcome to the site!!"
+            className="flex flex-col text-center justify-center items-center mx-auto translate-y-[7%] space-y-8 max-w-[75%]"
+              aria-label="This is the main title of the landing page HelpMe - Car, also a link to the proper home page. Welcome to the site!!"
           >
             <Link to='/reg'>
-              <h1 className='font-poppins lan min-w-96 text-5xl md:text-8xl font-bold pb-2 md:pb-4 -translate-x-[3rem] sm:translate-x-0'>
+              <h1 className='font-poppins lan min-w-96 text-5xl md:text-8xl font-bold pb-2 md:pb-4 sm:translate-x-0'>
                 HelpMe - Car
               </h1>
             </Link>
-            <p className='font-michroma pb-2 lan text-xl sm:text-2xl md:text-4xl'>
-              Share helpful information / advisories about someone's car, if it needs it. Create a helper profile if you would like
-            </p>
+            
+            <div className="space-y-2">
+              <p className='font-michroma lan text-xl sm:text-2xl md:text-4xl uppercase tracking-tighter'>
+                Identify. Alert. Help.
+              </p>
+              <p className="font-inter text-white/90 text-sm md:text-base max-w-xl">
+                The anonymous vehicle advisory system. Enter the registration, select the fault, and assist a fellow human.
+              </p>
+            </div>
 
-            <div className='font-inter text-white text-base sm:text-lg md:text-xl'>
-              <p>If you see a fault with someone's car, this is a way of letting them know. Simply choose from a selection of various problems</p>
-              <p>Help someone out</p>
-              <p>Dark mode yields surprises...</p>
+            {/* Modular Glass Cards Section */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mt-4">
+              <div className="p-4 border border-white/10 backdrop-blur-md bg-white/5 rounded-sm">
+                <h3 className="font-michroma text-[var(--neon-colour)] text-[10px] tracking-widest mb-2">01 // VIEW</h3>
+                <p className="font-inter text-white text-[11px] opacity-70">Focus on the registration plate.</p>
+              </div>
+              <div className="p-4 border border-white/10 backdrop-blur-md bg-white/5 rounded-sm">
+                <h3 className="font-michroma text-[var(--neon-colour)] text-[10px] tracking-widest mb-2">02 // INPUT</h3>
+                <p className="font-inter text-white text-[11px] opacity-70">Select the specific vehicle fault.</p>
+              </div>
+              <div className="p-4 border border-white/10 backdrop-blur-md bg-white/5 rounded-sm">
+                <h3 className="font-michroma text-[var(--neon-colour)] text-[10px] tracking-widest mb-2">03 // DISPATCH</h3>
+                <p className="font-inter text-white text-[11px] opacity-70">Alert the driver anonymously.</p>
+              </div>
             </div>
 
             <div 
-              className='lead'
-                aria-label="This is anothe button to go to the home page. Welcome again"
+              className='lead pt-4' 
+                aria-label="Initialise Help. This is another button to go to the home page. Welcome again"
             >
-              <Link to='/reg' className='neon-button font-poppins'>This Way To Help Someone's Car</Link>
+              <Link to='/reg' className='neon-button font-poppins'>Initialise Reporting Process</Link>
+            </div>
+
+            <div className="flex flex-col items-center mt-12 space-y-2">
+              {/* A thin, technical divider line */}
+              <div className='h-[1px] w-16 bg-[var(--neon-colour)] opacity-30 mb-2'></div>
+              <p className='font-inter text-[10px] tracking-[0.5em] uppercase text-white opacity-90'>
+                {/* The Pulsing Dot */}
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--neon-colour)] mr-3 animate-pulse"></span>
+                
+                SYSTEM ACCESS: 
+                {/* The Pulsing "Online" Text */}
+                <span className="text-[var(--neon-colour)] ml-2 animate-pulse font-bold">
+                  ONLINE
+                </span> 
+                <span className="ml-4 text-white/80">GOOGLE // GITHUB // GUEST</span>
+              </p>
             </div>
           </div>
         </div>

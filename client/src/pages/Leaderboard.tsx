@@ -90,6 +90,12 @@ export const Board: FC<BoardProps> = ({ leaderboard, className = "" }) => {
               );
             })}
           </motion.ul>
+          <div className="mt-4 pt-4 border-t border-zinc-400/80 dark:border-white/10"></div>
+          <div className="flex flex-col items-end justify-end">
+            <div className="font-mono text-[8px] text-zinc-800/80 dark:text-white/40 uppercase tracking-widest">
+              Payload: 10,000_Digits_Pi // Protocol: f1(0)
+            </div>
+          </div>
         </GlassCard>
       </div>
     </>
@@ -131,20 +137,3 @@ const Leaderboard: FC = () => {
 };
 
 export default Leaderboard;
-
-{/* {leaderboard.map((entry: any, index: number) => (
-  <motion.li 
-    key={entry.clerkId}
-      variants={rowVariants}
-        className="flex justify-between items-center inter p-2 sm:p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors"
-  >
-    <div className="flex items-center gap-4">
-      <span className="text-lg sm:text-2xl font-mono text-zinc-500 dark:text-zinc-100">#{index + 1}</span>
-      <span className="text-lg sm:text-xl font-semibold text-gray-500 dark:text-gray-100">{entry.username}</span>
-    </div>
-    <div className="flex gap-6 items-center">
-      <span className="text-xs sm:text-sm text-cyan-400">{entry.carsHelped} Car(s)</span>
-      <span className="text-lg sm:text-2xl font-bold text-yellow-300">{entry.starsGiven} ⭐</span>
-    </div>
-  </motion.li>
-))} */}

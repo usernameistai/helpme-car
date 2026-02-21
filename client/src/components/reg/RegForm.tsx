@@ -40,8 +40,8 @@ const RegForm: React.FC = () => {
     },
   });
 
-  const shadowClass = "relative p-5 rounded-xl leading-8 shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] hover:shadow-[0_20px_60px_rgba(34,211,238,0.5)] transition-shadow duration-300 bg-white/5 backdrop-blur-sm";
-  const brightBorderClass = "absolute inset-0 rounded-xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
+  const shadowClass = "relative p-5 rounded-xl leading-8 shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] hover:shadow-[0_20px_60px_rgba(34,211,238,0.5)] transition-shadow duration-300 bg-zinc-100/10 dark:bg-zinc-900/20 backdrop-blur-sm";
+  const brightBorderClass = "absolute inset-0 rounded-xl border-t border-l border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
   const paneTitleClass = "font-michroma tracking-wider text-xl font-semibold text-zinc-500/90 dark:text-zinc-200/90 mb-2";
   const labelClass = "font-inter tracking-wider m-1 text-zinc-700/90 dark:text-zinc-200/90";
   const navClass = "flex items-center justify-center font-poppins bg-sky-100 text-zinc-700/90 font-semibold px-4 py-3 mt-4 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition duration-200 ease-in-out";

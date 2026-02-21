@@ -25,10 +25,8 @@ const RegList: FC<Props> = memo(({ regs, isLoading, isError }) => {
             regs.map(( reg, index ) => (
               <div
                 key={reg._id}
-                  className={`shrink-0 transition z-20 
-                  w-[31%] md:w-[23%] lg:w-[18%]
-                  sm:mb-3 lg:mb-8 
-                  animate-none hover:${randomAnime()}
+                  className={`shrink-0 transition z-20 w-[31%] md:w-[23%] lg:w-[18%]
+                  sm:mb-3 lg:mb-8 animate-none hover:${randomAnime()}
                   ${index >= 3 ? 'hidden' : 'md:block'} ${index === 3 ? 'md:block' : ''} ${index >= 4 ? 'lg:block' : ''}
                   `}
                     style={{ transform: `rotate(${Math.random() * 8 - 4}deg) translateY(${Math.random() * 16 - 8}px)` }}

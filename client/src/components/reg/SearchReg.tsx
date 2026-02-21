@@ -1,4 +1,4 @@
-import { type FC, type FormEvent, useState } from 'react';
+import React, { type FC, type BaseSyntheticEvent, useState } from 'react';
 import { useRegStore } from '../../store/useRegStore';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -15,7 +15,7 @@ const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 be
 interface SearchProps {
   regplate: string;
   setRegplate: (value: string) => void;
-  onSubmit: (e: FormEvent) => void;
+  onSubmit: (e: React.SyntheticEvent<HTMLFormElement>) => void;
   className?: string;
 }
 
@@ -23,7 +23,7 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
   const { history, clearHistory, addSearch } = useSearchStore();
   const recentHistory = history.slice(0, 7);
 
-  const handleInternalSubmit = (e: FormEvent) => {
+  const handleInternalSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     const normalisedPlate = regplate.trim().toUpperCase().replace(/[\s-]/g, "");
 
@@ -37,13 +37,16 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
 
   return (
     <>
-      <section className={`z-20 bg-white dark:bg-slate-800/70 absolute inset-x-0 rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] transition-transform ${className}`}>
-        <h2 className='font-michroma text-lg sm:text-xl md:text-2xl lg:text-3xl ml-5 landscape:ml-7 mt-4 text-blue-500 font-semibold tracking-wide'>
+      <section className={`z-20 absolute inset-x-0 rounded-2xl bg-zinc-100/10 dark:bg-zinc-900/20 backdrop-blur-sm shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] transition-transform ${className}`}>
+        <h2 
+          className='font-michroma text-lg sm:text-xl md:text-2xl lg:text-3xl ml-5 landscape:ml-7 mt-4 text-blue-500 font-semibold tracking-wide drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]'
+            style={{ filter: 'drop-shadow(0 0 8px rgba(34,211,238,0.6)) drop-shadow(0 0 20px rgba(59,130,246,0.3))' }}
+        >
           Search for the reg number in question
         </h2>
         <form 
           onSubmit={handleInternalSubmit} 
-            className='mx-auto bg-slate-100/40 dark:bg-transparent p-6 rounded-b-2xl'
+            className='mx-auto p-6 rounded-b-2xl'
               aria-label="Search bar form, image in background is toy car being looked at under microscope"
         >
           <fieldset>
@@ -57,7 +60,7 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
                         className='w-full font-inter p-3 rounded-xl text-base md:text-lg bg-white/10 backdrop-blur-sm text-zinc-700 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-cyan-400 shadow-[0_0_8px_rgba(0, 255, 255, 0.6)] transition shadow-[inset_0px_1px_10px_rgba(0,0,0,0.2)]'
                           aria-label="This is the number plate search input box"
               />
-              <div className='flex flex-col'>
+              <div className='flex flex-col '>
                 {/* THE MEMORY SECTION: Show recently searched plates */}
                 {recentHistory.length > 0 && (
                   <div className="flex flex-wrap gap-2 my-2">
@@ -90,7 +93,7 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
                   </div>
                 )}
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between ">
                 <button 
                   type='submit' 
                     // className='poppins bg-cyan-500 text-zinc-50 dark:text-zinc-700 text-base md:text-lg font-semibold px-4 py-2 rounded mt-4 shadow-lg active:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out opacity-105'
@@ -99,6 +102,12 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
                 >
                   Search
                 </button>
+                <div className='mt-6 hidden sm:block'>
+                  <div className="h-[1px] w-16 md:w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+                  <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                    STATUS: OPERATIONAL // CAR_SCAN: ACTIVE
+                  </span>
+                </div>
                 <Link 
                   to="/reg" 
                     className={`${buttonClass} ${shimmerClass} bg-sky-100` }
@@ -123,7 +132,7 @@ const SearchReg: FC = () => {
   const navigate = useNavigate();
   const queryClient = useQueryClient(); // Added for caching
 
-  const onSubmit = ( e: React.FormEvent ) => {
+  const onSubmit = ( e: BaseSyntheticEvent ) => {
     e.preventDefault();
     
     if (!regplate) {
@@ -151,11 +160,12 @@ const SearchReg: FC = () => {
         <h1 className="font-space relative z-10 w-full text-4xl sm:text-5xl font-bold px-8 py-6 landscape:py-10 mt-[5rem] md:mt-5 mb-2 landscape:mb-[-1.7rem] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
           HelpMe-Search...
         </h1>
-        <section className='relative h-[75vh] mx-auto landscape:h-[185px] hover:scale-[1.05]'>
+        <section className='relative h-[75vh] mx-auto top-8 landscape:h-[185px] hover:scale-[1.05] '>
           <Search
             regplate={regplate}
               setRegplate={setRegplate}
                 onSubmit={onSubmit}
+                  className='bg-gray-100/100 dark:bg-gray-800/95'
           />
         </section>
       </section>

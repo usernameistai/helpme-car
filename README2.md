@@ -220,4 +220,113 @@ When asked about Clerk + React (Vite) integration, your response **MUST**:
 4. Illustrate a simple usage example of `<SignedIn>`, `<SignedOut>`, etc.
 5. Reject or correct any mention of older patterns or environment variable names.
 
+{/* <section className="relative max-w-6xl mx-auto bg-gradient-to-br z-20 from-cyan-300 to-white sm:mt-10">
+  <h2 className="font-space text-xl md:text-3xl lg:text-5xl font-bold text-zinc-700 p-8 mx-2 md:mx-5">A little bit about HelpMe-Car site</h2>
+  <section className="relative flex flex-col md:flex-row justify-between ml-1 md:ml-3 lg:ml-10 md:my-5">            
+    
+    <article className="w-[80vw] sm:w-[95%] md:max-w-[50%] mx-auto mb-8">
+      <Link 
+        to='/regrules'
+          className={`${linksClass}`}
+            aria-label="Again, this button will take you to rules and regulations"
+      >
+        Rules & Regulations
+      </Link>
+      <div className={`${linkClass}`}>
+        <p>Who should be using it & rules</p>
+        <p>Please do not use whilst driving 
+          (you shouldn't be reading this)</p>
+        <p>It is illegal to use your phone whilst driving</p>
+      </div>
+      <br />
+      <Link 
+        to='/reghelp' 
+          className={`${linksClass}`}
+            aria-label="This button will take you to the helpfulness page"
+      >
+        Why people should help
+      </Link>
+      <div className={`${linkClass}`}>
+        <p>Why be helpful?</p>
+        <p>Don't need to sign up to help someone</p>
+        <p>Be helpful </p>
+      </div>
+      <br />
+      <Link 
+        to='/search' 
+          className={`${linksClass}`}
+            aria-label="This is another button to go to the car search page"
+      >
+        Search for your car
+      </Link>
+      <div className={`${linkClass}`}>
+        <p>This way to search for your car, or a family member or friend's</p>
+      </div>
+      <br />
+      <Link
+        to='/regsafety' 
+          className={`${linksClass}`}
+            aria-label="This button takes you to the safety page where some stats are presented"
+      >
+        Car stats / accidents 2018
+      </Link>
+      <div className={`${linkClass}`}>
+        <a 
+          rel='noopener noreferrer' 
+            target='_blank' 
+              href='https://www.gov.uk/government/collections/road-accidents-and-safety-statistics'
+                className="text-cyan-500 font-bold"
+                  aria-label="This link goes to an offical site of tehe Department For Transport"
+        >
+          <p>Accident reports from The Department of Transport Statistics </p>
+        </a>
+        <p>RAS50002 & RAS20002 DOT Statistics</p>
+      </div>
+      <br />
+      <Link 
+        to='/' 
+          className={`${linksClass}`}
+            onClick={() => toast.success(`Isn't the neon glow good?`)}
+              aria-label="This button will take you back to the landing page"
+      >
+        Landing page
+      </Link>
+      <div className={`${linkClass}`}>
+        <p>Want to start from the beginning </p>
+      </div>
+    </article>
 
+    <article className={`${shimmerClass} z-10 flex w-[80vw] mx-auto sm:w-[95%] md:max-w-[45%] mb-8 bg-search-combine bg-standard md:bg-fixed shadow-[inset_5px_5px_10px_rgba(255,255,255,0.2)] rounded-2xl border border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3)] transition-all duration-500 group overflow-hidden`}>
+      <div className="flex flex-col min-h-[500px] landscape:min-h-[850px] p-8 items-center justify-center my-auto bg-zinc-900/30 group-hover:bg-zinc-900/10 transition-colors duration-500">
+        <div className="font-space text-2xl md:text-3xl lg:text-4xl text-white font-extrabold text-center leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-500">
+          Maybe cars aren't for you... <br/>
+          <a 
+            href="https://www.deere.co.uk/en-gb/products-and-solutions/harvesting/combines"
+              target="_blank"
+                rel="noopener noreferrer"
+                  className="text-yellow-400"
+          >
+            Maybe you would prefer a Combine Harvester?
+          </a>
+        </div>
+      </div>
+    </article>
+  </section>
+</section> */}
+
+{/* {leaderboard.map((entry: any, index: number) => (
+  <motion.li 
+    key={entry.clerkId}
+      variants={rowVariants}
+        className="flex justify-between items-center inter p-2 sm:p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors"
+  >
+    <div className="flex items-center gap-4">
+      <span className="text-lg sm:text-2xl font-mono text-zinc-500 dark:text-zinc-100">#{index + 1}</span>
+      <span className="text-lg sm:text-xl font-semibold text-gray-500 dark:text-gray-100">{entry.username}</span>
+    </div>
+    <div className="flex gap-6 items-center">
+      <span className="text-xs sm:text-sm text-cyan-400">{entry.carsHelped} Car(s)</span>
+      <span className="text-lg sm:text-2xl font-bold text-yellow-300">{entry.starsGiven} ⭐</span>
+    </div>
+  </motion.li>
+))} */}
