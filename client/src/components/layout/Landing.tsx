@@ -19,11 +19,11 @@ const Landing = () => {
       <main className="relative z-20 bg-landing-car-1 bg-standard h-[100vh] my-[-2.5rem]">
         <div className="absolute inset-0 bg-black/70 z-0">
           <div 
-            className="flex flex-col text-center justify-center items-center mx-auto translate-y-[7%] space-y-8 max-w-[75%]"
+            className="flex flex-col text-center justify-center items-center mx-auto translate-y-[7%] space-y-5 max-w-[75%]"
               aria-label="This is the main title of the landing page HelpMe - Car, also a link to the proper home page. Welcome to the site!!"
           >
             <Link to='/reg'>
-              <h1 className='font-poppins lan min-w-96 text-5xl md:text-8xl font-bold pb-2 md:pb-4 sm:translate-x-0'>
+              <h1 className='font-poppins lan min-w-96 text-5xl md:text-8xl font-bold pb-2 md:pb-4'>
                 HelpMe - Car
               </h1>
             </Link>
