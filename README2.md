@@ -330,3 +330,51 @@ When asked about Clerk + React (Vite) integration, your response **MUST**:
     </div>
   </motion.li>
 ))} */}
+
+  // if (isError || notFound) return (
+  //   <>
+  //     <ParticlesBg theme="bubble" colour='emerald-400'/>
+  //     <section className='relative z-20'>
+  //       <h1 className="text-5xl font-bold mt-5 mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">HelpMe-Not Found</h1>
+  //       <div className="flex flex-col relative mt-5 mb-10 rounded-2xl items-center justify-center min-h-68 text-center p-8 bg-gradient-to-br from-cyan-200 to-zinc-100 shadow-md min-h-[300px] bg-slate-100/90 border border-white/20 backdrop-blur-sm hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]">
+  //         <h2 className="text-2xl font-bold text-gray-500 mb-2">
+  //           Registration <span className='text-zinc-700 shadow-lg mx-2 rounded px-2 py-1 bg-zinc-50 border-2 border-blue-800 tracking-wide'>{regplate}</span>all clear!
+  //         </h2>
+  //         <div className="space-y-4 max-w-md m-4">
+  //           <div className="inline-block px-4 py-1 rounded-full bg-emerald-500/10 text-emerald-600 font-bold text-sm border border-emerald-500/20">Clean Bill of Health</div>
+  //           <p className="text-zinc-600 text-lg leading-relaxed">We couldn't find any reported faults for this vehicle in our system, (however book a slot with your local garage if unsure).</p>
+  //           <p className="text-zinc-500 text-sm">That's good news for the driver! Safe travels out there.</p>
+  //         </div>
+  //         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+  //           <button 
+  //             onClick={handleShare}
+  //             className="inline-flex items-center px-6 py-3 bg-emerald-500 text-white font-bold rounded-lg shadow-lg hover:bg-emerald-600 transition-all hover:shadow-[inset_0px_1px_10px_rgba(0,0,0,0.2)] active:scale-95"
+  //           >
+  //             <span className="mr-2">📢</span> Share the Good News
+  //           </button>
+            
+  //           <Link to='/reg' className='inline-block px-8 py-3 bg-zinc-400 text-white font-semibold rounded-lg shadow-lg hover:shadow-[inset_0px_1px_10px_rgba(0,0,0,0.2)] transition'>
+  //             Go Back 
+  //           </Link>
+  //         </div>
+  //         {/* <Link to='/reg' className='my-4 inline-block px-8 py-4 bg-red-400 text-white font-semibold rounded-lg shadow-xl hover:bg-red-500/80 hover:shadow-[inset_0px_1px_10px_rgba(0,0,0,0.2)] transition'>
+  //           Go Back 
+  //         </Link> */}
+  //         <div className="absolute inset-0 rounded-2xl border border-cyan-400/40 pointer-events-none animate-pulse animate-pulse-glow"></div>
+  //       </div>
+  //     </section>
+  //   </>
+  // );
+
+  // const AdvisoryBox = ({ message }: AdvisoryBoxProps) => (
+  //   <div className="relative group transition-all duration-300 hover:translate-x-1">
+  //     <div className="relative bg-zinc-900/60 backdrop-blur-xs border-l-4 border-cyan-400 rounded-r-xl p-5 shadow-[5px_5px_15px_rgba(0,0,0,0.3)] mb-4">
+  //       <div className="flex items-center gap-4">
+  //         <div className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_cyan]" />
+  //         <p className="font-inter text-zinc-200 font-medium tracking-wide">{message}</p>
+  //       </div>
+  //     </div>
+  //     {/* Subtle glow behind the box on hover */}
+  //     <div className="absolute inset-0 bg-cyan-400/5 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+  //   </div>
+  // );

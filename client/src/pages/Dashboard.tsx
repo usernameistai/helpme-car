@@ -18,7 +18,7 @@ const Dashboard: FC = () => {
   const hasWelcomed = useRef(false);
 
   const dashClass = "font-inter tracking-wider flex justify-between text-lg sm:text-xl font-semibold text-gray-100";
-  const navClass = "font-poppins text-slate-700 font-semibold bg-yellow-300 max-w-36 text-center rounded px-4 py-2 sm:py-4 h-16 mt-6 justify-center shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
+  const navClass = "font-poppins dark:bg-yellow-500/20 dark:text-yellow-400 border dark:border-yellow-500/50 bg-sky-500/20 text-sky-400 border-2 border-sky-500/50 font-semibold max-w-36 text-center rounded px-4 py-2 sm:py-4 h-16 mt-6 justify-center shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
   useEffect(() => {

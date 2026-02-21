@@ -15,7 +15,7 @@ const RegRules: FC = () => {
   const brightBorder = "absolute inset-0 rounded-2xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
   const imageClass = "relative h-60 md:h-80 lg:h-96 w-[49%] rounded-lg mb-8 font-semibold text-zinc-100 justify-center flex items-center shadow-cyan-200/30 dark:shadow-sky-100/50";
   const divClass = "font-inter md:h-80 lg:h-96 w-[49%] text-sm sm:text-base md:text-xl rounded-lg p-2 md:p-4 mb-8 font-semibold text-zinc-700 dark:text-zinc-200/90 justify-center flex leading-6 md:leading-8";
-  const buttonClass = "font-poppins text-zinc-700 font-semibold dark:bg-yellow-300 bg-sky-100 rounded my-2 md:px-4 py-3 h-12 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
+  const buttonClass = "font-poppins font-semibold dark:bg-yellow-500/20 dark:text-yellow-400 border dark:border-yellow-500/50 bg-sky-500/20 text-zinc-700 border border-sky-500/50 rounded my-2 md:px-4 py-3 h-12 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
   return (

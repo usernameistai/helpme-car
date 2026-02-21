@@ -6,7 +6,7 @@ import ParticlesBg from '../layout/ParticlesBg';
 const RegSafety: FC = () => {
   const quoteClass = "font-space bg-gray-200 dark:bg-gray-700 dark:text-zinc-200/90 mb-2 px-4 py-4 rounded-lg shadow-lg dark:shadow-sky-100/50 backdrop-blur-md border border-white/20";
   const pClass = "font-inter mt-5 mb-8 px-6 py-4 text-sm md:text-base text-zinc-700/80 dark:text-zinc-200/90 leading-6";
-  const buttonClass = "text-zinc-700 font-semibold dark:bg-yellow-300 bg-sky-100 rounded px-4 py-3 h-12 mt-4 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
+  const buttonClass = "font-semibold dark:bg-yellow-500/20 dark:text-yellow-400 border dark:border-yellow-500/50 bg-sky-500/20 text-zinc-700 border border-sky-500/50 rounded px-4 py-3 h-12 mt-4 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
   
   return (

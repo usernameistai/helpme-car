@@ -17,10 +17,10 @@ const DashboardForm: React.FC = () => {
   // Initialise formData but keep it empty until profile loads
   const [formData, setFormData] = useState<Partial<IProfile>>({});
 
-  const sectionClass = "mb-4 p-4 sm:p-6 z-50 relative bg-slate-200/10 backdrop-blur-sm rounded-2xl shadow-lg hover:bg-white/20 hover:scale-105 hover:shadow-[inset_5px_5px_10px_rgba(255,255,255,0.2)]";
+  const sectionClass = "mb-4 p-4 sm:p-6 z-50 relative bg-zinc-100/10 dark:bg-zinc-900/20 backdrop-blur-sm rounded-2xl shadow-lg hover:bg-white/20 hover:scale-105 hover:shadow-[inset_5px_5px_10px_rgba(255,255,255,0.2)]";
   const h2Class = "font-space text-2xl md:text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300 mb-4";
   const brightBorder = "absolute inset-0 rounded-2xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
-  const buttonLink = "font-poppins relative z-10 max-w-44 font-semibold rounded px-2 sm:px-4 py-3 h-12 mt-0 sm:mt-4 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
+  const buttonLink = "font-poppins relative z-10 max-w-44 font-semibold items-center text-center justify-center rounded px-4 py-2 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
   // Sync profile from Store to Form once it loads
   useEffect(() => {
@@ -96,7 +96,7 @@ const DashboardForm: React.FC = () => {
     <>
       <ParticlesBg theme='snow' colour='cyan-400' />
       <div className={`relative z-20 p-4 sm:p-6 bg-search-combine bg-standard bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] rounded-lg `}>
-        <div className="absolute inset-0 bg-zinc-700/50" />
+        <div className="absolute inset-0 bg-zinc-950/50" />
         <h1 className="font-space relative z-10 text-3xl sm:text-5xl font-bold mt-5 mb-4 md:mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
           Here you can update {''} <span className="text-5xl sm:text-7xl">{profile?.username}'s</span>{''} profile
         </h1>
@@ -222,19 +222,19 @@ const DashboardForm: React.FC = () => {
               <nav className="flex justify-between items-center text-sm sm:text-lg">
                 <button 
                   type="submit"
-                    className={`${buttonLink} ${shimmerClass} bg-blue-500 max-w-40 text-white`}
+                    className={`${buttonLink} ${shimmerClass} bg-blue-500/30 text-blue-300 border-2 border-blue-500/50  max-w-40`}
                 >
                   Save Changes
                 </button>
                 <Link 
                   to="/dashboard" 
-                    className={`${buttonLink} ${shimmerClass} text-slate-700 bg-yellow-300 max-w-32`}
+                    className={`${buttonLink} ${shimmerClass} dark:bg-yellow-500/20 dark:text-yellow-400 border-2 dark:border-yellow-500/50 bg-sky-500/20 text-sky-400 border-sky-500/50 max-w-32`}
                 >
                   Dashboard
                 </Link>
                 <Link 
                   to="/helpreg" 
-                    className={`${buttonLink} ${shimmerClass} text-slate-700 bg-yellow-300 max-w-32`}
+                    className={`${buttonLink} ${shimmerClass} dark:bg-yellow-500/20 dark:text-yellow-400 border-2 dark:border-yellow-500/50 bg-sky-500/20 text-sky-400 border-sky-500/50 max-w-32`}
                 >
                   Help A Car
                 </Link>

@@ -37,10 +37,10 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
 
   return (
     <>
-      <section className={`z-20 absolute inset-x-0 rounded-2xl bg-zinc-100/10 dark:bg-zinc-900/20 backdrop-blur-sm shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] transition-transform ${className}`}>
+      <section className={`z-20 absolute inset-x-0 rounded-2xl backdrop-blur-sm shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] transition-transform ${className}`}>
         <h2 
-          className='font-michroma text-lg sm:text-xl md:text-2xl lg:text-3xl ml-5 landscape:ml-7 mt-4 text-blue-500 font-semibold tracking-wide drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]'
-            style={{ filter: 'drop-shadow(0 0 8px rgba(34,211,238,0.6)) drop-shadow(0 0 20px rgba(59,130,246,0.3))' }}
+          className='font-michroma text-lg sm:text-xl md:text-2xl lg:text-3xl ml-5 landscape:ml-7 mt-4 text-blue-500 font-semibold tracking-wide drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]'
+            style={{ filter: 'drop-shadow(0 0 8px rgba(34,211,238,0.5)) drop-shadow(0 0 20px rgba(59,130,246,0.3))' }}
         >
           Search for the reg number in question
         </h2>
@@ -165,7 +165,7 @@ const SearchReg: FC = () => {
             regplate={regplate}
               setRegplate={setRegplate}
                 onSubmit={onSubmit}
-                  className='bg-gray-100/100 dark:bg-gray-800/95'
+                  className='bg-white dark:bg-gray-800/95'
           />
         </section>
       </section>

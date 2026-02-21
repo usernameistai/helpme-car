@@ -18,10 +18,10 @@ const ShowReg = () => {
   const queryClient = useQueryClient();
 
   const h1Class = "text-xl md:text-2xl mb-2 md:mb-4 font-bold text-zinc-500/90 dark:text-zinc-200/90";
-  const divClass = "relative rounded-xl mb-4 shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
+  const divClass = "relative group transition-all duration-300 rounded-xl mb-4 shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] hover:shadow-none hover:translate-x-1";
   const titleClass = "font-inter tracking-wider font-bold shadow-lg px-5 py-4 rounded-xl mb-4";
-  const brightBorderClass = "absolute inset-0 rounded-xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
-  const buttonClass = "flex text-center items-center justify-center font-poppins text-zinc-700 px-4 py-3 mt-4 text-small md:text-lg font-semibold rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
+  const brightBorderClass = "absolute inset-0 rounded-xl blur-xs border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
+  const buttonClass = "flex text-center items-center justify-center font-poppins px-4 py-3 mt-4 text-small md:text-lg font-semibold rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
   const handleDeleteClick = () => setModalOpen(true);
@@ -68,9 +68,24 @@ const ShowReg = () => {
   }
   const AdvisoryBox = ({ message }: AdvisoryBoxProps) => (
     <>
-      <div className={`${divClass} mb-4`}>
-        <div className={`${titleClass}`}><p>{message}</p></div>
-        <div className={`${brightBorderClass}`} />
+      <div className="animate-materialize">
+        <div className={`${divClass} mb-5`}>
+          <div className={`${titleClass} flex justify-between gap-4`}>
+            <div className="flex items-center gap-4">
+              <div className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_cyan]" />
+              <p>{message}</p>
+            </div>
+            <div className="flex flex-col space-y-[3px] opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_5px_rgba(34,211,238,0.4)]">
+              <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div></div>
+              <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div></div>
+              <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div></div>
+              <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400 drop-shadow-[0_0_5px_rgba(34,211,238,0.4)]"></div>
+              <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400 drop-shadow-[0_0_5px_rgba(34,211,238,0.4)]"></div>
+              <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400 drop-shadow-[0_0_5px_rgba(34,211,238,0.4)]"></div>
+            </div>
+          </div>
+          <div className={`${brightBorderClass}`} />
+        </div>
       </div>
     </>
   );
@@ -101,33 +116,48 @@ const ShowReg = () => {
   if (isError || notFound) return (
     <>
       <ParticlesBg theme="bubble" colour='emerald-400'/>
-      <section className='relative z-20'>
-        <h1 className="text-5xl font-bold mt-5 mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">HelpMe-Not Found</h1>
-        <div className="flex flex-col relative mt-5 mb-10 rounded-2xl items-center justify-center min-h-68 text-center p-8 bg-gradient-to-br from-cyan-200 to-zinc-100 shadow-md min-h-[300px] bg-slate-100/90 border border-white/20 backdrop-blur-sm hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]">
-          <h2 className="text-2xl font-bold text-gray-500 mb-2">
-            Registration <span className='text-zinc-700 shadow-lg mx-2 rounded px-2 py-1 bg-zinc-50 border-2 border-blue-800 tracking-wide'>{regplate}</span>all clear!
-          </h2>
-          <div className="space-y-4 max-w-md m-4">
-            <div className="inline-block px-4 py-1 rounded-full bg-emerald-500/10 text-emerald-600 font-bold text-sm border border-emerald-500/20">Clean Bill of Health</div>
-            <p className="text-zinc-600 text-lg leading-relaxed">We couldn't find any reported faults for this vehicle in our system, (however book a slot with your local garage if unsure).</p>
-            <p className="text-zinc-500 text-sm">That's good news for the driver! Safe travels out there.</p>
+      <section className='relative z-20 max-w-4xl mx-auto px-4'>
+        <h1 className="font-michroma text-3xl md:text-5xl font-bold mt-10 mb-6 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300">
+          SCAN_RESULT: ALL_CLEAR
+        </h1>
+        
+        <div className="relative flex flex-col items-center justify-center p-8 md:p-12 rounded-2xl bg-zinc-300/50 dark:bg-zinc-900/50 border border-emerald-500/30 backdrop-blur-md shadow-[0_20px_50px_rgba(16,185,129,0.2)] overflow-hidden">
+          {/* Diagnostic Background Detail */}
+          <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-emerald-600 dark:text-emerald-300/80 text-right">
+            SENSOR_ID: 0x77AF<br/>STATUS: NO_FAULTS_DETECTED
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+  
+          <h2 className="font-michroma text-xl md:text-2xl text-zinc-700 dark:text-zinc-100 mb-6 flex flex-wrap justify-center items-center gap-3">
+            REG: <span className='px-4 py-1 bg-zinc-800 border border-emerald-400/50 text-emerald-400 rounded-lg shadow-[0_0_15px_rgba(52,211,153,0.3)] tracking-widest'>{regplate}</span>
+          </h2>
+  
+          <div className="space-y-4 max-w-md text-center">
+            <div className="inline-block px-4 py-1 rounded-full border-emerald-600/50 bg-emerald-400 text-emerald-600/80 dark:bg-emerald-500/20 dark:text-emerald-400 font-bold text-xs uppercase tracking-widest border-2 animate-pulse">
+              Safe to Proceed
+            </div>
+            <p className="text-zinc-700/90 dark:text-zinc-400 text-lg leading-relaxed font-inter">
+              Our satellites have no record of active faults for this unit.
+            </p>
+            <p className="text-zinc-700/90 dark:text-zinc-500 text-xs italic">
+              Note: Sensors only detect reported anomalies. Regular maintenance required.
+            </p>
+          </div>
+  
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 w-full sm:w-auto">
             <button 
               onClick={handleShare}
-              className="inline-flex items-center px-6 py-3 bg-emerald-500 text-white font-bold rounded-lg shadow-lg hover:bg-emerald-600 transition-all hover:shadow-[inset_0px_1px_10px_rgba(0,0,0,0.2)] active:scale-95"
+              className={`${buttonClass} ${shimmerClass} bg-emerald-500 text-zinc-900 min-w-[200px]`}
             >
-              <span className="mr-2">📢</span> Share the Good News
+              📢 Share Good News
             </button>
             
-            <Link to='/reg' className='inline-block px-8 py-3 bg-zinc-400 text-white font-semibold rounded-lg shadow-lg hover:shadow-[inset_0px_1px_10px_rgba(0,0,0,0.2)] transition'>
-              Go Back 
+            <Link to='/reg' className={`${buttonClass} bg-zinc-800/50 text-zinc-300 border-2 border-white/30 hover:bg-zinc-700 min-w-[150px]`}>
+              New Scan
             </Link>
           </div>
-          {/* <Link to='/reg' className='my-4 inline-block px-8 py-4 bg-red-400 text-white font-semibold rounded-lg shadow-xl hover:bg-red-500/80 hover:shadow-[inset_0px_1px_10px_rgba(0,0,0,0.2)] transition'>
-            Go Back 
-          </Link> */}
-          <div className="absolute inset-0 rounded-2xl border border-cyan-400/40 pointer-events-none animate-pulse animate-pulse-glow"></div>
+  
+          {/* The "Mission Pulse" border */}
+          <div className="absolute inset-0 rounded-2xl border border-emerald-400/20 pointer-events-none animate-pulse"></div>
         </div>
       </section>
     </>
@@ -140,7 +170,7 @@ const ShowReg = () => {
         <h1 className="font-space text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 pb-2 lan">
           HelpMe-Advisories | Faults
         </h1>
-
+        
         <div className="m-5 mx-auto py-6 md:py-10 px-8 space-y-5 text-zinc-500/90 dark:text-zinc-200/90 font-semibold rounded-lg shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]">
           <h1 className='text-3xl md:text-4xl font-bold mb-2 text-transparent pb-4 bg-clip-text bg-gradient-to-r from-blue-400 to-green-400 text-center'>
             Message for owner of
@@ -149,10 +179,11 @@ const ShowReg = () => {
               {selectedReg.regplate}
             </span>
           </h1>
-
+          
           <section>
             <div className='mb-10'>
               <h1 className={`${h1Class}`}>The following faults may apply to your car: </h1>
+              
               {ADVISORY_MAP.map(({ key, msg }) => (
                 (selectedReg as any)?.[key] && (
                 <AdvisoryBox key={key} message={msg} />
@@ -172,7 +203,7 @@ const ShowReg = () => {
         <nav className="flex gap-4 mt-4 justify-between">
           <Link 
             to={`/reg/${selectedReg.regplate}/edit`} 
-              className={`pt-3 bg-yellow-300 ${buttonClass} ${shimmerClass}`}
+              className={`pt-3 bg-yellow-500/20 text-yellow-400 border border-yellow-500/50 ${buttonClass} ${shimmerClass}`}
           >
             Edit Reg
           </Link>
@@ -180,7 +211,7 @@ const ShowReg = () => {
           <div className="">
             <button
               onClick={handleDeleteClick}
-                className={`bg-red-300 ${buttonClass} ${shimmerClass}`}
+                className={`bg-red-500/20 text-red-400 border border-red-500/50 ${buttonClass} ${shimmerClass}`}
             >
               Delete Reg
             </button>
@@ -195,7 +226,7 @@ const ShowReg = () => {
           />
           <Link 
             to="/reg" 
-              className={`pt-3 bg-sky-100 ${buttonClass} ${shimmerClass}`}
+              className={`pt-3 bg-sky-500/20 text-sky-400 border border-sky-500/50 ${buttonClass} ${shimmerClass}`}
                   onClick={() => toast.success(`Not your car?`)}
           >
             Home
