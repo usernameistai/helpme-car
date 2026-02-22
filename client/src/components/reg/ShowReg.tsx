@@ -176,7 +176,7 @@ const ShowReg = () => {
             style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
               className="relative text-center drop-shadow-cyan-400 w-full mb-4 text-zinc-500/90 dark:text-zinc-100 text-3xl md:text-4xl lg:text-5xl font-bold"
           >
-            Message for owner of
+            Message for owner of 
             <span
               className="text-center justify-center mx-2 md:mx-3 px-2 md:px-3 py-0.5 md:py-1 text-xl md:text-2xl w-48 font-bold text-zinc-700 shadow-lg rounded bg-zinc-50 border-2 border-blue-800 tracking-wide hover:shadow-[inset_0px_1px_10px_rgba(0,0,0,0.2)] transition ease-in-out">
               {selectedReg.regplate}

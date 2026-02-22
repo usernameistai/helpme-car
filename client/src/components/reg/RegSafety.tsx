@@ -192,7 +192,7 @@ const RegSafety: FC = () => {
           <br />
 
           <section className='mx-2 sm:mx-0'>
-            <h2 
+            <h2  
               style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
                 className="font-space relative drop-shadow-cyan-400 w-full font-bold mb-4 text-zinc-500/90 dark:text-zinc-100 text-2xl md:text-4xl lg:text-5xl"
             >

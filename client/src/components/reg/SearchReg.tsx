@@ -131,7 +131,7 @@ const SearchReg: FC = () => {
   const { addSearch } = useSearchStore();
   const navigate = useNavigate();
   const queryClient = useQueryClient(); // Added for caching
-
+ 
   const onSubmit = ( e: BaseSyntheticEvent ) => {
     e.preventDefault();
     

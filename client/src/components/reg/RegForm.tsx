@@ -126,7 +126,7 @@ const RegForm: React.FC = () => {
       <section className='relative z-20 max-w-6xl mx-auto '>
         <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan">
           HelpMe-Out
-        </h1>
+        </h1> 
         <section className="rounded-lg mx-auto py-5 px-8 shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]">
           <h2 
             style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}

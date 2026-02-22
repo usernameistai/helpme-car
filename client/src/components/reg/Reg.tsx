@@ -260,7 +260,7 @@ const Reg: FC = () => {
               className="font-space text-sm md:text-xl tracking-[0.3em] uppercase text-white/90 text-warm-glow"
                 style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
             >
-              HelpMe-Car Mission // Protocol & Intel
+              HelpMe-Car Mission // Protocol & Intel 
             </h2>
             <div className="flex flex-col items-end">
               <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">

@@ -22,7 +22,7 @@ const RegHelp: FC = () => {
             className="font-space relative drop-shadow-cyan-400 w-full font-bold mb-4 text-zinc-500/90 dark:text-zinc-100 text-2xl md:text-4xl lg:text-5xl"
         >
           Many, many good reasons...
-        </h2>
+        </h2> 
         <section className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-2 md:gap-10">
           <article className={articleClass}>
             <div 

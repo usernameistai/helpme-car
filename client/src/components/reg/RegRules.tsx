@@ -232,7 +232,7 @@ const RegRules: FC = () => {
               className="font-space relative drop-shadow-cyan-400 w-full font-bold mb-4 text-zinc-500/90 dark:text-zinc-100 text-2xl md:text-4xl lg:text-5xl"
           >
             Regulations
-          </h2>
+          </h2> 
 
           <section className='relative bg-rules-car bg-standard rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
             <div className='bg-black/50 text-center h-44 rounded-2xl shadow-lg flex items-start justify-center'>
