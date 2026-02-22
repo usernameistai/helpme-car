@@ -127,7 +127,7 @@ const ShowReg = () => {
             SENSOR_ID: 0x77AF<br/>STATUS: NO_FAULTS_DETECTED
           </div>
   
-          <h2 className="font-michroma text-xl md:text-2xl text-zinc-700 dark:text-zinc-100 mb-6 flex flex-wrap justify-center items-center gap-3">
+          <h2 className="font-michroma text-xl md:text-2xl text-zinc-700 mt-6 md:mt-0 dark:text-zinc-100 mb-6 flex flex-wrap justify-center items-center gap-3">
             REG: <span className='px-4 py-1 bg-zinc-800 border border-emerald-400/50 text-emerald-400 rounded-lg shadow-[0_0_15px_rgba(52,211,153,0.3)] tracking-widest'>{regplate}</span>
           </h2>
   

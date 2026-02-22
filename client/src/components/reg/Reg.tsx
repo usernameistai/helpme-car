@@ -20,11 +20,11 @@ const Reg: FC = () => {
   const [regplate, setRegplate] = useState("");
   const [showBoard, setShowBoard] = useState(false);
 
-  const liClass = "relative z-30 flex flex-col group sm:my-8 py-2 sm:p-4 bg-zinc-100 dark:bg-zinc-900/10 backdrop-blur-sm border-t border-l border-white/20 rounded-2xl w-full sm:w-1/3 shadow-xl dark:shadow-[15px_15px_35px_rgba(0,0,0,0.7),_inset_2px_2px_4px_rgba(255,255,255,0.05)] transition-all duration-300 ease-out hover:border-cyan-400/50 hover:-translate-y-4 dark:shadow-[15px_15px_35px_rgba(0,0,0,0.7),_inset_2px_2px_4px_rgba(255,255,255,0.05)] hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
+  const liClass = "relative z-30 flex flex-col group mt-8 py-2 sm:p-4 bg-zinc-100 dark:bg-zinc-900/10 backdrop-blur-sm border-l border-t border-cyan-400/20 rounded-2xl w-full sm:w-1/3 shadow-xl shadow-[inset_2px_2px_4px_rgba(255,255,255,0.05)] transition-all duration-300 ease-out hover:border-cyan-400/50 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
   const h3Class = "font-space text-2xl md:text-xl lg:text-3xl font-bold mt-2 lg:mt-4 mb-4 text-zinc-600 dark:text-zinc-50 text-center";
   const titleClass = "font-inter font-semibold text-base md:text-base lg:text-lg mb-4 lg:my-6 px-4 lg:px-8 lg:leading-8 text-zinc-700/90 dark:text-zinc-300/80";
-  const buttonClass = "font-poppins relative z-50 rounded shadow-lg bg-sky-100 px-3 py-2 my-4 lg:my-16 text-center text-zinc-700 text-base md:text-lg lg:text-xl font-semibold hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
-  const brightBorderClass = "absolute inset-0 rounded-2xl border border-cyan-400/40 animate-pulse animate-pulse-glow";
+  const buttonClass = "font-poppins relative z-50 rounded shadow-lg bg-sky-100 px-3 py-2 mt-4 lg:my-16 text-center text-zinc-700 text-base md:text-lg lg:text-xl font-semibold hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
+  const brightBorderClass = "absolute top-0 right-0 inset-0 rounded-2xl border-t-2 border-l-2 border-cyan-400/40 group-hover:border-cyan-500 transition-colors animate-pulse";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
   const articleClass = "relative bg-zinc-100/10 dark:bg-zinc-900/20 border-t border-l border-white/10 rounded-2xl p-8 shadow-2xl dark:shadow-[15px_15px_35px_rgba(0,0,0,0.7),_inset_2px_2px_4px_rgba(255,255,255,0.05)] transition-all duration-500 hover:border-cyan-400/50 hover:shadow-[0_20px_50px_rgba(34,211,238,0.25),20px_20px_60px_rgba(0,0,0,0.8)]";
   const article2Class = "relative bg-zinc-100/10 dark:bg-zinc-900/20 border-t border-l border-white/10 rounded-2xl p-8 shadow-2xl dark:shadow-[15px_15px_35px_rgba(0,0,0,0.7),_inset_2px_2px_4px_rgba(255,255,255,0.05)] transition-all duration-500 hover:border-yellow-400/50 hover:shadow-[0_0_30px_rgba(250,204,21,0.2)]"
@@ -36,16 +36,17 @@ const Reg: FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: window.innerWidth > 640 ? 0.2 : 0,
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
       },
     },
   };
   const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
+    hidden: { opacity: 0 },
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.4, ease: "easeOut" } // Custom cubic-bezier for "slick" motion
+      transition: { duration: 0.4, }, // ease: "easeOut"
     },
   } as const;
 
@@ -83,7 +84,7 @@ const Reg: FC = () => {
   return (
     <>
       <ParticlesBg theme="default" colour="cyan-400"/>
-      <section className="space-y-5 sm:mx-0 w-full">
+      <section className="space-y-10 mx-auto w-full">
         <section className="relative z-20 max-w-6xl mx-auto">
           <h1 className="relative mt-4 z-50 font-space text-4xl md:text-5xl lg:text-7xl font-bold ml-4 sm:ml-10 mb-4 md:mb-8 pb-4 w-full text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
             Home of HelpMe-Car
@@ -103,7 +104,8 @@ const Reg: FC = () => {
                   variants={containerVariants}
                     initial="hidden"
                       animate="visible"
-                        className="flex flex-col relative z-50 sm:flex-row mb-10 justify-center items-stretch transform gap-7 w-[100vw] left-1/2 -translate-x-1/2 px-7 mx-auto overflow-visible"
+                        className="flex flex-col relative z-50 md:flex-row mb-8 justify-center items-stretch gap-4 px-7 mx-auto"
+                          style={{ transform: 'translateZ(0)', willChange: 'transform' }}
                 >
                   <motion.li
                     key="helpme-car"
@@ -112,7 +114,7 @@ const Reg: FC = () => {
                           className={`${liClass}`}
                   >
                     <h3 className={`${h3Class}`}>Help Someone's Car</h3>
-                    <p className={`${titleClass}`}>Add a car's number plate for any advisories you may have seen along your travels, for a passenger or not driving</p>
+                    <p className={`${titleClass}`}>Add a car's faults / advisories via their number plate, for passengers or not driving</p>
                     <div className="text-center my-4">
                       <Link 
                         to="/helpreg" 
@@ -136,14 +138,14 @@ const Reg: FC = () => {
                           className={`${liClass}`}
                   >
                     <h3 className={`${h3Class}`}>Search for your Car</h3>
-                    <p className={`${titleClass}`}>Please enter a number plate to see if anyone has entered information about YOUR car!!</p>
+                    <p className={`${titleClass}`}>Please enter a number plate to potentially discover an entry in our db</p>
                     <div className="text-center my-4">
                       <Link 
                         to="/search" 
                           className={` ${buttonClass}`}
                             aria-label="Click this button after entering a number plate to go to the display page"
                       >
-                      Regplate Search
+                      HelpMe Search
                       </Link>
                     </div>
                     <div className="flex flex-col items-center text-center">
@@ -160,14 +162,14 @@ const Reg: FC = () => {
                           className={`${liClass}`}
                   >
                     <h3 className={`${h3Class}`}>HelpMe Information</h3>
-                    <p className={`${titleClass}`}>Important Information, Rules & Regulations, Guidance about HelpMe-Car and more...</p>
+                    <p className={`${titleClass}`}>Important Information, Rules & Regulations, Guidance about HelpMe-Car...</p>
                     <div className="text-center my-4">
                       <Link 
                         to="/regrules"
                           className={`mt-9 md:mt-4 ${buttonClass}`}
                             aria-label="Click this button to hear about the rules and regulatations subsequently about being helpful"
                       >
-                        HelpMe - Info?
+                        HelpMe Info?
                       </Link>
                     </div>
                     <div className="flex flex-col items-center text-center">
@@ -179,9 +181,27 @@ const Reg: FC = () => {
                   </motion.li>
                 </motion.ul>
               </section>
+
+              <section className="relative max-w-6xl mx-auto z-20 mt-20">
+                <div className="flex items-center space-x-4 mb-12 px-5">
+                  <div className="h-[1px] w-12 bg-cyan-400 opacity-50"></div>
+                  <h2 
+                    className="font-space text-sm md:text-xl tracking-[0.3em] uppercase text-white/90 text-warm-glow"
+                      style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
+                  >
+                    HelpMe-Car Recently Helped // Success
+                  </h2>
+                  <div className="flex flex-col items-end">
+                    <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                      STATUS: OPERATIONAL // OPT_LOAD: f1(1) // REG_ADD: 7/CHAR // LINK: ACTIVE
+                    </span>
+                    <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+                  </div>
+                </div>
+              </section>
               
 
-              <GlassCard title="Recently added registrations" className="z-30 font-space h-full relative w-full lg:w-[63vw] min-h-60 backdrop-blur-sm mx-auto hover:scale-100 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]">
+              <GlassCard title="Recently added registrations" className="z-30 font-space h-full mb-0 relative min-h-60 mx-w-5xl backdrop-blur-sm mx-auto hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]">
                 <p className="text-gray-900 dark:text-gray-200 text-base lg:text-xl m-1/2 sm:m-0 px-6 sm:px-8">Here are a few number plates from the database, if this is your car, click on it to see what advisories have been added. Maybe you could help someone else out?</p>
                 <div className="relative z-30">
                   <div className="h-[1px] mt-2 w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
@@ -197,28 +217,43 @@ const Reg: FC = () => {
               </GlassCard>
             </div>
           </section>
-        </section>
 
-        <section className="relative max-w-6xl mx-auto grid grid-cols-1 z-20 w-full min-h-fit gap-8">
-          <div className="">
+          <section className="relative max-w-6xl mx-auto z-20">
+            <div className="flex items-center space-x-4 mb-12 px-5">
+              <div className="h-[1px] w-12 bg-cyan-400 opacity-50"></div>
+              <h2 
+                className="font-space text-sm md:text-xl tracking-[0.3em] uppercase text-cyan-400/90 text-warm-glow"
+                  style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
+              >
+                HelpMe-Car Search and Leaderboard // Seek & Help
+              </h2>
+              <div className="flex flex-col items-end">
+                <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                  STATUS: OPERATIONAL // OPT_LOAD: f2(1) // REG_SEARCH: 7/CHAR // TOP_HELP: ACTIVE
+                </span>
+                <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+              </div>
+            </div>
+          </section>
+
+          <section className="relative max-w-6xl mx-auto grid grid-cols-1 z-20 w-full min-h-fit gap-8 mb-20">
             <Search
               regplate={regplate}
                 setRegplate={setRegplate}
                   onSubmit={handleRegSearch}
-                    className="relative w-full pt-2 mx-auto bg-zinc-100/10 dark:bg-zinc-900/20"
-            />
-          </div>
-          <div className="">
+                    className="relative w-full pt-2 mx-auto bg-zinc-100/10 dark:bg-zinc-900/20 hover:-translate-y-4 transition duration-200 ease-in-out"
+            />         
             {showBoard && (
               <Board 
                 leaderboard={leaderboard.slice(0, 5)}
                   className="rounded-2xl w-full mx-auto"
               />
             )}
-          </div>
+          </section>
         </section>
 
-        <section className="relative max-w-6xl mx-auto z-20 mt-20 pb-20">
+
+        <section className="relative max-w-6xl mx-auto z-20 mt-24 pb-20">
           <div className="flex items-center space-x-4 mb-12 px-5">
             <div className="h-[1px] w-12 bg-cyan-400 opacity-50"></div>
             <h2 
@@ -263,9 +298,9 @@ const Reg: FC = () => {
                     <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div></div>
                     <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div></div>
                     <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div></div>
-                    <div className="h-[2px] w-[35px] bg-cyan-400"></div>
-                    <div className="h-[2px] w-[35px] bg-cyan-400"></div>
-                    <div className="h-[2px] w-[35px] bg-cyan-400"></div>
+                    <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400"></div>
+                    <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400"></div>
+                    <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400"></div>
                   </div>
                 </div>
                 <Link to="/reghelp" className="inline-block">
@@ -304,9 +339,9 @@ const Reg: FC = () => {
                     <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div></div>
                     <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div></div>
                     <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div></div>
-                    <div className="h-[2px] w-[35px] bg-cyan-400"></div>
-                    <div className="h-[2px] w-[35px] bg-cyan-400"></div>
-                    <div className="h-[2px] w-[35px] bg-cyan-400"></div>
+                    <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400"></div>
+                    <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400"></div>
+                    <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400"></div>
                   </div>
                 </div>
                 <Link to="/regsafety" className="inline-block">
@@ -362,9 +397,9 @@ const Reg: FC = () => {
                     <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-500/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-500/80 dark:bg-white/40"></div></div>
                     <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-500/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-500/80 dark:bg-white/40"></div></div>
                     <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-500/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-500/80 dark:bg-white/40"></div></div>
-                    <div className="h-[2px] w-[35px] bg-cyan-400"></div>
-                    <div className="h-[2px] w-[35px] bg-cyan-400"></div>
-                    <div className="h-[2px] w-[35px] bg-cyan-400"></div>
+                    <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400"></div>
+                    <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400"></div>
+                    <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400"></div>
                   </div>
                 </div>
                 <div className="relative left-1/2 p-1 font-mono text-[8px] text-yellow-800 dark:text-yellow-400 opacity-40">CRITICAL_OUTLIER_DETECTED</div>
@@ -410,6 +445,12 @@ const Reg: FC = () => {
                   Payload: 10,000_Digits_Pi // Protocol: f2(1)
                 </div>
               </article>
+              <div className="flex flex-col items-center mt-8">
+                <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em] mb-1">
+                  STATUS: OPERATIONAL // REG_PAGE: SCROLL_END
+                </span>
+                <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+              </div>
             </section>
 
           </section>

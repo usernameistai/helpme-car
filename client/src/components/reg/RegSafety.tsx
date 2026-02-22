@@ -90,7 +90,7 @@ const RegSafety: FC = () => {
                 <li>1. The inclusion of more 20mph zones around cities</li>
                 <li>2. More automatic indication of faulty car parts in newer cars</li>
                 <li>3. People are driving better and more considerately</li>
-                <li>4. Less people are driving - using public transport or cycling</li>
+                <li>4. Fewer people are driving - using public transport or cycling</li>
               </ol>
               <article>
                 <blockquote className={quoteClass}>Yet despite these encouranging trends, driving on the roads it appears less people are interested in following The Highway Code or driving appropriately (i.e. safely and considerately)
