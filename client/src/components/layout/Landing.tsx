@@ -53,13 +53,6 @@ const Landing = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-end">
-              <span className="font-mono text-[10px] text-cyan-400/50 tracking-[0.2em]">
-              STATUS: SHEEP_DETECTION_OFF // FREQUENCY: UNFILTERED // BRAINWASH_PROTECTION: ACTIVE
-              </span>
-              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
-            </div>
-
             <div 
               className='lead' 
                 aria-label="Initialise Help. This is another button to go to the home page. Welcome again"
@@ -81,6 +74,13 @@ const Landing = () => {
                 </span> 
                 <span className="ml-4 text-white/80">GOOGLE // GITHUB // GUEST</span>
               </p>
+            </div>
+
+            <div className="flex flex-col items-end">
+              <span className="font-mono text-[10px] text-cyan-400/50 tracking-[0.2em]">
+              STATUS: SHEEP_DETECTION_OFF // FREQUENCY: UNFILTERED // BRAINWASH_PROTECTION: ACTIVE
+              </span>
+              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
             </div>
           </div>
         </div>

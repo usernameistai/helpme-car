@@ -105,7 +105,7 @@ const RegHelp: FC = () => {
               Car Help Safety
             </Link>
             <Link 
-              to='/regrule' 
+              to='/regrules' 
                 className={`${buttonClass} ${shimmerClass}`}
             >
               HelpMe-Car Rules
