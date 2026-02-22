@@ -49,7 +49,7 @@ const EditReg: FC = () => {
   const brightBorderClass = "absolute inset-0 rounded-xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
   const paneTitleClass = "font-michroma text-xl font-semibold text-zinc-500/90 dark:text-zinc-200/90 mb-1";
   const labelClass = "font-inter tracking-wider ml-1 text-zinc-500/90 dark:text-zinc-200/90";
-  const navClass = "flex items-center justify-center text-center font-poppins bg-sky-100 text-zinc-700/90 font-semibold px-4 py-3 mt-4 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
+  const navClass = "flex items-center justify-center text-center font-poppins bg-sky-100 text-zinc-700/90 font-semibold px-4 py-3 rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
   // Fetch reg once
@@ -116,15 +116,18 @@ const EditReg: FC = () => {
   return (
     <>
       <ParticlesBg theme='nasa' colour='purple-500' />
-      <section className='relative z-20 mx-2 sm:mx-0 -translate-y-10 sm:-translate-y-8'>
-        <h1 className="font-space text-4xl sm:text-5xl font-bold mb-2 sm:mb-8 pb-2 lan">
+      <section className='relative z-20 max-w-6xl mx-auto '>
+        <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan">
           HelpMe-Edit the Reg... please
         </h1>
         
-        <section className="rounded-lg m-5 mx-auto py-10 px-8 shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]">
-          <h1 className="font-michroma text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-300">
+        <section className="rounded-lg mx-auto py-5 px-8 shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]">
+          <h2 
+            style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
+              className="font-michroma relative drop-shadow-cyan-400 w-full mb-4 text-zinc-500/90 dark:text-zinc-100 text-2xl md:text-3xl lg:text-4xl font-extrabold"
+          >
             Help your fellow human, update their car ...
-          </h1>
+          </h2>
           <form onSubmit={onSubmit} className='space-y-4'>
             {editted && (
               <div role='status' aria-live='polite' className='sr-only'>
@@ -197,6 +200,12 @@ const EditReg: FC = () => {
                 <div className={`${brightBorderClass}`}/>
               </div>
             </fieldset>
+            <article className="flex flex-col items-end">
+              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                STATUS: OPERATIONAL // OPT_LOAD: f2(1) // BLC: 3 OPTS
+              </span>
+              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </article>
 
             {/* Rear Car Lights Condition */}
             <fieldset>
@@ -242,6 +251,12 @@ const EditReg: FC = () => {
                 <div className={`${brightBorderClass}`} />
               </div>
             </fieldset>
+            <article className="flex flex-col items-end">
+              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                STATUS: OPERATIONAL // OPT_LOAD: f2(1) // RCLC: 3 OPTS
+              </span>
+              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </article>
 
             {/* Indicator and Hazard / Warning Lights Condition */}
             <fieldset>
@@ -299,6 +314,12 @@ const EditReg: FC = () => {
                 <div className={`${brightBorderClass}`}/>
               </div>
             </fieldset>
+            <article className="flex flex-col items-end">
+              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                STATUS: OPERATIONAL // OPT_LOAD: f2(1) // I/HWLC: 4 OPTS
+              </span>
+              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </article>
 
             {/* Exhaust Smoke Colour */}
             <fieldset>
@@ -344,6 +365,12 @@ const EditReg: FC = () => {
                 <div className={`${brightBorderClass}`}/>
               </div>
             </fieldset>
+            <article className="flex flex-col items-end">
+              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                STATUS: OPERATIONAL // OPT_LOAD: f2(1) // ESC: 3 OPTS
+              </span>
+              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </article>
 
             {/* Car Rear Tyre Condition */}
             <fieldset>
@@ -377,6 +404,12 @@ const EditReg: FC = () => {
                 <div className={`${brightBorderClass}`}/>
               </div>
             </fieldset>
+            <article className="flex flex-col items-end">
+              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                STATUS: OPERATIONAL // OPT_LOAD: f2(1) // CTRC: 2 OPTS
+              </span>
+              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </article>
 
             {/* Driver Info */}
             <fieldset>
@@ -422,6 +455,12 @@ const EditReg: FC = () => {
                 <div className={`${brightBorderClass}`}/>
               </div>
             </fieldset>
+            <article className="flex flex-col items-end">
+              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                STATUS: OPERATIONAL // OPT_LOAD: f2(1) // DC: 3 OPTS
+              </span>
+              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </article>
 
             <nav className='flex justify-between'>
               <button

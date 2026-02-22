@@ -13,22 +13,33 @@ const RegSafety: FC = () => {
     <>
       <ParticlesBg theme='nasa' colour='blue-500'/>
       <section className='relative z-20 mx-auto mb-4 w-full max-w-6xl px-4 sm:px-0'>
-        <h1 className="font-space text-4xl sm:text-5xl font-bold my-8 pb-1 w-96 text-transparent 
-          bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300 leading-[4rem]"
+        <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan"
         >
           HelpMe-Safety
         </h1>
         <section className='roboto'>
-        <h2 className='font-space text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Driver Accident Statistics from DoT</h2>
+        <h2 
+          style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
+            className="font-space relative drop-shadow-cyan-400 w-full font-bold mb-4 text-zinc-500/90 dark:text-zinc-100 text-2xl md:text-4xl lg:text-5xl"
+        >
+          Driver Accident Statistics // DoT
+        </h2>
           <section aria-labelledby='safety-intent'>
             <h2 id="safety-intent" className='sr-only'>
-              This site could potentially redce the number of accidents, even only a little bit
+              This site could potentially reduce the number of accidents, even only a little bit
             </h2>
             <blockquote className='mb-2'>
               <p className={quoteClass}>
                 "The best thing this site could hope to achieve is reduce the number of accidents on the road and the very least could help drivers ensure their car's are safe and roadworthy. Below is some analysis of vehicle stats, maybe worth considering. Drive safely"
               </p>
-              <footer className='flex flex-row-reverse mt-1 text-cyan-600'> - me</footer>
+              <footer className='flex flex-row-reverse mt-1 text-cyan-600'>
+                <article className="flex flex-col items-end">
+                  <span className="font-mono text-[11px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                    STATUS: SAFETY // OPT_LOAD: f1(1) // QUOTE: ME
+                  </span>
+                  <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+                </article>
+              </footer>
             </blockquote>
           </section>
 
@@ -106,18 +117,30 @@ const RegSafety: FC = () => {
           <br />
 
           <section className='mx-2 sm:mx-0'>
-          <h2 className='font-space text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Gender Variation Statistics from DoT</h2>
-          <section aria-labelledby='safety-intent'>
-            <h2 id="safety-intent" className='sr-only'>
-              Hopefully people will see how they tenmselves might be at risk of an accident. 
+            <h2 
+              style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
+                className="font-space relative drop-shadow-cyan-400 w-full font-bold mb-4 text-zinc-500/90 dark:text-zinc-100 text-2xl md:text-4xl lg:text-5xl"
+            >
+              Gender Driving Statistics // DoT
             </h2>
-            <blockquote className='mb-2'>
-              <p className={quoteClass}>
-                "The table below talks about the relative number of casualties for males and females relating to certain age groups, also collective results."
-              </p>
-              <footer className='flex flex-row-reverse mt-1 text-cyan-600'> - me</footer>
-            </blockquote>
-          </section>
+            <section aria-labelledby='safety-intent'>
+              <h2 id="safety-intent" className='sr-only'>
+                Hopefully people will see how they tenmselves might be at risk of an accident. 
+              </h2>
+              <blockquote className='mb-2'>
+                <p className={quoteClass}>
+                  "The table below talks about the relative number of casualties for males and females relating to certain age groups, also collective results."
+                </p>
+                <footer className='flex flex-row-reverse mt-1 text-cyan-600'>
+                  <article className="flex flex-col items-end">
+                    <span className="font-mono text-[11px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                      STATUS: SAFETY // OPT_LOAD: f1(1) // QUOTE: ME
+                    </span>
+                    <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+                  </article>
+                </footer>
+              </blockquote>
+            </section>
             <p className='text-sm md:text-base'>The following data is from the 
               <span>
                 <a className='text-cyan-600' rel='noopener noreferrer' target='_blank' href='https://www.gov.uk/government/statistical-data-sets/ras20-drivers-riders-and-vehicles-in-reported-road-accidents'> Department for Transport Statistics </a>
@@ -169,18 +192,30 @@ const RegSafety: FC = () => {
           <br />
 
           <section className='mx-2 sm:mx-0'>
-          <h2 className='font-space text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Driver Density UK from DoT</h2>
-          <section aria-labelledby='safety-intent'>
-            <h2 id="safety-intent" className='sr-only'>
-              Hopefully people will see how they tenmselves might be at risk of an accident. 
+            <h2 
+              style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
+                className="font-space relative drop-shadow-cyan-400 w-full font-bold mb-4 text-zinc-500/90 dark:text-zinc-100 text-2xl md:text-4xl lg:text-5xl"
+            >
+              Driver Density UK // DoT
             </h2>
-            <blockquote className='mb-2'>
-              <p className={quoteClass}>
-                "The figure below shows the relative car density per 1000 head of population. London appers to have amongst the lowest frequencies of car owners."
-              </p>
-              <footer className='flex flex-row-reverse mt-1 text-cyan-600'> - me</footer>
-            </blockquote>
-          </section>
+            <section aria-labelledby='safety-intent'>
+              <h2 id="safety-intent" className='sr-only'>
+                Hopefully people will see how they tenmselves might be at risk of an accident. 
+              </h2>
+              <blockquote className='mb-2'>
+                <p className={quoteClass}>
+                  "The figure below shows the relative car density per 1000 head of population. London appers to have amongst the lowest frequencies of car owners."
+                </p>
+                <footer className='flex flex-row-reverse mt-1 text-cyan-600'>
+                  <article className="flex flex-col items-end">
+                    <span className="font-mono text-[11px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                      STATUS: SAFETY // OPT_LOAD: f1(1) // QUOTE: ME
+                    </span>
+                    <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+                  </article>
+                </footer>
+              </blockquote>
+            </section>
             <p className='text-sm md:text-base text-zinc-700/80 dark:text-zinc-200/90'>Data and map from 
               <a className='text-cyan-600' rel='noopener noreferrer' target='_blank' href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/800502/vehicle-licensing-statistics-2018.pdf'> Vehicle Licensing Statistics: Annual 2018 </a>
               release
@@ -225,7 +260,7 @@ const RegSafety: FC = () => {
                 HelpMe-Car Home
               </Link>
               <Link 
-                to='/regrule' 
+                to='/regrules' 
                   className={`${buttonClass} ${shimmerClass}`}
               >
                 HelpMe-Car Rules

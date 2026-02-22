@@ -86,7 +86,7 @@ const Reg: FC = () => {
       <ParticlesBg theme="default" colour="cyan-400"/>
       <section className="space-y-10 mx-auto w-full">
         <section className="relative z-20 max-w-6xl mx-auto">
-          <h1 className="relative mt-4 z-50 font-space text-4xl md:text-5xl lg:text-7xl font-bold ml-4 sm:ml-10 mb-4 md:mb-8 pb-4 w-full text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
+          <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan">
             Home of HelpMe-Car
           </h1>
 
@@ -94,7 +94,7 @@ const Reg: FC = () => {
             <div className="relative pt-4 w-full">
               <h2 
                 style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
-                  className="font-space relative drop-shadow-cyan-400 text-center w-full mb-2 text-zinc-700/90 dark:text-zinc-100 text-3xl md:text-4xl lg:text-6xl lg:mt-14 font-extrabold"
+                  className="font-space relative drop-shadow-cyan-400 text-center w-full mb-2 text-zinc-500/90 dark:text-zinc-100 text-3xl md:text-4xl lg:text-6xl lg:mt-14 font-extrabold"
               >
                 A way to help your fellow Humans
               </h2>

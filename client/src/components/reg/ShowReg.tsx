@@ -166,21 +166,24 @@ const ShowReg = () => {
   return (
     <>
       <ParticlesBg theme="default" colour='purple-500' />
-      <section className="relative z-20 space-y-2 md:space-y-4 mx-2 sm:mx-0 -translate-y-10 sm:-translate-y-4">
-        <h1 className="font-space text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 pb-2 lan">
+      <section className="relative z-20 max-w-6xl mx-auto space-y-2 md:space-y-4">
+        <h1 className="font-space text-4xl md:text-5xl lg:text-7xl font-bold ml-2 pb-4 lan">
           HelpMe-Advisories | Faults
         </h1>
         
-        <div className="m-5 mx-auto py-6 md:py-10 px-8 space-y-5 text-zinc-500/90 dark:text-zinc-200/90 font-semibold rounded-lg shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]">
-          <h1 className='text-3xl md:text-4xl font-bold mb-2 text-transparent pb-4 bg-clip-text bg-gradient-to-r from-blue-400 to-green-400 text-center'>
+        <div className="m-5 mx-auto py-5 px-8 space-y-5 font-semibold rounded-lg shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]">
+          <h2 
+            style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
+              className="relative text-center drop-shadow-cyan-400 w-full mb-4 text-zinc-500/90 dark:text-zinc-100 text-3xl md:text-4xl lg:text-5xl font-bold"
+          >
             Message for owner of
             <span
               className="text-center justify-center mx-2 md:mx-3 px-2 md:px-3 py-0.5 md:py-1 text-xl md:text-2xl w-48 font-bold text-zinc-700 shadow-lg rounded bg-zinc-50 border-2 border-blue-800 tracking-wide hover:shadow-[inset_0px_1px_10px_rgba(0,0,0,0.2)] transition ease-in-out">
               {selectedReg.regplate}
             </span>
-          </h1>
+          </h2>
           
-          <section>
+          <section className='text-zinc-500/90 dark:text-zinc-200/90'>
             <div className='mb-10'>
               <h1 className={`${h1Class}`}>The following faults may apply to your car: </h1>
               
@@ -188,6 +191,12 @@ const ShowReg = () => {
                 (selectedReg as any)?.[key] && (
                 <AdvisoryBox key={key} message={msg} />
               )))}
+              <div className="flex flex-col items-end">
+                <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                  STATUS: OPERATIONAL // OPT_LOAD: f1(1) // CAR_FAULTS: ...
+                </span>
+                <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+              </div>
             </div>
             <div>
               <h1 className={`${h1Class} mt-4`}>People said the following about your driving: </h1>
@@ -195,6 +204,12 @@ const ShowReg = () => {
                 (selectedReg.driver as any)?.[key] && (
                 <AdvisoryBox key={key} message={msg} />
               )))}
+              <div className="flex flex-col items-end">
+                <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                  STATUS: OPERATIONAL // OPT_LOAD: f1(1) // DRIVER_FAULTS: ...
+                </span>
+                <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+              </div>
             </div>
           </section>
 

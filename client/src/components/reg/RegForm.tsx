@@ -123,13 +123,16 @@ const RegForm: React.FC = () => {
   return (
     <>
       <ParticlesBg theme='nasa' colour='purple-500' />
-      <section className='relative z-20 mx-2 sm:mx-0'>
-        <h1 className="font-space text-4xl sm:text-5xl font-bold ml-10 mt-[3rem] pb-4 w-[30rem] lan -translate-y-10 sm:-translate-y-8 mb-4">
+      <section className='relative z-20 max-w-6xl mx-auto '>
+        <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan">
           HelpMe-Out
         </h1>
-        <section className="rounded-lg m-5 mx-auto py-5 sm:py-10 px-8 shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] -translate-y-10">
-          <h2 className="font-michroma text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-300">
-            Help out fellow humans by adding their car number plate...
+        <section className="rounded-lg mx-auto py-5 px-8 shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]">
+          <h2 
+            style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
+              className="font-michroma relative drop-shadow-cyan-400 w-full mb-4 text-zinc-500/90 dark:text-zinc-100 text-2xl md:text-3xl lg:text-5xl font-extrabold"
+          >
+            Help out fellow humans by adding their car number plate..
           </h2>
           <form onSubmit={onSubmit} className='space-y-5 '>
             {submitted && (
@@ -153,14 +156,15 @@ const RegForm: React.FC = () => {
                                 required
                                   id="reg-plate"
                                     aria-label="Please enter the reg plate of the car you want to help"
-                  />
-                  <div className='ml-1 text-zinc-500/90 dark:text-zinc-200/90'>Please enter registration number, public or private</div></label>
+                />
+                <div className='ml-1 text-zinc-500/90 dark:text-zinc-200/90'>Please enter registration number, public or private</div></label>
               </div>
             </fieldset>
 
             {/* Brake Lights Condition */}
             <fieldset>
               <legend className='sr-only'>Brake lights condition</legend>
+              
               <div className={`${shadowClass}`}>
                 <h3 className={`${paneTitleClass}`}>Brake Lights Condition</h3>
                 <div>
@@ -202,6 +206,12 @@ const RegForm: React.FC = () => {
                 <div className={`${brightBorderClass}`} />
               </div>
             </fieldset>
+            <article className="flex flex-col items-end">
+              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                STATUS: OPERATIONAL // OPT_LOAD: f1(1) // BLC: 3 OPTS
+              </span>
+              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </article>
           
             {/* Rear Car Lights Condition */}
             <fieldset>
@@ -247,6 +257,12 @@ const RegForm: React.FC = () => {
                 <div className={`${brightBorderClass}`} />
               </div>
             </fieldset>
+            <article className="flex flex-col items-end">
+              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                STATUS: OPERATIONAL // OPT_LOAD: f1(1) // RCLC: 3 OPTS
+              </span>
+              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </article>
 
             {/* Indicator and Hazard / Warning Lights Condition */}
             <fieldset>
@@ -304,6 +320,12 @@ const RegForm: React.FC = () => {
                 <div className={`${brightBorderClass}`}/>
               </div>
             </fieldset>
+            <article className="flex flex-col items-end">
+              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                STATUS: OPERATIONAL // OPT_LOAD: f1(1) // I/HWLC: 4 OPTS
+              </span>
+              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </article>
 
             {/* Exhaust Smoke Colour */}
             <fieldset>
@@ -349,6 +371,12 @@ const RegForm: React.FC = () => {
                 <div className={`${brightBorderClass}`}></div>
               </div>
             </fieldset>
+            <article className="flex flex-col items-end">
+              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                STATUS: OPERATIONAL // OPT_LOAD: f1(1) // ESC: 3 OPTS
+              </span>
+              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </article>
 
             {/* Car Rear Tyre Condition */}
             <fieldset>
@@ -382,6 +410,12 @@ const RegForm: React.FC = () => {
                 <div className={`${brightBorderClass}`}></div>
               </div>
             </fieldset>
+            <article className="flex flex-col items-end">
+              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                STATUS: OPERATIONAL // OPT_LOAD: f1(1) // CTRC: 2 OPTS
+              </span>
+              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </article>
 
             {/* Driver Info */}
             <fieldset>
@@ -427,6 +461,12 @@ const RegForm: React.FC = () => {
                 <div className={`${brightBorderClass}`}></div>
               </div>
             </fieldset>
+            <article className="flex flex-col items-end">
+              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                STATUS: OPERATIONAL // OPT_LOAD: f1(1) // DC: 3 OPTS
+              </span>
+              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </article>
 
             <nav className='flex justify-between'>
               <button 

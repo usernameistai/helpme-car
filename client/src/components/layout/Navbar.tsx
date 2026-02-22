@@ -96,7 +96,6 @@ const Navbar = () => {
               ) : (
                 <div className="flex items-center gap-x-2"><span>☀️</span><span className="hidden lg:flex font-bold">| Light</span></div>
               )}
-              <span aria-hidden="true" className={`${navItemsOneTwo} hidden md:block w-20 space-x-2`}><span> ☀️ </span><span>|</span> <span>🌙 </span> </span>
             </button>
 
             {[

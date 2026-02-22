@@ -22,12 +22,16 @@ const RegRules: FC = () => {
     <>
       <ParticlesBg theme='bubble' colour='#94a3b8' />
       <section className='relative z-20 mx-auto mb-4 w-full max-w-6xl px-4 sm:px-0'>
-        <h1 className="font-space text-4xl md:text-5xl font-bold my-8 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
+        <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan">
           HelpMe - Rules & Regulations
         </h1>
-
-        <h2 className='font-space text-zinc-500/90 dark:text-zinc-200/90 text-xl sm:text-4xl font-bold mb-4'>Rules (Please don't break them)</h2>
-        <section className='relative bg-rules-car bg-standard rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
+        <h2 
+          style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
+            className="font-space relative drop-shadow-cyan-400 w-full font-bold mb-4 text-zinc-500/90 dark:text-zinc-100 text-2xl md:text-4xl lg:text-5xl"
+        >
+          Rules (Please don't break them)
+        </h2>
+        <section className='relative bg-rules-car bg-standard transform-gpu rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
           <div className='bg-black/50 text-center h-44 rounded-2xl shadow-lg flex items-start justify-center' >
             <span className='font-michroma text-lg sm:text-xl md:text-3xl font-bold text-cyan-400 pt-6'>
               No driver(s) may enter data
@@ -186,6 +190,13 @@ const RegRules: FC = () => {
           </ul>
         </section>
 
+        <article className="flex flex-col items-end">
+          <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+            STATUS: SAFETY // OPT_LOAD: f1(1) // PHOTOS: JOHN GETTY IMAGES
+          </span>
+          <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50 mb-1"></div>
+        </article>
+
         <section className="mb-2 text-sm md:text-lg">
           <h3 className='inter font-bold text-zinc-700 dark:text-zinc-200/90'>* Pulled over correctly and safely and are not blocking traffic, so not driving</h3>
           <h3 className='inter font-bold text-zinc-700 dark:text-zinc-200/90'>**MSM - Mirror Signal Manoeuvre (this is still driving, so not this)</h3>
@@ -216,7 +227,12 @@ const RegRules: FC = () => {
         </nav>
 
         <section>
-          <h2 className='font-space text-zinc-500 dark:text-zinc-200/90 text-2xl md:text-4xl font-bold mb-4'>Regulations</h2>
+          <h2 
+            style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
+              className="font-space relative drop-shadow-cyan-400 w-full font-bold mb-4 text-zinc-500/90 dark:text-zinc-100 text-2xl md:text-4xl lg:text-5xl"
+          >
+            Regulations
+          </h2>
 
           <section className='relative bg-rules-car bg-standard rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'>
             <div className='bg-black/50 text-center h-44 rounded-2xl shadow-lg flex items-start justify-center'>
@@ -283,6 +299,13 @@ const RegRules: FC = () => {
               <li>A Happy Man as People Should Be - <strong>Charles Etoroma</strong></li>
               <li>Remember, nnnnooo drivers - <strong>I.M.Notdriving</strong></li>
             </ul>
+          </article>
+
+          <article className="flex flex-col items-end">
+            <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+              STATUS: SAFETY // OPT_LOAD: f1(1) // PHOTOS: JOHN GETTY IMAGES
+            </span>
+            <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50 mb-4"></div>
           </article>
 
           <nav className='font-poppins flex flex-col mb-4 md:mb-20 px-4 md:flex-row w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'>
