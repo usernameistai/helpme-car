@@ -5,13 +5,12 @@ import { GiRuleBook } from 'react-icons/gi';
 import { IoClose, IoHome, IoMenu } from 'react-icons/io5';
 import { LuSearchCode } from 'react-icons/lu';
 import { TbLayoutDashboardFilled } from 'react-icons/tb';
+import { MdSatelliteAlt } from "react-icons/md";
 import { NavLink } from 'react-router-dom';
 
 const Sidebar: FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
-
   const linkClass = "font-michroma block p-4 text-zinc-100 hover:bg-cyan-400/20 hover:text-cyan-400 transition-all border-l-4 border-transparent hover:border-cyan-400";
-
   // Toggle theme function
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -64,7 +63,7 @@ const Sidebar: FC = () => {
             <div><FaHandsHelping /></div>
           </NavLink>
           <NavLink to="/search" className={`${linkClass} flex justify-between`}>
-            <div>Search By Number Plate</div>
+            <div>Search Number Plate</div>
             <div><LuSearchCode /></div>
           </NavLink>
           <NavLink to="/dashboard" className={`${linkClass} flex justify-between`}>
@@ -86,6 +85,10 @@ const Sidebar: FC = () => {
           <NavLink to="/regsafety" className={`${linkClass} flex justify-between`}>
             <div>Importance of Safety</div>
             <div><FaHelmetSafety /></div>
+          </NavLink>
+          <NavLink to="/mission_briefing" className={`${linkClass} flex justify-between`}>
+            <div>Mission_Briefing</div>
+            <div><MdSatelliteAlt /></div>
           </NavLink>
           {/* Theme Toggle */}
           <button onClick={toggleTheme} aria-label="Toggle theme" className={`${linkClass}`}>

@@ -144,7 +144,7 @@ html.dark {
   animation: materialize 0.6s ease-out forwards;
 }
 
-@keyframes thermal-scan {
+/* @keyframes thermal-scan {
   0% { background-position: 0% -100%; }
   100% { background-position: 0% 200%; }
 }
@@ -157,35 +157,40 @@ html.dark {
   background: linear-gradient(to bottom, transparent, rgba(34, 211, 238, 0.2), transparent);
   background-size: 100% 50%;
   animation: thermal-scan 2s linear infinite;
-}
+} */
 
 /* Reliable fade-in for Firefox ESR */
-@keyframes missionFadeIn {
+/* @keyframes missionFadeIn {
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 .animate-mission-fade {
   animation: missionFadeIn 0.4s ease-out forwards;
-}
+} */
 
-/* The scanning line - simplified */
-@keyframes scanLine {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(400%); }
-}
-
-.scan-line {
-  height: 2px;
-  background: linear-gradient(to right, transparent, #22d3ee, transparent);
-  box-shadow: 0 0 8px #22d3ee;
+/* HP Envy Optimized Scanline */
+.scanline {
   width: 100%;
-  position: absolute;
-  top: 0;
+  height: 100px; /* A soft gradient beam instead of a harsh line */
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(52, 211, 153, 0.05), /* Very faint emerald */
+    transparent
+  );
+  position: fixed;
+  top: -100px;
   left: 0;
-  animation: scanLine 3s linear infinite;
-  z-index: 10;
+  z-index: 50;
   pointer-events: none;
+  /* Use transform for GPU acceleration */
+  animation: scan-optimized 8s linear infinite;
+  will-change: transform; 
+}
+
+@keyframes scan-optimized {
+  from { transform: translateY(0); }
+  to { transform: translateY(calc(100vh + 100px)); }
 }
 
 .bg-standard {

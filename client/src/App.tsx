@@ -20,6 +20,7 @@ import SignInPage from "./pages/SignIn";
 import Dashboard from "./pages/Dashboard";
 import DashboardForm from "./pages/DashboardForm";
 import Leaderboard from "./pages/Leaderboard";
+import MissionBriefing from "./pages/MissionBriefing";
 
 const App: FC = () => {
   const { regs, loading } = useRegStore();
@@ -55,6 +56,7 @@ const App: FC = () => {
           <Route path="/dashboard" element={ <Dashboard /> } />
           <Route path="/dashboard/:userId/edit" element={ <DashboardForm /> } />
           <Route path="/leaderboard" element={ <Leaderboard /> } />
+          <Route path='/mission_briefing' element={ <MissionBriefing /> } />
           {/* Add more routes here */}
         </Route>
       </Routes>

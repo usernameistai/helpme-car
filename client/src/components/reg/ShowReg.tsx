@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useRegStore } from '../../store/useRegStore';
 import Spinner from '../layout/Spinner';
@@ -24,6 +24,15 @@ const ShowReg = () => {
   const buttonClass = "flex text-center items-center justify-center font-poppins px-4 py-3 mt-4 text-small md:text-lg font-semibold rounded shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
+  useEffect(() => {
+    // If loading is done, and we have no data, and there isn't a hard network error... 
+    if (!isLoading && !selectedReg && !isError) {
+      setNotFound(true);
+    } else if (selectedReg) {
+      setNotFound(false);
+    }
+  }, [selectedReg, isLoading, isError]);
+
   const handleDeleteClick = () => setModalOpen(true);
   const handleDelete = async () => {
     if (!selectedReg?.regplate) return;
@@ -42,10 +51,12 @@ const ShowReg = () => {
   const handleCancelDelete = () => setModalOpen(false);
 
   const handleShare = async () => {
+    // Generate a mock "Access Token" based on the plate + current minute
+    const accessCode = btoa(`${selectedReg?.regplate}-${Math.floor(Date.now() / 60000)}`).substring(0, 8).toUpperCase();
     const shareData = {
-      title: `HelpMe - All Clear!`,
-      text: `Good news I checked the car ${selectedReg?.regplate} and it has a clean bill of health! 🚗✨`,
-      url: window.location.href, // Shares current page linlk
+      title: `HMC_INTEL_REPORT: ${regplate}`,
+      text: `📡 MISSION_STATUS: ALL_CLEAR\n🔑 ACCESS_CODE: [${accessCode}]\n🎯 TARGET: ${regplate}\n\nIntel provided by HelpMe Satellite Uplink.`,
+      url: window.location.href,
     };
 
     try {
@@ -54,13 +65,13 @@ const ShowReg = () => {
         toast.success("Shared successfully");
       } else {
         // Fallback for Desktop/Incompatible browsers
-        await navigator.clipboard.writeText(window.location.href);
-        toast.success("Link copied to clipboard! 📋");
+        await navigator.clipboard.writeText(`${shareData.text} \nLink: ${shareData.url}`);
+        toast.success("Access code & Link copied to clipboard! 📋");
       }
     } catch (err: any) {
       console.error("Error sharing", err);
     }
-  }
+  };
 
   interface AdvisoryBoxProps {
     key: string;
@@ -115,48 +126,68 @@ const ShowReg = () => {
   if (isLoading) return <Spinner />;
   if (isError || notFound) return (
     <>
-      <ParticlesBg theme="bubble" colour='emerald-400'/>
-      <section className='relative z-20 max-w-4xl mx-auto px-4'>
-        <h1 className="font-michroma text-3xl md:text-5xl font-bold mt-10 mb-6 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300">
+      <ParticlesBg 
+        theme="bubble" 
+        colour='emerald-400' 
+        className='opacity-50 dark:opacity-100 contrast-150 saturate-150 dark:contrast-100'
+      />
+      <div className="scanline fixed inset-0 z-30" />
+      <section className='relative z-20 max-w-4xl mx-auto px-4 py-10 space-y-6'>
+        <h1 className="font-michroma text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300">
           SCAN_RESULT: ALL_CLEAR
         </h1>
-        
-        <div className="relative flex flex-col items-center justify-center p-8 md:p-12 rounded-2xl bg-zinc-300/50 dark:bg-zinc-900/50 border border-emerald-500/30 backdrop-blur-md shadow-[0_20px_50px_rgba(16,185,129,0.2)] overflow-hidden">
-          {/* Diagnostic Background Detail */}
-          <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-emerald-600 dark:text-emerald-300/80 text-right">
-            SENSOR_ID: 0x77AF<br/>STATUS: NO_FAULTS_DETECTED
+  
+        {/* INTERCEPT DATA PACKET */}
+        <div className="relative p-6 border-l-4 border-emerald-500 bg-zinc-900/40 backdrop-blur-md rounded-r-xl">
+          <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-emerald-400"></div>
+          <h2 className="font-michroma text-emerald-400 text-[8px] md:text-base tracking-tighter animate-pulse">
+            &gt; DECODING_PAYLOAD_FROM_T'AI_SATELLITE_BASE_HUB...
+          </h2>
+          <div className="mt-2 p-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-mono text-[10px] inline-block">
+            [CHECKSUM: OK] [ENCRYPTION: AES-256] [UPLINK: ACTIVE]
+          </div>
+        </div>
+  
+        {/* MAIN DIAGNOSTIC CARD */}
+        <div className="relative flex flex-col items-center justify-center p-8 md:p-12 rounded-2xl bg-zinc-300/50 dark:bg-zinc-900/60 border border-emerald-500/30 backdrop-blur-xl shadow-[0_20px_50px_rgba(16,185,129,0.2)] overflow-hidden">
+          
+          {/* SENSOR METADATA CORNERS */}
+          <div className="absolute top-4 left-4 font-mono text-[9px] uppercase opacity-60 text-emerald-600 dark:text-emerald-400">
+            LAT: 55.8642° N <br />
+            LONG: 4.2518° W <br />
+            SIGNAL: |||||||..
+          </div>
+          <div className="absolute top-4 right-4 font-mono text-[9px] text-emerald-600 dark:text-emerald-400 text-right opacity-60">
+            SENSOR_ID: 0x77AF<br/>
+            STREAMS: STABLE
           </div>
   
-          <h2 className="font-michroma text-xl md:text-2xl text-zinc-700 mt-6 md:mt-0 dark:text-zinc-100 mb-6 flex flex-wrap justify-center items-center gap-3">
-            REG: <span className='px-4 py-1 bg-zinc-800 border border-emerald-400/50 text-emerald-400 rounded-lg shadow-[0_0_15px_rgba(52,211,153,0.3)] tracking-widest'>{regplate}</span>
+          {/* REG PLATE DISPLAY */}
+          <h2 className="font-michroma text-xl md:text-2xl text-zinc-700 mt-12 md:mt-4 dark:text-zinc-100 mb-6 flex flex-wrap justify-center items-center gap-3">
+            REG_: <span className='px-4 py-1 bg-zinc-800 border border-emerald-400/50 text-emerald-400 rounded-lg shadow-[0_0_15px_rgba(52,211,153,0.3)] tracking-widest'>{regplate}</span>
           </h2>
   
+          {/* STATUS MESSAGE */}
           <div className="space-y-4 max-w-md text-center">
-            <div className="inline-block px-4 py-1 rounded-full border-emerald-600/50 bg-emerald-400 text-emerald-600/80 dark:bg-emerald-500/20 dark:text-emerald-400 font-bold text-xs uppercase tracking-widest border-2 animate-pulse">
+            <div className="inline-block px-4 py-1 rounded-full border-emerald-600/50 bg-emerald-400 text-emerald-900 dark:bg-emerald-500/20 dark:text-emerald-400 font-bold text-xs uppercase tracking-widest border-2 animate-pulse">
               Safe to Proceed
             </div>
-            <p className="text-zinc-700/90 dark:text-zinc-400 text-lg leading-relaxed font-inter">
-              Our satellites have no record of active faults for this unit.
+            <p className="text-zinc-700/90 dark:text-zinc-300 text-lg leading-relaxed font-inter">
+              No active faults detected in the current grid sector.
             </p>
             <p className="text-zinc-700/90 dark:text-zinc-500 text-xs italic">
-              Note: Sensors only detect reported anomalies. Regular maintenance required.
-            </p>
+              // Note: Sensors only detect reported anomalies. <a href='https://www.halfords.com/' target="_blank" rel="noopener noreferrer" className="text-emerald-400/80">Regular maintenance required. </a>//
+           </p>
           </div>
   
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 w-full sm:w-auto">
-            <button 
-              onClick={handleShare}
-              className={`${buttonClass} ${shimmerClass} bg-emerald-500 text-zinc-900 min-w-[200px]`}
-            >
-              📢 Share Good News
+          <div className="flex flex-col sm:flex-row gap-1 md:gap-4 justify-center mt-4 md:mt-10 w-full sm:w-auto">
+            <button onClick={handleShare} className={`${buttonClass} ${shimmerClass} bg-emerald-500 text-zinc-900 min-w-[200px]`}>
+              📢 Share Intel
             </button>
-            
             <Link to='/reg' className={`${buttonClass} bg-zinc-800/50 text-zinc-300 border-2 border-white/30 hover:bg-zinc-700 min-w-[150px]`}>
               New Scan
             </Link>
           </div>
-  
-          {/* The "Mission Pulse" border */}
           <div className="absolute inset-0 rounded-2xl border border-emerald-400/20 pointer-events-none animate-pulse"></div>
         </div>
       </section>
@@ -166,6 +197,7 @@ const ShowReg = () => {
   return (
     <>
       <ParticlesBg theme="default" colour='purple-500' />
+      <div className="scanline fixed inset-0 z-30" />
       <section className="relative z-20 max-w-6xl mx-auto space-y-2 md:space-y-4">
         <h1 className="font-space text-4xl md:text-5xl lg:text-7xl font-bold ml-2 pb-4 lan">
           HelpMe-Advisories | Faults

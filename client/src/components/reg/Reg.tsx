@@ -385,14 +385,40 @@ const Reg: FC = () => {
                   Payload: 10,000_Digits_Pi // Protocol: f1(5)
                 </div>
               </article>
+              
+              <div className="flex flex-col items-center mt-8">
+                <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em] mb-1">
+                  STATUS: OPERATIONAL // FUNC_REG_PAGE: SCROLL_END
+                </span>
+                <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+              </div>
             </section>
 
-            <section>
-              <article 
-                className={article2Class}
-              >
+            <section className="space-y-9">
+              <article className={articleClass} >
                 <div className="flex justify-between items-start mb-4">
-                  <span className="font-mono text-[10px] text-cyan-400 tracking-widest">09 // ALTERNATIVE TRANSPORT / FARM VEHICLES</span>
+                  <span className="font-mono text-[10px] text-cyan-400 tracking-widest">09 // INSTRUCTIONS</span>
+                  <div className="flex flex-col space-y-[3px] opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div></div>
+                    <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div></div>
+                    <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-700/80 dark:bg-white/40"></div></div>
+                    <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400"></div>
+                    <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400"></div>
+                    <div className="h-[2px] w-[35px] animate-pulse bg-cyan-400"></div>
+                  </div>
+                </div>
+                <Link to="/mission_briefing" className="inline-block">
+                  <h3 className={missionh3Class}>Mission_Briefing</h3>
+                </Link>
+                <p className="font-space text-xs text-zinc-700/80 dark:text-white/50 leading-relaxed">How to use the site: / Instructions</p>
+                <div className={payloadClass}>
+                  Payload: 10,000_Digits_Pi // Protocol: f2(1)
+                </div>
+              </article>
+
+              <article className={article2Class} >
+                <div className="flex justify-between items-start mb-4">
+                  <span className="font-mono text-[10px] text-cyan-400 tracking-widest">10 // ALTERNATIVE TRANSPORT / FARM VEHICLES</span>
                   <div className="flex flex-col space-y-[3px] opacity-80 group-hover:opacity-100 transition-opacity">
                     <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-500/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-500/80 dark:bg-white/40"></div></div>
                     <div className="flex space-x-[3px]"><div className="h-[2px] w-4 bg-zinc-500/80 dark:bg-white/40"></div><div className="h-[2px] w-4 bg-zinc-500/80 dark:bg-white/40"></div></div>
@@ -433,21 +459,21 @@ const Reg: FC = () => {
                     </div>       
                   </article>
                   <div className="flex flex-col items-end">
-                  <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
-                    STATUS: OPERATIONAL // AGRI_SCAN: ACTIVE
-                  </span>
-                  <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
-                </div>
+                    <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                      STATUS: OPERATIONAL // AGRI_SCAN: ACTIVE
+                    </span>
+                    <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+                  </div>
 
               
                 </div>
                 <div className={payloadClass}>
-                  Payload: 10,000_Digits_Pi // Protocol: f2(1)
+                  Payload: 10,000_Digits_Pi // Protocol: f2(2)
                 </div>
               </article>
               <div className="flex flex-col items-center mt-8">
                 <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em] mb-1">
-                  STATUS: OPERATIONAL // REG_PAGE: SCROLL_END
+                  STATUS: OPERATIONAL // AGRI_REG_PAGE: SCROLL_END
                 </span>
                 <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
               </div>

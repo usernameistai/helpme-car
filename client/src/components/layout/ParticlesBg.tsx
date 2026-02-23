@@ -18,9 +18,10 @@ const tailwindColours: Record<string, string> = {
 interface ParticlesProps {
   theme?: keyof typeof particlePresets;
   colour?: string;
+  className?: string;
 }
 
-const ParticlesBg: FC<ParticlesProps> = ({theme = 'default', colour }) => {
+const ParticlesBg: FC<ParticlesProps> = ({theme = 'default', colour, className = "" }) => {
 
   useEffect(() => {
     // Vite/React to ensure script is loaded and ID exists
@@ -88,7 +89,7 @@ const ParticlesBg: FC<ParticlesProps> = ({theme = 'default', colour }) => {
     <>
       <div 
         id="particles-js"
-          className='fixed inset-0 z-10 bg-slate-200/30 dark:bg-slate-900 pointer-events-none'
+          className={`fixed inset-0 z-10 bg-slate-200/30 dark:bg-slate-900 pointer-events-none ${className}`}
             aria-hidden='true'
       />
     </>

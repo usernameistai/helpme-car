@@ -55,21 +55,4 @@ export const particlePresets = {
     },
     retina_detect: false // from true
   },
-  // nyancat: {
-  //   particles: {
-  //     number: { value: 8, density: { enable: true, value_area: 800 } },
-  //     shape: {
-  //       type: "image",
-  //       image: {
-  //         src: "https://vincentgarreau.com",
-  //         width: 100,
-  //         height: 100
-  //       }
-  //     },
-  //     size: { value: 32, random: false },
-  //     line_linked: { enable: false },
-  //     move: { enable: true, speed: 4, direction: "right", straight: true, out_mode: "out" }
-  //   },
-  //   retina_detect: false // from true
-  // }
 };

@@ -378,3 +378,71 @@ When asked about Clerk + React (Vite) integration, your response **MUST**:
   //     <div className="absolute inset-0 bg-cyan-400/5 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
   //   </div>
   // );
+
+   // if (isError || notFound) return (
+  //   <>
+  //     <ParticlesBg theme="bubble" colour='emerald-400' className='opacity-50 dark:opacity-100 contrast-150 saturate-150 dark:contrast-100'/>
+  //     <section className='relative z-20 max-w-4xl mx-auto px-4 space-y-4'>
+  //       <h1 className="font-michroma text-3xl md:text-5xl font-bold mt-10 mb-6 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300">
+  //         SCAN_RESULT: ALL_CLEAR
+  //       </h1>
+  //       <div className="relative p-8 border-l-4 border-emerald-500 bg-zinc-900/80 backdrop-blur-md">
+  //       {/* Tactical Corner Bracket */}
+  //         <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-emerald-400"></div>
+          
+  //         <h1 className="font-michroma text-emerald-400 tracking-tighter">
+  //           DECODING_PAYLOAD...
+  //         </h1>
+          
+  //         <div className="mt-4 p-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-mono text-xs">
+  //           [CHECKSUM: OK] [ENCRYPTION: AES-256]
+  //         </div>
+  //       </div>
+        
+        
+  //       <div className="relative flex flex-col items-center justify-center p-8 md:p-12 rounded-2xl bg-zinc-300/50 dark:bg-zinc-900/50 border border-emerald-500/30 backdrop-blur-md shadow-[0_20px_50px_rgba(16,185,129,0.2)] overflow-hidden">
+  //         {/* Diagnostic Background Detail */}
+  //         <div className="absolute top-4 left-4 font-mono text-[10px] uppercase opacity-40">
+  //           LAT: 55.8642° N <br />
+  //           LONG: 4.2518° W <br />
+  //           SIGNAL_STRENGTH: |||||||..
+  //         </div>
+  //         <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-emerald-600 dark:text-emerald-300/80 text-right">
+  //           SENSOR_ID: 0x77AF<br/>STATUS: NO_FAULTS_DETECTED
+  //         </div>
+  
+  //         <h2 className="font-michroma text-xl md:text-2xl text-zinc-700 mt-8 md:mt-0 dark:text-zinc-100 mb-6 flex flex-wrap justify-center items-center gap-3">
+  //           REG: <span className='px-4 py-1 bg-zinc-800 border border-emerald-400/50 text-emerald-400 rounded-lg shadow-[0_0_15px_rgba(52,211,153,0.3)] tracking-widest'>{regplate}</span>
+  //         </h2>
+  
+  //         <div className="space-y-4 max-w-md text-center">
+  //           <div className="inline-block px-4 py-1 rounded-full border-emerald-600/50 bg-emerald-400 text-emerald-600/80 dark:bg-emerald-500/20 dark:text-emerald-400 font-bold text-xs uppercase tracking-widest border-2 animate-pulse">
+  //             Safe to Proceed
+  //           </div>
+  //           <p className="text-zinc-700/90 dark:text-zinc-400 text-lg leading-relaxed font-inter">
+  //             Our satellites have no record of active faults for this unit.
+  //           </p>
+  //           <p className="text-zinc-700/90 dark:text-zinc-500 text-xs italic">
+  //             Note: Sensors only detect reported anomalies. Regular maintenance required.
+  //           </p>
+  //         </div>
+  
+  //         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 w-full sm:w-auto">
+  //           <button 
+  //             onClick={handleShare}
+  //             className={`${buttonClass} ${shimmerClass} bg-emerald-500 text-zinc-900 min-w-[200px]`}
+  //           >
+  //             📢 Share Good News
+  //           </button>
+            
+  //           <Link to='/reg' className={`${buttonClass} bg-zinc-800/50 text-zinc-300 border-2 border-white/30 hover:bg-zinc-700 min-w-[150px]`}>
+  //             New Scan
+  //           </Link>
+  //         </div>
+  
+  //         {/* The "Mission Pulse" border */}
+  //         <div className="absolute inset-0 rounded-2xl border border-emerald-400/20 pointer-events-none animate-pulse"></div>
+  //       </div>
+  //     </section>
+  //   </>
+  // );

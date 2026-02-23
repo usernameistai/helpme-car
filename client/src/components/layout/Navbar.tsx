@@ -9,6 +9,7 @@ import { IoHome } from "react-icons/io5";
 import { BsMenuUp } from "react-icons/bs";
 import { PiSignInDuotone } from "react-icons/pi";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
+import { MdSatelliteAlt } from "react-icons/md";
 import { SignedIn, SignedOut, SignInButton, SignOutButton } from "@clerk/clerk-react";
 
 const Navbar = () => {
@@ -171,6 +172,7 @@ const Navbar = () => {
                         { to: "/regrules", label: "HMC Rules", icon: <FcRules className="my-auto text-cyan-500"/>, icon2: <GiRuleBook className="my-auto text-cyan-500"/>},
                         { to: "/reghelp", label: "HMC Help", icon: <FaHandsHelping className="my-auto text-cyan-500"/>},
                         { to: "/regsafety", label: "HMC Safety", icon: <FaHelmetSafety className="my-auto text-cyan-500"/>},
+                        { to: "/mission_briefing", label: "Mission_Briefing", icon: <MdSatelliteAlt className="my-auto text-cyan-500"/>},
                         { to: "/signin", label: "HMC Sign In", icon: <PiSignInDuotone className="my-auto text-cyan-500" size={20}/>}
                       ].map((menu) => (
                         <li key={menu.to} role="none">

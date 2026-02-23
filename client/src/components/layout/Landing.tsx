@@ -30,7 +30,9 @@ const Landing = () => {
             
             <div className="space-y-2">
               <p className='font-michroma lan text-xl sm:text-2xl md:text-4xl uppercase tracking-tighter'>
-                Identify. Alert. Help.
+                <Link to="/mission_briefing">
+                  Identify. Alert. Help.
+                </Link>
               </p>
               <p className="font-inter text-white/90 text-sm md:text-base max-w-xl">
                 The anonymous vehicle advisory system. Enter the registration, select the fault, and assist a fellow human.
