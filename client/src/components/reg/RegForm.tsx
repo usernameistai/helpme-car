@@ -207,7 +207,7 @@ const RegForm: React.FC = () => {
               </div>
             </fieldset>
             <article className="flex flex-col items-end">
-              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+              <span className="font-mono text-[8px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                 STATUS: OPERATIONAL // OPT_LOAD: f1(1) // BLC: 3 OPTS
               </span>
               <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
@@ -258,7 +258,7 @@ const RegForm: React.FC = () => {
               </div>
             </fieldset>
             <article className="flex flex-col items-end">
-              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+              <span className="font-mono text-[8px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                 STATUS: OPERATIONAL // OPT_LOAD: f1(1) // RCLC: 3 OPTS
               </span>
               <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
@@ -321,7 +321,7 @@ const RegForm: React.FC = () => {
               </div>
             </fieldset>
             <article className="flex flex-col items-end">
-              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+              <span className="font-mono text-[8px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                 STATUS: OPERATIONAL // OPT_LOAD: f1(1) // I/HWLC: 4 OPTS
               </span>
               <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
@@ -372,7 +372,7 @@ const RegForm: React.FC = () => {
               </div>
             </fieldset>
             <article className="flex flex-col items-end">
-              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+              <span className="font-mono text-[8px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                 STATUS: OPERATIONAL // OPT_LOAD: f1(1) // ESC: 3 OPTS
               </span>
               <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
@@ -411,7 +411,7 @@ const RegForm: React.FC = () => {
               </div>
             </fieldset>
             <article className="flex flex-col items-end">
-              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+              <span className="font-mono text-[8px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                 STATUS: OPERATIONAL // OPT_LOAD: f1(1) // CTRC: 2 OPTS
               </span>
               <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
@@ -462,7 +462,7 @@ const RegForm: React.FC = () => {
               </div>
             </fieldset>
             <article className="flex flex-col items-end">
-              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+              <span className="font-mono text-[8px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                 STATUS: OPERATIONAL // OPT_LOAD: f1(1) // DC: 3 OPTS
               </span>
               <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>

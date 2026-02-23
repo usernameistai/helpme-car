@@ -103,8 +103,8 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
                   Search
                 </button>
                 <div className='mt-6 hidden sm:block'>
-                  <div className="h-[1px] w-16 md:w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
-                  <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                  <div className="h-[1px] w-16 md:w-24 bg-gradient-to-r from-zinc-500 dark:from-cyan-400 to-transparent opacity-50"></div>
+                  <span className="font-mono text-[8px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                     STATUS: OPERATIONAL // CAR_SCAN: ACTIVE
                   </span>
                 </div>

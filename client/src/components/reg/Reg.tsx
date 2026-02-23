@@ -192,10 +192,10 @@ const Reg: FC = () => {
                     HelpMe-Car Recently Helped // Success
                   </h2>
                   <div className="flex flex-col items-end">
-                    <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                    <span className="font-mono text-[8px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                       STATUS: OPERATIONAL // OPT_LOAD: f1(1) // REG_ADD: 7/CHAR // LINK: ACTIVE
                     </span>
-                    <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+                    <div className="h-[1px] w-24 bg-gradient-to-r from-zinc-500 dark:from-cyan-400 to-transparent opacity-50"></div>
                   </div>
                 </div>
               </section>
@@ -204,8 +204,8 @@ const Reg: FC = () => {
               <GlassCard title="Recently added registrations" className="z-30 font-space h-full mb-0 relative min-h-60 mx-w-5xl backdrop-blur-sm mx-auto hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]">
                 <p className="text-gray-900 dark:text-gray-200 text-base lg:text-xl m-1/2 sm:m-0 px-6 sm:px-8">Here are a few number plates from the database, if this is your car, click on it to see what advisories have been added. Maybe you could help someone else out?</p>
                 <div className="relative z-30">
-                  <div className="h-[1px] mt-2 w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
-                  <div className="font-mono text-[8px] text-cyan-700/80 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
+                  <div className="h-[1px] mt-2 w-24 bg-gradient-to-r from-zinc-500 dark:from-cyan-400 to-transparent opacity-50"></div>
+                  <div className="font-mono text-[8px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                     STATUS: OPERATIONAL // AGRI_SCAN: ACTIVE
                   </div>
                   <RegList 
@@ -228,10 +228,10 @@ const Reg: FC = () => {
                 HelpMe-Car Search and Leaderboard // Seek & Help
               </h2>
               <div className="flex flex-col items-end">
-                <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                <span className="font-mono text-[8px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                   STATUS: OPERATIONAL // OPT_LOAD: f2(1) // REG_SEARCH: 7/CHAR // TOP_HELP: ACTIVE
                 </span>
-                <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+                <div className="h-[1px] w-24 bg-gradient-to-r from-zinc-500 dark:from-cyan-400 to-transparent opacity-50"></div>
               </div>
             </div>
           </section>
@@ -263,10 +263,10 @@ const Reg: FC = () => {
               HelpMe-Car Mission // Protocol & Intel 
             </h2>
             <div className="flex flex-col items-end">
-              <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+              <span className="font-mono text-[8px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                 STATUS: OPERATIONAL // OPT_LOAD: f1(1) // DATA_STREAM: 10k_PI // AGRI_SCAN: ACTIVE
               </span>
-              <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+              <div className="h-[1px] w-24 bg-gradient-to-r from-zinc-500 dark:from-cyan-400 to-transparent opacity-50"></div>
             </div>
           </div>
 
@@ -387,10 +387,10 @@ const Reg: FC = () => {
               </article>
               
               <div className="flex flex-col items-center mt-8">
-                <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em] mb-1">
+                <span className="font-mono text-[0.7rem] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                   STATUS: OPERATIONAL // FUNC_REG_PAGE: SCROLL_END
                 </span>
-                <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+                <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-zinc-500 dark:from-cyan-400 to-transparent opacity-50"></div>
               </div>
             </section>
 
@@ -472,10 +472,10 @@ const Reg: FC = () => {
                 </div>
               </article>
               <div className="flex flex-col items-center mt-8">
-                <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em] mb-1">
+                <span className="font-mono text-[0.7rem] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                   STATUS: OPERATIONAL // AGRI_REG_PAGE: SCROLL_END
                 </span>
-                <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+                <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-zinc-500 dark:from-cyan-400 to-transparent opacity-50"></div>
               </div>
             </section>
 

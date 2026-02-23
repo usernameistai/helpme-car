@@ -191,10 +191,10 @@ const RegRules: FC = () => {
         </section>
 
         <article className="flex flex-col items-end">
-          <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+          <span className="font-mono text-[8px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
             STATUS: SAFETY // OPT_LOAD: f1(1) // PHOTOS: JOHN GETTY IMAGES
           </span>
-          <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50 mb-1"></div>
+          <div className="h-[1px] w-24 bg-gradient-to-r from-zinc-500 dark:from-cyan-400 to-transparent opacity-50 mb-1"></div>
         </article>
 
         <section className="mb-2 text-sm md:text-lg">
@@ -302,10 +302,10 @@ const RegRules: FC = () => {
           </article>
 
           <article className="flex flex-col items-end">
-            <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+            <span className="font-mono text-[8px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
               STATUS: SAFETY // OPT_LOAD: f1(1) // PHOTOS: JOHN GETTY IMAGES
             </span>
-            <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50 mb-4"></div>
+            <div className="h-[1px] w-24 bg-gradient-to-r from-zinc-500 dark:from-cyan-400 to-transparent opacity-50 mb-4"></div>
           </article>
 
           <nav className='font-poppins flex flex-col mb-4 md:mb-20 px-4 md:flex-row w-full max-w-4xl mx-auto text-sm md:text-base justify-center md:justify-between text-center'>

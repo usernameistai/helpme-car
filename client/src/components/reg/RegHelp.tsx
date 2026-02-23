@@ -88,10 +88,10 @@ const RegHelp: FC = () => {
         </section>
 
         <article className="flex flex-col items-end">
-          <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+          <span className="font-mono text-[8px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
             STATUS: SAFETY // OPT_LOAD: f1(1) // PHOTOS: JOHN GETTY IMAGES
           </span>
-          <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50 mb-12"></div>
+          <div className="h-[1px] w-24 bg-gradient-to-r from-zinc-500 dark:from-cyan-400 to-transparent opacity-50 mb-12"></div>
         </article>
 
         <section className="relative mb-4 md:mb-32 lg:mb-28 z-50">
