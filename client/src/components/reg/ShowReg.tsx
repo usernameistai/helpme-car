@@ -247,7 +247,7 @@ const ShowReg = () => {
 
         </div>
 
-        <nav className="flex gap-4 mt-4 justify-between">
+        <nav className="flex gap-4 mt-4 pb-4 justify-between">
           <Link 
             to={`/reg/${selectedReg.regplate}/edit`} 
               className={`pt-3 bg-yellow-500/20 text-yellow-400 border border-yellow-500/50 ${buttonClass} ${shimmerClass}`}

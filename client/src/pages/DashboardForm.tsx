@@ -165,7 +165,7 @@ const DashboardForm: React.FC = () => {
                         value={currentPower}
                           onChange={(e) => setCurrentPower(e.target.value)}
                             onKeyDown={handleAddPower}
-                              placeholder='Type a power and hit Enter...'
+                              placeholder='Type a power and hit Enter / Return...'
                                 id="edit-superpowers"
                                   className='border border-sky-200 rounded-md p-1 sm:p-2 w-full text-base sm:text-lg text-zinc-700'
                   />
