@@ -80,7 +80,7 @@ const Dashboard: FC = () => {
           {/* Profile Section  */}
           <GlassCard 
             title={`${profile?.username}'s Profile`} 
-              className="relative flex flex-col font-space backdrop-blur-md z-30 overflow-hidden group min-h-[450px]"
+              className="relative flex flex-col font-space backdrop-blur-md z-30 overflow-visible touch-pan-y group min-h-[450px]"
           >
             {/* TOP TIER: DATA Dossier */}
             <div className="m-4 flex-1 space-y-4">
@@ -124,7 +124,7 @@ const Dashboard: FC = () => {
                 </span>
                 
                 {/* The "Magic" Footer Bar */}
-                <div className="relative w-full max-w-[200px] h-[2px] mt-4 bg-white/10 overflow-hidden">
+                <div className="relative w-full max-w-[200px] h-[2px] mt-4 bg-white/10">
                   <div className="absolute inset-0 bg-cyan-400 w-1/3 animate-scan-fast shadow-[0_0_10px_cyan]" />
                 </div>
               </div>
@@ -132,7 +132,7 @@ const Dashboard: FC = () => {
           </GlassCard>
          
           {/* Cars I have helped */}
-          <GlassCard title="Your Impact" className="relative flex flex-col overflow-hidden font-space backdrop-blur-md z-30">
+          <GlassCard title="Your Impact" className="relative flex flex-col overflow-visible touch-pan-y font-space backdrop-blur-md z-30">
             <div className="m-4 flex items-center justify-around bg-cyan-500/5 rounded-lg border border-white/5 py-3">
               {/* Cars Helped Metric */}
               <div className="flex flex-col items-center">
@@ -176,29 +176,30 @@ const Dashboard: FC = () => {
               </div>
 
               {/* THE GRID: Locked to 2x2 for clean presentation */}
-              {/* <div className="grid grid-cols-2 gap-3 flex-1 overflow-hidden"> */}
-              <div className="grid grid-cols-2 gap-3 flex-none">
-                {myCars?.slice(0, 10).map((car: any) => (
-                  <Link
-                    key={car._id}
-                    to={`/reg/${car.regplate}`}
-                    className="group relative flex flex-col justify-center items-center p-4 bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-sm hover:border-cyan-500/50 transition-all duration-300 overflow-hidden"
-                  >
-                    {/* Decorative Corner Flange */}
-                    <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-cyan-500/30 group-hover:border-cyan-400 transition-colors" />
-                    
-                    <span className="text-yellow-400 font-black text-lg tracking-[0.15em] drop-shadow-[0_0_8px_rgba(250,204,21,0.2)]">
-                      {car.regplate}
-                    </span>
-                    
-                    <div className="flex items-center gap-1 mt-1">
-                      <div className="w-1 h-1 bg-cyan-500 rounded-full animate-pulse" />
-                      <span className="text-[8px] text-cyan-500 font-michroma uppercase">
-                        Unit_Link
+              <div className="mt-4 border-t border-cyan-500/10 pt-4 flex flex-col">
+                <div className="grid grid-cols-2 gap-3 flex-none">
+                  {myCars?.slice(0, 10).map((car: any) => (
+                    <Link
+                      key={car._id}
+                      to={`/reg/${car.regplate}`}
+                      className="group relative flex flex-col justify-center items-center p-4 bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-sm hover:border-cyan-500/50 transition-all duration-300"
+                    >
+                      {/* Decorative Corner Flange */}
+                      <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-cyan-500/30 group-hover:border-cyan-400 transition-colors" />
+                      
+                      <span className="text-yellow-400 font-black text-lg tracking-[0.15em] drop-shadow-[0_0_8px_rgba(250,204,21,0.2)]">
+                        {car.regplate}
                       </span>
-                    </div>
-                  </Link>
-                ))}
+                      
+                      <div className="flex items-center gap-1 mt-1">
+                        <div className="w-1 h-1 bg-cyan-500 rounded-full animate-pulse" />
+                        <span className="text-[8px] text-cyan-500 font-michroma uppercase">
+                          Unit_Link
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               {/* FOOTER ACTION: Only shows if more than 4 exist */}
