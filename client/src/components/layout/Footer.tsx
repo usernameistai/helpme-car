@@ -9,7 +9,7 @@ const Footer = () => {
          <div className="flex flex-col items-center">
             <span className="font-mono text-[12px] text-cyan-400/50 tracking-[0.2em] mb-2">
             HelpMe-Car // 💠 // BUILT_TO_HELP: NOT_TO_TRACK
-         © {new Date().getFullYear() }  Future Source
+         © {new Date().getFullYear() }  David J.J. Battye - Future Source / The Universe.
             </span>
             <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
           </div>

@@ -14,7 +14,7 @@ const Dashboard: FC = () => {
   const { user } = useUser(); // Clerk session
   const { isLoaded, getToken } = useAuth();
   const { profile, loading, error, setProfile, setLoading, setError } = useProfileStore();
-  const { data: myCars, isLoading: loadingCars } = useMyActivity()
+  const { data: myCars, isLoading: loadingCars } = useMyActivity();
   const hasWelcomed = useRef(false);
 
   const dashClass = "font-inter tracking-wider flex justify-between text-lg sm:text-xl font-semibold text-gray-100";
@@ -58,119 +58,204 @@ const Dashboard: FC = () => {
       <section className={`relative z-20 p-6 my-[-1.5rem] ${profile.theme === "dark" ? "text-white" : "text-gray-900"} mx-auto max-w-6xl relative bg-search-combine bg-standard bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]`}>
         <div className="absolute inset-0 bg-zinc-950/60" />
         <div className="relative z-10">
-        <h1 className="relative font-space z-10 text-4xl sm:text-5xl font-bold mt-5 mb-4 md:mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300" >
-          Welcome back {''}
-          <span className="text-5xl sm:text-7xl">
-            {profile?.username}
-          </span>
-        </h1>
-
-        {/* Profile Section  */}
-        <GlassCard title={`${profile?.username}'s Profile`} className="font-space backdrop-blur-md z-30">
-          <div className="m-4">
-            <p className={`${dashClass}`}>
-              <span className="hidden sm:flex">First Name: </span>
-              <span className="ml-1 sm:ml-0">{profile?.firstName || "Not set"} </span>
-            </p>
-            <p className={`${dashClass}`}>
-              <span className="hidden sm:flex">Last Name: </span>
-              <span className="ml-1 sm:ml-0">{profile?.lastName || "Not set"} </span>
-            </p>
-            <p className={`${dashClass}`}>
-              <span className="hidden sm:flex">Username: </span>
-              <span className="ml-1 sm:ml-0">{profile?.username || "Not set"} </span>
-            </p>
-            <p className={`${dashClass}`}>
-              <span className="hidden sm:flex">Email: </span>
-              <span className="ml-1 sm:ml-0">{profile?.email || "Not set"} </span>
-            </p>
-          </div>
-        </GlassCard>
-
-        {/* Cars I have helped */}
-        <GlassCard title="Your Impact" className="font-space backdrop-blur-md z-30">
-          <div className="m-4">
-            <p className={`${dashClass}`}>
-              <span>Cars Helped: </span>
-              <span>{profile.carsHelped} 🚗 </span>
-            </p>
-            <p className={`${dashClass}`}>
-              <span>Stars given: </span>
-              <span>{profile.starsGiven} 🌟 </span>
-            </p>
-
-            {/* NEW: The Logbook Section */}
-            <div className="mt-4 border-t border-white/10 pt-4">
-              <h3 className="text-sm font-bold text-cyan-400 mb-3 font-michroma tracking-tighter">
-                Recent Acts of Kindess
-              </h3>
-
-              {loadingCars ? (
-                <p className="text-xs animate-pulse text-zinc-400">Consulting the records...</p>
-              ) : myCars?.length > 0 ? (
-                <div className="flex flex-wrap gap-3 mb-4">
-                  {myCars.slice(0, 6).map((car: any) => (
-                    <Link
-                      key={car._id}
-                        to={`/reg/${car.regplate}`}
-                          className="px-3 py-1 bg-white/5 border border-white/10 rounded text-yellow-300 text-sm hover:border-cyan-400/50 hover:bg-white/10 transition duration-300 shadow-sm"
-                    >
-                      {car.regplate}
-                    </Link>
-                  ))}
-                </div>
-              ) : (
-                <p>No cars loged yet. Your first help is waiting!</p>
-              )}
+          <div className="flex items-center gap-4 mb-6 font-michroma text-[10px] tracking-widest uppercase opacity-70">
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+              </span>
+              <span className="text-cyan-400">System: Operational</span>
             </div>
+            <div className="h-[1px] flex-1 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
+            <div className="text-zinc-400 hidden sm:block">Sector: English / The Universe</div>
+            <div className="text-zinc-400">Node: {profile?.userId?.slice(-6) || "-----"}</div>
           </div>
-        </GlassCard>
+          <h1 className="relative font-space z-10 text-4xl sm:text-5xl font-bold mt-5 mb-4 md:mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300" >
+            Welcome back {''}
+            <span className="text-5xl sm:text-7xl">
+              {profile?.username}
+            </span>
+          </h1>
 
-        {/* Superpowers (for fun) */}
-        <GlassCard title="Superpowers" className="font-space backdrop-blur-md z-30">
-          <div className="m-4">
-            {profile.superpowers?.length ? (
-              <ul className="space-x-2">
-                {profile.superpowers?.map((s, i) => (
-                  <li key={i} className="flex flex-row text-xl gap-2 items-center">
-                    <BsFillLightningChargeFill className="text-yellow-300"/>
-                    <div className="text-gray-100 ">{s}</div>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <div className="">
-                <p className={`${dashClass}`}>
-                  <span>No superpowers yet </span>
-                  <span><BsFillLightningChargeFill className="text-yellow-300 inline mx-2"/></span>
-                  <span>⚡ ⚡️ 🌩️ ⛈️ 🔌 🧨 💥</span>
+          {/* Profile Section  */}
+          <GlassCard title={`${profile?.username}'s Profile`} className="flex flex-col font-space backdrop-blur-md z-30">
+            <div className="m-4">
+              <p className={`${dashClass}`}>
+                <span className="hidden sm:flex">First Name: </span>
+                <span className="ml-1 sm:ml-0">{profile?.firstName || "Not set"} </span>
+              </p>
+              <p className={`${dashClass}`}>
+                <span className="hidden sm:flex">Last Name: </span>
+                <span className="ml-1 sm:ml-0">{profile?.lastName || "Not set"} </span>
+              </p>
+              <p className={`${dashClass}`}>
+                <span className="hidden sm:flex">Username: </span>
+                <span className="ml-1 sm:ml-0">{profile?.username || "Not set"} </span>
+              </p>
+              <p className={`${dashClass}`}>
+                <span className="hidden sm:flex">Email: </span>
+                <span className="ml-1 sm:ml-0">{profile?.email || "Not set"} </span>
+              </p>
+            </div>
+            <div className="mt-8 flex flex-col items-center">
+              <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em]">
+                STATUS: PROFILE // FUNC_DASH_PAGE: USERNAME
+              </span>
+              <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </div>
+          </GlassCard>
+
+          {/* Cars I have helped */}
+          <GlassCard title="Your Impact" className="relative flex flex-col overflow-hidden font-space backdrop-blur-md z-30">
+            <div className="m-4 flex items-center justify-around bg-cyan-500/5 rounded-lg border border-white/5 py-3">
+              {/* Cars Helped Metric */}
+              <div className="flex flex-col items-center">
+                <span className="text-[8px] font-michroma text-zinc-400 tracking-[0.2em] uppercase mb-1">
+                  Cars_Helped
+                </span>
+                <p className={`${dashClass} !m-0 !p-0 flex items-center gap-2`}>
+                  <span className="text-xl font-bold tracking-tighter">{profile.carsHelped}</span>
+                  <span className="text-sm opacity-70">🚗</span>
                 </p>
               </div>
-            )}
-          </div>
-        </GlassCard>
 
-        {/* Quick Actions  */}
-        <GlassCard title="Quick Actions" className="backdrop-blur-md z-30">
-          <div className="mb-4">
-            <nav className='flex justify-between items-center text-base sm:text-lg gap-3'>
-              <Link to={`/dashboard/${profile.userId}/edit`} className={`${navClass} ${shimmerClass}`} aria-label='Go back to the home page button'>
-                Edit Profile
-              </Link>
-              <Link to="/helpreg" className={`${navClass} ${shimmerClass}`} aria-label='Go back to the home page button'>
-                Help A Car
-              </Link>
-              <Link to="/reg" className={`${navClass} ${shimmerClass}`} aria-label='Go back to the home page button'>
-                Home Page
-              </Link>
-            </nav>
-          </div>
-        </GlassCard>
+              {/* Mission Divider */}
+              <div className="h-8 w-[1px] bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent" />
+
+              {/* Stars Given Metric */}
+              <div className="flex flex-col items-center">
+                <span className="text-[8px] font-michroma text-zinc-400 tracking-[0.2em] uppercase mb-1">
+                  Stars_Given
+                </span>
+                <p className={`${dashClass} !m-0 !p-0 flex items-center gap-2`}>
+                  <span className="text-xl font-bold tracking-tighter">{profile.starsGiven}</span>
+                  <span className="text-sm opacity-70">🌟</span>
+                </p>
+              </div>
+            </div>
+            {/* LOGBOOK SECTION - Fixed Height Containment */}
+            <div className="mt-4 border-t border-cyan-500/10 pt-4 flex flex-col">
+              <div className="flex justify-between items-center mb-3">
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-michroma text-cyan-400 tracking-widest uppercase">
+                    Active_Recon
+                  </span>
+                  <span className="text-[7px] text-zinc-500 font-mono italic">
+                    MAX_DISPLAY: 04_UNITS
+                  </span>
+                </div>
+                <span className="text-[10px] text-zinc-300 font-mono bg-white/5 px-2 py-0.5 rounded border border-cyan-400/10">
+                  TOTAL: {myCars?.length || 0}
+                </span>
+              </div>
+
+              {/* THE GRID: Locked to 2x2 for clean presentation */}
+              <div className="grid grid-cols-2 gap-3 flex-1 overflow-hidden">
+                {myCars?.slice(0, 10).map((car: any) => (
+                  <Link
+                    key={car._id}
+                    to={`/reg/${car.regplate}`}
+                    className="group relative flex flex-col justify-center items-center p-4 bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-sm hover:border-cyan-500/50 transition-all duration-300 overflow-hidden"
+                  >
+                    {/* Decorative Corner Flange */}
+                    <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-cyan-500/30 group-hover:border-cyan-400 transition-colors" />
+                    
+                    <span className="text-yellow-400 font-black text-lg tracking-[0.15em] drop-shadow-[0_0_8px_rgba(250,204,21,0.2)]">
+                      {car.regplate}
+                    </span>
+                    
+                    <div className="flex items-center gap-1 mt-1">
+                      <div className="w-1 h-1 bg-cyan-500 rounded-full animate-pulse" />
+                      <span className="text-[8px] text-cyan-500 font-michroma uppercase">
+                        Unit_Link
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+
+              {/* FOOTER ACTION: Only shows if more than 4 exist */}
+              {myCars?.length > 4 && (
+                <button className="mt-3 w-full py-1.5 border border-white/5 bg-white/5 text-[8px] font-michroma text-zinc-400 hover:text-cyan-400 hover:bg-white/10 transition-all uppercase tracking-widest">
+                  Access Archive DB (+{myCars.length - 4})
+                </button>
+              )}
+              <div className="flex flex-col items-center mt-8">
+                <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em]">
+                  STATUS: IMPACT // FUNC_DASH_PAGE: CARS_HELPED
+                </span>
+                <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+              </div>
+            </div>
+          </GlassCard>
+
+          {/* Superpowers (for fun) */}
+          <GlassCard title="Superpowers" className="font-space backdrop-blur-md z-30">
+            <div className="m-4">
+              {profile.superpowers?.length ? (
+                <ul className="space-x-2">
+                  {profile.superpowers?.map((s, i) => (
+                    <li key={i} className="flex flex-row text-xl gap-2 items-center">
+                      <BsFillLightningChargeFill className="text-yellow-300"/>
+                      <div className="text-gray-100 ">{s}</div>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <div className="">
+                  <p className={`${dashClass}`}>
+                    <span>No superpowers yet </span>
+                    <span><BsFillLightningChargeFill className="text-yellow-300 inline mx-2"/></span>
+                    <span>⚡ ⚡️ 🌩️ ⛈️ 🔌 🧨 💥</span>
+                  </p>
+                </div>
+              )}
+            </div>
+            <div className="flex flex-col items-center mt-16">
+              <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em]">
+                STATUS: SUPERPOWERS // FUNC_DASH_PAGE: LIST_INCLUDED
+              </span>
+              <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </div>
+          </GlassCard>
+
+          {/* Quick Actions  */}
+          <GlassCard title="Quick Actions" className="backdrop-blur-md z-30">
+            <div className="mb-4">
+              <nav className='flex justify-between items-center text-base sm:text-lg gap-3'>
+                <Link to={`/dashboard/${profile.userId}/edit`} className={`${navClass} ${shimmerClass}`} aria-label='Go back to the home page button'>
+                  Edit Profile
+                </Link>
+                <Link to="/helpreg" className={`${navClass} ${shimmerClass}`} aria-label='Go back to the home page button'>
+                  Help A Car
+                </Link>
+                <Link to="/reg" className={`${navClass} ${shimmerClass}`} aria-label='Go back to the home page button'>
+                  Home Page
+                </Link>
+              </nav>
+            </div>
+            <div className="flex flex-col items-center mt-8">
+              <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em]">
+                STATUS: PAGE_EXIT // FUNC_DASH_PAGE: QUICK_LINKS
+              </span>
+              <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+            </div>
+          </GlassCard>
         </div>
-
       </section>
     </>
   );
 };
 
 export default Dashboard;
+
+{/* <div className="m-4">
+  <p className={`${dashClass}`}>
+    <span>Cars Helped: </span>
+    <span>{profile.carsHelped} 🚗 </span>
+  </p>
+  <p className={`${dashClass}`}>
+    <span>Stars given: </span>
+    <span>{profile.starsGiven} 🌟 </span>
+  </p>
+</div> */}
