@@ -54,10 +54,10 @@ const Dashboard: FC = () => {
   
   return (
     <>
-      <ParticlesBg theme="snow" colour="cyan-400" />
-      <section className={`relative z-20 p-6 my-[-1.5rem] ${profile.theme === "dark" ? "text-white" : "text-gray-900"} mx-auto max-w-6xl relative bg-search-combine bg-standard md:bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]`}>
-        <div className="absolute inset-0 bg-zinc-950/60" />
-        <div className="relative z-10">
+      <ParticlesBg theme="snow" colour="cyan-400" className="fixed inset-0 z-0 pointer-events-none touch-none"/>
+      <section className={`relative z-10 p-4 sm:p-6 min-h-screen ${profile.theme === "dark" ? "text-white" : "text-gray-900"} mx-auto max-w-6xl relative bg-search-combine bg-standard md:bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]`}>
+        <div className="absolute inset-0 bg-zinc-950/60 pointer-events-none" />
+        <div className="relative z-20 space-y-7">
           <div className="flex items-center gap-4 mb-6 font-michroma text-[10px] tracking-widest uppercase opacity-70">
             <div className="flex items-center gap-2">
               <span className="relative flex h-2 w-2">
@@ -80,7 +80,7 @@ const Dashboard: FC = () => {
           {/* Profile Section  */}
           <GlassCard 
             title={`${profile?.username}'s Profile`} 
-              className="relative flex flex-col font-space backdrop-blur-md z-30 overflow-visible touch-pan-y group min-h-[450px]"
+              className="font-space backdrop-blur-md z-10 overflow-visible touch-pan-y group min-h-[450px]"
           >
             {/* TOP TIER: DATA Dossier */}
             <div className="m-4 flex-1 space-y-4">
@@ -132,7 +132,7 @@ const Dashboard: FC = () => {
           </GlassCard>
          
           {/* Cars I have helped */}
-          <GlassCard title="Your Impact" className="relative flex flex-col overflow-visible touch-pan-y font-space backdrop-blur-md z-30">
+          <GlassCard title="Your Impact" className="overflow-visible touch-pan-y font-space backdrop-blur-md z-10">
             <div className="m-4 flex items-center justify-around bg-cyan-500/5 rounded-lg border border-white/5 py-3">
               {/* Cars Helped Metric */}
               <div className="flex flex-col items-center">
@@ -218,7 +218,7 @@ const Dashboard: FC = () => {
           </GlassCard>
 
           {/* Superpowers (for fun) */}
-          <GlassCard title="Superpowers" className="font-space backdrop-blur-md z-30">
+          <GlassCard title="Superpowers" className="font-space backdrop-blur-md z-10">
             <div className="m-4">
               {profile.superpowers?.length ? (
                 <ul className="space-x-2">
@@ -248,7 +248,7 @@ const Dashboard: FC = () => {
           </GlassCard>
 
           {/* Quick Actions  */}
-          <GlassCard title="Quick Actions" className="backdrop-blur-md z-30">
+          <GlassCard title="Quick Actions" className="font-space backdrop-blur-md z-10">
             <div className="mb-4">
               <nav className='flex justify-between items-center text-base sm:text-lg gap-3'>
                 <Link to={`/dashboard/${profile.userId}/edit`} className={`${navClass} ${shimmerClass}`} aria-label='Go back to the home page button'>
@@ -276,14 +276,3 @@ const Dashboard: FC = () => {
 };
 
 export default Dashboard;
-
-{/* <div className="m-4">
-  <p className={`${dashClass}`}>
-    <span>Cars Helped: </span>
-    <span>{profile.carsHelped} 🚗 </span>
-  </p>
-  <p className={`${dashClass}`}>
-    <span>Stars given: </span>
-    <span>{profile.starsGiven} 🌟 </span>
-  </p>
-</div> */}
