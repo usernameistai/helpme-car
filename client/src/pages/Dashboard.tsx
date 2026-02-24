@@ -9,12 +9,14 @@ import GlassCard from "../components/reg/components/GlassCard";
 import Spinner from "../components/layout/Spinner";
 import ParticlesBg from "../components/layout/ParticlesBg";
 import toast from "react-hot-toast";
+import { twMerge } from 'tailwind-merge';
 
 const Dashboard: FC = () => {
   const { user } = useUser(); // Clerk session
   const { isLoaded, getToken } = useAuth();
   const { profile, loading, error, setProfile, setLoading, setError } = useProfileStore();
-  const { data: myCars, isLoading: loadingCars } = useMyActivity();
+  const { data: myCars } = useMyActivity();
+  // const { data: myCars, isLoading: loadingCars } = useMyActivity();
   const hasWelcomed = useRef(false);
 
   const dashClass = "font-inter tracking-wider flex justify-between text-lg sm:text-xl font-semibold text-gray-100";
@@ -80,7 +82,7 @@ const Dashboard: FC = () => {
           {/* Profile Section  */}
           <GlassCard 
             title={`${profile?.username}'s Profile`} 
-              className="font-space backdrop-blur-md z-10 overflow-visible touch-pan-y group min-h-[450px]"
+              className="font-space backdrop-blur-md z-10 overflow-visible touch-pan-y group min-h-[450px] hover:scale-100 sm:hover:scale-[1.05]"
           >
             {/* TOP TIER: DATA Dossier */}
             <div className="m-4 flex-1 space-y-4">
@@ -132,7 +134,7 @@ const Dashboard: FC = () => {
           </GlassCard>
          
           {/* Cars I have helped */}
-          <GlassCard title="Your Impact" className="overflow-visible touch-pan-y font-space backdrop-blur-md z-10">
+          <GlassCard title="Your Impact" className="overflow-visible touch-pan-y font-space backdrop-blur-md z-10 hover:scale-100 sm:hover:scale-[1.05]">
             <div className="m-4 flex items-center justify-around bg-cyan-500/5 rounded-lg border border-white/5 py-3">
               {/* Cars Helped Metric */}
               <div className="flex flex-col items-center">
@@ -217,56 +219,88 @@ const Dashboard: FC = () => {
             </div>
           </GlassCard>
 
-          {/* Superpowers (for fun) */}
-          <GlassCard title="Superpowers" className="font-space backdrop-blur-md z-10">
+          {/* Superpowers (for fun) */}   
+          <GlassCard title="Superpowers" className="hover:scale-100 sm:hover:scale-[1.05] overflow-visible">
             <div className="m-4">
               {profile.superpowers?.length ? (
-                <ul className="space-x-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                   {profile.superpowers?.map((s, i) => (
-                    <li key={i} className="flex flex-row text-xl gap-2 items-center">
-                      <BsFillLightningChargeFill className="text-yellow-300"/>
-                      <div className="text-gray-100 ">{s}</div>
-                    </li>
+                    <div key={i} className="group relative p-[1px] bg-gradient-to-br from-cyan-500/20 to-transparent rounded-lg overflow-hidden">
+                      {/* Inner Content Box */}
+                      <div className="bg-zinc-950/40 backdrop-blur-md p-3 rounded-lg flex items-center gap-3 border border-white/5 group-hover:border-cyan-500/40 transition-all">
+                        
+                        {/* Icon Container with glowing effect */}
+                        <div className="relative">
+                          <BsFillLightningChargeFill className="text-yellow-300 text-lg relative z-10 animate-pulse" />
+                          <div className="absolute inset-0 bg-yellow-400/20 blur-md rounded-full animate-pulse" />
+                        </div>
+
+                        <div className="flex flex-col">
+                          <span className="text-[8px] font-michroma text-cyan-500 tracking-tighter uppercase opacity-50">
+                            Augment_0{i + 1}
+                          </span>
+                          <span className="text-gray-100 font-space font-bold text-xs uppercase tracking-wider">
+                            {s}
+                          </span>
+                        </div>
+                        
+                        {/* Tactical "Corner Notch" */}
+                        <div className="absolute top-0 right-0 w-4 h-4 bg-cyan-500/10 [clip-path:polygon(100%_0,0_0,100%_100%)]" />
+                        <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-transparent via-cyan-400 to-transparent group-hover:w-full transition-all duration-700 ease-out shadow-[0_0_8px_cyan]" />
+                      </div>
+                    </div>
                   ))}
-                </ul>
+                </div>
               ) : (
-                <div className="">
-                  <p className={`${dashClass}`}>
-                    <span>No superpowers yet </span>
-                    <span><BsFillLightningChargeFill className="text-yellow-300 inline mx-2"/></span>
-                    <span>⚡ ⚡️ 🌩️ ⛈️ 🔌 🧨 💥</span>
-                  </p>
+                <div className="text-center py-10 border border-dashed border-white/10 rounded-xl">
+                  <span className="font-michroma text-[10px] text-zinc-500 uppercase tracking-[0.3em]">
+                    Waiting for System Augmentation...
+                  </span>
                 </div>
               )}
-            </div>
-            <div className="flex flex-col items-center mt-16">
-              <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em]">
-                STATUS: SUPERPOWERS // FUNC_DASH_PAGE: LIST_INCLUDED
-              </span>
-              <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
             </div>
           </GlassCard>
 
           {/* Quick Actions  */}
-          <GlassCard title="Quick Actions" className="font-space backdrop-blur-md z-10">
+          <GlassCard title="Quick Actions" className="font-space backdrop-blur-md z-10 hover:scale-100 sm:hover:scale-[1.05]">
             <div className="mb-4">
-              <nav className='flex justify-between items-center text-base sm:text-lg gap-3'>
-                <Link to={`/dashboard/${profile.userId}/edit`} className={`${navClass} ${shimmerClass}`} aria-label='Go back to the home page button'>
-                  Edit Profile
-                </Link>
-                <Link to="/helpreg" className={`${navClass} ${shimmerClass}`} aria-label='Go back to the home page button'>
-                  Help A Car
-                </Link>
-                <Link to="/reg" className={`${navClass} ${shimmerClass}`} aria-label='Go back to the home page button'>
-                  Home Page
-                </Link>
+              {/* Grid layout for mobile, single row for desktop */}
+              <nav className='grid grid-cols-1 sm:flex justify-center sm:justify-between items-center gap-4 w-full text-base sm:text-lg'>
+                {[
+                  { to: `/dashboard/${profile.userId}/edit`, label: 'Edit Profile', color: 'cyan' },
+                  { to: "/helpreg", label: 'Help A Car', color: 'yellow' },
+                  { to: "/reg", label: 'Home Page', color: 'cyan' }
+                ].map((link, idx) => (
+                  <Link 
+                    key={idx}
+                    to={link.to} 
+                    className={twMerge(
+                      navClass, 
+                      shimmerClass,
+                      "relative group flex items-center max-w-full sm:max-w-none mt-0 h-14 font-poppins transition-all"
+                    )}
+                  >
+                    {/* Static Corner Detail for the button */}
+                    <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20 group-hover:border-cyan-400" />
+                    
+                    <span className="relative z-10">{link.label}</span>
+                    
+                    {/* Glitch-style underline on hover */}
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-cyan-400 group-hover:w-3/4 transition-all duration-300 shadow-[0_0_8px_cyan]" />
+                  </Link>
+                ))}
               </nav>
             </div>
-            <div className="flex flex-col items-center mt-8">
-              <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em]">
-                STATUS: PAGE_EXIT // FUNC_DASH_PAGE: QUICK_LINKS
-              </span>
-              <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+
+            {/* Footer Telemetry */}
+            <div className="flex flex-col items-center mt-12">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-1 w-1 rounded-full bg-red-500 animate-pulse" />
+                <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em]">
+                  STATUS: PAGE_EXIT // FUNC_DASH_PAGE: READY_FOR_DISPATCH
+                </span>
+              </div>
+              <div className="h-[1px] w-48 bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent"></div>
             </div>
           </GlassCard>
         </div>

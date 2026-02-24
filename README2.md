@@ -572,3 +572,211 @@ STATUS: PROFILE // FUNC_DASH_PAGE: USERNAME
 <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
 </div>
 </GlassCard> */}
+
+
+{/* <GlassCard title="Superpowers" className="font-space backdrop-blur-md z-10 hover:scale-100 sm:hover:scale-[1.05]">
+  }<div className="m-4">
+    {profile.superpowers?.length ? (
+      <ul className="space-x-2">
+        {profile.superpowers?.map((s, i) => (
+          <li key={i} className="flex flex-row text-xl gap-2 items-center">
+            <BsFillLightningChargeFill className="text-yellow-300"/>
+            <div className="text-gray-100 ">{s}</div>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <div className="">
+        <p className={`${dashClass}`}>
+          <span>No superpowers yet </span>
+          <span><BsFillLightningChargeFill className="text-yellow-300 inline mx-2"/></span>
+          <span>⚡ ⚡️ 🌩️ ⛈️ 🔌 🧨 💥</span>
+        </p>
+      </div>
+    )}
+  </div>
+  <div className="flex flex-col items-center mt-16">
+    <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em]">
+      STATUS: SUPERPOWERS // FUNC_DASH_PAGE: LIST_INCLUDED
+    </span>
+    <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+  </div>
+</GlassCard> */
+
+<GlassCard title="Quick Actions" className="font-space backdrop-blur-md z-10 hover:scale-100 sm:hover:scale-[1.05]">
+  <div className="mb-4">
+    <nav className='flex justify-between items-center text-base sm:text-lg gap-3'>
+      <Link to={`/dashboard/${profile.userId}/edit`} className={`${navClass} ${shimmerClass}`} aria-label='Go back to the home page button'>
+        Edit Profile
+      </Link>
+      <Link to="/helpreg" className={`${navClass} ${shimmerClass}`} aria-label='Go back to the home page button'>
+        Help A Car
+      </Link>
+      <Link to="/reg" className={`${navClass} ${shimmerClass}`} aria-label='Go back to the home page button'>
+        Home Page
+      </Link>
+    </nav>
+  </div>
+  <div className="flex flex-col items-center mt-8">
+    <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em]">
+      STATUS: PAGE_EXIT // FUNC_DASH_PAGE: QUICK_LINKS
+    </span>
+    <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+  </div>
+</GlassCard>
+
+
+// return (
+//   <>
+//     <ParticlesBg theme='snow' colour='cyan-400' />
+//     <div className={`relative z-20 p-4 sm:p-6 bg-search-combine bg-standard bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] rounded-lg `}>
+//       <div className="absolute inset-0 bg-zinc-950/50" />
+//       <h1 className="font-space relative z-10 text-3xl sm:text-5xl font-bold mt-5 mb-4 md:mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
+//         Here you can update {''} <span className="text-5xl sm:text-7xl">{profile?.username}'s</span>{''} profile
+//       </h1>
+//       <form onSubmit={onSubmit}>
+//         {editted && (
+//           <div role='status' aria-live='polite' className='sr-only'>Submission successful. You have helped out a fellow human or earthling. Gold star ✴️✴️✴️✴️✴️</div>
+//         )}
+
+//         <section className={sectionClass}>
+//           <h2 className={h2Class}>Edit your name fields</h2>
+
+//             {/* Edit First Name */}
+//             <fieldset>
+//               <div className='mb-4'>
+//                 <label htmlFor="edit-first-name" className='roboto text-zinc-100 mb-2 sm:text-lg'>
+//                   Edit First Name
+//                   <input 
+//                     type="text" 
+//                       name="firstName"
+//                         value={formData.firstName || ""}
+//                           onChange={handleInputChange}
+//                             className='border border-sky-200 rounded-md p-1 sm:p-2 w-full text-base sm:text-lg text-gray-700'
+//                               placeholder='Enter your First Name'
+//                                 id="edit-first-name"
+//                                   required
+//                                     aria-label='Enter your first name please'
+//                   />
+//                 </label>
+//               </div>
+//             </fieldset>
+
+//             {/* Edit Last Name */}
+//             <fieldset>
+//               <div className='mb-4'>
+//                 <label htmlFor="edit-last-name" className='roboto text-zinc-100 mb-2 sm:text-lg'>
+//                   Edit Last Name / Surname
+//                   <input 
+//                     type="text" 
+//                       name="lastName"
+//                         value={formData.lastName || ""}
+//                           onChange={handleInputChange}
+//                             className='border border-sky-200 rounded-md p-1 sm:p-2 w-full text-base sm:text-lg text-gray-700'
+//                               placeholder='Enter your Last Name / Surname'
+//                                 id="edit-last-name"
+//                                   required
+//                                     aria-label='Enter your last name / surname please'
+//                   />
+//                 </label>
+//               </div>
+//             </fieldset>
+
+//           <div className={brightBorder}></div>
+//         </section>
+
+//         <section className={sectionClass}>
+//           <h2 className={h2Class}>Edit {profile?.username} Superpowers</h2>
+//           {/* Edit Super Powers */}
+//           <fieldset>
+//             <div className='mb-4'>
+//               <label htmlFor="edit-superpowers" className='roboto text-zinc-100 mb-2 sm:text-lg'>
+//                 {/* Input Box */}
+//                 Add Superpowers, e.g. Picking Up Litter, AI, Housework, Flying...
+//                 <input 
+//                   type="text" 
+//                     name="superpowers"
+//                       value={currentPower}
+//                         onChange={(e) => setCurrentPower(e.target.value)}
+//                           onKeyDown={handleAddPower}
+//                             placeholder='Type a power and hit Enter / Return...'
+//                               id="edit-superpowers"
+//                                 className='border border-sky-200 rounded-md p-1 sm:p-2 w-full text-base sm:text-lg text-zinc-700'
+//                 />
+//               </label>
+
+//               {/* The Visual Tags */}
+//               <div className="flex flex-wrap gap-2 my-4">
+//                 {formData.superpowers?.map((power) => (
+//                   <span
+//                     key={power}
+//                       className='flex items-center gap-1 px-4 py-[0.3rem] text-base sm:text-lg bg-gradient-to-r from-cyan-500 to-green-700 text-zinc-700 rounded-full font-semibold shadow-lg animate-in zoom-in'
+//                   >
+//                     ✨ {power}
+//                     <button
+//                       type='button'
+//                         onClick={() => removePower(power)}
+//                           className='ml-2 font-bold hover:text-red-400 transition-colors'
+//                     >
+//                       X
+//                     </button>
+//                   </span>
+//                 ))}
+//               </div>
+//             </div>
+//           </fieldset>
+//           <div className={brightBorder}></div>
+//         </section>
+
+//         <section className={sectionClass}>
+//           <h2 className={h2Class}>Choose your theme, light | dark</h2>
+//            <div className="flex gap-6 items-center">
+//             {['light', 'dark'].map((t) => (
+//               <label key={t} className="flex items-center gap-3 cursor-pointer group">
+//                 <input
+//                   type="radio"
+//                     name="theme"
+//                       value={t}
+//                         checked={formData.theme === t}
+//                           onChange={handleInputChange} // This works because your handler uses e.target.name
+//                             className="w-5 h-5 accent-yellow-300 cursor-pointer"
+//                 />
+//                 <span className="roboto text-xl font-semibold text-zinc-100 capitalize group-hover:text-yellow-300 transition-colors">
+//                 { t === 'light' ? '☀️' : '🌙'} {t} Theme
+//                 </span>
+//               </label>
+//             ))}
+//           </div>
+//           <div className={brightBorder}></div>
+//         </section>
+
+//         <section className={sectionClass}>
+//           <h2 className={h2Class}>Quick Actions</h2>
+//           <div className="mb-4">
+//             <nav className="flex justify-between items-center text-sm sm:text-lg">
+//               <button 
+//                 type="submit"
+//                   className={`${buttonLink} ${shimmerClass} bg-blue-500/30 text-blue-300 border-2 border-blue-500/50  max-w-40`}
+//               >
+//                 Save Changes
+//               </button>
+//               <Link 
+//                 to="/dashboard" 
+//                   className={`${buttonLink} ${shimmerClass} dark:bg-yellow-500/20 dark:text-yellow-400 border-2 dark:border-yellow-500/50 bg-sky-500/20 text-sky-400 border-sky-500/50 max-w-32`}
+//               >
+//                 Dashboard
+//               </Link>
+//               <Link 
+//                 to="/helpreg" 
+//                   className={`${buttonLink} ${shimmerClass} dark:bg-yellow-500/20 dark:text-yellow-400 border-2 dark:border-yellow-500/50 bg-sky-500/20 text-sky-400 border-sky-500/50 max-w-32`}
+//               >
+//                 Help A Car
+//               </Link>
+//             </nav>
+//           </div>
+//           <div className={brightBorder}></div>
+//         </section>
+//       </form>
+//     </div>
+//   </>
+// );
