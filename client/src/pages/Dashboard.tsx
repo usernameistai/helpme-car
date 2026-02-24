@@ -124,7 +124,7 @@ const Dashboard: FC = () => {
                 </span>
                 
                 {/* The "Magic" Footer Bar */}
-                <div className="relative w-full max-w-[200px] h-[2px] mt-4 bg-white/10">
+                <div className="relative w-full max-w-[200px] h-[2px] mt-4 bg-white/10 overflow-visible touch-pan-y">
                   <div className="absolute inset-0 bg-cyan-400 w-1/3 animate-scan-fast shadow-[0_0_10px_cyan]" />
                 </div>
               </div>
@@ -182,7 +182,7 @@ const Dashboard: FC = () => {
                     <Link
                       key={car._id}
                       to={`/reg/${car.regplate}`}
-                      className="group relative flex flex-col justify-center items-center p-4 bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-sm hover:border-cyan-500/50 transition-all duration-300"
+                      className="group relative flex flex-col justify-center items-center p-4 bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-sm hover:border-cyan-500/50 transition-all duration-300 overflow-visible touch-pan-y"
                     >
                       {/* Decorative Corner Flange */}
                       <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-cyan-500/30 group-hover:border-cyan-400 transition-colors" />
