@@ -515,32 +515,60 @@ When asked about Clerk + React (Vite) integration, your response **MUST**:
 // };
 {/* <div className="flex items-center gap-6">
 
-                    <span className="font-mono text-xs font-bold tracking-widest opacity-70">
-                      RANK_{ (index + 1).toString().padStart(2, '0') }
-                    </span>
+<span className="font-mono text-xs font-bold tracking-widest opacity-70">
+  RANK_{ (index + 1).toString().padStart(2, '0') }
+</span>
 
-                    <div className="flex flex-col">
-                      <span className={`font-space uppercase tracking-widest text-base ${isTopThree ? 'text-white font-bold' : 'text-zinc-400'}`}>
-                        {entry.username}
-                      </span>
-                      <div className="flex gap-2 items-center">
-                        <span className="h-1 w-1 rounded-full bg-cyan-500 animate-pulse" />
-                        <span className="text-[9px] font-mono opacity-40">
-                          SECTOR: EARTH_UNIT // AUTH_LEVEL: {isTopThree ? 'ELITE' : 'RESERVE'}
-                        </span>
-                      </div>
-                    </div>
-                  </div> */}
-                  {/* <div className="flex font-mono gap-10 items-center">
-                    <div className="hidden md:flex flex-col items-end">
-                      <span className="text-[8px] opacity-30 uppercase">Assist_Count</span>
-                      <span className="text-cyan-400 text-sm">{entry.carsHelped.toString().padStart(3, '0')}</span>
-                    </div>
-                    
-                    <div className="flex flex-col items-end min-w-[60px]">
-                      <span className="text-[8px] opacity-40 uppercase tracking-tighter">Merit</span>
-                      <span className={`text-2xl font-black ${isTopThree ? 'animate-pulse' : ''}`}>
-                        {entry.starsGiven}
-                      </span>
-                    </div>
-                  </div> */}
+<div className="flex flex-col">
+  <span className={`font-space uppercase tracking-widest text-base ${isTopThree ? 'text-white font-bold' : 'text-zinc-400'}`}>
+    {entry.username}
+  </span>
+  <div className="flex gap-2 items-center">
+    <span className="h-1 w-1 rounded-full bg-cyan-500 animate-pulse" />
+    <span className="text-[9px] font-mono opacity-40">
+      SECTOR: EARTH_UNIT // AUTH_LEVEL: {isTopThree ? 'ELITE' : 'RESERVE'}
+    </span>
+  </div>
+</div>
+</div> */}
+{/* <div className="flex font-mono gap-10 items-center">
+<div className="hidden md:flex flex-col items-end">
+  <span className="text-[8px] opacity-30 uppercase">Assist_Count</span>
+  <span className="text-cyan-400 text-sm">{entry.carsHelped.toString().padStart(3, '0')}</span>
+</div>
+
+<div className="flex flex-col items-end min-w-[60px]">
+  <span className="text-[8px] opacity-40 uppercase tracking-tighter">Merit</span>
+  <span className={`text-2xl font-black ${isTopThree ? 'animate-pulse' : ''}`}>
+    {entry.starsGiven}
+  </span>
+</div>
+</div> */}
+
+
+{/* <GlassCard title={`${profile?.username}'s Profile`} className="flex flex-col font-space backdrop-blur-md z-30">
+<div className="m-4">
+<p className={`${dashClass}`}>
+<span className="hidden sm:flex">First Name: </span>
+<span className="ml-1 sm:ml-0">{profile?.firstName || "Not set"} </span>
+</p>
+<p className={`${dashClass}`}>
+<span className="hidden sm:flex">Last Name: </span>
+<span className="ml-1 sm:ml-0">{profile?.lastName || "Not set"} </span>
+</p>
+<p className={`${dashClass}`}>
+<span className="hidden sm:flex">Username: </span>
+<span className="ml-1 sm:ml-0">{profile?.username || "Not set"} </span>
+</p>
+<p className={`${dashClass}`}>
+<span className="hidden sm:flex">Email: </span>
+<span className="ml-1 sm:ml-0">{profile?.email || "Not set"} </span>
+</p>
+</div>
+<div className="mt-8 flex flex-col items-center">
+<span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em]">
+STATUS: PROFILE // FUNC_DASH_PAGE: USERNAME
+</span>
+<div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+</div>
+</GlassCard> */}

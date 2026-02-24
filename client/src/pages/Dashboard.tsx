@@ -55,7 +55,7 @@ const Dashboard: FC = () => {
   return (
     <>
       <ParticlesBg theme="snow" colour="cyan-400" />
-      <section className={`relative z-20 p-6 my-[-1.5rem] ${profile.theme === "dark" ? "text-white" : "text-gray-900"} mx-auto max-w-6xl relative bg-search-combine bg-standard bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]`}>
+      <section className={`relative z-20 p-6 my-[-1.5rem] ${profile.theme === "dark" ? "text-white" : "text-gray-900"} mx-auto max-w-6xl relative bg-search-combine bg-standard md:bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]`}>
         <div className="absolute inset-0 bg-zinc-950/60" />
         <div className="relative z-10">
           <div className="flex items-center gap-4 mb-6 font-michroma text-[10px] tracking-widest uppercase opacity-70">
@@ -78,33 +78,59 @@ const Dashboard: FC = () => {
           </h1>
 
           {/* Profile Section  */}
-          <GlassCard title={`${profile?.username}'s Profile`} className="flex flex-col font-space backdrop-blur-md z-30">
-            <div className="m-4">
-              <p className={`${dashClass}`}>
-                <span className="hidden sm:flex">First Name: </span>
-                <span className="ml-1 sm:ml-0">{profile?.firstName || "Not set"} </span>
-              </p>
-              <p className={`${dashClass}`}>
-                <span className="hidden sm:flex">Last Name: </span>
-                <span className="ml-1 sm:ml-0">{profile?.lastName || "Not set"} </span>
-              </p>
-              <p className={`${dashClass}`}>
-                <span className="hidden sm:flex">Username: </span>
-                <span className="ml-1 sm:ml-0">{profile?.username || "Not set"} </span>
-              </p>
-              <p className={`${dashClass}`}>
-                <span className="hidden sm:flex">Email: </span>
-                <span className="ml-1 sm:ml-0">{profile?.email || "Not set"} </span>
-              </p>
+          <GlassCard 
+            title={`${profile?.username}'s Profile`} 
+              className="relative flex flex-col font-space backdrop-blur-md z-30 overflow-hidden group min-h-[450px]"
+          >
+            {/* TOP TIER: DATA Dossier */}
+            <div className="m-4 flex-1 space-y-4">
+              {[
+                { label: "First Name", value: profile?.firstName },
+                { label: "Last Name", value: profile?.lastName },
+                { label: "Username", value: profile?.username },
+                { label: "Email Address", value: profile?.email }
+              ].map((item, idx) => (
+                <div key={idx} className="relative group/item">
+                  {/* Tactical Label */}
+                  <span className="text-[10px] font-michroma text-cyan-500/60 uppercase tracking-[0.2em] block mb-1">
+                    {item.label.replace(" ", "_")}
+                  </span>
+                  
+                  {/* Value with "Active Cursor" effect */}
+                  <div className="flex items-center gap-3 bg-white/5 border-l-2 border-cyan-400/30 p-2 rounded-r-md group-hover/item:bg-white/10 transition-all">
+                    <span className="text-white font-bold tracking-wide">
+                      {item.value || "NOT_SET"}
+                    </span>
+                    <div className="h-4 w-[2px] bg-cyan-400 animate-pulse opacity-0 group-hover/item:opacity-100" />
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="mt-8 flex flex-col items-center">
-              <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.2em]">
-                STATUS: PROFILE // FUNC_DASH_PAGE: USERNAME
-              </span>
-              <div className="h-[1px] w-24 mt-2 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+
+            {/* BOTTOM TIER: MISSION TELEMETRY (Pinned) */}
+            <div className="p-6 bg-gradient-to-t from-cyan-900/20 to-transparent">
+              <div className="flex flex-col items-center">
+                {/* Dynamic Status Indicator */}
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-cyan-400/50" />
+                  <span className="font-mono text-[10px] text-cyan-400 tracking-[0.3em] animate-pulse">
+                    CONNECTED_SESSION
+                  </span>
+                  <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-cyan-400/50" />
+                </div>
+
+                <span className="font-mono text-[0.7rem] text-cyan-400/50 tracking-[0.1em] uppercase">
+                  STATUS: PROFILE // FUNC_DASH_PAGE: {profile?.username || "GUEST"}
+                </span>
+                
+                {/* The "Magic" Footer Bar */}
+                <div className="relative w-full max-w-[200px] h-[2px] mt-4 bg-white/10 overflow-hidden">
+                  <div className="absolute inset-0 bg-cyan-400 w-1/3 animate-scan-fast shadow-[0_0_10px_cyan]" />
+                </div>
+              </div>
             </div>
           </GlassCard>
-
+         
           {/* Cars I have helped */}
           <GlassCard title="Your Impact" className="relative flex flex-col overflow-hidden font-space backdrop-blur-md z-30">
             <div className="m-4 flex items-center justify-around bg-cyan-500/5 rounded-lg border border-white/5 py-3">
@@ -150,7 +176,8 @@ const Dashboard: FC = () => {
               </div>
 
               {/* THE GRID: Locked to 2x2 for clean presentation */}
-              <div className="grid grid-cols-2 gap-3 flex-1 overflow-hidden">
+              {/* <div className="grid grid-cols-2 gap-3 flex-1 overflow-hidden"> */}
+              <div className="grid grid-cols-2 gap-3 flex-none">
                 {myCars?.slice(0, 10).map((car: any) => (
                   <Link
                     key={car._id}
