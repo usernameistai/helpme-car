@@ -20,7 +20,7 @@ const Reg: FC = () => {
   const [regplate, setRegplate] = useState("");
   const [showBoard, setShowBoard] = useState(false);
 
-  const liClass = "relative z-30 flex flex-col group mt-8 py-2 sm:p-4 bg-zinc-100 dark:bg-zinc-900/10 backdrop-blur-sm border-l border-t border-cyan-400/20 rounded-2xl w-full sm:w-1/3 shadow-xl shadow-[inset_2px_2px_4px_rgba(255,255,255,0.05)] transition-all duration-300 ease-out hover:border-cyan-400/50 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
+  const liClass = "relative z-30 flex flex-col group mt-8 p-3 sm:p-4 bg-zinc-100 dark:bg-zinc-900/10 backdrop-blur-sm border-l border-t border-cyan-400/20 rounded-2xl w-full sm:w-1/3 shadow-xl shadow-[inset_2px_2px_4px_rgba(255,255,255,0.05)] transition-all duration-300 ease-out hover:border-cyan-400/50 hover:shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
   const h3Class = "font-space text-2xl md:text-xl lg:text-3xl font-bold mt-2 lg:mt-4 mb-4 text-zinc-600 dark:text-zinc-50 text-center";
   const titleClass = "font-inter font-semibold text-base md:text-base lg:text-lg mb-4 lg:my-6 px-4 lg:px-8 lg:leading-8 text-zinc-700/90 dark:text-zinc-300/80";
   const buttonClass = "font-poppins relative z-50 rounded shadow-lg bg-sky-100 px-3 py-2 mt-4 lg:my-16 text-center text-zinc-700 text-base md:text-lg lg:text-xl font-semibold hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";

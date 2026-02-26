@@ -140,10 +140,10 @@ const ShowReg = () => {
         {/* INTERCEPT DATA PACKET */}
         <div className="relative p-6 border-l-4 border-emerald-500 bg-zinc-900/40 backdrop-blur-md rounded-r-xl">
           <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-emerald-400"></div>
-          <h2 className="font-michroma text-emerald-400 text-[8px] md:text-base tracking-tighter animate-pulse">
+          <h2 className="font-michroma text-emerald-400 text-[7px] sm:text-[8px] md:text-base tracking-tighter animate-pulse">
             &gt; DECODING_PAYLOAD_FROM_T'AI_SATELLITE_BASE_HUB...
           </h2>
-          <div className="mt-2 p-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-mono text-[10px] inline-block">
+          <div className="mt-2 p-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-mono text-[8px] sm:text-[10px] inline-block">
             [CHECKSUM: OK] [ENCRYPTION: AES-256] [UPLINK: ACTIVE]
           </div>
         </div>
@@ -164,7 +164,7 @@ const ShowReg = () => {
   
           {/* REG PLATE DISPLAY */}
           <h2 className="font-michroma text-xl md:text-2xl text-zinc-700 mt-12 md:mt-4 dark:text-zinc-100 mb-6 flex flex-wrap justify-center items-center gap-3">
-            REG_: <span className='px-4 py-1 bg-zinc-800 border border-emerald-400/50 text-emerald-400 rounded-lg shadow-[0_0_15px_rgba(52,211,153,0.3)] tracking-widest'>{regplate}</span>
+            REG_PLATE: <span className='px-4 py-1 bg-zinc-800 border border-emerald-400/50 text-emerald-400 rounded-lg shadow-[0_0_15px_rgba(52,211,153,0.3)] tracking-widest'>{regplate}</span>
           </h2>
   
           {/* STATUS MESSAGE */}

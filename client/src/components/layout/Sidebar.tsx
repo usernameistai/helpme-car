@@ -11,7 +11,11 @@ import { NavLink } from 'react-router-dom';
 const Sidebar: FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const linkClass = "font-michroma block p-4 text-zinc-100 hover:bg-cyan-400/20 hover:text-cyan-400 transition-all border-l-4 border-transparent hover:border-cyan-400";
-  // Toggle theme function
+  
+  const closeSidebar = () => {
+    const checkbox = document.getElementById('sidebar-toggle') as HTMLInputElement;
+    if ( checkbox ) checkbox.checked = false;
+  };
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
@@ -54,39 +58,39 @@ const Sidebar: FC = () => {
 
         <nav className="mt-4 flex flex-col">
           <h2 className="font-michroma px-5 text-sm font-bold text-zinc-500 uppercase tracking-widest my-4">Navigation</h2>
-          <NavLink to="/reg" className={`${linkClass} flex justify-between`}>
+          <NavLink to="/reg" onClick={closeSidebar} className={`${linkClass} flex justify-between`}>
             <div>Home</div>
             <div><IoHome /></div>
           </NavLink>
-          <NavLink to="/helpreg" className={`${linkClass} flex justify-between`}>
+          <NavLink to="/helpreg" onClick={closeSidebar} className={`${linkClass} flex justify-between`}>
             <div>Help A Car</div>
             <div><FaHandsHelping /></div>
           </NavLink>
-          <NavLink to="/search" className={`${linkClass} flex justify-between`}>
+          <NavLink to="/search" onClick={closeSidebar} className={`${linkClass} flex justify-between`}>
             <div>Search Number Plate</div>
             <div><LuSearchCode /></div>
           </NavLink>
-          <NavLink to="/dashboard" className={`${linkClass} flex justify-between`}>
+          <NavLink to="/dashboard" onClick={closeSidebar} className={`${linkClass} flex justify-between`}>
             <div>Dashboard</div>
             <div><TbLayoutDashboardFilled /></div>
           </NavLink>
-          <NavLink to="/leaderboard" className={`${linkClass} flex justify-between`}>
+          <NavLink to="/leaderboard" onClick={closeSidebar} className={`${linkClass} flex justify-between`}>
             <div>Leaderboard</div>
             <div><FaRankingStar /></div>
           </NavLink>
-          <NavLink to="/regrules" className={`${linkClass} flex justify-between`}>
+          <NavLink to="/regrules" onClick={closeSidebar} className={`${linkClass} flex justify-between`}>
             <div>The Rules</div>
             <div><GiRuleBook /></div>
           </NavLink>
-          <NavLink to="/reghelp" className={`${linkClass} flex justify-between`}>
+          <NavLink to="/reghelp" onClick={closeSidebar} className={`${linkClass} flex justify-between`}>
             <div>Being Helpful</div>
             <div><FaHandsHelping /></div>
           </NavLink>
-          <NavLink to="/regsafety" className={`${linkClass} flex justify-between`}>
+          <NavLink to="/regsafety" onClick={closeSidebar} className={`${linkClass} flex justify-between`}>
             <div>Importance of Safety</div>
             <div><FaHelmetSafety /></div>
           </NavLink>
-          <NavLink to="/mission_briefing" className={`${linkClass} flex justify-between`}>
+          <NavLink to="/mission_briefing" onClick={closeSidebar} className={`${linkClass} flex justify-between`}>
             <div>Mission_Briefing</div>
             <div><MdSatelliteAlt /></div>
           </NavLink>

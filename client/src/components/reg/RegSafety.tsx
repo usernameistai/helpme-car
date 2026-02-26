@@ -12,7 +12,7 @@ const RegSafety: FC = () => {
   return (
     <>
       <ParticlesBg theme='nasa' colour='blue-500'/>
-      <section className='relative z-20 mx-auto mb-4 w-full max-w-6xl px-4 sm:px-0'>
+      <section className='relative z-20 mx-auto mb-4 w-full max-w-6xl px-1 sm:px-0'>
         <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan"
         >
           HelpMe-Safety
@@ -34,7 +34,7 @@ const RegSafety: FC = () => {
               </p>
               <footer className='flex flex-row-reverse mt-1 text-cyan-600'>
                 <article className="flex flex-col items-end">
-                  <span className="font-mono text-[11px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
+                  <span className="font-mono text-[8px] sm:text-[11px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                     STATUS: SAFETY // OPT_LOAD: f1(1) // QUOTE: ME
                   </span>
                   <div className="h-[1px] w-24 bg-gradient-to-r from-zinc-500 dark:from-cyan-400 to-transparent opacity-50"></div>
@@ -133,7 +133,7 @@ const RegSafety: FC = () => {
                 </p>
                 <footer className='flex flex-row-reverse mt-1 text-cyan-600'>
                   <article className="flex flex-col items-end">
-                    <span className="font-mono text-[11px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
+                    <span className="font-mono text-[8px] sm:text-[11px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                       STATUS: SAFETY // OPT_LOAD: f1(1) // QUOTE: ME
                     </span>
                     <div className="h-[1px] w-24 bg-gradient-to-r from-zinc-500 dark:from-cyan-400 to-transparent opacity-50"></div>
@@ -208,7 +208,7 @@ const RegSafety: FC = () => {
                 </p>
                 <footer className='flex flex-row-reverse mt-1 text-cyan-600'>
                   <article className="flex flex-col items-end">
-                    <span className="font-mono text-[11px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
+                    <span className="font-mono text-[8px] sm:text-[11px] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                       STATUS: SAFETY // OPT_LOAD: f1(1) // QUOTE: ME
                     </span>
                     <div className="h-[1px] w-24 bg-gradient-to-r from-zinc-500 dark:from-cyan-400 to-transparent opacity-50"></div>

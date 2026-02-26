@@ -17,7 +17,7 @@ interface SearchProps {
   setRegplate: (value: string) => void;
   onSubmit: (e: React.SyntheticEvent<HTMLFormElement>) => void;
   className?: string;
-}
+};
 
 export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, className = "" }) => {
   const { history, clearHistory, addSearch } = useSearchStore();
@@ -33,7 +33,7 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
     } else {
       toast.error("Please enter a valid reg");
     }
-  }
+  };
 
   return (
     <>
@@ -72,7 +72,7 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
                         key={plate}
                         type="button" // Important: Prevents form submission
                         onClick={() => setRegplate(plate)} // Fills the box for the user
-                        className={`items-center px-3 py-1 my-3 max-h-[42px] bg-cyan-500/10 text-cyan-600/80 dark:text-cyan-400 text-xs rounded-lg border border-cyan-400/30 hover:bg-cyan-500/20 transition-all font-poppins font-semibold shadow-sm
+                        className={`items-center px-3 py-1 my-3 max-h-[42px] bg-cyan-500/10 text-cyan-600/80 dark:text-cyan-400 text-[11px] sm:text-xs rounded-lg border border-cyan-400/30 hover:bg-cyan-500/20 transition-all font-poppins font-semibold shadow-sm
                           ${index < 3 ? 'flex' : 'hidden'}  /* Hide items 4-7 on mobile */
                           ${index >= 3 && index < 5 ? 'md:flex' : ''} /* show 4 & 5 on mediu screens */
                           ${index >= 5 ? 'lg:flex' : ''}  /* Hide items 6-7 on medium */    

@@ -3,7 +3,10 @@ import ParticlesBg from '../components/layout/ParticlesBg';
 import { Link } from 'react-router-dom';
 
 const MissionBriefing: React.FC = () => {
-  const elementClass = "relative z-30 flex flex-col group mt-8 py-4 md:py-2 p-8 sm:p-4 bg-zinc-100 dark:bg-zinc-900/10 backdrop-blur-sm border-l border-t border-cyan-400/20 rounded-2xl w-full shadow-[inset_2px_2px_4px_rgba(255,255,255,0.05)] transition-all duration-300 ease-out hover:border-cyan-400/50 hover:shadow-[0_10px_20px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
+  const elementClass = "relative z-30 flex flex-col group mt-8 py-4 sm:py-7 p-5 sm:p-4 bg-zinc-100 dark:bg-zinc-900/10 backdrop-blur-sm border-l border-t border-cyan-400/20 rounded-2xl w-full shadow-[inset_2px_2px_4px_rgba(255,255,255,0.05)] transition-all duration-300 ease-out hover:border-cyan-400/50 hover:shadow-[0_10px_20px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
+  const numberClass  = "bg-emerald-500 rounded-sm text-sm sm:text-base text-slate-900 px-2 py-1 font-bold";
+  const h2Class = " text-base sm:text-xl font-bold uppercase tracking-widest";
+  const pClass = "pl-12 text-sm sm:text-base text-slate-300 leading-relaxed";
 
   return (
     <>
@@ -17,13 +20,13 @@ const MissionBriefing: React.FC = () => {
             <div className="flex items-center space-x-4 mb-2 px-5">
               <div className="h-[1px] w-12 bg-cyan-400 opacity-50"></div>
               <h2 
-                className="font-space text-sm md:text-xl tracking-[0.3em] uppercase text-cyan-400/90 text-warm-glow"
+                className="font-space text-xs md:text-xl tracking-[0.3em] uppercase text-cyan-400/90 text-warm-glow"
                   style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
               >
                 System Protocol: HelpMe // MISSION_BRIEFING
               </h2>
               <div className="flex flex-col items-end">
-                <span className="font-mono text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
+                <span className="font-mono text-[7px] sm:text-[8px] text-cyan-400/50 tracking-[0.2em] mb-1">
                   STATUS: OPERATIONAL // STRICTLY FOR FIELD OPERATORS ONLY // CLEARANCE L1
                 </span>
                 <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
@@ -35,12 +38,12 @@ const MissionBriefing: React.FC = () => {
             {/* Step 1 */}
             <div className={`animate-materialize ${elementClass}`} style={{ animationDelay: '0.2s' }}>
               <div className="flex items-center gap-4 mb-2 ">
-                <span className="bg-emerald-500 rounded-sm text-slate-900 px-2 py-1 font-bold">01</span>
-                <h2 className="text-xl font-bold uppercase tracking-widest">Anomaly Detection</h2>
+                <span className={numberClass}>01</span>
+                <h2 className={h2Class}>Anomaly Detection</h2>
               </div>
-              <p className="pl-12 text-slate-300 leading-relaxed">
+              <p className={pClass}>
                 Identify a target vehicle exhibiting mechanical or safety discrepancies. 
-                <span className="block mt-2 text-sm text-yellow-500/80 italic">
+                <span className="block mt-2 text-xs sm:text-sm text-yellow-500/80 italic">
                   Note: Requires situational awareness. Deactivate "Self-Obsessed" mode before proceeding and pull car over to side of road if "driving".
                 </span>
               </p>
@@ -49,13 +52,13 @@ const MissionBriefing: React.FC = () => {
             {/* Step 2 */}
             <div className={`animate-materialize ${elementClass}`} style={{ animationDelay: '0.5s' }}>
               <div className="flex items-center gap-4 mb-2">
-                <span className="bg-emerald-500 rounded-sm text-slate-900 px-2 py-1 font-bold">02</span>
-                <h2 className="text-xl font-bold uppercase tracking-widest">Data Uplink</h2>
+                <span className={numberClass}>02</span>
+                <h2 className={h2Class}>Data Uplink</h2>
               </div>
-              <p className="pl-12 text-slate-300 leading-relaxed">
+              <p className={pClass}>
                 Input the registration plate into the HUD. The interface is engineered to be 
                 completely self-explanatory.
-                <span className="block mt-2 text-sm text-emerald-500/70">
+                <span className="block mt-2 text-xs sm:text-sm text-emerald-500/70">
                   // EXECUTE_SCAN --AUTO_INTUITION_ENABLED
                 </span>
               </p>
@@ -64,13 +67,13 @@ const MissionBriefing: React.FC = () => {
             {/* Step 3 */}
             <div className={`animate-materialize ${elementClass}`}style={{ animationDelay: '0.8s' }}>
               <div className="flex items-center gap-4 mb-2">
-                <span className="bg-emerald-500 rounded-sm text-slate-900 px-2 py-1 font-bold">03</span>
-                <h2 className="text-xl font-bold uppercase tracking-widest">Mission Termination</h2>
+                <span className={numberClass}>03</span>
+                <h2 className={h2Class}>Mission Termination</h2>
               </div>
-              <p className="pl-12 text-slate-300">
+              <p className={pClass}>
                 The End. Disconnect and return to standby.
               </p>
-              <div className="mt-8 pt-4 border-t border-emerald-500/10 text-center font-bold text-2xl tracking-[0.5em] opacity-40">
+              <div className="mt-8 pt-4 border-t border-emerald-500/10 text-center font-bold text-lg sm:text-2xl tracking-[0.5em] opacity-40">
                 FIN.
               </div>
             </div>
@@ -93,20 +96,20 @@ const MissionBriefing: React.FC = () => {
           </div>
 
           <div className="flex flex-col z-20 items-center space-y-2">
-          {/* A thin, technical divider line */}
-          <div className='h-[1px] w-16 bg-[var(--neon-colour)] opacity-30 mb-2'></div>
-          <p className='font-inter text-[10px] tracking-[0.5em] uppercase text-white opacity-90'>
-            {/* The Pulsing Dot */}
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--neon-colour)] mr-3 animate-pulse"></span>
-            
-            SYSTEM ACCESS: 
-            {/* The Pulsing "Online" Text */}
-            <span className="text-[var(--neon-colour)] ml-2 animate-pulse font-bold">
-              ONLINE
-            </span> 
-            <span className="ml-4 text-white/80">MISSION // BRIEF</span>
-          </p>
-        </div>
+            {/* A thin, technical divider line */}
+            <div className='h-[1px] w-16 bg-[var(--neon-colour)] opacity-30 mb-2'></div>
+            <p className='font-inter text-[6px] sm:text-[10px] tracking-[0.5em] uppercase text-white opacity-90'>
+              {/* The Pulsing Dot */}
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--neon-colour)] mr-3 animate-pulse"></span>
+              
+              SYSTEM ACCESS: 
+              {/* The Pulsing "Online" Text */}
+              <span className="text-[var(--neon-colour)] ml-2 animate-pulse font-bold">
+                ONLINE
+              </span> 
+              <span className="ml-4 text-white/80">MISSION // BRIEF</span>
+            </p>
+          </div>
         </div>
 
         

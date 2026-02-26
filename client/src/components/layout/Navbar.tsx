@@ -91,7 +91,7 @@ const Navbar = () => {
           <section className="flex items-center gap-x-2 text-sm md:text-base font-bold">
             
             {/* Theme Toggle */}
-            <button onClick={toggleTheme} aria-label="Toggle theme" className={`${navItemBase} group`}>
+            <button onClick={toggleTheme} onTouchStart={(e) => e.preventDefault()} aria-label="Toggle theme" className={`${navItemBase} group`}>
               {theme === 'light' ? (
                 <div className="flex items-center gap-x-2"><span>🌙</span> <span className="hidden lg:flex font-bold">| Dark</span></div>
               ) : (

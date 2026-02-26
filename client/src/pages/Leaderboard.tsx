@@ -63,7 +63,7 @@ export const Board: FC<BoardProps> = ({ leaderboard, className = "" }) => {
                       // whileHover={{ scale: 1.02, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
                       whileHover={{ x: 10, backgroundColor: "rgba(34, 211, 238, 0.08" }}
                         className={`
-                        flex justify-between items-center p-4 transition-all relative rounded-r-md
+                        flex justify-between items-center p-2 sm:p-4 transition-all relative rounded-r-md
                         ${isTopThree 
                           ? `${medalStyles[index]} border-l-4 border-b` 
                           : "bg-black/20 border-l-2 border-l-zinc-800 border-b border-white/5 text-zinc-500"}
@@ -71,8 +71,8 @@ export const Board: FC<BoardProps> = ({ leaderboard, className = "" }) => {
                 >
                   <div className="flex items-center gap-6">
                     {/* RANK SECTION: Icon above ID */}
-                    <div className="flex flex-col items-center justify-center min-w-[40px]">
-                      <span className="text-lg sm:text-xl mb-1">
+                    <div className="flex flex-col items-center justify-center min-w-[33px]">
+                      <span className="text-base sm:text-xl mb-1">
                         {index === 0 ? "👑" : index === 1 ? "🥈" : index === 2 ? "🥉" : ""}
                       </span>
                       <span className="font-mono text-[10px] font-bold tracking-widest opacity-60">
@@ -81,7 +81,7 @@ export const Board: FC<BoardProps> = ({ leaderboard, className = "" }) => {
                     </div>
                     
                     <div className="flex flex-col">
-                      <span className={`font-space uppercase tracking-[0.2em] text-sm sm:text-base ${isTopThree ? 'text-white' : 'text-zinc-400'}`}>
+                      <span className={`font-space uppercase tracking-[0.2em] text-zinc-700/80 text-xs sm:text-base ${isTopThree ? 'dark:text-white' : 'dark:text-zinc-400'}`}>
                         {entry.username}
                       </span>
                       <span className="text-[9px] font-mono opacity-40 uppercase">
@@ -100,8 +100,8 @@ export const Board: FC<BoardProps> = ({ leaderboard, className = "" }) => {
                     </div>
                     
                     {/* MERIT SECTION: Stars underneath score */}
-                    <div className="flex flex-col items-end min-w-[70px]">
-                      <span className="text-[8px] opacity-40 uppercase tracking-tighter">Merit</span>
+                    <div className="flex flex-col items-center sm:items-end min-w-[70px]">
+                      <span className="pr-2 sm:pr-0 text-[8px] opacity-40 uppercase tracking-tighter">Merit</span>
                       <span className={`text-xl font-black leading-none ${isTopThree ? 'text-white' : 'text-zinc-300'}`}>
                         {entry.starsGiven}
                       </span>

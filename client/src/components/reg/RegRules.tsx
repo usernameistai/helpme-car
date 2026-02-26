@@ -11,17 +11,17 @@ const RegRules: FC = () => {
   const articleClass = "relative rounded-2xl shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]";
   const textClass = "font-inter rounded-lg shadow-lg relative dark:shadow-sky-100/50 h-60 md:h-80 lg:h-96 w-[47.5%] p-4 justify-center items-center flex text-center text-cyan-100 text-2xl md:text-3xl font-semibold drop-shadow-md";
   const overlayClass = "absolute rounded-lg inset-0 bg-black/40 dark:bg-black/60 z-0";
-  const pClass = "font-inter px-6 py-4 lg:text-xl text-zinc-500/90 dark:text-zinc-200/90 font-semibold leading-7 md:leading-8";
+  const pClass = "font-inter px-6 py-4 text-sm sm:text-base md:text-lg lg:text-xl text-zinc-500/90 dark:text-zinc-200/90 font-semibold leading-7 md:leading-8";
   const brightBorder = "absolute inset-0 rounded-2xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse";
   const imageClass = "relative h-60 md:h-80 lg:h-96 w-[49%] rounded-lg mb-8 font-semibold text-zinc-100 justify-center flex items-center shadow-cyan-200/30 dark:shadow-sky-100/50";
-  const divClass = "font-inter md:h-80 lg:h-96 w-[49%] text-sm sm:text-base md:text-xl rounded-lg p-2 md:p-4 mb-8 font-semibold text-zinc-700 dark:text-zinc-200/90 justify-center flex leading-6 md:leading-8";
+  const divClass = "font-inter md:h-80 lg:h-96 w-[49%] text-xs sm:text-base md:text-xl rounded-lg p-1 sm:p-2 md:p-4 mb-8 font-semibold text-zinc-700 dark:text-zinc-200/90 justify-center flex leading-6 md:leading-8";
   const buttonClass = "font-poppins font-semibold dark:bg-yellow-500/20 dark:text-yellow-400 border dark:border-yellow-500/50 bg-sky-500/20 text-zinc-700 border border-sky-500/50 rounded my-2 md:px-4 py-3 h-12 shadow-lg hover:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition";
   const shimmerClass = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]`;
 
   return (
     <>
       <ParticlesBg theme='bubble' colour='#94a3b8' />
-      <section className='relative z-20 mx-auto mb-4 w-full max-w-6xl px-4 sm:px-0'>
+      <section className='relative z-20 mx-auto mb-4 w-full max-w-6xl px-1 sm:px-0'>
         <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan">
           HelpMe - Rules & Regulations
         </h1>
@@ -40,7 +40,7 @@ const RegRules: FC = () => {
         </section>
 
         <section className='text-center'>
-          <p className='font-inter font-semibold text-md md:text-lg text-cyan-500'>Until safely stopped* / MSM**</p>
+          <p className='font-inter font-semibold text-xs sm:text-base md:text-lg text-cyan-500'>Until safely stopped* / MSM**</p>
         </section>
 
         <section className='rounded-lg m-5 mx-auto py-10 px-8 mb-10 shadow-[inset_1px_5px_20px_rgba(0,0,0,0.2)]'>
@@ -174,7 +174,7 @@ const RegRules: FC = () => {
         
         <section className='bg-zinc-900/70 dark:bg-zinc-900/50 text-white text-center py-4'>
           <h3 className='font-space text-lg md:text-xl lg:text-2xl font-bold'>Rules Photo Credits from UnSplash</h3>
-          <ul className='inter text-sm md:text-base lg:text-lg mb-2'>
+          <ul className='inter text-xs sm:text-sm md:text-base lg:text-lg mb-2'>
             <br />
             <li>Little Girl Having Fun with Mobile - <strong>Pan Xiaozhen</strong></li>
             <li>Three Gents Being Passengers - <strong>Luke Porter</strong></li>
@@ -197,7 +197,7 @@ const RegRules: FC = () => {
           <div className="h-[1px] w-24 bg-gradient-to-r from-zinc-500 dark:from-cyan-400 to-transparent opacity-50 mb-1"></div>
         </article>
 
-        <section className="mb-2 text-sm md:text-lg">
+        <section className="mb-2 text-[9px] sm:text-sm md:text-lg">
           <h3 className='inter font-bold text-zinc-700 dark:text-zinc-200/90'>* Pulled over correctly and safely and are not blocking traffic, so not driving</h3>
           <h3 className='inter font-bold text-zinc-700 dark:text-zinc-200/90'>**MSM - Mirror Signal Manoeuvre (this is still driving, so not this)</h3>
         </section>
@@ -290,7 +290,7 @@ const RegRules: FC = () => {
         <section>
           <article className='bg-zinc-900/70 dark:bg-zinc-900/50 text-white text-center py-4 mb-2'>
             <h3 className='font-space text-lg md:text-xl lg:text-2xl font-bold'>Regulations Photo Credits from UnSplash</h3>
-            <ul className='inter text-sm md:text-base lg:text-lg mb-2'>
+            <ul className='inter text-xs sm:text-sm md:text-base lg:text-lg mb-2'>
               <br />
               <li>Daunting Road Signs  - <strong>Nick Fewings</strong></li>
               <li>Abandoned American 1950's Pick-Up - <strong>Christopher Burns</strong></li>
@@ -337,7 +337,7 @@ const RegRules: FC = () => {
               className='font-space flex relative items-center justify-center rounded-2xl bg-sky-100 p-2 mb-4 landscape:mb-8 shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)]'
           >
             <FaJediOrder size={25} className='text-zinc-700 font-bold mr-5'/>
-            <p className='font-bold text-zinc-700 text-base sm:text-lg md:text-2xl lg:text-3xl'>Thank you for reading the rules </p>
+            <p className='font-bold text-zinc-700 text-sm sm:text-lg md:text-2xl lg:text-3xl'>Thank you for reading the rules </p>
             <FaJediOrder size={25} className='text-zinc-700 font-bold ml-5'/>
             <div className="absolute inset-0 rounded-2xl border border-cyan-400/40 pointer-events-none animate-pulse-glow animate-pulse" />
           </article>

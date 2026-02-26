@@ -13,7 +13,7 @@ const RegHelp: FC = () => {
   return (
     <>
       <ParticlesBg theme="default" colour="cyan-400" />
-      <section className="relative z-20 mx-auto mb-4 w-full max-w-6xl px-4 sm:px-0">
+      <section className="relative z-20 mx-auto mb-4 w-full max-w-6xl px-1 sm:px-0">
         <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan">
           Why help a fellow human?
         </h1>

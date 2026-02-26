@@ -21,7 +21,7 @@ const GlassCard: FC<GlassCardProps> = ({ children, title, className = "" }) => {
       >
         {/* Dynamic Title with Wizard Gradient */}
         {title && (
-          <h2 className="text-xl sm:text-3xl md:text-4xl font-bold mb-4 
+          <h2 className="text-lg sm:text-3xl md:text-4xl font-bold mb-4 
             text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300"
           >
             {title}
