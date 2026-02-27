@@ -21,6 +21,7 @@ import Dashboard from "./pages/Dashboard";
 import DashboardForm from "./pages/DashboardForm";
 import Leaderboard from "./pages/Leaderboard";
 import MissionBriefing from "./pages/MissionBriefing";
+import DashboardRegs from "./pages/DashboardRegs";
 
 const App: FC = () => {
   const { regs, loading } = useRegStore();
@@ -55,6 +56,7 @@ const App: FC = () => {
           <Route path="/reg/:regplate/edit" element={ <EditReg /> } />
           <Route path="/dashboard" element={ <Dashboard /> } />
           <Route path="/dashboard/:userId/edit" element={ <DashboardForm /> } />
+          <Route path="/dashboardregs" element={ <DashboardRegs /> } />
           <Route path="/leaderboard" element={ <Leaderboard /> } />
           <Route path='/mission_briefing' element={ <MissionBriefing /> } />
           {/* Add more routes here */}

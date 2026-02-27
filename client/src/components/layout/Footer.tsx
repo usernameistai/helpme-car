@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <>
-      <footer className="font-space relative z-50 bg-gray-600 dark:bg-gray-800 mt-auto border-t-2 border-teal-500 dark:border-teal-900">
+      <footer className="pb-safe pt-4 font-space relative z-50 bg-gray-600 dark:bg-gray-800 mt-auto border-t-2 border-teal-500 dark:border-teal-900">
         <div className="container mx-auto text-slate-100 text-center text-xs md:text-sm pt-3 pb-4">
         <strong> 
           {/* HelpMe-Car 💠 Built to help, not to track.

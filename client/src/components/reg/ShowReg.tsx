@@ -211,7 +211,9 @@ const ShowReg = () => {
             Message for owner of 
             <span
               className="text-center justify-center mx-2 md:mx-3 px-2 md:px-3 py-0.5 md:py-1 text-xl md:text-2xl w-48 font-bold text-zinc-700 shadow-lg rounded bg-zinc-50 border-2 border-blue-800 tracking-wide hover:shadow-[inset_0px_1px_10px_rgba(0,0,0,0.2)] transition ease-in-out">
-              {selectedReg.regplate}
+                <Link to="https://www.gov.uk/check-mot-status">
+                  {selectedReg.regplate}
+                </Link>
             </span>
           </h2>
           
