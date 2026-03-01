@@ -49,10 +49,6 @@ const Dashboard: FC = () => {
     fetchProfile();
   }, [user, isLoaded]); 
 
-  // const randomIntel = [ ...(myCars) ]
-  //   .sort(() => Math.random() - 0.5)
-  //   .slice(0, 3);
-
   if (!user) return <p>Please sign in to view your dashboard</p>
   if (loading) return <Spinner />
   if (error) return <p className="text-red-500">{error}</p>
@@ -138,7 +134,7 @@ const Dashboard: FC = () => {
           </GlassCard>
          
           {/* Cars I have helped */}
-          <GlassCard title="Your Impact" className="overflow-visible touch-pan-y font-space backdrop-blur-md z-10 hover:scale-100 sm:hover:scale-[1.05]">
+          <GlassCard title={`${profile?.username}'s Impact`} className="overflow-visible touch-pan-y font-space backdrop-blur-md z-10 hover:scale-100 sm:hover:scale-[1.05]">
             <div className="m-4 flex items-center justify-around bg-cyan-500/5 rounded-lg border border-white/5 py-3">
               {/* Cars Helped Metric */}
               <div className="flex flex-col items-center">
@@ -226,7 +222,7 @@ const Dashboard: FC = () => {
           </GlassCard>
 
           {/* Superpowers (for fun) */}   
-          <GlassCard title="Superpowers" className="hover:scale-100 sm:hover:scale-[1.05] overflow-visible">
+          <GlassCard title={`Superpowers of ${profile?.username}`}className="hover:scale-100 sm:hover:scale-[1.05] overflow-visible">
             <div className="m-4">
               {profile.superpowers?.length ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">

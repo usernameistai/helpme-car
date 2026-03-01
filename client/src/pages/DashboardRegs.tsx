@@ -47,7 +47,7 @@ const DashboardRegs: FC = () => {
             </span>
           </h1>
           {/* Cars I have helped */}
-          <GlassCard title="Your Impact" className="overflow-visible touch-pan-y font-space backdrop-blur-md z-10 hover:scale-100 sm:hover:scale-[1.05]">
+          <GlassCard title={`${profile?.username}'s Impact`} className="overflow-visible touch-pan-y font-space backdrop-blur-md z-10 hover:scale-100 sm:hover:scale-[1.05]">
             <div className="m-4 flex items-center justify-around bg-cyan-500/5 rounded-lg border border-white/5 py-3">
               {/* Cars Helped Metric */}
               <div className="flex flex-col items-center">
@@ -74,25 +74,13 @@ const DashboardRegs: FC = () => {
                 </p>
               </div>
             </div>
+
             {/* LOGBOOK SECTION - Fixed Height Containment */}
             <div className="mt-4 border-t border-cyan-500/10 pt-4 flex flex-col">
-              {/* <div className="flex justify-between items-center mb-3">
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-michroma text-cyan-400 tracking-widest uppercase">
-                    Active_Recon
-                  </span>
-                  <span className="text-[7px] text-zinc-500 font-mono italic">
-                    MAX_DISPLAY: 04_UNITS
-                  </span>
-                </div>
-                <span className="text-[10px] text-zinc-300 font-mono bg-white/5 px-2 py-0.5 rounded border border-cyan-400/10">
-                  TOTAL: {myCars?.length || 0}
-                </span>
-              </div> */}
               {/* REPLACEMENT LOGBOOK HEADER */}
               <div className="mt-4 border-t border-cyan-500/20 pt-4 mb-4">
-                <div className="flex justify-between items-end">
-                  <div>
+                <div className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-o">
+                  <div className='text-center sm:text-left'>
                     <h2 className="text-cyan-500 font-michroma text-[10px] uppercase tracking-[0.2em]">
                       Archive_Database_v1.0
                     </h2>
@@ -100,7 +88,7 @@ const DashboardRegs: FC = () => {
                       Status: Encrypted // Location: {profile?.username || "Unknown"}_Vault
                     </p>
                   </div>
-                  <div className="text-right">
+                  <div className="text-center sm:text-right">
                     <span className="text-[8px] text-cyan-500/60 block uppercase font-michroma tracking-widest">
                       Incomplete_Units_Helped
                     </span>
