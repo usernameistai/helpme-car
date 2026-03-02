@@ -39,7 +39,7 @@ const MissionBriefing: React.FC = () => {
             <div className={`animate-materialize ${elementClass}`} style={{ animationDelay: '0.2s' }}>
               <div className="flex items-center gap-4 mb-2 ">
                 <span className={numberClass}>01</span>
-                <h2 className={h2Class}>Anomaly Detection</h2>
+                <h2 className={h2Class}>Anomaly / Fault Detection</h2>
               </div>
               <p className={pClass}>
                 Identify a target vehicle exhibiting mechanical or safety discrepancies. 
@@ -57,21 +57,21 @@ const MissionBriefing: React.FC = () => {
               </div>
               <p className={pClass}>
                 Input the registration plate into the HUD. The interface is engineered to be 
-                completely self-explanatory.
+                completely self-explanatory. (Enter Faults / Advisories)
                 <span className="block mt-2 text-xs sm:text-sm text-emerald-500/70">
-                  // EXECUTE_SCAN --AUTO_INTUITION_ENABLED
+                  // DIAGNOSTIC_SCAN --AUTO_INTUITION_ENABLED
                 </span>
               </p>
             </div>
 
             {/* Step 3 */}
-            <div className={`animate-materialize ${elementClass}`}style={{ animationDelay: '0.8s' }}>
+            <div className={`animate-materialize ${elementClass}`} style={{ animationDelay: '0.8s' }}>
               <div className="flex items-center gap-4 mb-2">
                 <span className={numberClass}>03</span>
-                <h2 className={h2Class}>Mission Termination</h2>
+                <h2 className={h2Class}>Mission Completion</h2>
               </div>
               <p className={pClass}>
-                The End. Disconnect and return to standby.
+                Mission Completed. Disconnect from altruism and return to standby.
               </p>
               <div className="mt-8 pt-4 border-t border-emerald-500/10 text-center font-bold text-lg sm:text-2xl tracking-[0.5em] opacity-40">
                 FIN.

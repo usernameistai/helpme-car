@@ -62,6 +62,10 @@ const Sidebar: FC = () => {
             <div>Home</div>
             <div><IoHome /></div>
           </NavLink>
+          <NavLink to="/mission_briefing" onClick={closeSidebar} className={`${linkClass} flex justify-between`}>
+            <div>Mission_Briefing</div>
+            <div><MdSatelliteAlt /></div>
+          </NavLink>
           <NavLink to="/helpreg" onClick={closeSidebar} className={`${linkClass} flex justify-between`}>
             <div>Help A Car</div>
             <div><FaHandsHelping /></div>
@@ -89,10 +93,6 @@ const Sidebar: FC = () => {
           <NavLink to="/regsafety" onClick={closeSidebar} className={`${linkClass} flex justify-between`}>
             <div>Importance of Safety</div>
             <div><FaHelmetSafety /></div>
-          </NavLink>
-          <NavLink to="/mission_briefing" onClick={closeSidebar} className={`${linkClass} flex justify-between`}>
-            <div>Mission_Briefing</div>
-            <div><MdSatelliteAlt /></div>
           </NavLink>
           {/* Theme Toggle */}
           <button onClick={toggleTheme} aria-label="Toggle theme" className={`${linkClass}`}>

@@ -116,7 +116,7 @@ const EditReg: FC = () => {
   return (
     <>
       <ParticlesBg theme='nasa' colour='purple-500' />
-      <section className='relative z-20 max-w-6xl mx-auto '> 
+      <section className='relative z-20 max-w-6xl mx-auto mb-10'> 
         <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan">
           HelpMe-Edit the Reg... please
         </h1>

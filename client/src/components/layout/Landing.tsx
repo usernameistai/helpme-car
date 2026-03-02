@@ -31,27 +31,35 @@ const Landing = () => {
             <div className="space-y-2">
               <p className='font-michroma lan text-xl sm:text-2xl md:text-4xl uppercase tracking-tighter'>
                 <Link to="/mission_briefing">
-                  Identify. Alert. Help.
+                  Observe . Log . Help
                 </Link>
               </p>
               <p className="font-inter text-white/90 text-sm md:text-base max-w-xl">
-                The anonymous vehicle advisory system. Enter the registration, select the fault, and assist a fellow human.
+                The anonymous car advisory application system. See a car that needs help, enter the registration, select the fault / advisory and help a fellow human
               </p>
+              <div className="flex flex-col">
+                <span className="text-[10px] text-cyan-400/50 font-mono tracking-[0.2em]">
+                  // SAFETY_PROTOCOL: DO NOT OPERATE WHILE DRIVING
+                </span>
+                <div className="flex flex-col items-center ">
+                  <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
+                </div>
+              </div>
             </div>
 
             {/* Modular Glass Cards Section */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mt-4">
-              <div className="p-4 border border-white/10 backdrop-blur-md bg-white/5 rounded-sm">
-                <h3 className="font-michroma text-[var(--neon-colour)] text-[10px] tracking-widest mb-2">01 // VIEW</h3>
-                <p className="font-inter text-white text-[11px] opacity-70">Focus on the registration plate.</p>
+              <div className="p-4 border border-white/10 hover:border-[var(--neon-colour)] hover:animate-pulse backdrop-blur-md bg-white/5 rounded-sm">
+                <h3 className="font-michroma text-[var(--neon-colour)] text-[10px] tracking-widest mb-2">01 // OBSERVE</h3>
+                <p className="font-inter text-white text-[11px] opacity-70">View the car's number plate.</p>
               </div>
-              <div className="p-4 border border-white/10 backdrop-blur-md bg-white/5 rounded-sm">
-                <h3 className="font-michroma text-[var(--neon-colour)] text-[10px] tracking-widest mb-2">02 // INPUT</h3>
+              <div className="p-4 border border-white/10 hover:border-[var(--neon-colour)] hover:animate-pulse backdrop-blur-md bg-white/5 rounded-sm">
+                <h3 className="font-michroma text-[var(--neon-colour)] text-[10px] tracking-widest mb-2">02 // LOG</h3>
                 <p className="font-inter text-white text-[11px] opacity-70">Select the specific vehicle fault.</p>
               </div>
-              <div className="p-4 border border-white/10 backdrop-blur-md bg-white/5 rounded-sm">
-                <h3 className="font-michroma text-[var(--neon-colour)] text-[10px] tracking-widest mb-2">03 // DISPATCH</h3>
-                <p className="font-inter text-white text-[11px] opacity-70">Alert the driver anonymously.</p>
+              <div className="p-4 border border-white/10 hover:border-[var(--neon-colour)] hover:animate-pulse backdrop-blur-md bg-white/5 rounded-sm">
+                <h3 className="font-michroma text-[var(--neon-colour)] text-[10px] tracking-widest mb-2">03 // HELP</h3>
+                <p className="font-inter text-white text-[11px] opacity-70">Update the HelpMe-Car database.</p>
               </div>
             </div>
 
@@ -59,7 +67,7 @@ const Landing = () => {
               className='lead' 
                 aria-label="Initialise Help. This is another button to go to the home page. Welcome again"
             >
-              <Link to='/reg' className='neon-button font-poppins'>Initialise Reporting Process</Link>
+              <Link to='/reg' className='neon-button font-poppins'>Initialise Helping Process</Link>
             </div>
 
             <div className="flex flex-col items-center mt-12 space-y-2">
@@ -80,7 +88,7 @@ const Landing = () => {
 
             <div className="flex flex-col items-end">
               <span className="font-mono text-[10px] text-cyan-400/50 tracking-[0.2em]">
-              STATUS: SHEEP_DETECTION_OFF // FREQUENCY: UNFILTERED // BRAINWASH_PROTECTION: ACTIVE
+                STATUS: SHEEP_DETECTION_OFF // FREQUENCY: UNFILTERED // BRAINWASH_PROTECTION: ACTIVE
               </span>
               <div className="h-[1px] w-24 bg-gradient-to-r from-cyan-400 to-transparent opacity-50"></div>
             </div>

@@ -114,7 +114,7 @@ const Reg: FC = () => {
                           className={`${liClass}`}
                   >
                     <h3 className={`${h3Class}`}>Help Someone's Car</h3>
-                    <p className={`${titleClass}`}>Add a car's faults / advisories via their number plate, for passengers or not driving</p>
+                    <p className={`${titleClass}`}>Add a car's faults / advisories via their number plate, for people not currently driving</p>
                     <div className="text-center my-4">
                       <Link 
                         to="/helpreg" 
@@ -138,7 +138,7 @@ const Reg: FC = () => {
                           className={`${liClass}`}
                   >
                     <h3 className={`${h3Class}`}>Search for your Car</h3>
-                    <p className={`${titleClass}`}>Please enter a number plate to potentially discover an entry in our db</p>
+                    <p className={`${titleClass}`}>Please enter your number plate to potentially discover an entry in our db</p>
                     <div className="text-center my-4">
                       <Link 
                         to="/search" 

@@ -96,7 +96,7 @@ const DashboardForm: React.FC = () => {
   return (
     <>
       <ParticlesBg theme='snow' colour='cyan-400' />
-      <div className="relative z-20 p-4 sm:p-6 bg-search-combine bg-standard bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] rounded-lg">
+      <div className="relative z-20 p-4 sm:p-6 bg-search-combine bg-standard bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]">
         <div className="absolute inset-0 bg-zinc-950/60 pointer-events-none" />
         
         {/* Header with improved typography */}
@@ -110,7 +110,7 @@ const DashboardForm: React.FC = () => {
         )}
           {/* SECTION 1: IDENTITY */}
           <section className={`${sectionClass} hover:scale-100 sm:hover:scale-[1.02]`}>
-            <h2 className={h2Class}>Dossier Identity</h2>
+            <h2 className={h2Class}>Helper Dossier Identity</h2>
             <div className='space-y-4'>
               <fieldset>
                 <label htmlFor="edit-first-name" className='font-michroma text-[10px] text-cyan-400/60 uppercase tracking-widest block mb-2'>

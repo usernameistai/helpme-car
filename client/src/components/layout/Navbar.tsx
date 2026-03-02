@@ -164,7 +164,8 @@ const Navbar = () => {
                   >
                     {
                       [
-                        { to: "/reg", label: "HMC Home", icon: <IoHome className="my-auto text-cyan-500"/>},
+                        { to: "/reg", label: "Home Page", icon: <IoHome className="my-auto text-cyan-500"/>},
+                        { to: "/mission_briefing", label: "Mission Briefing", icon: <MdSatelliteAlt className="my-auto text-cyan-500"/>},
                         { to: "/helpreg", label: "Help A Car", icon: <FaHands className="my-auto text-cyan-500"/>,  icon2: <FaCarRear className="my-auto text-cyan-500"/>},
                         { to: "/search", label: "Search", icon: <LuSearchCode className="my-auto text-cyan-500" size={20}/>},
                         { to: "/dashboard", label: "Dashboard", icon: <TbLayoutDashboardFilled className="my-auto text-cyan-500"/>},
@@ -172,7 +173,6 @@ const Navbar = () => {
                         { to: "/regrules", label: "HMC Rules", icon: <FcRules className="my-auto text-cyan-500"/>, icon2: <GiRuleBook className="my-auto text-cyan-500"/>},
                         { to: "/reghelp", label: "HMC Help", icon: <FaHandsHelping className="my-auto text-cyan-500"/>},
                         { to: "/regsafety", label: "HMC Safety", icon: <FaHelmetSafety className="my-auto text-cyan-500"/>},
-                        { to: "/mission_briefing", label: "Mission_Briefing", icon: <MdSatelliteAlt className="my-auto text-cyan-500"/>},
                         { to: "/signin", label: "HMC Sign In", icon: <PiSignInDuotone className="my-auto text-cyan-500" size={20}/>}
                       ].map((menu) => (
                         <li key={menu.to} role="none">
