@@ -39,7 +39,7 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
     <>
       <section className={`z-20 absolute inset-x-0 rounded-2xl backdrop-blur-sm shadow-[0_20px_50px_rgba(34,211,238,0.3),inset_5px_5px_10px_rgba(255,255,255,0.2)] transition-transform ${className}`}>
         <h2 
-          className='font-michroma text-lg sm:text-xl md:text-2xl lg:text-3xl ml-5 landscape:ml-7 mt-4 text-blue-500 font-semibold tracking-wide drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]'
+          className='font-michroma text-base sm:text-xl md:text-2xl lg:text-3xl ml-5 landscape:ml-7 mt-4 text-blue-500 font-semibold tracking-wide drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]'
             style={{ filter: 'drop-shadow(0 0 8px rgba(34,211,238,0.5)) drop-shadow(0 0 20px rgba(59,130,246,0.3))' }}
         >
           Search for the reg number in question
@@ -93,7 +93,7 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
                   </div>
                 )}
               </div>
-              <div className="flex justify-between ">
+              <div className="flex justify-between mt-1">
                 <button 
                   type='submit' 
                     // className='poppins bg-cyan-500 text-zinc-50 dark:text-zinc-700 text-base md:text-lg font-semibold px-4 py-2 rounded mt-4 shadow-lg active:shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)] hover:translate-y-[0.03rem] transition ease-in-out opacity-105'
@@ -123,7 +123,7 @@ export const Search: FC<SearchProps> = ({ regplate, setRegplate, onSubmit, class
       </section>
     </>
   );
-}
+};
 
 const SearchReg: FC = () => {
   const [regplate, setRegplate] = useState('');
@@ -155,12 +155,24 @@ const SearchReg: FC = () => {
   return (
     <>
       <ParticlesBg theme="snow" colour="purple-500" />
-      <section className='relative bg-search-car bg-standard h-[100vh] z-20 mx-auto max-w-6xl my-[-5rem] sm:my-[-3rem]'>
-        <div className="absolute inset-0 bg-zinc-700/50" /> 
-        <h1 className="font-space relative z-10 w-full text-4xl sm:text-5xl font-bold px-8 py-6 landscape:py-10 mt-[5rem] md:mt-5 mb-2 landscape:mb-[-1.7rem] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
+      <section className='relative bg-search-car bg-standard min-h-screen h-[100vh] z-10 mx-auto max-w-6xl'>
+        <div className="absolute inset-0 bg-zinc-700/50" />
+        <div className="relative z-30 flex items-center gap-4 mb-6 pt-4 px-2 font-michroma text-[10px] tracking-widest uppercase opacity-70">
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+            </span>
+            <span className="text-cyan-400 text-[8px] sm:text-[10px]">System: Operational</span>
+          </div>
+          <div className="h-[1px] flex-1 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
+          <div className="text-zinc-200 hidden sm:block">Sector: English / The Universe</div>
+          <div className="text-zinc-200 text-[8px] sm:text-[10px]">Node: Search_Reg</div>
+        </div>
+        <h1 className="font-space relative z-10 w-full text-4xl sm:text-5xl font-bold px-8 sm:py-5 landscape:py-10 md:mt-5 mb-2 landscape:mb-[-1.7rem] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300">
           HelpMe-Search...
         </h1>
-        <section className='relative h-[75vh] mx-auto top-8 landscape:h-[185px] hover:scale-[1.05] '>
+        <section className='relative h-[75vh] mx-auto top-8 landscape:h-[185px] hover:scale-[1.05]'>
           <Search
             regplate={regplate}
               setRegplate={setRegplate}

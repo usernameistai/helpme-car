@@ -170,10 +170,10 @@ const Navbar = () => {
                         { to: "/search", label: "Search", icon: <LuSearchCode className="my-auto text-cyan-500" size={20}/>},
                         { to: "/dashboard", label: "Dashboard", icon: <TbLayoutDashboardFilled className="my-auto text-cyan-500"/>},
                         { to: "/leaderboard", label: "Leaderboard", icon: <FaRankingStar className="my-auto text-cyan-500"/>},
-                        { to: "/regrules", label: "HMC Rules", icon: <FcRules className="my-auto text-cyan-500"/>, icon2: <GiRuleBook className="my-auto text-cyan-500"/>},
-                        { to: "/reghelp", label: "HMC Help", icon: <FaHandsHelping className="my-auto text-cyan-500"/>},
-                        { to: "/regsafety", label: "HMC Safety", icon: <FaHelmetSafety className="my-auto text-cyan-500"/>},
-                        { to: "/signin", label: "HMC Sign In", icon: <PiSignInDuotone className="my-auto text-cyan-500" size={20}/>}
+                        { to: "/regrules", label: "Rules", icon: <FcRules className="my-auto text-cyan-500"/>, icon2: <GiRuleBook className="my-auto text-cyan-500"/>},
+                        { to: "/reghelp", label: "Help", icon: <FaHandsHelping className="my-auto text-cyan-500"/>},
+                        { to: "/regsafety", label: "Safety", icon: <FaHelmetSafety className="my-auto text-cyan-500"/>},
+                        { to: "/signin", label: "Sign In", icon: <PiSignInDuotone className="my-auto text-cyan-500" size={20}/>}
                       ].map((menu) => (
                         <li key={menu.to} role="none">
                           <Link to={menu.to} role="menuitem" tabIndex={0} className={menuClass}>

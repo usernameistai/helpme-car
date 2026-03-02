@@ -20,7 +20,7 @@ const RegRules: FC = () => {
 
   return (
     <>
-      <ParticlesBg theme='bubble' colour='#94a3b8' />
+      <ParticlesBg theme='snow' colour='#94a3b8' />
       <section className='relative z-20 mx-auto mb-4 w-full max-w-6xl px-1 sm:px-0'>
         <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan">
           HelpMe - Rules & Regulations

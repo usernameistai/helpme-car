@@ -66,11 +66,11 @@ const Dashboard: FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
               </span>
-              <span className="text-cyan-400">System: Operational</span>
+              <span className="text-cyan-400 text-[8px] sm:text-[10px]">System: Operational</span>
             </div>
             <div className="h-[1px] flex-1 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
-            <div className="text-zinc-400 hidden sm:block">Sector: English / The Universe</div>
-            <div className="text-zinc-400">Node: {profile?.userId?.slice(-6) || "-----"}</div>
+            <div className="text-zinc-300 hidden sm:block">Sector: English / The Universe</div>
+            <div className="text-zinc-300 text-[8px] sm:text-[10px]">Node: {profile?.userId?.slice(-6) || "-----"}</div>
           </div>
           <h1 className="relative font-space z-10 text-4xl sm:text-5xl font-bold mt-5 mb-4 md:mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300" >
             Welcome back {''}

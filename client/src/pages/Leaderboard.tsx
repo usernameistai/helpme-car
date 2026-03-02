@@ -122,7 +122,7 @@ export const Board: FC<BoardProps> = ({ leaderboard, className = "" }) => {
           </motion.ul>
  
           <div className="mt-8 pt-4 border-t border-white/5 flex justify-between items-center">
-            <div className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">
+            <div className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest">
               Data_Stream: 128-bit_Encrypted
             </div>
             <div className="flex gap-2">
@@ -152,7 +152,7 @@ const Leaderboard: FC = () => {
     <>
       <ParticlesBg theme='nasa' colour='yellow-300' />
       <section className='relative z-20 my-[-1.5rem]'>
-        <section className="p-6 mx-auto max-w-6xl bg-rules-people-8 bg-standard bg-fixed bg-black/50 min-h-screen">
+        <section className="mt-2 p-6 mx-auto max-w-6xl bg-rules-people-8 bg-standard bg-fixed bg-black/50 min-h-screen">
           <div className="absolute inset-0 bg-zinc-950/20 pointer-events-none" />
           <div className="relative z-25 flex items-center gap-4 mb-6 font-michroma text-[10px] tracking-widest uppercase opacity-70">
             <div className="flex items-center gap-2">
@@ -160,11 +160,11 @@ const Leaderboard: FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
               </span>
-              <span className="text-cyan-400">System: Operational</span>
+              <span className="text-cyan-400 text-[8px] sm:text-[10px]">System: Operational</span>
             </div>
             <div className="h-[1px] flex-1 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
-            <div className="text-zinc-400 hidden sm:block">Sector: English / The Universe</div>
-            <div className="text-zinc-400">Node: {profile?.userId?.slice(-6) || "-----"}</div>
+            <div className="text-zinc-200 hidden sm:block">Sector: English / The Universe</div>
+            <div className="text-zinc-200 text-[8px] sm:text-[10px]">Node: {profile?.userId?.slice(-6) || "-----"}</div>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-5 mb-8 md:mb-12">
             <h1 className="relative z-25 font-space text-center text-3xl sm:text-6xl pb-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-300 tracking-tight">
