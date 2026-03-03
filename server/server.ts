@@ -41,7 +41,7 @@ if (process.env.NODE_ENV === 'production') {
   const root = process.cwd();
   app.use(express.static(path.join(root, 'dist')));
 
-  // This is the Express 5 version of your old '*'
+  // This is the Express 5 version of old '*'
   app.get('*any', (req, res) => {
     res.sendFile(path.resolve(root, 'dist', 'index.html'));
   });
