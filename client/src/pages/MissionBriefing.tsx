@@ -10,7 +10,7 @@ const MissionBriefing: React.FC = () => {
 
   return (
     <>
-      <ParticlesBg theme='default' colour='' className='' />
+      <ParticlesBg theme='default' colour='' className='pointer-events-none' />
       <div className="min-h-screen bg-slate-300 dark:bg-slate-900 text-emerald-400 p-8 font-mono relative overflow-hidden">
         {/* Background Decor */}
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px]"></div>
@@ -20,7 +20,7 @@ const MissionBriefing: React.FC = () => {
             <div className="flex items-center space-x-4 mb-2 px-5">
               <div className="h-[1px] w-12 bg-cyan-400 opacity-50"></div>
               <h2 
-                className="font-space text-xs md:text-xl tracking-[0.3em] uppercase text-cyan-400/90 text-warm-glow"
+                className="font-space text-xs md:text-xl tracking-[0.3em] uppercase text-cyan-400/90 text-warm-glow will-change-[filter]"
                   style={{ filter: 'drop-shadow(-10px 0 15px rgba(34,211,238,0.4)) drop-shadow(10px 0 15px rgba(250,204,21,0.4))' }}
               >
                 System Protocol: HelpMe // MISSION_BRIEFING
@@ -121,7 +121,7 @@ const MissionBriefing: React.FC = () => {
         
         
         {/* The cinematic scanline you wanted—only on this static page! */}
-        <div className="scanline" />
+        <div className="scanline pointer-events-none" />
       </div>
     </>
   );

@@ -79,7 +79,7 @@ const ShowReg = () => {
   }
   const AdvisoryBox = ({ message }: AdvisoryBoxProps) => (
     <>
-      <div className="animate-materialize">
+      <div className="animate-materialize will-change-opacity">
         <div className={`${divClass} mb-5`}>
           <div className={`${titleClass} flex justify-between gap-4`}>
             <div className="flex items-center gap-4">
@@ -197,7 +197,7 @@ const ShowReg = () => {
   return (
     <>
       <ParticlesBg theme="default" colour='purple-500' />
-      <div className="scanline fixed inset-0 z-30" />
+      <div className="scanline fixed inset-0 z-30 pointer-events-none" />
       <section className="relative z-20 max-w-6xl mx-auto space-y-2 md:space-y-4">
         <h1 className="font-space text-4xl md:text-5xl lg:text-7xl font-bold ml-2 pb-4 lan">
           HelpMe-Advisories | Faults
