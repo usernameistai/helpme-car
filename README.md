@@ -45,6 +45,7 @@ To initialize the satellite link locally:
     Create a .env file in the root directory and input your Clerk and MongoDB credentials.
 
 3. **Launch Dual-Stream (Frontend & Backend):**
+    ```bash
     npm run dev
 
 
