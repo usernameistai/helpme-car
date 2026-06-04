@@ -1,9 +1,8 @@
-import { useEffect, useMemo, useState, type FC, type SyntheticEvent } from "react";
+import { useEffect, useMemo, useState, type FC, type SyntheticEvent, lazy, Suspense } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useQueryClient } from "@tanstack/react-query";
 import { getRegByPlate } from "../../api/reg";
 import { useRegs } from "../../hooks/useRegs";
-import ParticlesBg from "../layout/ParticlesBg";
 import GlassCard from "./components/GlassCard";
 import RegList from "./components/RegList";
 import { Search } from "./SearchReg";
@@ -11,6 +10,7 @@ import { Board } from "../../pages/Leaderboard";
 import { useLeaderboard } from "../../hooks/useLeaderboard";
 import toast from "react-hot-toast";
 import { motion } from "motion/react";
+const LazyParticlesBg = lazy(() => import("../layout/ParticlesBg"));
 
 const Reg: FC = () => {
   const { data: regs = [], isLoading, isError } = useRegs();
@@ -83,7 +83,10 @@ const Reg: FC = () => {
 
   return (
     <>
-      <ParticlesBg theme="default" colour="cyan-400"/>
+      <Suspense fallback={null}>
+        <LazyParticlesBg theme="default" colour="cyan-400"/>  
+      </Suspense>
+
       <section className="space-y-10 mx-auto w-full">
         <section className="relative z-20 max-w-6xl mx-auto">
           <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan">
@@ -471,6 +474,7 @@ const Reg: FC = () => {
                   Payload: 10,000_Digits_Pi // Protocol: f2(2)
                 </div>
               </article>
+
               <div className="flex flex-col items-center mt-8">
                 <span className="font-mono text-[0.7rem] text-zinc-500 dark:text-cyan-400/50 tracking-[0.2em] mb-1">
                   STATUS: OPERATIONAL // AGRI_REG_PAGE: SCROLL_END

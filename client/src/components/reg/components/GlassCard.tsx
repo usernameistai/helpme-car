@@ -1,4 +1,4 @@
-import { type FC, type ReactNode } from 'react';
+import type { FC, ReactNode } from 'react'; // put type outside {}
 import { twMerge } from 'tailwind-merge';
 
 interface GlassCardProps {

@@ -1,7 +1,7 @@
-import type { FC } from 'react';
+import { type FC, lazy, Suspense } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
-import ParticlesBg from '../layout/ParticlesBg';
+const LazyParticlesBg = lazy(() => import("../layout/ParticlesBg"));
 
 const RegSafety: FC = () => {
   const quoteClass = "font-space bg-gray-200 dark:bg-gray-700 dark:text-zinc-200/90 mb-2 px-4 py-4 rounded-lg shadow-lg dark:shadow-sky-100/50 backdrop-blur-md border border-white/20";
@@ -11,7 +11,9 @@ const RegSafety: FC = () => {
   
   return (
     <>
-      <ParticlesBg theme='nasa' colour='blue-500'/>
+      <Suspense fallback={null}>
+        <LazyParticlesBg theme='nasa' colour='blue-500' />
+      </Suspense>
       <section className='relative z-20 mx-auto mb-4 w-full max-w-6xl px-1 sm:px-0'>
         <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan"
         >

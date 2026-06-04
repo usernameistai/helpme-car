@@ -1,9 +1,9 @@
-import type { FC } from 'react';
+import { type FC, lazy, Suspense } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { SiStartrek } from "react-icons/si";
 import { FaJediOrder } from "react-icons/fa";
-import ParticlesBg from '../layout/ParticlesBg';
+const LazyParticlesBg = lazy(() => import("../layout/ParticlesBg"));
 
 const RegRules: FC = () => {
   const sectionClass = "flex flex-row justify-between my-2";
@@ -20,7 +20,9 @@ const RegRules: FC = () => {
 
   return (
     <>
-      <ParticlesBg theme='snow' colour='#94a3b8' />
+      <Suspense fallback={null} >
+        <LazyParticlesBg theme='snow' colour='#94a3b8' />
+      </Suspense>
       <section className='relative z-20 mx-auto mb-4 w-full max-w-6xl px-1 sm:px-0'>
         <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan">
           HelpMe - Rules & Regulations

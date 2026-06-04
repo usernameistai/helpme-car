@@ -1,11 +1,11 @@
-import type { FC } from 'react';
+import { type FC, lazy, Suspense } from 'react';
 import GlassCard from '../components/reg/components/GlassCard';
 import { useUser } from '@clerk/clerk-react';
 import { useProfileStore } from '../store/useProfileStore';
 import { useMyActivity } from '../hooks/useMyActivity';
 import Spinner from '../components/layout/Spinner';
 import { Link } from 'react-router-dom';
-import ParticlesBg from '../components/layout/ParticlesBg';
+const LazyParticlesBg = lazy(() => import('../components/layout/ParticlesBg'))
 import { twMerge } from 'tailwind-merge';
 
 
@@ -24,7 +24,9 @@ const DashboardRegs: FC = () => {
   if (!profile) return <p>Loading profile data...</p>;
   return (
     <>
-      <ParticlesBg theme="snow" colour="cyan-400" className="fixed inset-0 z-0 pointer-events-none touch-none"/>
+      <Suspense fallback={null} >
+        <LazyParticlesBg theme="snow" colour="cyan-400" className="fixed inset-0 z-0 pointer-events-none touch-none" />
+      </Suspense>
       <section className={`relative z-10 p-4 sm:p-6 min-h-screen ${profile.theme === "dark" ? "text-white" : "text-gray-900"} mx-auto max-w-6xl relative bg-search-combine bg-standard md:bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]`}>
         <div className="absolute inset-0 bg-zinc-950/60 pointer-events-none" />
         <div className="relative z-20 space-y-7">

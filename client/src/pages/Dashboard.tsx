@@ -1,4 +1,4 @@
-import { useEffect, useRef, type FC } from "react";
+import { useEffect, useRef, type FC, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { useProfileStore } from "../store/useProfileStore";
 import { getMyProfile } from "../api/profile";
@@ -7,7 +7,7 @@ import { useMyActivity } from "../hooks/useMyActivity";
 import { BsFillLightningChargeFill } from "react-icons/bs";
 import GlassCard from "../components/reg/components/GlassCard";
 import Spinner from "../components/layout/Spinner";
-import ParticlesBg from "../components/layout/ParticlesBg";
+const LazyParticlesBg = lazy(() => import("../components/layout/ParticlesBg"));
 import toast from "react-hot-toast";
 import { twMerge } from 'tailwind-merge';
 
@@ -56,7 +56,9 @@ const Dashboard: FC = () => {
   
   return (
     <>
-      <ParticlesBg theme="snow" colour="cyan-400" className="fixed inset-0 z-0 pointer-events-none touch-none"/>
+      <Suspense fallback={null} >
+        <LazyParticlesBg theme="snow" colour="cyan-400" className="fixed inset-0 z-0 pointer-events-none touch-none" />
+      </Suspense>
       <section className={`relative z-10 p-4 sm:p-6 min-h-screen ${profile.theme === "dark" ? "text-white" : "text-gray-900"} mx-auto max-w-6xl relative bg-search-combine bg-standard md:bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]`}>
         <div className="absolute inset-0 bg-zinc-950/60 pointer-events-none" />
         <div className="relative z-20 space-y-7">

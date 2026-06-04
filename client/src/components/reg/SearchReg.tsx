@@ -1,10 +1,10 @@
-import React, { type FC, type BaseSyntheticEvent, useState } from 'react';
+import React, { type FC, type BaseSyntheticEvent, useState, lazy, Suspense } from 'react';
 import { useRegStore } from '../../store/useRegStore';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
 import toast from 'react-hot-toast';
-import ParticlesBg from '../layout/ParticlesBg';
+const LazyParticlesBg = lazy(() => import("../layout/ParticlesBg"));
 import { useQueryClient } from '@tanstack/react-query';
 import { getRegByPlate } from '../../api/reg';
 import { useSearchStore } from '../../store/useSearchStore';
@@ -154,7 +154,9 @@ const SearchReg: FC = () => {
 
   return (
     <>
-      <ParticlesBg theme="snow" colour="purple-500" />
+      <Suspense fallback={null}>
+        <LazyParticlesBg theme="snow" colour="purple-500" />
+      </Suspense>
       <section className='relative bg-search-car bg-standard min-h-screen h-[100vh] z-10 mx-auto max-w-6xl'>
         <div className="absolute inset-0 bg-zinc-700/50" />
         <div className="relative z-30 flex items-center gap-4 mb-6 pt-4 px-2 font-michroma text-[10px] tracking-widest uppercase opacity-70">

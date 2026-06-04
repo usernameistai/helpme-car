@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useRegStore } from '../../store/useRegStore';
 import Spinner from '../layout/Spinner';
 import Modal from '../layout/Modal';
 import toast from 'react-hot-toast';
-import ParticlesBg from '../layout/ParticlesBg';
+const LazyParticlesBg = lazy(() => import("../layout/ParticlesBg"));
 import { useQueryClient } from '@tanstack/react-query';
 import { useRegdetail } from '../../hooks/useRegs';
 
@@ -126,11 +126,13 @@ const ShowReg = () => {
   if (isLoading) return <Spinner />;
   if (isError || notFound) return (
     <>
-      <ParticlesBg 
-        theme="bubble" 
-        colour='emerald-400' 
-        className='opacity-50 dark:opacity-100 contrast-150 saturate-150 dark:contrast-100'
-      />
+      <Suspense fallback={null} >
+        <LazyParticlesBg 
+          theme="bubble" 
+          colour='emerald-400' 
+          className='opacity-50 dark:opacity-100 contrast-150 saturate-150 dark:contrast-100'
+        />
+      </Suspense>
       <div className="scanline fixed inset-0 z-30" />
       <section className='relative z-20 max-w-4xl mx-auto px-4 py-10 space-y-6'>
         <h1 className="font-michroma text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300">
@@ -196,7 +198,9 @@ const ShowReg = () => {
 
   return (
     <>
-      <ParticlesBg theme="default" colour='purple-500' />
+      <Suspense fallback={null} >
+        <LazyParticlesBg theme="default" colour='purple-500' />
+      </Suspense>
       <div className="scanline fixed inset-0 z-30 pointer-events-none" />
       <section className="relative z-20 max-w-6xl mx-auto space-y-2 md:space-y-4">
         <h1 className="font-space text-4xl md:text-5xl lg:text-7xl font-bold ml-2 pb-4 lan">

@@ -1,5 +1,5 @@
-import React from 'react';
-import ParticlesBg from '../components/layout/ParticlesBg';
+import React, { lazy, Suspense } from 'react';
+const LazyParticlesBg = lazy(() => import('../components/layout/ParticlesBg'));
 import { Link } from 'react-router-dom';
 
 const MissionBriefing: React.FC = () => {
@@ -10,7 +10,9 @@ const MissionBriefing: React.FC = () => {
 
   return (
     <>
-      <ParticlesBg theme='default' colour='' className='pointer-events-none' />
+      <Suspense fallback={null} >
+        <LazyParticlesBg theme='default' colour='' className='pointer-events-none'  />
+      </Suspense>
       <div className="min-h-screen bg-slate-300 dark:bg-slate-900 text-emerald-400 p-8 font-mono relative overflow-hidden">
         {/* Background Decor */}
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px]"></div>

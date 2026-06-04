@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import type { FC } from 'react';
 import { Link, useNavigate, useParams } from "react-router-dom";
 import type { IReg } from '../../types/reg';
@@ -8,7 +8,7 @@ import Spinner from '../layout/Spinner';
 import toast from 'react-hot-toast';
 import { useAuth } from '@clerk/clerk-react';
 import { getMyProfile } from '../../api/profile';
-import ParticlesBg from '../layout/ParticlesBg';
+const LazyParticlesBg = lazy(() => import("../layout/ParticlesBg"));
 import { useQueryClient } from '@tanstack/react-query';
 
 
@@ -115,7 +115,9 @@ const EditReg: FC = () => {
 
   return (
     <>
-      <ParticlesBg theme='nasa' colour='purple-500' />
+      <Suspense fallback={null} >
+        <LazyParticlesBg theme='nasa' colour='purple-500' />
+      </Suspense>
       <section className='relative z-20 max-w-6xl mx-auto mb-10'> 
         <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan">
           HelpMe-Edit the Reg... please

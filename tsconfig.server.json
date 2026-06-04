@@ -18,6 +18,3 @@
     "server/types/**/*.d.ts",
   ],
 }
-
-// Was below changed to above
-// "include": ["server/**/*"],

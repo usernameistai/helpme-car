@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, lazy, Suspense } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import type { IProfile } from '../types/profile';
 import { useProfileStore } from '../store/useProfileStore';
@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import Spinner from '../components/layout/Spinner';
 import { useAuth } from '@clerk/clerk-react';
 import { api } from '../api/profile';
-import ParticlesBg from '../components/layout/ParticlesBg';
+const LazyParticlesBg = lazy(() => import('../components/layout/ParticlesBg'));
 
 const DashboardForm: React.FC = () => {
   const navigate = useNavigate();
@@ -95,7 +95,9 @@ const DashboardForm: React.FC = () => {
 
   return (
     <>
-      <ParticlesBg theme='snow' colour='cyan-400' />
+      <Suspense fallback={null} >
+        <LazyParticlesBg theme='snow' colour='cyan-400'  />
+      </Suspense>
       <div className="relative z-20 p-4 sm:p-6 bg-search-combine bg-standard bg-fixed shadow-[inset_1px_1px_15px_rgba(0,0,0,0.2)]">
         <div className="absolute inset-0 bg-zinc-950/60 pointer-events-none" />
         

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import type { IReg } from '../../types/reg';
 import { useRegStore } from '../../store/useRegStore';
@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import { getMyProfile } from '../../api/profile';
 import { useAuth } from '@clerk/clerk-react';
 import { useProfileStore } from '../../store/useProfileStore';
-import ParticlesBg from '../layout/ParticlesBg';
+const LazyParticlesBg = lazy(() => import("../layout/ParticlesBg"));
 
 const RegForm: React.FC = () => {
   const navigate = useNavigate();
@@ -122,7 +122,9 @@ const RegForm: React.FC = () => {
 
   return (
     <>
-      <ParticlesBg theme='nasa' colour='purple-500' />
+      <Suspense fallback={null}>
+        <LazyParticlesBg theme='nasa' colour='purple-500' />
+      </Suspense>
       <section className='relative z-20 max-w-6xl mx-auto mb-10'>
         <h1 className="font-space text-4xl md:text-5xl font-bold ml-2 pb-4 lan">
           HelpMe-Out

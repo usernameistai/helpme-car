@@ -1,8 +1,8 @@
-import { type FC } from 'react'
+import { type FC, lazy, Suspense } from 'react'
 import { getLeaderboard } from '../api/profile';  
 import Spinner from '../components/layout/Spinner';
 import GlassCard from '../components/reg/components/GlassCard';
-import ParticlesBg from '../components/layout/ParticlesBg';
+const LazyParticlesBg = lazy(() => import('../components/layout/ParticlesBg'))
 import { useQuery } from '@tanstack/react-query';
 import { GiTrophyCup } from "react-icons/gi";
 import { motion } from 'motion/react';
@@ -150,7 +150,9 @@ const Leaderboard: FC = () => {
 
   return (
     <>
-      <ParticlesBg theme='nasa' colour='yellow-300' />
+      <Suspense fallback={null} >
+        <LazyParticlesBg theme='nasa' colour='yellow-300' />
+      </Suspense>
       <section className='relative z-20 my-[-1.5rem]'>
         <section className="mt-2 p-6 mx-auto max-w-6xl bg-rules-people-8 bg-standard bg-fixed bg-black/50 min-h-screen">
           <div className="absolute inset-0 bg-zinc-950/20 pointer-events-none" />
