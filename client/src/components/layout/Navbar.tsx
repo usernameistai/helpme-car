@@ -20,7 +20,7 @@ const Navbar = () => {
   const navItemBase = "group relative flex items-center gap-x-1 sm:gap-x-2 p-1 sm:p-2 rounded-xl transition-all duration-300 border-b-2 border-transparent hover:border-cyan-400 hover:bg-white/10 hover:text-cyan-400";
   const navItemsOneTwo = "absolute top-10 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all duration-200 origin-top border border-cyan-400/70 bg-slate-900/90 backdrop-blur-md text-cyan-300 text-xs py-1 px-2 rounded shadow-xl pointer-events-none lg:hidden z-50 text-center";
   const activeClass = "bg-cyan-400/20 text-cyan-400 border-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.1)]";
-  const menuClass = "flex justify-between px-4 py-2 border-b border-zinc-200 hover:bg-gray-100 text-center";
+  const menuClass = "flex justify-between px-4 py-2 border-b border-zinc-200/50 hover:bg-gray-100 text-center";
 
   // Close menu on outside click
   useEffect(() => {
@@ -178,7 +178,7 @@ const Navbar = () => {
                         <li key={menu.to} role="none">
                           <Link to={menu.to} role="menuitem" tabIndex={0} className={menuClass}>
                             <span>{menu.label}</span>
-                            <span className="flex gap1 ml-1">{menu.icon}{menu.icon2}</span>
+                            <span className="flex gap-1 ml-1">{menu.icon}{menu.icon2}</span>
                           </Link>
                         </li>
                       ))
